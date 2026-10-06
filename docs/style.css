@@ -56,6 +56,13 @@ main > h1{margin-top:6px;}
 .doc th,.doc td{border:1px solid var(--line);padding:8px 11px;vertical-align:top;text-align:left;}
 .doc thead th,.doc tr:first-child th{background:var(--amber-soft);color:var(--amber-ink);}
 
+/* bảng đại từ */
+.doc table.pron th,.doc table.pron td{text-align:center;vertical-align:middle;}
+.doc table.pron th small{display:block;font-weight:400;font-size:12.5px;color:var(--amber-ink);opacity:.8;}
+.doc table.pron td:first-child{text-align:left;color:var(--dim);font-weight:500;white-space:nowrap;}
+.doc table.pron td strong{font-size:16.5px;}
+.doc table.pron tbody tr:nth-child(even){background:#fbf7ef;}
+
 @media (max-width:480px){
   .hero{padding:36px 0 12px;}
   .path::before{left:23px;}
