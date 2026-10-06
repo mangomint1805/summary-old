@@ -1,0 +1,13 @@
+:root{color-scheme:light;--ink:#1F2A44;--soft:#4A5568;--bg:#F7F5EF;--card:#FFFDF8;--line:#DAD6CB;--accent:#1F3864;--teal:#0F6E62;--orange:#C2571A}
+*{box-sizing:border-box}html{background:var(--bg)}body{margin:0;background:var(--bg);color:var(--ink);font-family:'Be Vietnam Pro',Arial,sans-serif;line-height:1.6;font-size:17px}
+a{color:var(--teal)}header.top{background:var(--accent);color:#F7F5EF;padding:14px 16px}header.top a{color:#F7F5EF;text-decoration:none;font-weight:600}
+main{max-width:960px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:32px;line-height:1.2;margin:8px 0 4px}h2{font-size:24px;margin:32px 0 10px;color:var(--accent)}h3{font-size:19px;margin:22px 0 8px;color:var(--accent)}
+.sub{color:var(--soft);margin:0 0 20px}.btn{display:inline-block;background:var(--teal);color:#F7F5EF;padding:8px 16px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px}
+.doc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-top:20px;overflow-x:auto}
+.doc table{border-collapse:collapse;width:100%;margin:12px 0;font-size:15.5px}.doc th,.doc td{border:1px solid var(--line);padding:7px 10px;vertical-align:top;text-align:left}
+.doc tr:first-child th,.doc thead th{background:var(--accent);color:#F7F5EF}.doc p{margin:6px 0}.doc img{max-width:100%}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;text-decoration:none;color:var(--ink)}
+.card:hover{border-color:var(--teal)}.card .u{font-size:13px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.5px}.card .t{font-weight:700;font-size:17px;margin:4px 0}.card .v{color:var(--soft);font-size:15px}
+footer{color:var(--soft);font-size:14px;text-align:center;padding:24px 16px}
