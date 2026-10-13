@@ -2,7 +2,14 @@
 
 Tóm tắt kiến thức từng bài của khóa TOEIC Pre (Reading & Listening), viết bằng tiếng Việt cho học viên mới bắt đầu, kèm bảng từ vựng của mỗi bài.
 
-**Trang chủ:** https://mangomint1805.github.io/summary-old/
+## Link nhanh
+
+| Dùng để | Link |
+|---|---|
+| 🏠 Trang chủ (mở tất cả bài) | [mangomint1805.github.io/summary-old](https://mangomint1805.github.io/summary-old/) |
+| 🔒 Chọn bài mở cho lớp (giáo viên) | [mangomint1805.github.io/summary-old/?gv](https://mangomint1805.github.io/summary-old/?gv) |
+
+**Cách gửi bài cho lớp:** mở link *Chọn bài mở cho lớp* → tick các Unit lớp đã học → bấm **Sao chép link** → gửi link đó cho học sinh. Bài chưa tick sẽ hiện "Chưa mở". Mỗi lớp có thể dùng một link riêng; lớp học tới bài mới thì tạo link mới và gửi lại.
 
 ## Reading
 
@@ -40,7 +47,7 @@ Tóm tắt kiến thức từng bài của khóa TOEIC Pre (Reading & Listening)
 
 ```
 docs/
-  index.html     trang chủ (danh sách các bài)
+  index.html     trang chủ (danh sách các bài, có chế độ ?gv để chọn bài mở cho lớp)
   style.css      giao diện chung
   reading/       trang web từng bài Reading
   listening/     trang web từng bài Listening
