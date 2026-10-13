@@ -6,41 +6,75 @@
 <meta name="color-scheme" content="light only">
 <title>Tóm tắt kiến thức TOEIC Pre</title>
 <link rel="stylesheet" href="style.css">
+<style>
+/* khóa bài chưa học */
+.stop .meta,.stop .soon{display:none;}
+.stop.locked .go{display:none;}
+.stop.locked .meta{display:block;margin:6px 0 0;color:var(--dim);font-size:14px;}
+.stop.locked .soon{display:inline-block;margin-top:8px;font-size:13px;font-weight:600;color:var(--dim);background:#efece5;border:1px solid var(--line);border-radius:999px;padding:3px 12px;}
+.stop.locked .dot{border-color:var(--line);background:var(--paper);color:var(--dim);}
+.stop.locked .name{color:var(--dim);}
+/* bảng giáo viên */
+.gv{display:none;margin:22px 0 0;background:var(--card);border:1.5px solid var(--amber);border-radius:10px;padding:18px 20px;}
+body.gvmode .gv{display:block;}
+.gv h2{font-family:'Lora','Times New Roman',serif;font-weight:600;font-size:21px;margin:0 0 4px;}
+.gv p{margin:4px 0 10px;color:var(--dim);font-size:14.5px;}
+.gv .grp{margin:12px 0 4px;font-weight:700;color:var(--amber-ink);}
+.gv .boxes{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px 12px;}
+.gv label{display:flex;gap:8px;align-items:center;font-size:14.5px;cursor:pointer;}
+.gv input[type=checkbox]{width:18px;height:18px;accent-color:var(--amber);}
+.gv .row{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0;}
+.gv button{font:inherit;font-size:14px;font-weight:600;border:1.5px solid var(--amber);background:var(--card);color:var(--amber-ink);border-radius:8px;padding:7px 14px;cursor:pointer;}
+.gv button.main{background:var(--amber);color:#fff;}
+.gv input.link{width:100%;margin-top:12px;font:inherit;font-size:13.5px;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);}
+.gv .ok{color:var(--teal);font-weight:600;font-size:14px;margin-left:4px;}
+</style>
 </head>
 <body>
 <div class="wrap">
   <header class="hero">
     <h1>Tóm tắt kiến thức TOEIC Pre</h1>
-    <p>Tóm tắt từng bài Reading và Listening bằng tiếng Việt, kèm bảng từ vựng. Bấm vào một bài để xem.</p>
+    <p>Tóm tắt từng bài Reading và Listening bằng tiếng Việt, kèm bảng từ vựng. Bấm vào một bài để xem. Bài nào ghi "Chưa mở" thì thầy sẽ mở khi lớp học tới.</p>
   </header>
+
+  <section class="gv" id="gv" aria-label="Chọn bài mở cho lớp">
+    <h2>Chọn bài mở cho lớp</h2>
+    <p>Đánh dấu các bài lớp đã học, rồi sao chép link gửi cho học sinh. Bài không đánh dấu sẽ hiện "Chưa mở". Mỗi lớp có thể dùng một link riêng.</p>
+    <div class="grp">Reading</div><div class="boxes" id="boxR"></div>
+    <div class="grp">Listening</div><div class="boxes" id="boxL"></div>
+    <div class="row"><button type="button" id="all">Chọn hết</button><button type="button" id="none">Bỏ chọn hết</button></div>
+    <input class="link" id="link" readonly aria-label="Link gửi học sinh">
+    <div class="row"><button type="button" class="main" id="copy">Sao chép link</button><button type="button" id="preview">Xem thử như học sinh</button><span class="ok" id="ok"></span></div>
+  </section>
+
   <h2 class="sec">Reading</h2>
   <ol class="path">
-    <li class="stop open"><div class="dot" aria-label="Unit 1"><small>Unit</small><b>1</b></div><div class="body"><p class="name">Nouns &amp; Pronouns</p><a class="go" href="reading/unit-01-nouns-pronouns.html"><span>Xem bài</span><i>Danh từ &amp; Đại từ</i></a></div></li>
-    <li class="stop open"><div class="dot" aria-label="Unit 2"><small>Unit</small><b>2</b></div><div class="body"><p class="name">Adjectives &amp; Adverbs</p><a class="go" href="reading/unit-02-adjectives-adverbs.html"><span>Xem bài</span><i>Tính từ &amp; Trạng từ</i></a></div></li>
-    <li class="stop open"><div class="dot" aria-label="Unit 3"><small>Unit</small><b>3</b></div><div class="body"><p class="name">Verb Tenses</p><a class="go" href="reading/unit-03-verb-tenses.html"><span>Xem bài</span><i>Các thì của động từ</i></a></div></li>
-    <li class="stop open"><div class="dot" aria-label="Unit 4"><small>Unit</small><b>4</b></div><div class="body"><p class="name">Active &amp; Passive Voice</p><a class="go" href="reading/unit-04-active-passive-voice.html"><span>Xem bài</span><i>Câu chủ động &amp; bị động</i></a></div></li>
-    <li class="stop open"><div class="dot" aria-label="Unit 5–6"><small>Unit</small><b>5–6</b></div><div class="body"><p class="name">To-infinitives &amp; Gerunds</p><a class="go" href="reading/unit-05-to-infinitives-gerunds.html"><span>Xem bài</span><i>To V &amp; V-ing</i></a></div></li>
-    <li class="stop open"><div class="dot" aria-label="Unit 7"><small>Unit</small><b>7</b></div><div class="body"><p class="name">Participles</p><a class="go" href="reading/unit-07-participles.html"><span>Xem bài</span><i>Phân từ</i></a></div></li>
-    <li class="stop open"><div class="dot" aria-label="Unit 8"><small>Unit</small><b>8</b></div><div class="body"><p class="name">Conjunctions</p><a class="go" href="reading/unit-08-conjunctions.html"><span>Xem bài</span><i>Liên từ</i></a></div></li>
-    <li class="stop open"><div class="dot" aria-label="Unit 9"><small>Unit</small><b>9</b></div><div class="body"><p class="name">Prepositions</p><a class="go" href="reading/unit-09-prepositions.html"><span>Xem bài</span><i>Giới từ</i></a></div></li>
-    <li class="stop open"><div class="dot" aria-label="Unit 10"><small>Unit</small><b>10</b></div><div class="body"><p class="name">Relative Pronouns &amp; Adverbs</p><a class="go" href="reading/unit-10-relative-pronouns-adverbs.html"><span>Xem bài</span><i>Đại từ &amp; trạng từ quan hệ</i></a></div></li>
-    <li class="stop open"><div class="dot" aria-label="Unit 11"><small>Unit</small><b>11</b></div><div class="body"><p class="name">Subjunctive Mood</p><a class="go" href="reading/unit-11-subjunctive-mood.html"><span>Xem bài</span><i>Thức giả định</i></a></div></li>
-    <li class="stop open"><div class="dot" aria-label="Unit 12"><small>Unit</small><b>12</b></div><div class="body"><p class="name">Agreement</p><a class="go" href="reading/unit-12-agreement.html"><span>Xem bài</span><i>Sự hòa hợp chủ ngữ – động từ</i></a></div></li>
+    <li class="stop open" data-id="R1"><div class="dot" aria-label="Unit 1"><small>Unit</small><b>1</b></div><div class="body"><p class="name">Nouns &amp; Pronouns</p><a class="go" href="reading/unit-01-nouns-pronouns.html"><span>Xem bài</span><i>Danh từ &amp; Đại từ</i></a><p class="meta">Danh từ &amp; Đại từ</p><span class="soon">Chưa mở</span></div></li>
+    <li class="stop open" data-id="R2"><div class="dot" aria-label="Unit 2"><small>Unit</small><b>2</b></div><div class="body"><p class="name">Adjectives &amp; Adverbs</p><a class="go" href="reading/unit-02-adjectives-adverbs.html"><span>Xem bài</span><i>Tính từ &amp; Trạng từ</i></a><p class="meta">Tính từ &amp; Trạng từ</p><span class="soon">Chưa mở</span></div></li>
+    <li class="stop open" data-id="R3"><div class="dot" aria-label="Unit 3"><small>Unit</small><b>3</b></div><div class="body"><p class="name">Verb Tenses</p><a class="go" href="reading/unit-03-verb-tenses.html"><span>Xem bài</span><i>Các thì của động từ</i></a><p class="meta">Các thì của động từ</p><span class="soon">Chưa mở</span></div></li>
+    <li class="stop open" data-id="R4"><div class="dot" aria-label="Unit 4"><small>Unit</small><b>4</b></div><div class="body"><p class="name">Active &amp; Passive Voice</p><a class="go" href="reading/unit-04-active-passive-voice.html"><span>Xem bài</span><i>Câu chủ động &amp; bị động</i></a><p class="meta">Câu chủ động &amp; bị động</p><span class="soon">Chưa mở</span></div></li>
+    <li class="stop open" data-id="R5"><div class="dot" aria-label="Unit 5–6"><small>Unit</small><b>5–6</b></div><div class="body"><p class="name">To-infinitives &amp; Gerunds</p><a class="go" href="reading/unit-05-to-infinitives-gerunds.html"><span>Xem bài</span><i>To V &amp; V-ing</i></a><p class="meta">To V &amp; V-ing</p><span class="soon">Chưa mở</span></div></li>
+    <li class="stop open" data-id="R7"><div class="dot" aria-label="Unit 7"><small>Unit</small><b>7</b></div><div class="body"><p class="name">Participles</p><a class="go" href="reading/unit-07-participles.html"><span>Xem bài</span><i>Phân từ</i></a><p class="meta">Phân từ</p><span class="soon">Chưa mở</span></div></li>
+    <li class="stop open" data-id="R8"><div class="dot" aria-label="Unit 8"><small>Unit</small><b>8</b></div><div class="body"><p class="name">Conjunctions</p><a class="go" href="reading/unit-08-conjunctions.html"><span>Xem bài</span><i>Liên từ</i></a><p class="meta">Liên từ</p><span class="soon">Chưa mở</span></div></li>
+    <li class="stop open" data-id="R9"><div class="dot" aria-label="Unit 9"><small>Unit</small><b>9</b></div><div class="body"><p class="name">Prepositions</p><a class="go" href="reading/unit-09-prepositions.html"><span>Xem bài</span><i>Giới từ</i></a><p class="meta">Giới từ</p><span class="soon">Chưa mở</span></div></li>
+    <li class="stop open" data-id="R10"><div class="dot" aria-label="Unit 10"><small>Unit</small><b>10</b></div><div class="body"><p class="name">Relative Pronouns &amp; Adverbs</p><a class="go" href="reading/unit-10-relative-pronouns-adverbs.html"><span>Xem bài</span><i>Đại từ &amp; trạng từ quan hệ</i></a><p class="meta">Đại từ &amp; trạng từ quan hệ</p><span class="soon">Chưa mở</span></div></li>
+    <li class="stop open" data-id="R11"><div class="dot" aria-label="Unit 11"><small>Unit</small><b>11</b></div><div class="body"><p class="name">Subjunctive Mood</p><a class="go" href="reading/unit-11-subjunctive-mood.html"><span>Xem bài</span><i>Thức giả định</i></a><p class="meta">Thức giả định</p><span class="soon">Chưa mở</span></div></li>
+    <li class="stop open" data-id="R12"><div class="dot" aria-label="Unit 12"><small>Unit</small><b>12</b></div><div class="body"><p class="name">Agreement</p><a class="go" href="reading/unit-12-agreement.html"><span>Xem bài</span><i>Sự hòa hợp chủ ngữ – động từ</i></a><p class="meta">Sự hòa hợp chủ ngữ – động từ</p><span class="soon">Chưa mở</span></div></li>
   </ol>
 
   <h2 class="sec">Listening</h2>
   <ol class="path">
-    <li class="stop open"><div class="dot" aria-label="Unit 1"><small>Unit</small><b>1</b></div><div class="body"><p class="name">Part 1 – Photos of People</p><a class="go" href="listening/unit-01-photos-of-people.html"><span>Xem bài</span><i>Tranh tả người</i></a></div></li>
-    <li class="stop open"><div class="dot" aria-label="Unit 2"><small>Unit</small><b>2</b></div><div class="body"><p class="name">Part 1 – Photos of Objects &amp; Scenes</p><a class="go" href="listening/unit-02-photos-of-objects-scenes.html"><span>Xem bài</span><i>Tranh tả vật và cảnh</i></a></div></li>
-    <li class="stop open"><div class="dot" aria-label="Unit 3"><small>Unit</small><b>3</b></div><div class="body"><p class="name">Part 2 – Information Questions (1)</p><a class="go" href="listening/unit-03-information-questions-1.html"><span>Xem bài</span><i>Câu hỏi Who / What / Which</i></a></div></li>
-    <li class="stop open"><div class="dot" aria-label="Unit 4"><small>Unit</small><b>4</b></div><div class="body"><p class="name">Part 2 – Information Questions (2)</p><a class="go" href="listening/unit-04-information-questions-2.html"><span>Xem bài</span><i>Câu hỏi When / Where / Why / How</i></a></div></li>
-    <li class="stop open"><div class="dot" aria-label="Unit 5"><small>Unit</small><b>5</b></div><div class="body"><p class="name">Part 2 – Yes/No Questions</p><a class="go" href="listening/unit-05-yes-no-questions.html"><span>Xem bài</span><i>Câu hỏi Yes/No</i></a></div></li>
-    <li class="stop open"><div class="dot" aria-label="Unit 6"><small>Unit</small><b>6</b></div><div class="body"><p class="name">Part 2 – Other Question Types</p><a class="go" href="listening/unit-06-other-question-types.html"><span>Xem bài</span><i>Các dạng câu hỏi khác</i></a></div></li>
-    <li class="stop open"><div class="dot" aria-label="Unit 7"><small>Unit</small><b>7</b></div><div class="body"><p class="name">Part 3 – Business Activities</p><a class="go" href="listening/unit-07-business-activities.html"><span>Xem bài</span><i>Hoạt động kinh doanh</i></a></div></li>
-    <li class="stop open"><div class="dot" aria-label="Unit 8"><small>Unit</small><b>8</b></div><div class="body"><p class="name">Part 3 – Daily Activities</p><a class="go" href="listening/unit-08-daily-activities.html"><span>Xem bài</span><i>Hoạt động hằng ngày</i></a></div></li>
-    <li class="stop open"><div class="dot" aria-label="Unit 9"><small>Unit</small><b>9</b></div><div class="body"><p class="name">Part 3 – At Public Places</p><a class="go" href="listening/unit-09-at-public-places.html"><span>Xem bài</span><i>Ở nơi công cộng</i></a></div></li>
-    <li class="stop open long"><div class="dot" aria-label="Unit 10–11"><small>Unit</small><b>10–11</b></div><div class="body"><p class="name">Part 4 – Telephone Messages, Announcements &amp; Ads</p><a class="go" href="listening/unit-10-telephone-messages-announcements-ads.html"><span>Xem bài</span><i>Tin nhắn thoại, thông báo, quảng cáo</i></a></div></li>
-    <li class="stop open long"><div class="dot" aria-label="Unit 11–12"><small>Unit</small><b>11–12</b></div><div class="body"><p class="name">Part 4 – Radio Broadcasts, Speeches &amp; Internal Announcements</p><a class="go" href="listening/unit-11-radio-broadcasts-speeches-internal-announcements.html"><span>Xem bài</span><i>Phát thanh, bài phát biểu, thông báo nội bộ</i></a></div></li>
+    <li class="stop open" data-id="L1"><div class="dot" aria-label="Unit 1"><small>Unit</small><b>1</b></div><div class="body"><p class="name">Part 1 – Photos of People</p><a class="go" href="listening/unit-01-photos-of-people.html"><span>Xem bài</span><i>Tranh tả người</i></a><p class="meta">Tranh tả người</p><span class="soon">Chưa mở</span></div></li>
+    <li class="stop open" data-id="L2"><div class="dot" aria-label="Unit 2"><small>Unit</small><b>2</b></div><div class="body"><p class="name">Part 1 – Photos of Objects &amp; Scenes</p><a class="go" href="listening/unit-02-photos-of-objects-scenes.html"><span>Xem bài</span><i>Tranh tả vật và cảnh</i></a><p class="meta">Tranh tả vật và cảnh</p><span class="soon">Chưa mở</span></div></li>
+    <li class="stop open" data-id="L3"><div class="dot" aria-label="Unit 3"><small>Unit</small><b>3</b></div><div class="body"><p class="name">Part 2 – Information Questions (1)</p><a class="go" href="listening/unit-03-information-questions-1.html"><span>Xem bài</span><i>Câu hỏi Who / What / Which</i></a><p class="meta">Câu hỏi Who / What / Which</p><span class="soon">Chưa mở</span></div></li>
+    <li class="stop open" data-id="L4"><div class="dot" aria-label="Unit 4"><small>Unit</small><b>4</b></div><div class="body"><p class="name">Part 2 – Information Questions (2)</p><a class="go" href="listening/unit-04-information-questions-2.html"><span>Xem bài</span><i>Câu hỏi When / Where / Why / How</i></a><p class="meta">Câu hỏi When / Where / Why / How</p><span class="soon">Chưa mở</span></div></li>
+    <li class="stop open" data-id="L5"><div class="dot" aria-label="Unit 5"><small>Unit</small><b>5</b></div><div class="body"><p class="name">Part 2 – Yes/No Questions</p><a class="go" href="listening/unit-05-yes-no-questions.html"><span>Xem bài</span><i>Câu hỏi Yes/No</i></a><p class="meta">Câu hỏi Yes/No</p><span class="soon">Chưa mở</span></div></li>
+    <li class="stop open" data-id="L6"><div class="dot" aria-label="Unit 6"><small>Unit</small><b>6</b></div><div class="body"><p class="name">Part 2 – Other Question Types</p><a class="go" href="listening/unit-06-other-question-types.html"><span>Xem bài</span><i>Các dạng câu hỏi khác</i></a><p class="meta">Các dạng câu hỏi khác</p><span class="soon">Chưa mở</span></div></li>
+    <li class="stop open" data-id="L7"><div class="dot" aria-label="Unit 7"><small>Unit</small><b>7</b></div><div class="body"><p class="name">Part 3 – Business Activities</p><a class="go" href="listening/unit-07-business-activities.html"><span>Xem bài</span><i>Hoạt động kinh doanh</i></a><p class="meta">Hoạt động kinh doanh</p><span class="soon">Chưa mở</span></div></li>
+    <li class="stop open" data-id="L8"><div class="dot" aria-label="Unit 8"><small>Unit</small><b>8</b></div><div class="body"><p class="name">Part 3 – Daily Activities</p><a class="go" href="listening/unit-08-daily-activities.html"><span>Xem bài</span><i>Hoạt động hằng ngày</i></a><p class="meta">Hoạt động hằng ngày</p><span class="soon">Chưa mở</span></div></li>
+    <li class="stop open" data-id="L9"><div class="dot" aria-label="Unit 9"><small>Unit</small><b>9</b></div><div class="body"><p class="name">Part 3 – At Public Places</p><a class="go" href="listening/unit-09-at-public-places.html"><span>Xem bài</span><i>Ở nơi công cộng</i></a><p class="meta">Ở nơi công cộng</p><span class="soon">Chưa mở</span></div></li>
+    <li class="stop open long" data-id="L10"><div class="dot" aria-label="Unit 10–11"><small>Unit</small><b>10–11</b></div><div class="body"><p class="name">Part 4 – Telephone Messages, Announcements &amp; Ads</p><a class="go" href="listening/unit-10-telephone-messages-announcements-ads.html"><span>Xem bài</span><i>Tin nhắn thoại, thông báo, quảng cáo</i></a><p class="meta">Tin nhắn thoại, thông báo, quảng cáo</p><span class="soon">Chưa mở</span></div></li>
+    <li class="stop open long" data-id="L11"><div class="dot" aria-label="Unit 11–12"><small>Unit</small><b>11–12</b></div><div class="body"><p class="name">Part 4 – Radio Broadcasts, Speeches &amp; Internal Announcements</p><a class="go" href="listening/unit-11-radio-broadcasts-speeches-internal-announcements.html"><span>Xem bài</span><i>Phát thanh, bài phát biểu, thông báo nội bộ</i></a><p class="meta">Phát thanh, bài phát biểu, thông báo nội bộ</p><span class="soon">Chưa mở</span></div></li>
   </ol>
 
   <section class="tips">
@@ -55,5 +89,57 @@
 
   <footer>TOEIC Pre</footer>
 </div>
+<script>
+(function(){
+  var KEY='summaryOld.mo';
+  var q=new URLSearchParams(location.search);
+  var gv=q.has('gv');
+  var stops=[].slice.call(document.querySelectorAll('.stop[data-id]'));
+  var ids=stops.map(function(s){return s.dataset.id;});
+  function store(k,v){try{if(v===null)localStorage.removeItem(k);else localStorage.setItem(k,v);}catch(e){}}
+  function read(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+  // ?mo=R1-R2-L1 : chỉ mở các bài này. ?mo=all : mở hết. Không có ?mo thì dùng link đã mở lần trước trên máy này.
+  var mo=q.get('mo');
+  if(!gv){
+    if(mo!==null){ store(KEY, mo); } else { mo=read(KEY); }
+  }
+  function apply(list){
+    stops.forEach(function(s){
+      var open=!list||list.indexOf(s.dataset.id)>=0;
+      s.classList.toggle('locked',!open); s.classList.toggle('open',open);
+    });
+  }
+  function parse(v){ if(v===null||v===''||v==='all') return null; return v.split('-').filter(function(x){return ids.indexOf(x)>=0;}); }
+  if(!gv){ apply(parse(mo)); return; }
+  // ----- chế độ giáo viên (?gv) -----
+  document.body.classList.add('gvmode');
+  var start=parse(mo);
+  function box(id,label,parent){
+    var l=document.createElement('label'); var c=document.createElement('input'); c.type='checkbox'; c.value=id;
+    c.checked=!start||start.indexOf(id)>=0; l.appendChild(c); l.appendChild(document.createTextNode(label)); parent.appendChild(l); return c;
+  }
+  var checks=stops.map(function(s){
+    var id=s.dataset.id; var n=s.querySelector('.dot b').textContent;
+    return box(id,'Unit '+n, document.getElementById(id[0]==='R'?'boxR':'boxL'));
+  });
+  var base=location.origin+location.pathname;
+  function link(){
+    var on=checks.filter(function(c){return c.checked;}).map(function(c){return c.value;});
+    var url=on.length===checks.length?base+'?mo=all':base+'?mo='+(on.join('-')||'none');
+    document.getElementById('link').value=url; apply(on); document.getElementById('ok').textContent=''; return url;
+  }
+  checks.forEach(function(c){c.addEventListener('change',link);});
+  document.getElementById('all').onclick=function(){checks.forEach(function(c){c.checked=true;});link();};
+  document.getElementById('none').onclick=function(){checks.forEach(function(c){c.checked=false;});link();};
+  document.getElementById('copy').onclick=function(){
+    var u=link(); var ok=document.getElementById('ok');
+    function done(){ok.textContent='Đã sao chép ✓';}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(u).then(done,function(){document.getElementById('link').select();document.execCommand('copy');done();});}
+    else{document.getElementById('link').select();document.execCommand('copy');done();}
+  };
+  document.getElementById('preview').onclick=function(){window.open(link(),'_blank');};
+  link();
+})();
+</script>
 </body>
 </html>
