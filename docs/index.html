@@ -28,6 +28,9 @@ body.gvmode .gv{display:block;}
 .gv button.main{background:var(--amber);color:#fff;}
 .gv input.link{width:100%;margin-top:12px;font:inherit;font-size:13.5px;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);}
 .gv .ok{color:var(--teal);font-weight:600;font-size:14px;margin-left:4px;}
+.gv .sched{margin:10px 0 6px;}
+.gv .sched summary{cursor:pointer;font-weight:700;color:var(--amber-ink);}
+.gv .sched img{display:block;width:100%;height:auto;margin-top:8px;border:1px solid var(--line);border-radius:8px;background:#fff;}
 </style>
 </head>
 <body>
@@ -40,6 +43,7 @@ body.gvmode .gv{display:block;}
   <section class="gv" id="gv" aria-label="Chọn bài mở cho lớp">
     <h2>Chọn bài mở cho lớp</h2>
     <p>Đánh dấu các bài lớp đã học, rồi sao chép link gửi cho học sinh. Bài không đánh dấu sẽ hiện "Chưa mở". Mỗi lớp có thể dùng một link riêng.</p>
+    <details class="sched" open><summary>Lịch học (Schedule)</summary><a href="schedule.jpg" target="_blank"><img src="schedule.jpg" alt="Lịch học TOEIC Pre: 24 buổi" loading="lazy"></a></details>
     <div class="grp">Reading</div><div class="boxes" id="boxR"></div>
     <div class="grp">Listening</div><div class="boxes" id="boxL"></div>
     <div class="row"><button type="button" id="all">Chọn hết</button><button type="button" id="none">Bỏ chọn hết</button></div>
