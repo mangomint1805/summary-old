@@ -146,14 +146,14 @@ body.gvmode .gate,body.gvmode .lopbar{display:none;}
     stops.forEach(function(s){
       var id=s.dataset.id, open=all||SN.isOpen(c,id);
       s.classList.toggle('locked',!open); s.classList.toggle('open',open);
-      if(!open){ var d=SN.openDate(c,id); s.querySelector('.soon').textContent='🔒 Mở ngày '+SN.fmt(d,true); }
+      if(!open){ var d=SN.openDate(c,id); s.querySelector('.soon').textContent='🔒 Mở '+snEndText(c)+' · '+SN.fmt(d,true); }
     });
   }
   function showClass(c){
     document.body.classList.remove('gated');
     var n=SN.doneSessions(c), ds=SN.dates(c), t=SN.today();
     document.getElementById('lopName').textContent='Lớp '+c.ten;
-    var next=ds.filter(function(d){return d>t;})[0];
+    var next=ds[n];
     document.getElementById('lopInfo').textContent='Đã học '+Math.min(n,ds.length)+'/'+ds.length+' buổi'+(next?' · Buổi tới: '+SN.fmt(next,true):' · Đã kết thúc khoá');
     document.getElementById('lopProg').style.width=Math.min(100,n/ds.length*100)+'%';
     paint(c,false);
