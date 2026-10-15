@@ -152,3 +152,10 @@ var SN = (function () {
     (main ? main.parentNode : document.body).insertBefore(box, main || null);
   });
 })();
+
+/* Nạp thêm tính năng: đánh dấu đã học + tìm kiếm (file extras.js) */
+(function () {
+  var me = document.currentScript; if (!me || !me.src) return;
+  var s = document.createElement('script'); s.src = me.src.replace(/classes\.js(\?.*)?$/, 'extras.js'); s.defer = true;
+  document.head.appendChild(s);
+})();
