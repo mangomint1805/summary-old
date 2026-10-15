@@ -11,7 +11,9 @@
                học xong buổi số mấy". Dùng khi lớp chậm/nhanh hơn lịch: các buổi
                sau sẽ tính tiếp từ mốc này theo các thứ học.
    hocToi    : (không bắt buộc) ép mở tới buổi số mấy dù chưa tới ngày.
-   Bài của buổi nào sẽ mở từ 0h ngày học buổi đó.
+   Bài của buổi nào sẽ mở SAU GIỜ TAN HỌC của ngày học buổi đó (giờ tan lấy từ
+               'ten', ví dụ '17h45 - 19h15' → mở lúc 19:15).
+   gioMo     : (không bắt buộc) giờ mở bài khác giờ tan học, dạng 'HH:MM'.
    ===================================================================== */
 var SN_CLASSES = [
   { ma: 'PRE112385', ten: 'PRE112385 (2-4-6, 17h45 - 19h15)', khaiGiang: '2026-08-28', thu: [2, 4, 6], nghi: [] },
@@ -53,6 +55,14 @@ var SN_FILES = {
 };
 
 /* ===================== phần xử lý (không cần sửa) ===================== */
+/* giờ mở bài của lớp: gioMo, hoặc giờ tan học trong tên lớp, mặc định 21:15 */
+function snEndHM(c) {
+  var m = c && c.gioMo ? String(c.gioMo).match(/(\d{1,2})\D(\d{2})/) : null;
+  if (!m && c) m = String(c.ten || '').match(/-\s*(\d{1,2})h(\d{2})/);
+  return m ? [+m[1], +m[2]] : [21, 15];
+}
+function snEndText(c) { var e = snEndHM(c); return e[0] + 'h' + ('0' + e[1]).slice(-2); }
+
 var SN = (function () {
   'use strict';
   var KEY = SN_PREFIX + '.lop', GV = SN_PREFIX + '.gv';
@@ -93,8 +103,8 @@ var SN = (function () {
   }
   function today() { var n = new Date(); return new Date(n.getFullYear(), n.getMonth(), n.getDate()); }
   function doneSessions(c) {
-    var t = today(), ds = dates(c), n = 0;
-    ds.forEach(function (d, i) { if (d <= t) n = i + 1; });
+    var now = new Date(), ds = dates(c), n = 0, e = snEndHM(c);
+    ds.forEach(function (d, i) { var o = new Date(d); o.setHours(e[0], e[1], 0, 0); if (now >= o) n = i + 1; });
     return Math.max(n, c.hocToi || 0);
   }
   function isOpen(c, id) { var s = SN_SESSIONS[id]; return !s || s <= doneSessions(c); }
@@ -145,7 +155,7 @@ var SN = (function () {
     } else {
       var d = SN.openDate(c, id);
       box.innerHTML = '<div class="ic">🔒</div><h2>Lớp mình chưa học tới bài này</h2>' +
-        '<p>Bài này sẽ mở vào <b>' + SN.fmt(d, true) + '/' + d.getFullYear() + '</b> (buổi ' + SN_SESSIONS[id] + ' của lớp ' + c.ma + ').</p>' +
+        '<p>Bài này sẽ mở sau giờ học, lúc <b>' + snEndText(c) + ' ngày ' + SN.fmt(d, true) + '/' + d.getFullYear() + '</b> (buổi ' + SN_SESSIONS[id] + ' của lớp ' + c.ma + ').</p>' +
         '<p>Ôn lại các bài đã học trước nha!</p><a class="btn" href="' + home + '">← Về danh sách bài</a>';
     }
     var main = document.querySelector('main');
