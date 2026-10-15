@@ -7,9 +7,28 @@ Tóm tắt kiến thức từng bài của khóa TOEIC Pre (Reading & Listening)
 | Dùng để | Link |
 |---|---|
 | 🏠 Trang chủ (mở tất cả bài) | [mangomint1805.github.io/summary-old](https://mangomint1805.github.io/summary-old/) |
-| 🔒 Chọn bài mở cho lớp (giáo viên) | [mangomint1805.github.io/summary-old/?gv](https://mangomint1805.github.io/summary-old/?gv) |
+| 👩‍🏫 Chế độ giáo viên (lịch từng lớp, link gửi lớp) | [mangomint1805.github.io/summary-old/?gv](https://mangomint1805.github.io/summary-old/?gv) |
 
-**Cách gửi bài cho lớp:** mở link *Chọn bài mở cho lớp* → tick các Unit lớp đã học → bấm **Sao chép link** → gửi link đó cho học sinh. Bài chưa tick sẽ hiện "Chưa mở". Mỗi lớp có thể dùng một link riêng; lớp học tới bài mới thì tạo link mới và gửi lại.
+## Mã lớp và lịch mở bài
+
+Học sinh vào trang chủ phải **nhập mã lớp** (hoặc mở link có sẵn mã, VD `…/summary-old/?lop=PRE115275`). Bài sẽ tự mở từ 0h ngày lớp học tới bài đó theo lịch 24 buổi; bài chưa tới hiện "🔒 Mở ngày …", mở thẳng link bài cũng bị chặn.
+
+Thêm lớp mới / sửa lịch: mở file `docs/classes.js`, sửa danh sách `SN_CLASSES`:
+
+```js
+{ ma: 'PRE115275', ten: 'PRE115275 (3-5-7, 17h45 - 19h15)', khaiGiang: '2026-09-19', thu: [3, 5, 7], nghi: [] }
+```
+
+- `thu`: các thứ học (2 = Thứ 2 … 7 = Thứ 7, 8 = Chủ nhật).
+- `nghi`: ngày lớp nghỉ (`'2026-11-20'`…), các buổi sau tự lùi lại.
+- `moc`: (tuỳ chọn) `['2026-10-14', 11]` = tới ngày 14/10 lớp đã học xong buổi 11; các buổi sau tính tiếp từ mốc này.
+- `hocToi`: (tuỳ chọn) ép mở tới buổi số mấy dù chưa tới ngày.
+
+Mở link `?gv` một lần trên máy của thầy để xem được mọi bài và xem lịch từng lớp. Đây chỉ là khoá đơn giản trên trình duyệt, không phải bảo mật thật.
+
+## Flashcard từ vựng
+
+Mỗi bài có nút **🃏 Flashcard từ vựng**, thẻ tạo tự động từ bảng từ vựng của bài (có phiên âm). Chạm để lật thẻ, 🔊 nghe phát âm (file mp3 có sẵn trong `docs/audio/`, 3 giọng Mỹ nữ / Mỹ nam / Anh nữ, nghe được trên mọi điện thoại), trộn thẻ, đánh dấu Đã thuộc / Chưa thuộc, ôn riêng từ chưa thuộc. Thêm từ mới thì chạy `python tools/make_audio.py <thư mục model>` để tạo file phát âm.
 
 ## Reading
 
@@ -47,7 +66,10 @@ Tóm tắt kiến thức từng bài của khóa TOEIC Pre (Reading & Listening)
 
 ```
 docs/
-  index.html     trang chủ (danh sách các bài, có chế độ ?gv để chọn bài mở cho lớp)
+  index.html     trang chủ (nhập mã lớp; chế độ ?gv cho giáo viên)
+  classes.js     danh sách lớp + lịch mở bài
+  flashcards.js  flashcard từ vựng
+  audio/         file phát âm từ vựng (tạo bằng tools/make_audio.py)
   style.css      giao diện chung
   reading/       trang web từng bài Reading
   listening/     trang web từng bài Listening

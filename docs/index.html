@@ -6,6 +6,7 @@
 <meta name="color-scheme" content="light only">
 <title>Tóm tắt kiến thức TOEIC Pre</title>
 <link rel="stylesheet" href="style.css">
+<script src="classes.js"></script>
 <style>
 /* khóa bài chưa học */
 .stop .meta,.stop .soon{display:none;}
@@ -14,41 +15,80 @@
 .stop.locked .soon{display:inline-block;margin-top:8px;font-size:13px;font-weight:600;color:var(--dim);background:#efece5;border:1px solid var(--line);border-radius:999px;padding:3px 12px;}
 .stop.locked .dot{border-color:var(--line);background:var(--paper);color:var(--dim);}
 .stop.locked .name{color:var(--dim);}
+/* nhập mã lớp */
+body.gated .sec,body.gated .path,body.gated .tips,body.gated .lopbar,body.gated .hero{display:none;}
+.gate{display:none;margin:40px 0 0;background:var(--card);border:1.5px solid var(--amber);border-radius:14px;padding:24px 22px;text-align:center;}
+body.gated .gate{display:block;}
+.gate .ic{font-size:40px;line-height:1;}
+.gate .kick{margin:0 0 14px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--amber-ink);}
+@media (max-width:480px){.gate{margin-top:24px;padding:22px 16px}.gate form{flex-direction:column}}
+.gate h2{font-family:'Lora','Times New Roman',serif;font-weight:600;font-size:23px;margin:10px 0 4px;}
+.gate p{margin:4px 0 14px;color:var(--dim);font-size:15px;}
+.gate form{display:flex;gap:8px;max-width:400px;margin:0 auto;}
+.gate input{flex:1;min-width:0;font:inherit;font-size:17px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);}
+.gate input:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 3px var(--amber-soft);}
+.gate button{font:inherit;font-size:16px;font-weight:700;border:0;border-radius:10px;padding:12px 18px;background:var(--amber);color:#fff;cursor:pointer;white-space:nowrap;}
+.gate .err{min-height:22px;margin:10px 0 0;color:#9b2c2c;font-size:14.5px;font-weight:600;}
+.gate.shake form{animation:gshake .35s;}
+@keyframes gshake{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+.lopbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 14px;margin:18px 0 0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;}
+.lopbar b{font-size:16px;}
+.lopbar small{display:block;color:var(--dim);font-size:13.5px;margin-top:2px;}
+.lopbar button{font:inherit;font-size:14px;font-weight:600;border:1.5px solid var(--amber);background:var(--card);color:var(--amber-ink);border-radius:8px;padding:6px 12px;cursor:pointer;}
+.lopbar .prog{height:6px;flex-basis:100%;background:var(--line);border-radius:99px;overflow:hidden;}
+.lopbar .prog i{display:block;height:100%;background:var(--teal);}
 /* bảng giáo viên */
 .gv{display:none;margin:22px 0 0;background:var(--card);border:1.5px solid var(--amber);border-radius:10px;padding:18px 20px;}
 body.gvmode .gv{display:block;}
+body.gvmode .gate,body.gvmode .lopbar{display:none;}
 .gv h2{font-family:'Lora','Times New Roman',serif;font-weight:600;font-size:21px;margin:0 0 4px;}
+.gv h3{font-size:17px;margin:20px 0 4px;color:var(--amber-ink);}
 .gv p{margin:4px 0 10px;color:var(--dim);font-size:14.5px;}
-.gv .grp{margin:12px 0 4px;font-weight:700;color:var(--amber-ink);}
-.gv .boxes{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px 12px;}
-.gv label{display:flex;gap:8px;align-items:center;font-size:14.5px;cursor:pointer;}
-.gv input[type=checkbox]{width:18px;height:18px;accent-color:var(--amber);}
-.gv .row{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0;}
-.gv button{font:inherit;font-size:14px;font-weight:600;border:1.5px solid var(--amber);background:var(--card);color:var(--amber-ink);border-radius:8px;padding:7px 14px;cursor:pointer;}
+.gv .row{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0;align-items:center;}
+.gv button,.gv a.b{font:inherit;font-size:14px;font-weight:600;border:1.5px solid var(--amber);background:var(--card);color:var(--amber-ink);border-radius:8px;padding:7px 14px;cursor:pointer;text-decoration:none;}
 .gv button.main{background:var(--amber);color:#fff;}
-.gv input.link{width:100%;margin-top:12px;font:inherit;font-size:13.5px;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);}
+.gv input.link{width:100%;margin-top:8px;font:inherit;font-size:13.5px;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);}
 .gv .ok{color:var(--teal);font-weight:600;font-size:14px;margin-left:4px;}
 .gv .sched{margin:10px 0 6px;}
-.gv .sched summary{cursor:pointer;font-weight:700;color:var(--amber-ink);}
+.gv .sched summary,.gv details.cal summary{cursor:pointer;font-weight:700;color:var(--amber-ink);}
 .gv .sched img{display:block;width:100%;height:auto;margin-top:8px;border:1px solid var(--line);border-radius:8px;background:#fff;}
+.gv table{width:100%;border-collapse:collapse;margin-top:8px;font-size:14px;}
+.gv th,.gv td{border:1px solid var(--line);padding:5px 8px;text-align:left;}
+.gv th{background:var(--amber-soft);color:var(--amber-ink);}
+.gv tr.done td{color:var(--dim);}
+.gv tr.next td{background:#fff7e6;font-weight:600;}
+.gv td:nth-child(2),.gv .tag{white-space:nowrap;}
+.gv .tag{font-size:12px;font-weight:700;border-radius:99px;padding:1px 8px;}
+.gv .tag.o{background:var(--teal-soft);color:var(--teal);}
+.gv .tag.l{background:#efece5;color:var(--dim);}
 </style>
 </head>
-<body>
+<body class="gated">
 <div class="wrap">
+  <section class="gate" id="gate" aria-label="Nhập mã lớp">
+    <p class="kick">Tóm tắt kiến thức TOEIC Pre</p>
+    <div class="ic">🔑</div>
+    <h2>Nhập mã lớp</h2>
+    <p>Nhập mã lớp thầy gửi để xem các bài lớp mình đã học.</p>
+    <form id="gateForm" autocomplete="off"><input id="code" name="code" placeholder="Mã lớp" aria-label="Mã lớp" autocapitalize="characters" spellcheck="false"><button type="submit">Vào học</button></form>
+    <div class="err" id="err" role="alert"></div>
+  </section>
+
   <header class="hero">
     <h1>Tóm tắt kiến thức TOEIC Pre</h1>
-    <p>Tóm tắt từng bài Reading và Listening bằng tiếng Việt, kèm bảng từ vựng. Bấm vào một bài để xem. Bài nào ghi "Chưa mở" thì thầy sẽ mở khi lớp học tới.</p>
+    <p>Tóm tắt từng bài Reading và Listening bằng tiếng Việt, kèm bảng từ vựng và flashcard. Nhập mã lớp để xem các bài lớp bạn đã học; bài mới sẽ tự mở vào ngày lớp học tới bài đó.</p>
   </header>
 
-  <section class="gv" id="gv" aria-label="Chọn bài mở cho lớp">
-    <h2>Chọn bài mở cho lớp</h2>
-    <p>Đánh dấu các bài lớp đã học, rồi sao chép link gửi cho học sinh. Bài không đánh dấu sẽ hiện "Chưa mở". Mỗi lớp có thể dùng một link riêng.</p>
-    <details class="sched" open><summary>Lịch học (Schedule)</summary><a href="schedule.jpg" target="_blank"><img src="schedule.jpg" alt="Lịch học TOEIC Pre: 24 buổi" loading="lazy"></a></details>
-    <div class="grp">Reading</div><div class="boxes" id="boxR"></div>
-    <div class="grp">Listening</div><div class="boxes" id="boxL"></div>
-    <div class="row"><button type="button" id="all">Chọn hết</button><button type="button" id="none">Bỏ chọn hết</button></div>
-    <input class="link" id="link" readonly aria-label="Link gửi học sinh">
-    <div class="row"><button type="button" class="main" id="copy">Sao chép link</button><button type="button" id="preview">Xem thử như học sinh</button><span class="ok" id="ok"></span></div>
+
+
+  <div class="lopbar" id="lopbar"><div><b id="lopName"></b><small id="lopInfo"></small></div><button type="button" id="doiLop">Đổi lớp</button><div class="prog"><i id="lopProg"></i></div></div>
+
+  <section class="gv" id="gv" aria-label="Chế độ giáo viên">
+    <h2>Chế độ giáo viên</h2>
+    <p>Bài tự mở theo lịch học của từng lớp (sửa danh sách lớp, ngày khai giảng, ngày nghỉ trong file <b>docs/classes.js</b>). Trên máy này thầy xem được mọi bài.</p>
+    <details class="sched"><summary>Lịch học (Schedule)</summary><a href="schedule.jpg" target="_blank"><img src="schedule.jpg" alt="Lịch học TOEIC Pre: 24 buổi" loading="lazy"></a></details>
+    <div id="gvClasses"></div>
+    <div class="row" style="margin-top:18px"><button type="button" id="gvExit">Thoát chế độ giáo viên trên máy này</button></div>
   </section>
 
   <h2 class="sec">Reading</h2>
@@ -86,7 +126,7 @@ body.gvmode .gv{display:block;}
     <ul>
       <li>Đọc phần tóm tắt trước buổi học để nắm ý chính.</li>
       <li>Sau buổi học, xem lại các ví dụ và tự đặt thêm một câu cho mỗi điểm ngữ pháp.</li>
-      <li>Học thuộc bảng từ vựng cuối mỗi bài, mỗi ngày một ít.</li>
+      <li>Học thuộc bảng từ vựng cuối mỗi bài, mỗi ngày một ít: bấm nút <b>🃏 Flashcard từ vựng</b> trong bài để lật thẻ, nghe phát âm và đánh dấu từ đã thuộc.</li>
       <li>Xem được trên cả máy tính và điện thoại.</li>
     </ul>
   </section>
@@ -95,54 +135,74 @@ body.gvmode .gv{display:block;}
 </div>
 <script>
 (function(){
-  var KEY='summaryOld.mo';
   var q=new URLSearchParams(location.search);
-  var gv=q.has('gv');
   var stops=[].slice.call(document.querySelectorAll('.stop[data-id]'));
-  var ids=stops.map(function(s){return s.dataset.id;});
-  function store(k,v){try{if(v===null)localStorage.removeItem(k);else localStorage.setItem(k,v);}catch(e){}}
-  function read(k){try{return localStorage.getItem(k);}catch(e){return null;}}
-  // ?mo=R1-R2-L1 : chỉ mở các bài này. ?mo=all : mở hết. Không có ?mo thì dùng link đã mở lần trước trên máy này.
-  var mo=q.get('mo');
-  if(!gv){
-    if(mo!==null){ store(KEY, mo); } else { mo=read(KEY); }
-  }
-  function apply(list){
+  try{localStorage.removeItem(SN_PREFIX+'.mo');}catch(e){}
+  var gv=q.has('gv'); if(gv) SN.teacher(true);
+  var preview=q.get('xem'); // ?xem=MALOP : thầy xem thử như học sinh lớp đó
+  if(q.has('lop')) SN.choose(q.get('lop'));
+
+  function paint(c, all){
     stops.forEach(function(s){
-      var open=!list||list.indexOf(s.dataset.id)>=0;
+      var id=s.dataset.id, open=all||SN.isOpen(c,id);
       s.classList.toggle('locked',!open); s.classList.toggle('open',open);
+      if(!open){ var d=SN.openDate(c,id); s.querySelector('.soon').textContent='🔒 Mở ngày '+SN.fmt(d,true); }
     });
   }
-  function parse(v){ if(v===null||v===''||v==='all') return null; return v.split('-').filter(function(x){return ids.indexOf(x)>=0;}); }
-  if(!gv){ apply(parse(mo)); return; }
-  // ----- chế độ giáo viên (?gv) -----
-  document.body.classList.add('gvmode');
-  var start=parse(mo);
-  function box(id,label,parent){
-    var l=document.createElement('label'); var c=document.createElement('input'); c.type='checkbox'; c.value=id;
-    c.checked=!start||start.indexOf(id)>=0; l.appendChild(c); l.appendChild(document.createTextNode(label)); parent.appendChild(l); return c;
+  function showClass(c){
+    document.body.classList.remove('gated');
+    var n=SN.doneSessions(c), ds=SN.dates(c), t=SN.today();
+    document.getElementById('lopName').textContent='Lớp '+c.ten;
+    var next=ds.filter(function(d){return d>t;})[0];
+    document.getElementById('lopInfo').textContent='Đã học '+Math.min(n,ds.length)+'/'+ds.length+' buổi'+(next?' · Buổi tới: '+SN.fmt(next,true):' · Đã kết thúc khoá');
+    document.getElementById('lopProg').style.width=Math.min(100,n/ds.length*100)+'%';
+    paint(c,false);
   }
-  var checks=stops.map(function(s){
-    var id=s.dataset.id; var n=s.querySelector('.dot b').textContent;
-    return box(id,'Unit '+n, document.getElementById(id[0]==='R'?'boxR':'boxL'));
+  function gate(msg){
+    document.body.classList.add('gated');
+    var e=document.getElementById('err'); e.textContent=msg||'';
+    setTimeout(function(){var i=document.getElementById('code'); if(i&&!('ontouchstart' in window)) i.focus();},50);
+  }
+  document.getElementById('gateForm').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var v=document.getElementById('code').value, c=SN.choose(v);
+    if(c){ showClass(c); window.scrollTo(0,0); return; }
+    var g=document.getElementById('gate'); g.classList.remove('shake'); void g.offsetWidth; g.classList.add('shake');
+    gate(v.trim()?'Mã lớp "'+v.trim().toUpperCase()+'" không đúng, kiểm tra lại hoặc hỏi thầy nhé.':'Bạn chưa nhập mã lớp.');
   });
-  var base=location.origin+location.pathname;
-  function link(){
-    var on=checks.filter(function(c){return c.checked;}).map(function(c){return c.value;});
-    var url=on.length===checks.length?base+'?mo=all':base+'?mo='+(on.join('-')||'none');
-    document.getElementById('link').value=url; apply(on); document.getElementById('ok').textContent=''; return url;
-  }
-  checks.forEach(function(c){c.addEventListener('change',link);});
-  document.getElementById('all').onclick=function(){checks.forEach(function(c){c.checked=true;});link();};
-  document.getElementById('none').onclick=function(){checks.forEach(function(c){c.checked=false;});link();};
-  document.getElementById('copy').onclick=function(){
-    var u=link(); var ok=document.getElementById('ok');
-    function done(){ok.textContent='Đã sao chép ✓';}
-    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(u).then(done,function(){document.getElementById('link').select();document.execCommand('copy');done();});}
-    else{document.getElementById('link').select();document.execCommand('copy');done();}
-  };
-  document.getElementById('preview').onclick=function(){window.open(link(),'_blank');};
-  link();
+  document.getElementById('doiLop').onclick=function(){ SN.leave(); document.getElementById('code').value=''; gate(''); };
+
+  if(preview!==null){ var pc=SN.find(preview); if(pc){ showClass(pc); document.getElementById('doiLop').style.display='none'; document.getElementById('lopInfo').textContent+=' · (xem thử)'; return; } }
+  if(!SN.teacher()){ var c=SN.current(); if(c) showClass(c); else gate(''); return; }
+
+  // ----- chế độ giáo viên -----
+  document.body.classList.add('gvmode'); document.body.classList.remove('gated');
+  paint(null,true);
+  var NAME={}; stops.forEach(function(s){ var id=s.dataset.id; var dn=s.querySelector('.dot b').textContent; NAME[id]=id[0]==='W'?'Weekly Revision '+dn:(id[0]==='R'?'Reading ':'Listening ')+dn+' · '+s.querySelector('.name').textContent; });
+  var BY={}; Object.keys(SN_SESSIONS).forEach(function(id){BY[SN_SESSIONS[id]]=id;});
+  var OTHER=SN_OTHER;
+  var base=location.origin+location.pathname, box=document.getElementById('gvClasses'), t=SN.today();
+  SN_CLASSES.forEach(function(c){
+    var ds=SN.dates(c), n=SN.doneSessions(c), nextShown=false, rows='';
+    ds.forEach(function(d,k){
+      var s=k+1, id=BY[s], cls=s<=n?'done':(!nextShown?(nextShown=true,'next'):'');
+      rows+='<tr class="'+cls+'"><td>'+s+'</td><td>'+SN.fmt(d,true)+'</td><td>'+(id?NAME[id]:(OTHER[s]||''))+'</td><td>'+(id?(s<=n?'<span class="tag o">Đã mở</span>':'<span class="tag l">Chưa mở</span>'):'')+'</td></tr>';
+    });
+    var link=base+'?lop='+encodeURIComponent(c.ma);
+    var div=document.createElement('div');
+    div.innerHTML='<h3>'+c.ten+'</h3><p>Khai giảng '+SN.fmt(ds[0],true)+'/'+ds[0].getFullYear()+' · bế giảng '+SN.fmt(ds[ds.length-1],true)+'/'+ds[ds.length-1].getFullYear()+' · đã học '+Math.min(n,ds.length)+'/'+ds.length+' buổi'+(c.hocToi?' (đang ép mở tới buổi '+c.hocToi+')':'')+'</p>'+
+      '<input class="link" readonly value="'+link+'" aria-label="Link gửi lớp '+c.ma+'">'+
+      '<div class="row"><button type="button" class="main cp">Sao chép link cho lớp</button><a class="b" target="_blank" href="'+base+'?xem='+encodeURIComponent(c.ma)+'">Xem thử như học sinh</a><span class="ok"></span></div>'+
+      '<details class="cal"><summary>Lịch 24 buổi của lớp</summary><table><thead><tr><th>Buổi</th><th>Ngày</th><th>Nội dung</th><th></th></tr></thead><tbody>'+rows+'</tbody></table></details>';
+    div.querySelector('.cp').onclick=function(){
+      var inp=div.querySelector('input'), ok=div.querySelector('.ok');
+      function done(){ok.textContent='Đã sao chép ✓';}
+      if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(link).then(done,function(){inp.select();document.execCommand('copy');done();});
+      else{inp.select();document.execCommand('copy');done();}
+    };
+    box.appendChild(div);
+  });
+  document.getElementById('gvExit').onclick=function(){ SN.teacher(false); location.href=base; };
 })();
 </script>
 </body>
