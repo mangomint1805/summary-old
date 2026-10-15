@@ -50,9 +50,9 @@
     '.doc h2,.doc h3{scroll-margin-top:16px;}' +
     '.sn-toc{margin:14px 0 6px;padding:12px 16px;border-radius:12px;background:var(--card,#fff);border:1px solid var(--line,#e2ddd2);}' +
     '.sn-toc summary{cursor:pointer;font-weight:700;}' +
-    '.sn-toc ol{margin:10px 0 0;padding-left:22px;}' +
+    '.sn-toc ol{margin:10px 0 0;padding-left:4px;list-style:none;}' +
     '.sn-toc li{margin:6px 0;}' +
-    '.sn-toc li.h3{margin-left:16px;list-style:circle;font-size:15px;}' +
+    '.sn-toc li.h3{margin-left:18px;font-size:15px;}' +
     '.sn-toc a{color:var(--amber-ink,#6b4410);}' +
     '.sn-top{position:fixed;right:16px;bottom:16px;z-index:50;font:inherit;font-weight:700;font-size:15px;padding:10px 16px;border-radius:999px;border:0;background:var(--amber,#a8691a);color:#fff;box-shadow:0 4px 14px rgba(0,0,0,.18);cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s;}' +
     '.sn-top.show{opacity:1;pointer-events:auto;}' +
