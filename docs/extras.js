@@ -46,7 +46,17 @@
     '.sn-res span{display:block;color:var(--dim,#666e7a);font-size:15px;}' +
     '.sn-res mark{background:#ffe6a8;color:inherit;padding:0 1px;border-radius:3px;}' +
     '.sn-note{color:var(--dim,#666e7a);font-size:15px;margin:8px 2px;}' +
-    '.doc h2.sn-hit,.doc h3.sn-hit{background:#fff4d6;border-radius:6px;}';
+    '.doc h2.sn-hit,.doc h3.sn-hit{background:#fff4d6;border-radius:6px;}' +
+    '.doc h2,.doc h3{scroll-margin-top:16px;}' +
+    '.sn-toc{margin:14px 0 6px;padding:12px 16px;border-radius:12px;background:var(--card,#fff);border:1px solid var(--line,#e2ddd2);}' +
+    '.sn-toc summary{cursor:pointer;font-weight:700;}' +
+    '.sn-toc ol{margin:10px 0 0;padding-left:22px;}' +
+    '.sn-toc li{margin:6px 0;}' +
+    '.sn-toc li.h3{margin-left:16px;list-style:circle;font-size:15px;}' +
+    '.sn-toc a{color:var(--amber-ink,#6b4410);}' +
+    '.sn-top{position:fixed;right:16px;bottom:16px;z-index:50;font:inherit;font-weight:700;font-size:15px;padding:10px 16px;border-radius:999px;border:0;background:var(--amber,#a8691a);color:#fff;box-shadow:0 4px 14px rgba(0,0,0,.18);cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s;}' +
+    '.sn-top.show{opacity:1;pointer-events:auto;}' +
+    '.sn-new{display:inline-block;margin-right:8px;padding:1px 9px;border-radius:999px;background:#c2410c;color:#fff;font-size:12px;font-weight:700;vertical-align:2px;}';
   document.head.appendChild(css);
 
   function rel() {
@@ -79,6 +89,19 @@
     main.appendChild(card);
     paint();
     if (location.hash) { var t = document.getElementById(location.hash.slice(1)); if (t) { t.classList.add('sn-hit'); } }
+    /* mục lục + nút lên đầu */
+    var hs = doc ? [].slice.call(doc.querySelectorAll('h2,h3')) : [];
+    if (hs.length > 2) {
+      var toc = document.createElement('details'); toc.className = 'sn-toc';
+      toc.innerHTML = '<summary>Mục lục bài (' + hs.filter(function (h) { return h.tagName === 'H2'; }).length + ' phần)</summary><ol>' +
+        hs.map(function (h) { return '<li class="' + h.tagName.toLowerCase() + '"><a href="#' + h.id + '">' + esc(h.textContent.trim()) + '</a></li>'; }).join('') + '</ol>';
+      if (h1) pill.insertAdjacentElement('afterend', toc); else main.insertBefore(toc, main.firstChild);
+    }
+    var up = document.createElement('button'); up.type = 'button'; up.className = 'sn-top'; up.textContent = '↑ Lên đầu';
+    up.onclick = function () { window.scrollTo({ top: 0, behavior: 'smooth' }); };
+    document.body.appendChild(up);
+    function onScroll() { up.classList.toggle('show', window.scrollY > 600); }
+    window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
   }
 
   /* ---------- trang chủ ---------- */
@@ -92,6 +115,23 @@
     var mine = document.createElement('p'); mine.className = 'sn-mine';
     var bar = document.getElementById('lopbar');
     if (bar) bar.insertAdjacentElement('afterend', mine);
+    function curClass() {
+      var x = new URLSearchParams(location.search).get('xem');
+      if (x !== null && SN.find) { var f = SN.find(x); if (f) return f; }
+      return SN.current ? SN.current() : null;
+    }
+    function paintNew() {
+      var c = curClass(), now = new Date();
+      stops.forEach(function (s) {
+        var b = s.querySelector('.sn-new'), isNew = false;
+        if (c && !s.classList.contains('locked') && SN.openDate) {
+          var d = SN.openDate(c, s.dataset.id);
+          if (d) { var o = new Date(d), e = typeof snEndHM === 'function' ? snEndHM(c) : [0, 0]; o.setHours(e[0], e[1], 0, 0); isNew = now >= o && now - o < 3 * 864e5; }
+        }
+        if (isNew && !b) { b = document.createElement('span'); b.className = 'sn-new'; b.textContent = 'Mới'; var n = s.querySelector('.name'); if (n) n.insertBefore(b, n.firstChild); }
+        if (!isNew && b) b.parentNode.removeChild(b);
+      });
+    }
     function paintDone() {
       var o = load(), open = 0, done = 0;
       stops.forEach(function (s) {
@@ -100,6 +140,7 @@
         if (isOpen) { open++; if (d) done++; }
       });
       mine.innerHTML = open ? 'Bạn đã ôn tập <b>' + done + '/' + open + '</b> bài đang mở.' : '';
+      paintNew();
     }
     paintDone();
     window.addEventListener('pageshow', paintDone);
@@ -124,7 +165,7 @@
         var href = a.getAttribute('href'), name = (s.querySelector('.name') || {}).textContent || '';
         var dn = (s.querySelector('.dot b') || {}).textContent || '';
         var id = s.dataset.id, kind = id[0] === 'R' ? 'Reading ' : id[0] === 'L' ? 'Listening ' : 'Weekly Revision ';
-        var label = kind + dn + ' · ' + name.replace('✓ Đã ôn', '').trim();
+        var label = kind + dn + ' · ' + name.replace('✓ Đã ôn', '').replace(/^Mới/, '').trim();
         return fetch(href).then(function (r) { return r.text(); }).then(function (html) {
           var d = new DOMParser().parseFromString(html, 'text/html'), doc = d.querySelector('.doc');
           if (!doc) return [];
