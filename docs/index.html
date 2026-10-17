@@ -121,6 +121,11 @@ body.gvmode .gate,body.gvmode .lopbar{display:none;}
     <li class="stop open long" data-id="L11"><div class="dot" aria-label="Unit 11–12"><small>Unit</small><b>11–12</b></div><div class="body"><p class="name">Part 4 – Radio Broadcasts, Speeches &amp; Internal Announcements</p><a class="go" href="listening/unit-11-radio-broadcasts-speeches-internal-announcements.html"><span>Xem bài</span><i>Phát thanh, bài phát biểu, thông báo nội bộ</i></a><p class="meta">Phát thanh, bài phát biểu, thông báo nội bộ</p><span class="soon">Chưa mở</span></div></li>
   </ol>
 
+  <h2 class="sec">Ôn tập</h2>
+  <ol class="path">
+    <li class="stop open" data-id="PT1"><div class="dot" aria-label="Progress Test 1"><small>Test</small><b>1</b></div><div class="body"><p class="name">Ôn tập sau Progress Test 1</p><a class="go" href="review/progress-test-1.html"><span>Xem bài</span><i>Kiến thức hay sai &amp; từ vựng khó</i></a><p class="meta">Kiến thức hay sai &amp; từ vựng khó</p><span class="soon">Chưa mở</span></div></li>
+  </ol>
+
   <section class="tips">
     <h2>Cách học hiệu quả</h2>
     <ul>
@@ -178,7 +183,7 @@ body.gvmode .gate,body.gvmode .lopbar{display:none;}
   // ----- chế độ giáo viên -----
   document.body.classList.add('gvmode'); document.body.classList.remove('gated');
   paint(null,true);
-  var NAME={}; stops.forEach(function(s){ var id=s.dataset.id; var dn=s.querySelector('.dot b').textContent; NAME[id]=id[0]==='W'?'Weekly Revision '+dn:(id[0]==='R'?'Reading ':'Listening ')+dn+' · '+s.querySelector('.name').textContent; });
+  var NAME={}; stops.forEach(function(s){ var id=s.dataset.id; var dn=s.querySelector('.dot b').textContent; NAME[id]=id[0]==='P'?'Ôn tập sau Progress Test '+dn:id[0]==='W'?'Weekly Revision '+dn:(id[0]==='R'?'Reading ':'Listening ')+dn+' · '+s.querySelector('.name').textContent; });
   var BY={}; Object.keys(SN_SESSIONS).forEach(function(id){BY[SN_SESSIONS[id]]=id;});
   var OTHER=SN_OTHER;
   var base=location.origin+location.pathname, box=document.getElementById('gvClasses'), t=SN.today();
