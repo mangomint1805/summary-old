@@ -75,7 +75,7 @@ main > h1{margin-top:6px;}
   .doc{padding:16px;}
 }
 
-.more-sites{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 22px}
+.more-sites{display:grid;grid-template-columns:1fr;max-width:520px;gap:10px;margin:0 0 22px}
 .more-sites a{display:flex;gap:12px;align-items:center;background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;color:var(--ink);transition:border-color .15s}
 .more-sites a:hover{border-color:var(--amber)}
 .more-sites a:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
