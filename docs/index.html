@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+<script>try{if(localStorage.getItem('mt.theme')==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
@@ -62,8 +64,9 @@ body.gvmode .gate,body.gvmode .lopbar{display:none;}
 .gv .tag.o{background:var(--teal-soft);color:var(--teal);}
 .gv .tag.l{background:#efece5;color:var(--dim);}
 </style>
+<link rel="icon" type="image/png" href="icons/fav-64.png">
 </head>
-<body class="gated">
+<body class="gated" data-nav="home">
 <div class="wrap">
   <section class="gate" id="gate" aria-label="Nhập mã lớp">
     <p class="kick">Tóm tắt kiến thức TOEIC Pre</p>
@@ -214,5 +217,6 @@ body.gvmode .gate,body.gvmode .lopbar{display:none;}
   document.getElementById('gvExit').onclick=function(){ SN.teacher(false); location.href=base; };
 })();
 </script>
+<script>window.ETSCFG=window.ETSCFG||{SCRIPT_URL:'https://script.google.com/macros/s/AKfycby3_45o2Zn3FMEMrVAg9nBCiQEIUvU9HgQxI2ZZtwJ4oUQ_bqXxj1vN0kL6cvhbDQCx/exec'};</script><script src="assets/ui.js" data-site="summary"></script>
 </body>
 </html>

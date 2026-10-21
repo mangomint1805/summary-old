@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
 :root{
   color-scheme:light;
   --paper:#faf8f4; --card:#ffffff; --line:#ddd7c9; --ink:#1e232b; --dim:#666e7a;
@@ -84,3 +84,53 @@ main > h1{margin-top:6px;}
 .more-sites small{display:block;font-size:12.5px;color:var(--dim);line-height:1.4}
 .more-sites .ar{margin-left:auto;color:var(--amber-ink);font-weight:700}
 @media (max-width:640px){.more-sites{grid-template-columns:1fr}}
+
+/* ===== Minto English look ===== */
+html,body{font-family:'IBM Plex Sans',system-ui,sans-serif;}
+h1,h2.sec,.tips h2,.gate h2,.gv h2,.dot b,.doc h2{font-family:'Fraunces',Georgia,serif!important;}
+h1{font-weight:500;letter-spacing:-.015em;}
+.wrap{max-width:760px;}
+.hero{padding:40px 0 14px;}
+.hero::before{content:"Minto English · TOEIC Pre";display:block;color:var(--amber);font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:0 0 10px;}
+h2.sec{font-weight:500;font-size:26px;display:flex;align-items:center;gap:10px;}
+h2.sec::after{content:"";flex:1;height:1px;background:var(--line);}
+.path::before{background:linear-gradient(var(--amber-soft),var(--line));}
+.dot{box-shadow:0 0 0 5px var(--paper);transition:transform .2s;}
+.stop.open .dot{background:linear-gradient(150deg,#f6d38c,#a8691a);border-color:#a8691a;color:#fff;box-shadow:0 0 0 5px var(--paper),0 6px 14px rgba(168,105,26,.25);}
+.stop:hover .dot{transform:scale(1.06);}
+.go{border:1px solid var(--line);border-radius:14px;padding:14px 16px;transition:border-color .15s,box-shadow .2s,transform .15s;box-shadow:0 1px 0 rgba(0,0,0,.02);}
+.go:hover{background:var(--card);border-color:var(--amber);box-shadow:0 10px 24px rgba(107,68,16,.10);transform:translateX(3px);}
+.go span::after{content:" →";}
+.tips,.lopbar,.gate,.gv,.more-sites a{border-radius:16px;}
+.tips{box-shadow:0 10px 30px rgba(107,68,16,.05);}
+.more-sites a{border:1px solid #ecd3a6;background:linear-gradient(120deg,#fff7e8,#fdf0d8);}
+.more-sites a:hover{box-shadow:0 10px 24px rgba(168,105,26,.14);}
+/* trang bài */
+body.has-nav header.top{display:none;}
+main{max-width:880px;}
+main > .sub:first-child{margin-top:22px;}
+main > h1{margin-top:10px;}
+.doc{border-radius:16px;padding:22px 26px;box-shadow:0 10px 30px rgba(107,68,16,.05);}
+.doc h2{font-weight:500;font-size:23px;}
+.doc table{border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+.doc th,.doc td{border:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);}
+.doc tr>*:last-child{border-right:0;}
+.doc tbody tr:last-child>*{border-bottom:0;}
+.doc tbody tr:nth-child(even){background:#fcfaf6;}
+.sn-top{right:auto!important;left:16px;}
+/* giao diện tối */
+html[data-theme=dark] .doc thead th,html[data-theme=dark] .doc tr:first-child th{background:#3b2d1b!important;color:#f0c787;}
+html[data-theme=dark] .doc tbody tr:nth-child(even),html[data-theme=dark] .doc table.pron tbody tr:nth-child(even){background:#20242a;}
+html[data-theme=dark] .doc td,html[data-theme=dark] .doc th,html[data-theme=dark] .doc table{border-color:#373b44!important;}
+html[data-theme=dark] .doc{background:var(--card);border-color:#2c3038;}
+html[data-theme=dark] .dot{background:#1c1f25;border-color:#3a3f48;box-shadow:0 0 0 5px var(--paper);}
+html[data-theme=dark] .go{background:#1c1f25;border-color:#2c3038;color:var(--ink);}
+html[data-theme=dark] .more-sites a{background:linear-gradient(120deg,#2a2216,#231c12)!important;border-color:#5a4422!important;}
+html[data-theme=dark] .gate,html[data-theme=dark] .gv,html[data-theme=dark] .lopbar{background:#1c1f25;}
+html[data-theme=dark] .stop.locked .soon{background:#242830;}
+html[data-theme=dark] .gv tr.next td{background:#2a2216;}
+html[data-theme=dark] .sn-res mark{background:#7a5a22;}
+html[data-theme=dark] .doc h2.sn-hit,html[data-theme=dark] .doc h3.sn-hit{background:#3b2d1b;}
+html[data-theme=dark] .fc-nav .no{background:#3d2320;color:#ef7a68;border-color:#6b3a33;}
+html[data-theme=dark] .sn-pill{background:#163a2d;color:#7fd6b2;}html[data-theme=dark] .sn-pill.off{background:#242830;color:#9aa1ad;}
+html[data-theme=dark] .doc table.v3note td{background:#2a2216!important;}
