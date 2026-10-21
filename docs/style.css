@@ -96,7 +96,7 @@ h2.sec{font-weight:500;font-size:26px;display:flex;align-items:center;gap:10px;}
 h2.sec::after{content:"";flex:1;height:1px;background:var(--line);}
 .path::before{background:linear-gradient(var(--amber-soft),var(--line));}
 .dot{box-shadow:0 0 0 5px var(--paper);transition:transform .2s;}
-.stop.open .dot{background:linear-gradient(150deg,#f6d38c,#a8691a);border-color:#a8691a;color:#fff;box-shadow:0 0 0 5px var(--paper),0 6px 14px rgba(168,105,26,.25);}
+.stop.open .dot{background:linear-gradient(150deg,#f6d38c,var(--brand,#a8691a));border-color:var(--brand,#a8691a);color:#fff;box-shadow:0 0 0 5px var(--paper),0 6px 14px rgba(168,105,26,.25);}
 .stop:hover .dot{transform:scale(1.06);}
 .go{border:1px solid var(--line);border-radius:14px;padding:14px 16px;transition:border-color .15s,box-shadow .2s,transform .15s;box-shadow:0 1px 0 rgba(0,0,0,.02);}
 .go:hover{background:var(--card);border-color:var(--amber);box-shadow:0 10px 24px rgba(107,68,16,.10);transform:translateX(3px);}
