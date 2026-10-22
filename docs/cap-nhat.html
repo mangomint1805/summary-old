@@ -1,0 +1,57 @@
+<!doctype html><html lang="vi"><head>
+<script>try{var d=document.documentElement,k=JSON.parse(localStorage.getItem('mt.skin')||'""');if(k==='scifi')d.setAttribute('data-theme','dark');if(k)d.setAttribute('data-skin',k)}catch(e){}</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<title>Có gì mới · Tóm tắt kiến thức TOEIC Pre</title>
+<meta name="description" content="Những tính năng và bài mới trên web Tóm tắt kiến thức TOEIC Pre, mới nhất ở trên cùng.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"><script src="classes.js"></script><link rel="icon" type="image/png" href="icons/fav-64.png?v=3">
+<style>
+.cn-lead{color:var(--dim);margin:0 0 6px;max-width:60ch}
+.cn-tl{list-style:none;margin:22px 0 10px;padding:0;position:relative;max-width:760px}
+.cn-tl::before{content:"";position:absolute;left:11px;top:14px;bottom:14px;width:2px;background:var(--line)}
+.cn-ent{position:relative;padding-left:38px;margin:0 0 18px}
+.cn-dot{position:absolute;left:3px;top:20px;width:18px;height:18px;border-radius:50%;background:var(--paper);border:3px solid var(--brand,var(--amber))}
+.cn-ent.new .cn-dot{background:var(--brand,var(--amber));box-shadow:0 0 0 4px var(--brand-soft,var(--amber-soft))}
+.cn-box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 18px 14px}
+.cn-ent.new .cn-box{border-color:var(--brand,var(--amber));box-shadow:0 6px 22px rgba(30,35,43,.08)}
+.cn-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:0 0 6px}
+.cn-date{display:inline-block;font-size:13px;font-weight:700;color:var(--brand-ink,var(--amber-ink));background:var(--brand-soft,var(--amber-soft));border-radius:999px;padding:2px 11px}
+.cn-day{font-size:13px;color:var(--dim)}
+.cn-new{font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#fff;background:var(--brand,var(--amber));border-radius:999px;padding:2px 9px}
+.cn-box h2{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:21px;line-height:1.25;margin:0 0 8px}
+.cn-box ul{margin:0;padding-left:20px}
+.cn-box li{margin:5px 0}
+.cn-go{display:inline-block;margin:10px 0 2px;padding:9px 16px;border-radius:10px;font-weight:700;font-size:14.5px;text-decoration:none;background:var(--brand,var(--amber));color:#fff}
+.cn-go:focus-visible{outline:3px solid var(--brand,var(--amber));outline-offset:2px}
+.cn-empty{color:var(--dim);background:var(--card);border:1px dashed var(--line);border-radius:14px;padding:16px 18px}
+.cn-foot{color:var(--dim);font-size:14px;margin:8px 0 0}
+html[data-theme=dark] .cn-ent.new .cn-box{box-shadow:0 8px 26px rgba(0,0,0,.4)}html[data-theme=dark] .cn-go,html[data-theme=dark] .cn-new{color:#1a1307}
+html[data-skin=scifi] .cn-dot{border-color:#4ad7ff}html[data-skin=scifi] .cn-ent.new .cn-dot{background:#4ad7ff;box-shadow:0 0 0 4px rgba(74,215,255,.18),0 0 14px rgba(74,215,255,.5)}
+html[data-skin=scifi] .cn-ent.new .cn-box{border-color:#4ad7ff}html[data-skin=scifi] .cn-tl::before{background:linear-gradient(#4ad7ff,#b04cff)}
+@media (max-width:520px){.cn-ent{padding-left:28px}.cn-tl::before{left:7px}.cn-dot{left:0;width:16px;height:16px}.cn-box{padding:13px 14px 12px}.cn-box h2{font-size:19px}.cn-box ul{padding-left:18px}}
+</style>
+</head><body data-nav="news"><header class="top"><a href="index.html">TOEIC Pre · Tóm tắt kiến thức</a></header><main><p class="sub"><a href="index.html">← Tất cả bài</a></p><h1>Web Tóm tắt kiến thức vừa có gì mới?</h1>
+<p class="cn-lead">Thầy cập nhật web thường xuyên. Đây là những điểm mới gần đây, mới nhất ở trên cùng.</p>
+<ol class="cn-tl" id="cnList" aria-label="Các lần cập nhật"></ol>
+<noscript><p class="cn-empty">Bật JavaScript để xem danh sách cập nhật.</p></noscript>
+<p class="cn-foot">Thấy lỗi hay có ý tưởng hay? Bấm nút Góp ý trên thanh menu để báo thầy nhé.</p>
+</main><footer>TOEIC Pre · Tóm tắt kiến thức</footer>
+<script src="cap-nhat.js?v=1"></script>
+<script>
+(function () {
+  var U = window.MT_UPDATES || [], el = document.getElementById('cnList');
+  var DAY = ['Chủ nhật', 'Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy'];
+  function esc(t) { return String(t == null ? '' : t).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  if (!U.length) { el.outerHTML = '<p class="cn-empty">Chưa tải được danh sách cập nhật. Thử tải lại trang nhé.</p>'; return; }
+  el.innerHTML = U.map(function (u, i) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(u.id || ''), day = m ? DAY[new Date(+m[1], +m[2] - 1, +m[3]).getDay()] : '';
+    var go = u.link && /^[\w./#?=-]+$/.test(u.link[0]) ? '<a class="cn-go" href="' + esc(u.link[0]) + '">' + esc(u.link[1] || 'Mở') + ' →</a>' : '';
+    return '<li class="cn-ent' + (i === 0 ? ' new' : '') + '" id="u-' + esc(u.id) + '"><span class="cn-dot" aria-hidden="true"></span><article class="cn-box">' +
+      '<div class="cn-meta"><span class="cn-date">' + esc(u.date) + '</span>' + (day ? '<span class="cn-day">' + day + '</span>' : '') + (i === 0 ? '<span class="cn-new">Mới</span>' : '') + '</div>' +
+      '<h2>' + esc(u.title) + '</h2><ul>' + (u.items || []).map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' + go + '</article></li>';
+  }).join('');
+  try { localStorage.setItem((window.SN_PREFIX || 'summaryNew') + '.seenUpdate', U[0].id); } catch (e) {}
+})();
+</script>
+<script>window.ETSCFG=window.ETSCFG||{SCRIPT_URL:'https://script.google.com/macros/s/AKfycby3_45o2Zn3FMEMrVAg9nBCiQEIUvU9HgQxI2ZZtwJ4oUQ_bqXxj1vN0kL6cvhbDQCx/exec'};</script><script src="assets/ui.js?v=3" data-site="summary"></script>
+</body></html>
