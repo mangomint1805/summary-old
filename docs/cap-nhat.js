@@ -1,6 +1,13 @@
 /* Có gì mới trên web Tóm tắt kiến thức TOEIC Pre — mới nhất ở trên cùng. Thêm mục mới vào ĐẦU danh sách; id là ngày (YYYY-MM-DD), cùng ngày thì thêm hậu tố (2026-10-21b). link (tuỳ chọn): [đường dẫn, chữ trên nút]. */
 window.MT_UPDATES = [
   {
+    id: '2026-10-22', date: '22/10/2026',
+    title: 'Xem có bao nhiêu bạn đang học cùng',
+    items: [
+      'Dưới logo có thêm dòng "● N bạn đang học": số bạn đang mở web cùng lúc với bạn, tự cập nhật liên tục.'
+    ]
+  },
+  {
     id: '2026-10-21', date: '21/10/2026',
     title: 'Giao diện Minto English mới và đăng nhập Google',
     items: [
