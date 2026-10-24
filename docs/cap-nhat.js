@@ -1,6 +1,14 @@
 /* Có gì mới trên web Tóm tắt kiến thức TOEIC Pre — mới nhất ở trên cùng. Thêm mục mới vào ĐẦU danh sách; id là ngày (YYYY-MM-DD), cùng ngày thì thêm hậu tố (2026-10-21b). link (tuỳ chọn): [đường dẫn, chữ trên nút]. */
 window.MT_UPDATES = [
   {
+    id: '2026-10-24i', date: '24/10/2026',
+    title: 'Phiên âm thống nhất theo giọng Mỹ',
+    items: [
+      'Toàn bộ phiên âm trong bài và bảng từ vựng giờ ghi theo giọng Mỹ, giống giọng đọc trong đề TOEIC và file phát âm của flashcard (ví dụ: schedule /ˈskedʒuːl/, order /ˈɔːrdər/, job /dʒɑːb/).',
+      'Cùng một từ thì phiên âm giống nhau ở mọi bài, không còn chỗ ghi kiểu Anh chỗ ghi kiểu Mỹ.'
+    ]
+  },
+  {
     id: '2026-10-24h', date: '24/10/2026',
     title: 'Sửa thêm vài chỗ trong bài tóm tắt',
     items: [
