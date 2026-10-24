@@ -154,6 +154,67 @@ var SN = (function () {
     doneSessions: doneSessions, isOpen: isOpen, openDate: openDate, fmt: fmt, today: today, norm: norm };
 })();
 
+/* ===== Bắt đăng nhập Google trước khi xem web =====
+   Chưa đăng nhập thì che toàn bộ trang và hiện nút đăng nhập (dùng assets/acc.js, Firebase minto-english).
+   Máy đã đăng nhập (mt.acc) thì cho xem ngay, nếu Firebase báo đã đăng xuất thì che lại.
+   Chế độ giáo viên (?gv) không bị chặn. Đây chỉ là khoá trên trình duyệt, không phải bảo mật thật. */
+(function () {
+  'use strict';
+  if (window.SN_GATE) return; window.SN_GATE = 1;
+  if (SN.teacher() || /[?&]gv(=|&|$)/.test(location.search)) return;
+  var me = document.currentScript, src = (me && me.getAttribute('src')) || 'classes.js';
+  var ACC = src.replace(/classes\.js.*$/, '') + 'assets/acc.js?v=7';
+  var had = false; try { had = !!localStorage.getItem('mt.acc'); } catch (e) {}
+  var root = document.documentElement, box = null, locked = false;
+  var css = document.createElement('style');
+  css.textContent = 'html.sn-auth body>*:not(.sn-auth-box){display:none!important}html.sn-auth body{background:var(--paper,#faf8f4)}' +
+    '.sn-auth-box{max-width:420px;margin:12vh auto 24px;padding:26px 22px 22px;background:#fff;border:1.5px solid var(--line,#ddd7c9);border-radius:16px;box-shadow:0 10px 30px rgba(30,35,43,.08);text-align:center;box-sizing:border-box;width:calc(100% - 32px);}' +
+    '.sn-auth-box .ic{font-size:44px;line-height:1}' +
+    '.sn-auth-box h2{font-family:Fraunces,Lora,"Times New Roman",serif;font-weight:600;font-size:24px;margin:12px 0 6px;color:var(--ink,#1e232b)}' +
+    '.sn-auth-box p{color:var(--dim,#666e7a);margin:4px 0 0;font-size:15.5px;line-height:1.55}' +
+    '.sn-auth-box .mp-acc{text-align:left;margin-top:16px;border-top:1px dashed #e2dbcd;padding-top:14px;font-size:15px}' +
+    '.sn-auth-box .mp-acc .ma-g{font-size:15.5px;padding:13px}' +
+    '.sn-auth-box .mp-acc .ma-t{display:none}' +
+    '.sn-auth-box .wait{color:var(--dim,#666e7a);font-size:14.5px}' +
+    '.sn-auth-box .retry{margin-top:10px;font:600 14.5px/1 inherit;padding:10px 16px;border-radius:10px;border:1.5px solid var(--amber,#a8691a);background:#fff;color:var(--amber-ink,#6b4410);cursor:pointer}';
+  document.head.appendChild(css);
+
+  function draw() {
+    if (!locked || !document.body) return;
+    if (!box) {
+      box = document.createElement('div'); box.className = 'sn-auth-box';
+      box.innerHTML = '<div class="ic">🔐</div><h2>Đăng nhập để học</h2>' +
+        '<p>Web tóm tắt bài dành cho học viên lớp của thầy. Đăng nhập Google một lần, lần sau vào là xem được luôn.</p>' +
+        '<div class="mp-acc"><span class="wait">Đang tải nút đăng nhập…</span></div>';
+      document.body.appendChild(box);
+    }
+    var acc = box.querySelector('.mp-acc');
+    if (window.MACC) window.MACC.render(acc);
+  }
+  function lock() { locked = true; root.classList.add('sn-auth'); if (document.body) draw(); else document.addEventListener('DOMContentLoaded', draw); }
+  function unlock() { locked = false; root.classList.remove('sn-auth'); if (box) { box.remove(); box = null; } }
+  function fail() {
+    if (!locked) return; draw();
+    var acc = box && box.querySelector('.mp-acc'); if (!acc) return;
+    acc.innerHTML = '<span class="wait">Không tải được dịch vụ đăng nhập. Kiểm tra mạng (Wi-Fi / 4G) rồi thử lại nhé.</span><br><button type="button" class="retry">Thử lại</button>';
+    acc.querySelector('.retry').onclick = function () { location.reload(); };
+  }
+  function watch() {
+    window.MACC.load().then(function (fb) {
+      fb.A.onAuthStateChanged(fb.auth, function (u) { if (u) unlock(); else lock(); });
+    }, fail);
+    if (locked) draw();
+  }
+  if (!had) lock();
+  if (window.MACC) watch();
+  else {
+    var sc = document.createElement('script'); sc.src = ACC;
+    sc.onload = function () { if (window.MACC) watch(); else fail(); };
+    sc.onerror = fail;
+    document.head.appendChild(sc);
+  }
+})();
+
 /* ===== Khoá trang bài học: bài chưa tới buổi thì không cho xem ===== */
 (function () {
   'use strict';

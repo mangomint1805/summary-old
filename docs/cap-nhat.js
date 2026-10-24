@@ -1,6 +1,15 @@
 /* Có gì mới trên web Tóm tắt kiến thức TOEIC Pre — mới nhất ở trên cùng. Thêm mục mới vào ĐẦU danh sách; id là ngày (YYYY-MM-DD), cùng ngày thì thêm hậu tố (2026-10-21b). link (tuỳ chọn): [đường dẫn, chữ trên nút]. */
 window.MT_UPDATES = [
   {
+    id: '2026-10-24e', date: '24/10/2026',
+    title: 'Đăng nhập Google để vào học',
+    items: [
+      'Từ nay cần đăng nhập Google để xem web. Chỉ cần đăng nhập một lần, lần sau vào là xem được luôn.',
+      'Nhờ đăng nhập, bài đã ôn, flashcard và câu luyện được lưu vào tài khoản, đổi điện thoại hay máy tính cũng không mất.',
+      'Nếu mở link trong Zalo hoặc Messenger thì bấm nút “Mở bằng Chrome / Safari” rồi đăng nhập (Google không cho đăng nhập ngay trong Zalo / Messenger).'
+    ]
+  },
+  {
     id: '2026-10-24d', date: '24/10/2026',
     title: 'Thông báo bài mới mở và ghi bài học trong mỗi chuyên đề',
     items: [

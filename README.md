@@ -26,6 +26,8 @@ Thêm lớp mới / sửa lịch: mở file `docs/classes.js`, sửa danh sách 
 
 Khi học sinh vào lại web, nếu lớp có bài mới mở kể từ lần vào trước thì hiện thông báo ở cuối màn hình (máy học sinh tự nhớ, lần đầu vào không báo).
 
+**Bắt đăng nhập:** mọi trang (trừ `thong-ke-gv.html` và chế độ `?gv`) đều yêu cầu đăng nhập Google trước khi xem (code ở cuối `docs/classes.js`, dùng `assets/acc.js`). Chỉ là khoá trên trình duyệt, không phải bảo mật thật.
+
 Mở link `?gv` một lần trên máy của thầy để xem được mọi bài và xem lịch từng lớp. Đây chỉ là khoá đơn giản trên trình duyệt, không phải bảo mật thật.
 
 ## Flashcard từ vựng
