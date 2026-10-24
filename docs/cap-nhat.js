@@ -1,6 +1,18 @@
 /* Có gì mới trên web Tóm tắt kiến thức TOEIC Pre — mới nhất ở trên cùng. Thêm mục mới vào ĐẦU danh sách; id là ngày (YYYY-MM-DD), cùng ngày thì thêm hậu tố (2026-10-21b). link (tuỳ chọn): [đường dẫn, chữ trên nút]. */
 window.MT_UPDATES = [
   {
+    id: '2026-10-24', date: '24/10/2026',
+    title: 'Chuyên đề mới: Phân biệt loại từ Danh – Động – Tính – Trạng',
+    link: ['chuyen-de/phan-biet-loai-tu.html', 'Mở chuyên đề'],
+    items: [
+      'Trang chuyên đề mới, mở sẵn cho mọi lớp (không cần chờ tới buổi học): Phân biệt loại từ Danh từ – Động từ – Tính từ – Trạng từ.',
+      'Hiểu nhanh mỗi loại từ làm gì trong câu, các đuôi hay gặp của từng loại và những từ dễ nhầm.',
+      'Nhìn vị trí chỗ trống để đoán loại từ, kèm 4 bước kiểm tra nhanh khi làm Part 5.',
+      '15 họ từ hay gặp trong đề, mỗi họ đủ các dạng danh – động – tính – trạng.',
+      '12 câu luyện Part 5 có giải thích tiếng Việt, và flashcard để ôn từ của chuyên đề.'
+    ]
+  },
+  {
     id: '2026-10-22', date: '22/10/2026',
     title: 'Xem có bao nhiêu bạn đang học cùng',
     items: [

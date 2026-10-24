@@ -1,0 +1,341 @@
+<!doctype html><html lang="vi"><head>
+<script>try{var d=document.documentElement,k=JSON.parse(localStorage.getItem('mt.skin')||'""');if(k==='scifi')d.setAttribute('data-theme','dark');if(k)d.setAttribute('data-skin',k)}catch(e){}</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<title>Phân biệt loại từ: Danh – Động – Tính – Trạng</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css"><script src="../classes.js"></script><link rel="icon" type="image/png" href="../icons/fav-64.png?v=3">
+<style>
+/* Chuyên đề loại từ – 4 màu cố định: N xanh dương · V đỏ · Adj xanh lá · Adv tím */
+:root{--lt-n:#1d5fa8;--lt-n-bg:#e4eefb;--lt-v:#b42318;--lt-v-bg:#fde9e6;--lt-a:#1f7a4d;--lt-a-bg:#e2f3ea;--lt-r:#6d3fb0;--lt-r-bg:#efe7fb;}
+.lt .w{font-weight:700;border-radius:5px;padding:0 4px;white-space:nowrap;}
+.lt .w.n{color:var(--lt-n);background:var(--lt-n-bg);}
+.lt .w.v{color:var(--lt-v);background:var(--lt-v-bg);}
+.lt .w.a{color:var(--lt-a);background:var(--lt-a-bg);}
+.lt .w.r{color:var(--lt-r);background:var(--lt-r-bg);}
+.lt-legend{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;}
+.lt-legend .w{font-size:14px;padding:3px 10px;}
+.lt-toc{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px;padding:0;list-style:none;}
+.lt-toc a{display:inline-block;font-size:14px;font-weight:600;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;background:var(--paper);}
+.lt-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0;}
+.lt-card{border:1.5px solid var(--line);border-left-width:6px;border-radius:12px;padding:12px 14px;background:var(--card);}
+.lt-card.n{border-left-color:var(--lt-n);} .lt-card.v{border-left-color:var(--lt-v);} .lt-card.a{border-left-color:var(--lt-a);} .lt-card.r{border-left-color:var(--lt-r);}
+.lt-card h3{margin:0 0 4px!important;font-size:17px;}
+.lt-card.n h3{color:var(--lt-n);} .lt-card.v h3{color:var(--lt-v);} .lt-card.a h3{color:var(--lt-a);} .lt-card.r h3{color:var(--lt-r);}
+.lt-card h3 small{font-weight:600;color:var(--dim);font-size:13.5px;}
+.lt-card p{font-size:15px;}
+.lt-card .ex{margin-top:8px;padding:8px 10px;background:var(--paper);border-radius:8px;font-size:15px;}
+.lt-card .ex i{display:block;font-style:normal;color:var(--dim);font-size:13.5px;}
+.lt-suf{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 16px;}
+.lt-suf h3{margin-bottom:4px!important;}
+.lt-suf table td:first-child{white-space:nowrap;font-weight:700;}
+.lt-h-n{color:var(--lt-n)!important;} .lt-h-v{color:var(--lt-v)!important;} .lt-h-a{color:var(--lt-a)!important;} .lt-h-r{color:var(--lt-r)!important;}
+.doc table.lt-t th.n{background:var(--lt-n-bg);color:var(--lt-n);} .doc table.lt-t th.v{background:var(--lt-v-bg);color:var(--lt-v);}
+.doc table.lt-t th.a{background:var(--lt-a-bg);color:var(--lt-a);} .doc table.lt-t th.r{background:var(--lt-r-bg);color:var(--lt-r);}
+.lt-trap{margin:14px 0;padding:14px 16px;border:1.5px dashed #c2410c;border-radius:12px;background:#fff6ef;}
+.lt-trap h3{color:#9a3412!important;margin:0 0 6px!important;}
+.lt-trap ol{margin:0;padding-left:22px;}
+.lt-trap li{margin:8px 0;}
+.lt-steps{counter-reset:s;list-style:none;margin:12px 0;padding:0;display:grid;gap:8px;}
+.lt-steps li{counter-increment:s;position:relative;padding:10px 12px 10px 52px;border:1px solid var(--line);border-radius:12px;background:var(--paper);}
+.lt-steps li::before{content:counter(s);position:absolute;left:12px;top:10px;width:28px;height:28px;border-radius:50%;background:var(--amber);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.lt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;}
+.lt-scroll table{margin:0!important;min-width:560px;}
+.lt-note{font-size:14px;color:var(--dim);}
+.lt-pos td:nth-child(2){white-space:nowrap;}
+/* bài luyện tập */
+.lt-score{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:10px 0 12px;padding:10px 14px;border-radius:12px;background:#fffaf0;border:1px solid #ecd3a6;font-weight:600;}
+.lt-score .bar{flex:1;min-width:120px;height:8px;border-radius:99px;background:var(--line);overflow:hidden;}
+.lt-score .bar i{display:block;height:100%;width:0;background:var(--teal);transition:width .3s;}
+.lt-q{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0;background:var(--card);}
+.lt-q .num{font-size:13px;font-weight:700;color:var(--amber-ink);letter-spacing:.04em;text-transform:uppercase;}
+.lt-q .st{font-size:16.5px;margin:4px 0 10px;line-height:1.55;}
+.lt-blank{display:inline-block;min-width:88px;border-bottom:2px solid var(--ink);text-align:center;font-weight:700;}
+.lt-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.lt-opt{font:inherit;font-size:15.5px;text-align:left;display:flex;gap:8px;align-items:center;min-height:46px;padding:9px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;}
+.lt-opt b{flex:none;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--line);font-size:13px;}
+.lt-opt:hover:not(:disabled){border-color:var(--amber);}
+.lt-opt:focus-visible{outline:3px solid var(--amber);outline-offset:2px;}
+.lt-opt:disabled{cursor:default;}
+.lt-opt.ok{border-color:#1f7a4d;background:#e2f3ea;}
+.lt-opt.ok b{background:#1f7a4d;border-color:#1f7a4d;color:#fff;}
+.lt-opt.bad{border-color:#b42318;background:#fde9e6;}
+.lt-opt.bad b{background:#b42318;border-color:#b42318;color:#fff;}
+.lt-opt.dim{opacity:.55;}
+.lt-fb{display:none;margin-top:10px;padding:10px 12px;border-radius:10px;font-size:15px;}
+.lt-fb.show{display:block;}
+.lt-fb.good{background:#e2f3ea;border:1px solid #9fd2b6;}
+.lt-fb.wrong{background:#fde9e6;border:1px solid #f0b4ab;}
+.lt-fb strong{display:block;margin-bottom:2px;}
+.lt-end{display:none;text-align:center;margin:16px 0 4px;padding:18px 16px;border-radius:14px;border:1.5px solid var(--amber);background:#fffaf0;}
+.lt-end.show{display:block;}
+.lt-end .big{font-size:40px;line-height:1;}
+.lt-end p{margin:8px 0;font-size:17px;}
+.lt-btn{font:inherit;font-weight:700;font-size:16px;border:0;border-radius:10px;padding:11px 20px;background:var(--amber);color:#fff;cursor:pointer;min-height:46px;}
+.lt-btn.alt{background:var(--card);color:var(--amber-ink);border:1.5px solid var(--amber);}
+.lt-again{text-align:right;margin:8px 0 0;}
+@media (max-width:480px){
+  .lt-cards,.lt-suf{grid-template-columns:1fr;}
+  .doc table{font-size:14.5px;}
+  .doc th,.doc td{padding:7px 8px;}
+  .lt-q{padding:12px;}
+  .lt-opt{font-size:15px;padding:8px 9px;}
+  .lt-pos td:nth-child(2){white-space:normal;}
+}
+</style>
+</head><body data-nav="home"><header class="top"><a href="../index.html">TOEIC Pre · Tóm tắt kiến thức</a></header><main class="lt"><p class="sub"><a href="../index.html">← Tất cả bài</a></p><h1>Phân biệt loại từ: Danh – Động – Tính – Trạng</h1><p class="sub">Chuyên đề bổ trợ · Danh từ, Động từ, Tính từ, Trạng từ (Noun, Verb, Adjective, Adverb)</p><div class="doc">
+<p>Trong <strong>Part 5</strong>, rất nhiều câu cho <strong>4 đáp án cùng một gốc từ</strong> (VD: decide / decision / decisive / decisively). Muốn làm đúng, bạn chỉ cần biết <strong>chỗ trống cần loại từ gì</strong> và <strong>từ nào thuộc loại đó</strong>. Cả trang dùng 4 màu cố định:</p>
+<div class="lt-legend"><span class="w n">Danh từ (N)</span><span class="w v">Động từ (V)</span><span class="w a">Tính từ (Adj)</span><span class="w r">Trạng từ (Adv)</span></div>
+<ul class="lt-toc"><li><a href="#lt-1">1. Nhiệm vụ</a></li><li><a href="#lt-2">2. Đuôi từ</a></li><li><a href="#lt-3">3. Vị trí</a></li><li><a href="#lt-4">4. Họ từ</a></li><li><a href="#lt-5">5. Luyện tập</a></li><li><a href="#lt-6">6. Từ vựng</a></li></ul>
+
+<h2 id="lt-1">1. Mỗi loại từ làm nhiệm vụ gì?</h2>
+<div class="lt-cards">
+<div class="lt-card n"><h3>Danh từ <small>Noun (n)</small></h3>
+<p>Gọi tên <strong>người, vật, sự việc</strong>. Làm <strong>chủ ngữ</strong> hoặc <strong>tân ngữ</strong>.</p>
+<p><strong>Vị trí:</strong> sau a/an/the, my/your/its…, this/that, sau giới từ, sau tính từ.</p>
+<div class="ex">The <span class="w n">manager</span> approved the <span class="w n">budget</span>.<i>Người quản lý đã duyệt ngân sách.</i></div></div>
+<div class="lt-card v"><h3>Động từ <small>Verb (v)</small></h3>
+<p>Chỉ <strong>hành động / trạng thái</strong>. Câu nào cũng phải có <strong>động từ chính</strong>.</p>
+<p><strong>Vị trí:</strong> sau chủ ngữ; sau will/can/must/should (V nguyên mẫu); sau to.</p>
+<div class="ex">Ms. Lee will <span class="w v">review</span> the contract tomorrow.<i>Cô Lee sẽ xem lại hợp đồng vào ngày mai.</i></div></div>
+<div class="lt-card a"><h3>Tính từ <small>Adjective (adj)</small></h3>
+<p><strong>Miêu tả danh từ</strong>: trả lời câu hỏi "như thế nào?".</p>
+<p><strong>Vị trí:</strong> trước danh từ; sau be / become / seem / remain / look.</p>
+<div class="ex">This is an <span class="w a">important</span> meeting. The report is <span class="w a">accurate</span>.<i>Đây là cuộc họp quan trọng. Bản báo cáo chính xác.</i></div></div>
+<div class="lt-card r"><h3>Trạng từ <small>Adverb (adv)</small></h3>
+<p>Bổ nghĩa cho <strong>động từ, tính từ, trạng từ khác</strong> hoặc <strong>cả câu</strong>.</p>
+<p><strong>Vị trí:</strong> trước/sau động từ, cuối câu, trước tính từ, đầu câu.</p>
+<div class="ex">Please read the form <span class="w r">carefully</span>. The price is <span class="w r">extremely</span> high.<i>Hãy đọc kỹ mẫu đơn. Giá cực kỳ cao.</i></div></div>
+</div>
+
+<h2 id="lt-2">2. Nhận diện bằng ĐUÔI TỪ (hậu tố)</h2>
+<p>Nhìn phần cuối của từ để đoán loại từ. Đây là cách nhanh nhất để xếp 4 đáp án vào 4 nhóm.</p>
+<div class="lt-suf">
+<div><h3 class="lt-h-n">Danh từ (N)</h3>
+<table class="lt-t"><thead><tr><th class="n">Đuôi</th><th class="n">Ví dụ</th></tr></thead><tbody>
+<tr><td>-tion / -sion</td><td>information, decision, expansion</td></tr>
+<tr><td>-ment</td><td>management, agreement, payment</td></tr>
+<tr><td>-ness</td><td>business, awareness, effectiveness</td></tr>
+<tr><td>-ity</td><td>ability, quality, security</td></tr>
+<tr><td>-ance / -ence</td><td>attendance, performance, experience</td></tr>
+<tr><td>-er / -or / -ee<br>-ant / -ist</td><td><strong>chỉ người</strong>: employer, supervisor, employee, applicant, receptionist</td></tr>
+<tr><td>-ship</td><td>membership, leadership, partnership</td></tr>
+<tr><td>-ure</td><td>procedure, failure, departure</td></tr>
+<tr><td>-al ⚠️</td><td>approval, arrival, proposal, renewal (trông giống tính từ!)</td></tr>
+</tbody></table></div>
+<div><h3 class="lt-h-v">Động từ (V)</h3>
+<table class="lt-t"><thead><tr><th class="v">Đuôi</th><th class="v">Ví dụ</th></tr></thead><tbody>
+<tr><td>-ize / -ise</td><td>organize, finalize, apologize</td></tr>
+<tr><td>-ify</td><td>notify, verify, simplify, clarify</td></tr>
+<tr><td>-en</td><td>widen, strengthen, shorten, quicken</td></tr>
+<tr><td>-ate</td><td>create, operate, communicate, evaluate</td></tr>
+</tbody></table>
+<p class="lt-note">⚠️ Một số từ đuôi <b>-ate</b> không phải động từ: accurate, appropriate (adj); candidate (n).</p>
+<h3 class="lt-h-r">Trạng từ (Adv)</h3>
+<table class="lt-t"><thead><tr><th class="r">Đuôi</th><th class="r">Ví dụ</th></tr></thead><tbody>
+<tr><td>-ly</td><td>quickly, carefully, recently, successfully (thường = tính từ + ly)</td></tr>
+</tbody></table></div>
+<div><h3 class="lt-h-a">Tính từ (Adj)</h3>
+<table class="lt-t"><thead><tr><th class="a">Đuôi</th><th class="a">Ví dụ</th></tr></thead><tbody>
+<tr><td>-ful / -less</td><td>helpful, successful / careless, wireless</td></tr>
+<tr><td>-ous</td><td>various, generous, numerous</td></tr>
+<tr><td>-ive</td><td>effective, productive, competitive</td></tr>
+<tr><td>-able / -ible</td><td>reliable, available, flexible, responsible</td></tr>
+<tr><td>-al</td><td>financial, professional, annual, additional</td></tr>
+<tr><td>-ic</td><td>economic, specific, basic</td></tr>
+<tr><td>-ent / -ant</td><td>efficient, confident, important, significant</td></tr>
+<tr><td>-y</td><td>busy, easy, wealthy, healthy</td></tr>
+<tr><td>-ing / -ed</td><td>interesting / interested, satisfying / satisfied<br><span class="lt-note">-ing: gây ra cảm xúc (vật, sự việc) · -ed: cảm thấy (người)</span></td></tr>
+</tbody></table></div>
+</div>
+
+<div class="lt-trap"><h3>⚠️ Bẫy đuôi từ hay gặp</h3>
+<ol>
+<li><strong>Đuôi -ly nhưng là TÍNH TỪ:</strong> friendly, costly, timely, likely, lovely, lonely. Riêng <strong>daily / weekly / monthly / yearly</strong> vừa là tính từ vừa là trạng từ.<br>VD: a <span class="w a">timely</span> reply (câu trả lời kịp thời) · a <span class="w a">weekly</span> meeting / We meet <span class="w r">weekly</span>.</li>
+<li><strong>Đuôi -al nhưng là DANH TỪ:</strong> approval, arrival, proposal, renewal, removal, rental.<br>VD: We are waiting for the manager's <span class="w n">approval</span>.</li>
+<li><strong>Một hình thức, vừa danh từ vừa động từ:</strong> increase, change, report, plan, request, review, order, delay. Phải nhìn vị trí!<br>VD: a sharp <span class="w n">increase</span> in sales (sau a + tính từ → N) · Sales <span class="w v">increased</span> last month (sau chủ ngữ → V).</li>
+<li><strong>Trạng từ KHÔNG có -ly</strong> (giống hệt tính từ): hard, fast, late, early, high; và <strong>well</strong> là trạng từ của good.<br>VD: She works <span class="w r">hard</span>. · The train arrived <span class="w r">late</span>. · He speaks English <span class="w r">well</span>.</li>
+<li><strong>Thêm -ly là ĐỔI NGHĨA:</strong> hardly = hầu như không · lately = gần đây · highly = rất, hết sức (highly recommended) · nearly = gần như.<br>VD: He <span class="w r">hardly</span> works. (Anh ấy hầu như không làm việc) ≠ He works <span class="w r">hard</span>. (Anh ấy làm việc chăm chỉ)</li>
+</ol></div>
+
+<h2 id="lt-3">3. Nhận diện bằng VỊ TRÍ (quan trọng nhất cho Part 5)</h2>
+<p>Đừng dịch cả câu! Chỉ cần <strong>nhìn từ ngay trước và ngay sau chỗ trống</strong>.</p>
+<table class="lt-pos">
+<colgroup><col style="width:38%"><col style="width:20%"><col style="width:42%"></colgroup>
+<thead><tr><th>Nhìn trước / sau chỗ trống</th><th>Cần</th><th>Ví dụ</th></tr></thead>
+<tbody>
+<tr><td>Sau <b>a / an / the</b>, <b>my / your / its / their</b>, <b>this / that</b>, sau <b>giới từ</b> (in, of, for…)</td><td><span class="w n">N</span><br><small>(hoặc <span class="w a">Adj</span> + <span class="w n">N</span>)</small></td><td>the <span class="w n">approval</span> of the plan<br>for your <span class="w n">cooperation</span></td></tr>
+<tr><td>Ngay <b>trước danh từ</b></td><td><span class="w a">Adj</span></td><td>a <span class="w a">flexible</span> schedule</td></tr>
+<tr><td>Sau <b>be / become / seem / remain / look</b></td><td><span class="w a">Adj</span></td><td>The results are <span class="w a">impressive</span>.</td></tr>
+<tr><td>Sau chủ ngữ, trước tân ngữ (câu <b>chưa có động từ</b>)</td><td><span class="w v">V</span></td><td>The company <span class="w v">hires</span> new staff every year.</td></tr>
+<tr><td>Sau <b>will / can / must / should</b>, sau <b>to</b></td><td><span class="w v">V</span> nguyên mẫu</td><td>You must <span class="w v">submit</span> the form.</td></tr>
+<tr><td>Bổ nghĩa <b>động từ</b> (trước động từ, hoặc cuối câu khi đã đủ tân ngữ)</td><td><span class="w r">Adv</span></td><td>She <span class="w r">quickly</span> finished the task.<br>She finished the task <span class="w r">quickly</span>.</td></tr>
+<tr><td>Ngay <b>trước tính từ</b> / trạng từ khác</td><td><span class="w r">Adv</span></td><td><span class="w r">extremely</span> expensive</td></tr>
+<tr><td><b>Đầu câu</b>, trước dấu phẩy (bổ nghĩa cả câu)</td><td><span class="w r">Adv</span></td><td><span class="w r">Fortunately</span>, the meeting ended early.</td></tr>
+<tr><td>Giữa <b>be</b> và <b>V-ing / V3</b></td><td><span class="w r">Adv</span></td><td>is <span class="w r">steadily</span> increasing<br>was <span class="w r">carefully</span> designed</td></tr>
+<tr><td>Giữa <b>have / has</b> và <b>V3</b></td><td><span class="w r">Adv</span></td><td>has <span class="w r">significantly</span> improved</td></tr>
+<tr><td>Sau <b>the most / more / very / so / too</b></td><td><span class="w a">Adj</span> hoặc <span class="w r">Adv</span></td><td>the most <span class="w a">qualified</span> candidate (đứng trước N → Adj)<br>drive more <span class="w r">carefully</span> (bổ nghĩa V → Adv)</td></tr>
+<tr><td>Sau <b>động từ thường</b></td><td><span class="w n">N</span> (tân ngữ)<br>hoặc <span class="w r">Adv</span></td><td>He submitted his <span class="w n">application</span>.<br>He spoke <span class="w r">clearly</span>.</td></tr>
+</tbody></table>
+
+<h3>Gặp câu chọn loại từ: làm theo 4 bước</h3>
+<ol class="lt-steps">
+<li><strong>Nhìn 4 đáp án</strong>: có cùng gốc từ không? (decide / decision / decisive / decisively → đúng, đây là câu loại từ.)</li>
+<li><strong>Nhìn trước &amp; sau chỗ trống</strong>: a/the? be? danh từ? động từ? dấu phẩy?</li>
+<li><strong>Xác định cần loại từ gì</strong> dựa vào bảng vị trí ở trên: N, V, Adj hay Adv.</li>
+<li><strong>Chọn theo đuôi từ.</strong> Nếu còn 2 danh từ: xem <strong>người hay vật</strong> (applicant / application), <strong>số ít hay số nhiều</strong> (a/an → số ít).</li>
+</ol>
+
+<h2 id="lt-4">4. Họ từ hay gặp trong TOEIC (Word families)</h2>
+<p>Một gốc từ có thể sinh ra nhiều loại từ. Học theo hàng ngang để nhớ cả họ. <span class="lt-note">(—: không có hoặc rất ít dùng · <b>(người)</b>: danh từ chỉ người)</span></p>
+<div class="lt-scroll"><table class="lt-t lt-fam">
+<thead><tr><th class="v">Động từ (V)</th><th class="n">Danh từ (N)</th><th class="a">Tính từ (Adj)</th><th class="r">Trạng từ (Adv)</th></tr></thead>
+<tbody>
+<tr><td>decide</td><td>decision</td><td>decisive</td><td>decisively</td></tr>
+<tr><td>succeed</td><td>success</td><td>successful</td><td>successfully</td></tr>
+<tr><td>produce</td><td>product, production, productivity</td><td>productive</td><td>productively</td></tr>
+<tr><td>compete</td><td>competition, competitor (người)</td><td>competitive</td><td>competitively</td></tr>
+<tr><td>expand</td><td>expansion</td><td>expansive</td><td>—</td></tr>
+<tr><td>rely (on)</td><td>reliance, reliability</td><td>reliable</td><td>reliably</td></tr>
+<tr><td>apply</td><td>application, applicant (người)</td><td>applicable</td><td>—</td></tr>
+<tr><td>attend</td><td>attendance, attendee (người), attention</td><td>attentive</td><td>attentively</td></tr>
+<tr><td>inform</td><td>information</td><td>informative</td><td>—</td></tr>
+<tr><td>—</td><td>effect, effectiveness</td><td>effective</td><td>effectively</td></tr>
+<tr><td>economize</td><td>economy, economist (người)</td><td>economic (thuộc kinh tế)<br>economical (tiết kiệm)</td><td>economically</td></tr>
+<tr><td>manage</td><td>management, manager (người)</td><td>manageable</td><td>—</td></tr>
+<tr><td>analyze</td><td>analysis, analyst (người)</td><td>analytical</td><td>analytically</td></tr>
+<tr><td>impress</td><td>impression</td><td>impressive</td><td>impressively</td></tr>
+<tr><td>satisfy</td><td>satisfaction</td><td>satisfied, satisfactory</td><td>satisfactorily</td></tr>
+</tbody></table></div>
+<p class="lt-note">Trên điện thoại: vuốt ngang bảng để xem hết 4 cột.</p>
+
+<h2 id="lt-5">5. Luyện tập (Part 5)</h2>
+<p>12 câu kiểu Part 5. Chạm vào một đáp án để xem đúng / sai và <strong>dấu hiệu vị trí</strong> giúp chọn đáp án.</p>
+<div class="lt-score" aria-live="polite"><span id="ltScore">Đúng 0 / 12</span><span class="bar"><i id="ltBar"></i></span><span id="ltDone">Đã làm 0/12</span></div>
+<div id="ltQuiz"></div>
+<div class="lt-end" id="ltEnd" aria-live="polite"><div class="big" id="ltEndIc">🎉</div><p id="ltEndTxt"></p><button type="button" class="lt-btn" id="ltAgain">↺ Làm lại</button></div>
+<p class="lt-again"><button type="button" class="lt-btn alt" id="ltReset">↺ Làm lại</button></p>
+
+<h2 id="lt-6">Bảng từ vựng (Vocabulary Sheet)</h2>
+<p><em>Từ vựng trong chuyên đề này (English – Pronunciation – Vietnamese).</em></p>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 32%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>English</strong></th>
+<th><strong>Pronunciation</strong></th>
+<th><strong>Vietnamese</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd"><td><strong>Decision (n)</strong></td><td>/dɪˈsɪʒn/</td><td>Quyết định</td></tr>
+<tr class="even"><td><strong>Decisive (adj)</strong></td><td>/dɪˈsaɪsɪv/</td><td>Quyết đoán; mang tính quyết định</td></tr>
+<tr class="odd"><td><strong>Successful (adj)</strong></td><td>/səkˈsesfl/</td><td>Thành công</td></tr>
+<tr class="even"><td><strong>Production (n)</strong></td><td>/prəˈdʌkʃn/</td><td>Sự sản xuất</td></tr>
+<tr class="odd"><td><strong>Productive (adj)</strong></td><td>/prəˈdʌktɪv/</td><td>Năng suất, hiệu quả</td></tr>
+<tr class="even"><td><strong>Competitive (adj)</strong></td><td>/kəmˈpetətɪv/</td><td>Cạnh tranh</td></tr>
+<tr class="odd"><td><strong>Expansion (n)</strong></td><td>/ɪkˈspænʃn/</td><td>Sự mở rộng</td></tr>
+<tr class="even"><td><strong>Reliable (adj)</strong></td><td>/rɪˈlaɪəbl/</td><td>Đáng tin cậy</td></tr>
+<tr class="odd"><td><strong>Application (n)</strong></td><td>/ˌæplɪˈkeɪʃn/</td><td>Đơn xin (việc); sự ứng dụng</td></tr>
+<tr class="even"><td><strong>Applicant (n)</strong></td><td>/ˈæplɪkənt/</td><td>Người nộp đơn, ứng viên</td></tr>
+<tr class="odd"><td><strong>Attendance (n)</strong></td><td>/əˈtendəns/</td><td>Sự có mặt; số người tham dự</td></tr>
+<tr class="even"><td><strong>Attendee (n)</strong></td><td>/əˌtenˈdiː/</td><td>Người tham dự</td></tr>
+<tr class="odd"><td><strong>Informative (adj)</strong></td><td>/ɪnˈfɔːmətɪv/</td><td>Nhiều thông tin, bổ ích</td></tr>
+<tr class="even"><td><strong>Effective (adj)</strong></td><td>/ɪˈfektɪv/</td><td>Hiệu quả</td></tr>
+<tr class="odd"><td><strong>Economic (adj)</strong></td><td>/ˌiːkəˈnɒmɪk/</td><td>Thuộc về kinh tế</td></tr>
+<tr class="even"><td><strong>Economical (adj)</strong></td><td>/ˌiːkəˈnɒmɪkl/</td><td>Tiết kiệm</td></tr>
+<tr class="odd"><td><strong>Analyst (n)</strong></td><td>/ˈænəlɪst/</td><td>Nhà phân tích</td></tr>
+<tr class="even"><td><strong>Proposal (n)</strong></td><td>/prəˈpəʊzl/</td><td>Bản đề xuất, đề nghị</td></tr>
+<tr class="odd"><td><strong>Approval (n)</strong></td><td>/əˈpruːvl/</td><td>Sự chấp thuận, phê duyệt</td></tr>
+<tr class="even"><td><strong>Timely (adj)</strong></td><td>/ˈtaɪmli/</td><td>Kịp thời, đúng lúc</td></tr>
+<tr class="odd"><td><strong>Verify (v)</strong></td><td>/ˈverɪfaɪ/</td><td>Xác minh, kiểm tra lại</td></tr>
+<tr class="even"><td><strong>Significantly (adv)</strong></td><td>/sɪɡˈnɪfɪkəntli/</td><td>Một cách đáng kể</td></tr>
+<tr class="odd"><td><strong>Participation (n)</strong></td><td>/pɑːˌtɪsɪˈpeɪʃn/</td><td>Sự tham gia</td></tr>
+<tr class="even"><td><strong>Stable (adj)</strong></td><td>/ˈsteɪbl/</td><td>Ổn định</td></tr>
+<tr class="odd"><td><strong>Satisfaction (n)</strong></td><td>/ˌsætɪsˈfækʃn/</td><td>Sự hài lòng</td></tr>
+</tbody>
+</table>
+</div></main><footer>TOEIC Pre · Tóm tắt kiến thức</footer>
+<script>
+(function(){
+  'use strict';
+  // t: loại từ của đáp án đúng (n/v/a/r) để tô màu khi điền vào chỗ trống
+  var Q=[
+    {s:'The marketing team will present its ___ to the board on Friday.',o:['propose','proposal','proposed','proposing'],k:1,t:'n',
+     e:'Sau <b>its</b> (tính từ sở hữu) cần <b>danh từ</b>. <b>proposal</b> đuôi -al nhưng là danh từ (bản đề xuất). propose là động từ; proposed / proposing không đứng một mình sau its.'},
+    {s:'Ms. Tanaka is a highly ___ manager with ten years of experience.',o:['success','succeed','successful','successfully'],k:2,t:'a',
+     e:'Chỗ trống đứng <b>trước danh từ manager</b> (sau trạng từ highly) → cần <b>tính từ</b>. Đuôi -ful → <b>successful</b>. "a highly successful manager" = một quản lý rất thành công.'},
+    {s:'Thank you for your ___ in our annual customer survey.',o:['participate','participatory','participant','participation'],k:3,t:'n',
+     e:'Sau <b>your</b> (và giới từ for) → cần <b>danh từ</b>. Có 2 danh từ: participant (người tham gia) và <b>participation</b> (sự tham gia). Cảm ơn "sự tham gia" của bạn → chọn vật/sự việc.'},
+    {s:'The new software has made our accounting process much more ___.',o:['efficient','efficiently','efficiency','efficiencies'],k:0,t:'a',
+     e:'Cấu trúc <b>make + tân ngữ + tính từ</b>: made our process (more) <b>efficient</b> = làm cho quy trình hiệu quả hơn. "more" ở đây bổ nghĩa cho tính từ, không có động từ nào để trạng từ bổ nghĩa.'},
+    {s:'All employees must ___ the training session on Monday morning.',o:['attendance','attend','attentive','attendee'],k:1,t:'v',
+     e:'Sau <b>must</b> (động từ khuyết thiếu) → cần <b>động từ nguyên mẫu</b>: must <b>attend</b> = phải tham dự. attendance / attendee là danh từ, attentive là tính từ.'},
+    {s:'Prices of office supplies have remained ___ this year.',o:['stability','stabilize','stably','stable'],k:3,t:'a',
+     e:'Sau <b>remain</b> (giống be: "vẫn") → cần <b>tính từ</b>: remained <b>stable</b> = vẫn ổn định. Không dùng trạng từ stably sau remain.'},
+    {s:'The receptionists at our hotel are always ___ and helpful.',o:['friend','friendly','friendship','friends'],k:1,t:'a',
+     e:'Sau <b>are</b> và đứng song song với tính từ <b>helpful</b> → cần <b>tính từ</b>. <b>friendly</b> có đuôi -ly nhưng là TÍNH TỪ (bẫy!) = thân thiện.'},
+    {s:'Ms. Rivera was hired as an ___ in the finance department.',o:['analyze','analysis','analyst','analytical'],k:2,t:'n',
+     e:'Sau <b>an</b> → cần <b>danh từ</b>. Có 2 danh từ: analysis (sự phân tích) và <b>analyst</b> (nhà phân tích). "was hired as" (được thuê làm) → phải là <b>người</b>.'},
+    {s:'The company is ___ expanding its operations in Southeast Asia.',o:['quick','quickly','quickness','quicken'],k:1,t:'r',
+     e:'Chỗ trống nằm <b>giữa be (is) và V-ing (expanding)</b> → cần <b>trạng từ</b>: is <b>quickly</b> expanding = đang nhanh chóng mở rộng. quicken (đuôi -en) là động từ.'},
+    {s:'The finance department ___ all travel expenses before payment.',o:['verifies','verification','verifiable','verifiably'],k:0,t:'v',
+     e:'Câu có chủ ngữ (The finance department) và tân ngữ (all travel expenses) nhưng <b>chưa có động từ</b> → cần <b>động từ</b>. Đuôi -ify → <b>verifies</b> (chủ ngữ số ít nên thêm -es).'},
+    {s:'___, the delayed shipment arrived before the store opened.',o:['Fortune','Fortunate','Fortunes','Fortunately'],k:3,t:'r',
+     e:'<b>Đầu câu, trước dấu phẩy</b>, bổ nghĩa cho cả câu → cần <b>trạng từ</b>: <b>Fortunately</b> = may mắn là.'},
+    {s:'Our new manager has ___ improved communication between departments.',o:['great','greatly','greatness','greater'],k:1,t:'r',
+     e:'Chỗ trống nằm <b>giữa has và V3 (improved)</b> → cần <b>trạng từ</b>: has <b>greatly</b> improved = đã cải thiện rất nhiều.'}
+  ];
+  var KEY='summaryOld.loaitu.quiz', L='ABCD';
+  var ans=(function(){try{var a=JSON.parse(localStorage.getItem(KEY)||'{}');return a&&typeof a==='object'?a:{};}catch(e){return {};}})();
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(ans));}catch(e){}}
+  var box=document.getElementById('ltQuiz');
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function render(){
+    box.innerHTML=Q.map(function(q,i){
+      var st=esc(q.s).replace('___','<span class="lt-blank" data-b="'+i+'">&nbsp;</span>');
+      return '<div class="lt-q" id="ltq'+i+'"><div class="num">Câu '+(i+1)+'</div><p class="st">'+st+'</p><div class="lt-opts">'+
+        q.o.map(function(o,j){return '<button type="button" class="lt-opt" data-q="'+i+'" data-o="'+j+'"><b>'+L[j]+'</b><span>'+esc(o)+'</span></button>';}).join('')+
+        '</div><div class="lt-fb" role="status"></div></div>';
+    }).join('');
+    Q.forEach(function(q,i){ if(ans[i]!==undefined) show(i,ans[i]); });
+    score();
+  }
+  function show(i,j){
+    var q=Q[i], el=document.getElementById('ltq'+i), ok=j===q.k;
+    [].forEach.call(el.querySelectorAll('.lt-opt'),function(b,x){
+      b.disabled=true;
+      if(x===q.k) b.classList.add('ok'); else if(x===j) b.classList.add('bad'); else b.classList.add('dim');
+    });
+    var bl=el.querySelector('.lt-blank'); bl.innerHTML='<span class="w '+q.t+'">'+esc(q.o[q.k])+'</span>';
+    var fb=el.querySelector('.lt-fb'); fb.className='lt-fb show '+(ok?'good':'wrong');
+    fb.innerHTML='<strong>'+(ok?'✓ Chính xác!':'✗ Chưa đúng. Đáp án: ('+L[q.k]+') '+esc(q.o[q.k]))+'</strong>'+q.e;
+  }
+  function score(){
+    var n=0,c=0; Q.forEach(function(q,i){ if(ans[i]!==undefined){n++; if(ans[i]===q.k)c++;} });
+    document.getElementById('ltScore').textContent='Đúng '+c+' / '+Q.length;
+    document.getElementById('ltDone').textContent='Đã làm '+n+'/'+Q.length;
+    document.getElementById('ltBar').style.width=(n/Q.length*100)+'%';
+    var end=document.getElementById('ltEnd');
+    if(n===Q.length){
+      end.classList.add('show');
+      document.getElementById('ltEndIc').textContent=c>=10?'🎉':c>=7?'👍':'💪';
+      document.getElementById('ltEndTxt').innerHTML='Bạn làm đúng <b>'+c+'/'+Q.length+'</b> câu. '+(c>=10?'Rất tốt! Bạn đã nắm chắc vị trí loại từ.':c>=7?'Khá lắm! Xem lại giải thích các câu sai nhé.':'Đọc lại phần 3 (Vị trí) rồi làm lại nhé!');
+    } else end.classList.remove('show');
+  }
+  box.addEventListener('click',function(ev){
+    var b=ev.target.closest('.lt-opt'); if(!b||b.disabled) return;
+    var i=+b.dataset.q, j=+b.dataset.o; if(ans[i]!==undefined) return;
+    ans[i]=j; save(); show(i,j); score();
+    if(Object.keys(ans).length===Q.length) setTimeout(function(){document.getElementById('ltEnd').scrollIntoView({behavior:'smooth',block:'center'});},300);
+  });
+  function reset(){ ans={}; save(); render(); document.getElementById('ltq0').scrollIntoView({behavior:'smooth',block:'center'}); }
+  document.getElementById('ltAgain').onclick=reset;
+  document.getElementById('ltReset').onclick=reset;
+  render();
+})();
+</script>
+<script src="../flashcards.js" defer></script><script>window.ETSCFG=window.ETSCFG||{SCRIPT_URL:'https://script.google.com/macros/s/AKfycby3_45o2Zn3FMEMrVAg9nBCiQEIUvU9HgQxI2ZZtwJ4oUQ_bqXxj1vN0kL6cvhbDQCx/exec'};</script><script src="../assets/ui.js?v=3" data-site="summary"></script>
+</body></html>
