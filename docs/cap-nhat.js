@@ -1,6 +1,14 @@
 /* Có gì mới trên web Tóm tắt kiến thức TOEIC Pre — mới nhất ở trên cùng. Thêm mục mới vào ĐẦU danh sách; id là ngày (YYYY-MM-DD), cùng ngày thì thêm hậu tố (2026-10-21b). link (tuỳ chọn): [đường dẫn, chữ trên nút]. */
 window.MT_UPDATES = [
   {
+    id: '2026-10-24g', date: '24/10/2026',
+    title: 'Bài tóm tắt dễ hiểu hơn',
+    items: [
+      'Listening Unit 7–11: câu ví dụ và các cụm gợi ý có thêm nghĩa tiếng Việt, các dạng câu hỏi có tên tiếng Việt, sửa một số nghĩa và phiên âm bị sai trong bảng từ vựng (ví dụ: last quarter = quý trước, on sale = đang giảm giá).',
+      'Bảng từ vựng Unit 9 và 10 hiện đủ cột Level, flashcard không còn bỏ sót từ.'
+    ]
+  },
+  {
     id: '2026-10-24f', date: '24/10/2026',
     title: 'Xem bài trên điện thoại gọn hơn',
     items: [
