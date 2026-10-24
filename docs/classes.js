@@ -53,7 +53,7 @@ var SN_TITLES = {
   "L8": "Listening Unit 8 · Part 3 – Daily Activities",
   "L9": "Listening Unit 9 · Part 3 – At Public Places",
   "L10": "Listening Unit 10–11 · Part 4 – Telephone Messages, Announcements & Ads",
-  "L11": "Listening Unit 11–12 · Part 4 – Radio Broadcasts, Speeches & Internal Announcements",
+  "L11": "Listening Unit 12 · Part 4 – Radio Broadcasts, Speeches & Internal Announcements",
   "PT1": "Ôn tập sau Progress Test 1",
   "PT2": "Ôn tập trước Progress Test 2"
  };
