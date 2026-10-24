@@ -73,12 +73,21 @@ Bài tổng hợp theo chủ điểm ngữ pháp, dùng để ôn xuyên suốt 
 | 3 | [Các thì của động từ trong TOEIC](https://mangomint1805.github.io/summary-old/chuyen-de/thi-dong-tu.html) |
 | 4 | [Câu bị động trong TOEIC](https://mangomint1805.github.io/summary-old/chuyen-de/cau-bi-dong.html) |
 | 5 | [Giới từ thường gặp trong TOEIC](https://mangomint1805.github.io/summary-old/chuyen-de/gioi-tu.html) |
+| 6 | [Liên từ trong TOEIC](https://mangomint1805.github.io/summary-old/chuyen-de/lien-tu.html) |
+| 7 | [Đại từ quan hệ trong TOEIC](https://mangomint1805.github.io/summary-old/chuyen-de/dai-tu-quan-he.html) |
+| 8 | [To V và V-ing trong TOEIC](https://mangomint1805.github.io/summary-old/chuyen-de/to-v-v-ing.html) |
+| 9 | [So sánh trong TOEIC](https://mangomint1805.github.io/summary-old/chuyen-de/so-sanh.html) |
+| 10 | [Sự hòa hợp chủ ngữ – động từ](https://mangomint1805.github.io/summary-old/chuyen-de/hoa-hop-chu-vi.html) |
+| 11 | [Bẫy thường gặp ở Part 1](https://mangomint1805.github.io/summary-old/chuyen-de/bay-part-1.html) |
+| 12 | [Câu trả lời gián tiếp ở Part 2](https://mangomint1805.github.io/summary-old/chuyen-de/tra-loi-gian-tiep-part-2.html) |
+| 13 | [Nhận ra cách nói lại (paraphrase) ở Part 3–4](https://mangomint1805.github.io/summary-old/chuyen-de/paraphrase-part-3-4.html) |
 
 ## Ôn tập
 
 | Bài | Nội dung |
 |---|---|
 | [Ôn tập sau Progress Test 1](https://mangomint1805.github.io/summary-old/review/progress-test-1.html) | Ôn lại kiến thức sau bài Progress Test 1 |
+| [Ôn tập trước Progress Test 2](https://mangomint1805.github.io/summary-old/review/progress-test-2.html) | Tóm tắt cả khoá, 20 câu luyện, từ vựng (mở sau buổi 22) |
 
 ## Cấu trúc thư mục
 

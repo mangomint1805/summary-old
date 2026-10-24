@@ -1,0 +1,354 @@
+<!doctype html><html lang="vi"><head>
+<script>try{var d=document.documentElement,k=JSON.parse(localStorage.getItem('mt.skin')||'""');if(k==='scifi')d.setAttribute('data-theme','dark');if(k)d.setAttribute('data-skin',k)}catch(e){}</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<title>Sự hòa hợp chủ ngữ – động từ</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css"><script src="../classes.js"></script><link rel="icon" type="image/png" href="../icons/fav-64.png?v=3">
+<style>
+/* Chuyên đề hòa hợp chủ ngữ – động từ – màu cố định: chủ ngữ thật xanh dương · động từ đỏ · phần chen giữa tím · từ quyết định số xanh lá */
+:root{--lt-n:#1d5fa8;--lt-n-bg:#e4eefb;--lt-v:#b42318;--lt-v-bg:#fde9e6;--lt-a:#1f7a4d;--lt-a-bg:#e2f3ea;--lt-r:#6d3fb0;--lt-r-bg:#efe7fb;}
+.lt .w{font-weight:700;border-radius:5px;padding:0 4px;white-space:nowrap;}
+.lt .w.n{color:var(--lt-n);background:var(--lt-n-bg);}
+.lt .w.v{color:var(--lt-v);background:var(--lt-v-bg);}
+.lt .w.a{color:var(--lt-a);background:var(--lt-a-bg);}
+.lt .w.r{color:var(--lt-r);background:var(--lt-r-bg);}
+.lt-legend{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;}
+.lt-legend .w{font-size:14px;padding:3px 10px;}
+.lt-toc{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px;padding:0;list-style:none;}
+.lt-toc a{display:inline-block;font-size:14px;font-weight:600;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;background:var(--paper);}
+.lt-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0;}
+.lt-card{border:1.5px solid var(--line);border-left-width:6px;border-radius:12px;padding:12px 14px;background:var(--card);}
+.lt-card.n{border-left-color:var(--lt-n);} .lt-card.v{border-left-color:var(--lt-v);} .lt-card.a{border-left-color:var(--lt-a);} .lt-card.r{border-left-color:var(--lt-r);}
+.lt-card h3{margin:0 0 4px!important;font-size:17px;}
+.lt-card.n h3{color:var(--lt-n);} .lt-card.v h3{color:var(--lt-v);} .lt-card.a h3{color:var(--lt-a);} .lt-card.r h3{color:var(--lt-r);}
+.lt-card h3 small{font-weight:600;color:var(--dim);font-size:13.5px;}
+.lt-card p{font-size:15px;}
+.lt-card .ex{margin-top:8px;padding:8px 10px;background:var(--paper);border-radius:8px;font-size:15px;}
+.lt-card .ex i{display:block;font-style:normal;color:var(--dim);font-size:13.5px;}
+.lt-suf{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 16px;}
+.lt-suf h3{margin-bottom:4px!important;}
+.lt-suf table td:first-child{white-space:nowrap;font-weight:700;}
+.lt-h-n{color:var(--lt-n)!important;} .lt-h-v{color:var(--lt-v)!important;} .lt-h-a{color:var(--lt-a)!important;} .lt-h-r{color:var(--lt-r)!important;}
+.doc table.lt-t th.n{background:var(--lt-n-bg);color:var(--lt-n);} .doc table.lt-t th.v{background:var(--lt-v-bg);color:var(--lt-v);}
+.doc table.lt-t th.a{background:var(--lt-a-bg);color:var(--lt-a);} .doc table.lt-t th.r{background:var(--lt-r-bg);color:var(--lt-r);}
+.lt-trap{margin:14px 0;padding:14px 16px;border:1.5px dashed #c2410c;border-radius:12px;background:#fff6ef;}
+.lt-trap h3{color:#9a3412!important;margin:0 0 6px!important;}
+.lt-trap ol{margin:0;padding-left:22px;}
+.lt-trap li{margin:8px 0;}
+.lt-steps{counter-reset:s;list-style:none;margin:12px 0;padding:0;display:grid;gap:8px;}
+.lt-steps li{counter-increment:s;position:relative;padding:10px 12px 10px 52px;border:1px solid var(--line);border-radius:12px;background:var(--paper);}
+.lt-steps li::before{content:counter(s);position:absolute;left:12px;top:10px;width:28px;height:28px;border-radius:50%;background:var(--amber);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.lt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;}
+.lt-scroll table{margin:0!important;min-width:560px;}
+.lt-note{font-size:14px;color:var(--dim);}
+.lt-pos td:nth-child(2){white-space:nowrap;}
+/* riêng trang hòa hợp chủ ngữ – động từ */
+.hh-big td:first-child{font-weight:700;white-space:nowrap;}
+.hh-vs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 0;}
+.hh-vs > div{padding:8px 10px;border-radius:8px;background:var(--paper);font-size:14.5px;}
+.hh-vs b{display:block;}
+.hh-vs i{display:block;font-style:normal;}
+.hh-formula{display:block;margin:6px 0;padding:8px 10px;border-radius:8px;background:#fffaf0;border:1px solid #ecd3a6;font-weight:600;font-size:15px;}
+@media (max-width:480px){
+  .hh-vs{grid-template-columns:1fr;}
+  .hh-big td:first-child{white-space:normal;}
+}
+/* bài luyện tập */
+.lt-score{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:10px 0 12px;padding:10px 14px;border-radius:12px;background:#fffaf0;border:1px solid #ecd3a6;font-weight:600;}
+.lt-score .bar{flex:1;min-width:120px;height:8px;border-radius:99px;background:var(--line);overflow:hidden;}
+.lt-score .bar i{display:block;height:100%;width:0;background:var(--teal);transition:width .3s;}
+.lt-q{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0;background:var(--card);}
+.lt-q .num{font-size:13px;font-weight:700;color:var(--amber-ink);letter-spacing:.04em;text-transform:uppercase;}
+.lt-q .st{font-size:16.5px;margin:4px 0 10px;line-height:1.55;}
+.lt-blank{display:inline-block;min-width:88px;border-bottom:2px solid var(--ink);text-align:center;font-weight:700;}
+.lt-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.lt-opt{font:inherit;font-size:15.5px;text-align:left;display:flex;gap:8px;align-items:center;min-height:46px;padding:9px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;}
+.lt-opt b{flex:none;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--line);font-size:13px;}
+.lt-opt:hover:not(:disabled){border-color:var(--amber);}
+.lt-opt:focus-visible{outline:3px solid var(--amber);outline-offset:2px;}
+.lt-opt:disabled{cursor:default;}
+.lt-opt.ok{border-color:#1f7a4d;background:#e2f3ea;}
+.lt-opt.ok b{background:#1f7a4d;border-color:#1f7a4d;color:#fff;}
+.lt-opt.bad{border-color:#b42318;background:#fde9e6;}
+.lt-opt.bad b{background:#b42318;border-color:#b42318;color:#fff;}
+.lt-opt.dim{opacity:.55;}
+.lt-fb{display:none;margin-top:10px;padding:10px 12px;border-radius:10px;font-size:15px;}
+.lt-fb.show{display:block;}
+.lt-fb.good{background:#e2f3ea;border:1px solid #9fd2b6;}
+.lt-fb.wrong{background:#fde9e6;border:1px solid #f0b4ab;}
+.lt-fb strong{display:block;margin-bottom:2px;}
+.lt-fb .dich{display:block;margin-top:6px;color:var(--dim);font-size:14px;}
+.lt-end{display:none;text-align:center;margin:16px 0 4px;padding:18px 16px;border-radius:14px;border:1.5px solid var(--amber);background:#fffaf0;}
+.lt-end.show{display:block;}
+.lt-end .big{font-size:40px;line-height:1;}
+.lt-end p{margin:8px 0;font-size:17px;}
+.lt-btn{font:inherit;font-weight:700;font-size:16px;border:0;border-radius:10px;padding:11px 20px;background:var(--amber);color:#fff;cursor:pointer;min-height:46px;}
+.lt-btn.alt{background:var(--card);color:var(--amber-ink);border:1.5px solid var(--amber);}
+.lt-again{text-align:right;margin:8px 0 0;}
+@media (max-width:480px){
+  .lt-cards,.lt-suf{grid-template-columns:1fr;}
+  .doc table{font-size:14.5px;}
+  .doc th,.doc td{padding:7px 8px;}
+  .lt-q{padding:12px;}
+  .lt-opt{font-size:15px;padding:8px 9px;}
+  .lt-pos td:nth-child(2){white-space:normal;}
+  .lt-suf table td:first-child{white-space:normal;}
+}
+</style>
+</head><body data-nav="home"><header class="top"><a href="../index.html">TOEIC Pre · Tóm tắt kiến thức</a></header><main class="lt"><p class="sub"><a href="../index.html">← Tất cả bài</a></p><h1>Sự hòa hợp chủ ngữ – động từ</h1><p class="sub">Chuyên đề bổ trợ · Chủ ngữ số ít hay số nhiều, chọn động từ cho đúng (Subject – Verb Agreement)</p><div class="doc">
+<p><strong>Hòa hợp chủ ngữ – động từ</strong> nghĩa là: chủ ngữ <strong>số ít</strong> thì đi với động từ <strong>số ít</strong>, chủ ngữ <strong>số nhiều</strong> thì đi với động từ <strong>số nhiều</strong>. Trong <strong>Part 5</strong>, khi 4 đáp án là cùng một động từ ở nhiều dạng (is / are, has / have, offer / offers), việc đầu tiên là <strong>tìm đúng chủ ngữ thật</strong>. Cả trang dùng các màu sau:</p>
+<div class="lt-legend"><span class="w n">Chủ ngữ thật</span><span class="w v">Động từ chia</span><span class="w r">Phần chen giữa (bỏ qua)</span><span class="w a">Từ quyết định số ít / nhiều</span></div>
+<ul class="lt-toc"><li><a href="#lt-1">1. Quy tắc cơ bản</a></li><li><a href="#lt-2">2. Tìm chủ ngữ thật</a></li><li><a href="#lt-3">3. Each / every / one of</a></li><li><a href="#lt-4">4. A number of</a></li><li><a href="#lt-5">5. Either / neither</a></li><li><a href="#lt-6">6. Không đếm được</a></li><li><a href="#lt-7">7. There is / who, which</a></li><li><a href="#lt-8">8. Mẹo Part 5</a></li><li><a href="#lt-9">9. Luyện tập</a></li><li><a href="#lt-10">10. Từ vựng</a></li></ul>
+
+<h2 id="lt-1">1. Quy tắc cơ bản: số ít hay số nhiều?</h2>
+<p>Thầy lưu ý một điều hay làm các bạn nhầm: <strong>chữ -s ở danh từ và ở động từ có nghĩa ngược nhau</strong>. Danh từ có -s → <strong>số nhiều</strong> (managers). Động từ có -s → <strong>số ít</strong> (manages).</p>
+<div class="lt-scroll"><table class="lt-t hh-big">
+<thead><tr><th>Động từ</th><th class="n">Chủ ngữ số ít<br><span class="lt-note">he, she, it, the manager, the report</span></th><th class="a">Chủ ngữ số nhiều<br><span class="lt-note">they, we, the managers, the reports</span></th></tr></thead>
+<tbody>
+<tr><td>Động từ thường (hiện tại)</td><td>V-s / V-es: works, offers, goes</td><td>V nguyên mẫu: work, offer, go</td></tr>
+<tr><td>be (hiện tại)</td><td>is</td><td>are</td></tr>
+<tr><td>be (quá khứ)</td><td>was</td><td>were</td></tr>
+<tr><td>have (hiện tại)</td><td>has</td><td>have</td></tr>
+<tr><td>do (hiện tại)</td><td>does / doesn't</td><td>do / don't</td></tr>
+</tbody></table></div>
+<p class="lt-note">Trên điện thoại: vuốt ngang bảng để xem hết 3 cột. Thì quá khứ đơn của động từ thường (worked) và động từ khiếm khuyết (can, will, must + V) <strong>không đổi theo chủ ngữ</strong>, nên đề không hỏi hòa hợp ở các dạng này.</p>
+<div class="lt-cards">
+<div class="lt-card n"><h3>Số ít</h3>
+<div class="ex"><span class="w n">The manager</span> <span class="w v">reviews</span> all invoices.<i>Người quản lý xem xét tất cả hóa đơn.</i></div></div>
+<div class="lt-card a"><h3>Số nhiều</h3>
+<div class="ex"><span class="w n">The managers</span> <span class="w v">review</span> all invoices.<i>Các quản lý xem xét tất cả hóa đơn.</i></div></div>
+</div>
+
+<h2 id="lt-2">2. Tìm chủ ngữ thật: bỏ qua phần chen giữa</h2>
+<p>Trong TOEIC, giữa chủ ngữ và động từ thường có một <span class="w r">cụm chen vào</span> để đánh lừa. Động từ luôn chia theo <span class="w n">danh từ chính</span> (thường là danh từ <strong>đứng đầu câu</strong>), không chia theo danh từ đứng gần nó nhất.</p>
+<div class="lt-cards">
+<div class="lt-card r"><h3>Cụm giới từ <small>of, in, for, with, from, on…</small></h3>
+<div class="ex"><span class="w n">The list</span> <span class="w r">of approved suppliers</span> <span class="w v">is</span> on the website.<i>Danh sách các nhà cung cấp được duyệt có trên trang web. (chủ ngữ là list, không phải suppliers)</i></div>
+<div class="ex"><span class="w n">The boxes</span> <span class="w r">in the storage room</span> <span class="w v">need</span> labels.<i>Các thùng trong phòng kho cần dán nhãn.</i></div></div>
+<div class="lt-card v"><h3>Together with / as well as / along with</h3>
+<p>Những cụm này <strong>không cộng thêm</strong> chủ ngữ. Động từ chia theo danh từ <strong>đứng trước</strong> chúng.</p>
+<div class="ex"><span class="w n">The director</span>, <span class="w r">together with her assistants</span>, <span class="w v">is</span> attending the fair.<i>Giám đốc cùng các trợ lý đang tham dự hội chợ.</i></div>
+<p class="lt-note">So sánh: <b>The director and her assistants are</b> … (có "and" → số nhiều).</p></div>
+<div class="lt-card n"><h3>Cụm phân từ / mệnh đề chen giữa</h3>
+<div class="ex"><span class="w n">The report</span> <span class="w r">prepared by the interns</span> <span class="w v">contains</span> several errors.<i>Bản báo cáo do các thực tập sinh soạn có vài lỗi.</i></div></div>
+</div>
+<span class="hh-formula">Cách làm: gạch bỏ <span class="w r">giới từ + danh từ</span> và phần nằm giữa hai dấu phẩy → danh từ còn lại ngay trước động từ là <span class="w n">chủ ngữ thật</span>.</span>
+
+<h2 id="lt-3">3. Each / Every / One of … → luôn số ít</h2>
+<table class="hh-big">
+<thead><tr><th>Cấu trúc</th><th>Động từ</th><th>Ví dụ</th></tr></thead>
+<tbody>
+<tr><td>each / every + N số ít</td><td>số ít</td><td>Every <b>room</b> <b>has</b> a desk.</td></tr>
+<tr><td>each of the + N số nhiều</td><td>số ít</td><td>Each of the <b>rooms</b> <b>has</b> a desk.</td></tr>
+<tr><td>one of the + N số nhiều</td><td>số ít</td><td>One of the <b>printers</b> <b>is</b> broken.</td></tr>
+<tr><td>everyone, everything, someone, nobody, anyone…</td><td>số ít</td><td>Everyone <b>needs</b> a visitor pass.</td></tr>
+</tbody></table>
+<div class="lt-cards">
+<div class="lt-card a"><h3>Ví dụ</h3>
+<div class="ex"><span class="w a">Each</span> <span class="w r">of the applicants</span> <span class="w v">was</span> interviewed twice.<i>Mỗi ứng viên đã được phỏng vấn hai lần.</i></div>
+<div class="ex"><span class="w a">One</span> <span class="w r">of our suppliers</span> <span class="w v">has</span> raised its prices.<i>Một trong các nhà cung cấp của chúng tôi đã tăng giá.</i></div></div>
+<div class="lt-card r"><h3>Ngược lại: luôn số nhiều</h3>
+<p><b>both, many, several, few, a few</b> + N số nhiều → động từ <strong>số nhiều</strong>.</p>
+<div class="ex"><span class="w a">Several</span> <span class="w n">branches</span> <span class="w v">are</span> closed today.<i>Một vài chi nhánh đóng cửa hôm nay.</i></div></div>
+</div>
+
+<h2 id="lt-4">4. A number of ≠ The number of</h2>
+<div class="lt-cards">
+<div class="lt-card a"><h3>A number of + N số nhiều → V số nhiều</h3>
+<p><b>a number of</b> = <strong>nhiều</strong> (giống many). Chủ ngữ thật là danh từ phía sau.</p>
+<div class="ex"><span class="w a">A number of</span> <span class="w n">guests</span> <span class="w v">have</span> asked for late checkout.<i>Nhiều khách đã yêu cầu trả phòng muộn.</i></div></div>
+<div class="lt-card n"><h3>The number of + N số nhiều → V số ít</h3>
+<p><b>the number of</b> = <strong>số lượng</strong> (một con số). Chủ ngữ thật là <b>the number</b>.</p>
+<div class="ex"><span class="w n">The number</span> <span class="w r">of guests</span> <span class="w v">has</span> doubled this year.<i>Số lượng khách đã tăng gấp đôi năm nay.</i></div></div>
+</div>
+<p class="lt-note">Mẹo nhớ: "<b>A</b> number" = "<b>A lot</b>" (nhiều → số nhiều) · "<b>The</b> number" = "con số" (một con số → số ít). Hay đi với: increase, rise, decline, double.</p>
+
+<h2 id="lt-5">5. Either … or / Neither … nor / Both … and</h2>
+<div class="lt-cards">
+<div class="lt-card v"><h3>Either A or B · Neither A nor B · Not only A but also B</h3>
+<p>Động từ chia theo <strong>danh từ GẦN NHẤT</strong> (là B).</p>
+<div class="ex">Neither the manager nor <span class="w n">the assistants</span> <span class="w v">are</span> available.<i>Cả quản lý lẫn các trợ lý đều không rảnh. (gần nhất: assistants → are)</i></div>
+<div class="ex">Either the assistants or <span class="w n">the manager</span> <span class="w v">is</span> available.<i>Hoặc các trợ lý, hoặc quản lý đang rảnh. (gần nhất: manager → is)</i></div></div>
+<div class="lt-card a"><h3>Both A and B · A and B → số nhiều</h3>
+<p>Có <b>and</b> nối hai chủ ngữ → luôn <strong>số nhiều</strong>.</p>
+<div class="ex"><span class="w a">Both</span> <span class="w n">the CEO and the CFO</span> <span class="w v">are</span> attending the meeting.<i>Cả tổng giám đốc lẫn giám đốc tài chính đều dự họp.</i></div></div>
+</div>
+
+<h2 id="lt-6">6. Danh từ không đếm được, V-ing và To-V làm chủ ngữ → số ít</h2>
+<p>Danh từ <strong>không đếm được</strong> không có dạng số nhiều (không thêm -s) và luôn đi với động từ <strong>số ít</strong>. Đây là những từ TOEIC rất hay dùng:</p>
+<div class="lt-scroll"><table class="lt-t">
+<thead><tr><th class="n">Danh từ không đếm được</th><th>Nghĩa</th><th class="n">Danh từ không đếm được</th><th>Nghĩa</th></tr></thead>
+<tbody>
+<tr><td>information</td><td>thông tin</td><td>equipment</td><td>thiết bị</td></tr>
+<tr><td>furniture</td><td>đồ nội thất</td><td>luggage / baggage</td><td>hành lý</td></tr>
+<tr><td>advice</td><td>lời khuyên</td><td>merchandise</td><td>hàng hóa</td></tr>
+<tr><td>money</td><td>tiền</td><td>machinery</td><td>máy móc</td></tr>
+</tbody></table></div>
+<div class="lt-cards">
+<div class="lt-card n"><h3>Không đếm được</h3>
+<div class="ex"><span class="w n">The equipment</span> <span class="w r">in the lab</span> <span class="w v">is</span> checked weekly.<i>Thiết bị trong phòng thí nghiệm được kiểm tra hằng tuần.</i></div>
+<p class="lt-note">Đếm bằng cụm: a piece of information, two pieces of furniture.</p></div>
+<div class="lt-card a"><h3>V-ing / To-V làm chủ ngữ</h3>
+<div class="ex"><span class="w n">Reviewing</span> <span class="w r">customer complaints</span> <span class="w v">takes</span> a lot of time.<i>Việc xem xét khiếu nại của khách hàng mất nhiều thời gian. (chủ ngữ là cả "việc reviewing" → số ít)</i></div></div>
+</div>
+
+<h2 id="lt-7">7. There is / There are và mệnh đề who, which, that</h2>
+<div class="lt-cards">
+<div class="lt-card r"><h3>There + be + N</h3>
+<p><b>There</b> không phải chủ ngữ thật. Nhìn danh từ <strong>ĐỨNG SAU</strong> động từ be:</p>
+<div class="hh-vs"><div><b>Số ít / không đếm được</b>There <span class="w v">is</span> <span class="w n">a problem</span> with the printer.<i class="lt-note">There <b>is</b> some information.</i></div><div><b>Số nhiều</b>There <span class="w v">are</span> <span class="w n">three problems</span> with the order.<i class="lt-note">There <b>were</b> many guests.</i></div></div></div>
+<div class="lt-card n"><h3>Who / which / that + V</h3>
+<p>Động từ trong mệnh đề quan hệ chia theo <strong>danh từ đứng ngay trước</strong> who / which / that.</p>
+<div class="ex"><span class="w n">Employees</span> <span class="w a">who</span> <span class="w v">work</span> overtime will be paid extra.<i>Nhân viên làm thêm giờ sẽ được trả thêm. (Employees số nhiều → work)</i></div>
+<div class="ex">The <span class="w n">form</span> <span class="w a">that</span> <span class="w v">is</span> on your desk must be signed.<i>Mẫu đơn trên bàn bạn phải được ký. (form số ít → is)</i></div></div>
+</div>
+<div class="lt-trap"><h3>⚠️ Bẫy hay gặp</h3>
+<ol>
+<li><strong>Chia theo danh từ gần nhất (SAI):</strong> <em>The quality of the products <s>are</s> …</em> → chủ ngữ là <b>quality</b> → <span class="w v">is</span>.</li>
+<li><strong>Each of the + N số nhiều</strong> nhưng động từ vẫn <strong>số ít</strong>: Each of the <b>reports</b> <span class="w v">has</span> a cover page.</li>
+<li><strong>Thêm -s cho danh từ không đếm được là SAI:</strong> <s>informations, equipments, furnitures, advices</s>.</li>
+<li><strong>Together with / as well as ≠ and.</strong> Chỉ <b>and</b> mới làm chủ ngữ thành số nhiều.</li>
+<li><strong>Còn phải đúng THÌ và THỂ:</strong> sau khi chọn số ít / số nhiều, kiểm tra thêm dấu hiệu thời gian (last week → quá khứ) và chủ động / bị động.</li>
+</ol></div>
+
+<h2 id="lt-8">8. Mẹo làm Part 5 câu hòa hợp</h2>
+<ol class="lt-steps">
+<li><strong>Nhìn 4 đáp án</strong>: cùng một động từ ở dạng số ít / số nhiều (is / are, has / have, offer / offers) → câu <strong>hòa hợp</strong>.</li>
+<li><strong>Kiểm tra câu còn thiếu động từ chính không</strong>: nếu thiếu, loại ngay V-ing và to-V (không làm động từ chính được).</li>
+<li><strong>Tìm chủ ngữ thật</strong>: gạch bỏ <span class="w r">cụm giới từ</span>, phần giữa hai dấu phẩy, together with / as well as. Với <b>There</b> → nhìn danh từ sau be. Với <b>who / which / that</b> → nhìn danh từ trước nó.</li>
+<li><strong>Xác định số</strong>: each / every / one of / the number of / không đếm được / V-ing → <strong>số ít</strong>. A and B / both / a number of / several → <strong>số nhiều</strong>. either … or / neither … nor → theo danh từ gần nhất.</li>
+<li><strong>Kiểm tra thì</strong>: nếu còn 2 đáp án cùng số (is / was), xem dấu hiệu thời gian để chọn.</li>
+</ol>
+
+<h2 id="lt-9">9. Luyện tập (Part 5)</h2>
+<p>12 câu kiểu Part 5. Chạm vào một đáp án để xem đúng / sai, <strong>dấu hiệu</strong> giúp chọn đáp án và bản dịch.</p>
+<div class="lt-score" aria-live="polite"><span id="ltScore">Đúng 0 / 12</span><span class="bar"><i id="ltBar"></i></span><span id="ltDone">Đã làm 0/12</span></div>
+<div id="ltQuiz"></div>
+<div class="lt-end" id="ltEnd" aria-live="polite"><div class="big" id="ltEndIc">🎉</div><p id="ltEndTxt"></p><button type="button" class="lt-btn" id="ltAgain">↺ Làm lại</button></div>
+<p class="lt-again"><button type="button" class="lt-btn alt" id="ltReset">↺ Làm lại</button></p>
+
+<h2 id="lt-10">Bảng từ vựng (Vocabulary Sheet)</h2>
+<p><em>Từ vựng trong chuyên đề này (English – Pronunciation – Vietnamese).</em></p>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 32%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>English</strong></th>
+<th><strong>Pronunciation</strong></th>
+<th><strong>Vietnamese</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd"><td><strong>Agreement (n)</strong></td><td>/əˈɡriːmənt/</td><td>Sự hòa hợp; sự đồng ý; hợp đồng</td></tr>
+<tr class="even"><td><strong>Subject (n)</strong></td><td>/ˈsʌbdʒɪkt/</td><td>Chủ ngữ; chủ đề</td></tr>
+<tr class="odd"><td><strong>Singular (adj)</strong></td><td>/ˈsɪŋɡjələ/</td><td>Số ít</td></tr>
+<tr class="even"><td><strong>Plural (adj)</strong></td><td>/ˈplʊərəl/</td><td>Số nhiều</td></tr>
+<tr class="odd"><td><strong>Uncountable (adj)</strong></td><td>/ʌnˈkaʊntəbl/</td><td>Không đếm được</td></tr>
+<tr class="even"><td><strong>Supplier (n)</strong></td><td>/səˈplaɪə/</td><td>Nhà cung cấp</td></tr>
+<tr class="odd"><td><strong>Approved (adj)</strong></td><td>/əˈpruːvd/</td><td>Đã được phê duyệt</td></tr>
+<tr class="even"><td><strong>Applicant (n)</strong></td><td>/ˈæplɪkənt/</td><td>Người nộp đơn, ứng viên</td></tr>
+<tr class="odd"><td><strong>Equipment (n)</strong></td><td>/ɪˈkwɪpmənt/</td><td>Thiết bị</td></tr>
+<tr class="even"><td><strong>Furniture (n)</strong></td><td>/ˈfɜːnɪtʃə/</td><td>Đồ nội thất</td></tr>
+<tr class="odd"><td><strong>Information (n)</strong></td><td>/ˌɪnfəˈmeɪʃn/</td><td>Thông tin</td></tr>
+<tr class="even"><td><strong>Luggage (n)</strong></td><td>/ˈlʌɡɪdʒ/</td><td>Hành lý</td></tr>
+<tr class="odd"><td><strong>Merchandise (n)</strong></td><td>/ˈmɜːtʃəndaɪs/</td><td>Hàng hóa</td></tr>
+<tr class="even"><td><strong>Machinery (n)</strong></td><td>/məˈʃiːnəri/</td><td>Máy móc</td></tr>
+<tr class="odd"><td><strong>Advice (n)</strong></td><td>/ədˈvaɪs/</td><td>Lời khuyên</td></tr>
+<tr class="even"><td><strong>Brochure (n)</strong></td><td>/ˈbrəʊʃə/</td><td>Tờ quảng cáo, sách giới thiệu</td></tr>
+<tr class="odd"><td><strong>Invoice (n)</strong></td><td>/ˈɪnvɔɪs/</td><td>Hóa đơn</td></tr>
+<tr class="even"><td><strong>Complaint (n)</strong></td><td>/kəmˈpleɪnt/</td><td>Lời phàn nàn, khiếu nại</td></tr>
+<tr class="odd"><td><strong>Complain (v)</strong></td><td>/kəmˈpleɪn/</td><td>Phàn nàn, khiếu nại</td></tr>
+<tr class="even"><td><strong>Available (adj)</strong></td><td>/əˈveɪləbl/</td><td>Có sẵn; rảnh (để gặp)</td></tr>
+<tr class="odd"><td><strong>Register (v)</strong></td><td>/ˈredʒɪstə/</td><td>Đăng ký</td></tr>
+<tr class="even"><td><strong>Workshop (n)</strong></td><td>/ˈwɜːkʃɒp/</td><td>Hội thảo chuyên đề, buổi tập huấn</td></tr>
+<tr class="odd"><td><strong>Laboratory (n)</strong></td><td>/ləˈbɒrətri/</td><td>Phòng thí nghiệm</td></tr>
+<tr class="even"><td><strong>Overtime (adv/n)</strong></td><td>/ˈəʊvətaɪm/</td><td>(Làm) thêm giờ</td></tr>
+<tr class="odd"><td><strong>Sharply (adv)</strong></td><td>/ˈʃɑːpli/</td><td>(Tăng / giảm) mạnh</td></tr>
+<tr class="even"><td><strong>Out of date (phr)</strong></td><td>—</td><td>Lỗi thời, hết hạn</td></tr>
+</tbody>
+</table>
+</div></main><footer>TOEIC Pre · Tóm tắt kiến thức</footer>
+<script>
+(function(){
+  'use strict';
+  // t: màu của đáp án đúng khi điền vào chỗ trống (v = động từ chia)
+  var Q=[
+    {s:'The list of approved suppliers ___ updated at the beginning of every month.',o:['are','is','be','being'],k:1,t:'v',
+     e:'Chủ ngữ thật là <b>The list</b> (số ít); "of approved suppliers" chỉ là cụm giới từ chen giữa → <b>is</b> (updated). are là bẫy chia theo "suppliers"; be / being không làm động từ chính được.<span class="dich">Dịch: Danh sách các nhà cung cấp được phê duyệt được cập nhật vào đầu mỗi tháng.</span>'},
+    {s:'Each of the new employees ___ a laptop and an ID badge on the first day.',o:['receive','have received','receives','receiving'],k:2,t:'v',
+     e:'<b>Each of the</b> + N số nhiều → động từ <b>số ít</b>: <b>receives</b>. receive / have received là dạng số nhiều (bẫy chia theo "employees"); receiving không làm động từ chính.<span class="dich">Dịch: Mỗi nhân viên mới nhận một máy tính xách tay và một thẻ nhân viên vào ngày đầu tiên.</span>'},
+    {s:'A number of customers ___ complained about the late deliveries.',o:['have','has','is','was'],k:0,t:'v',
+     e:'<b>A number of</b> + N số nhiều = "nhiều khách hàng" → động từ <b>số nhiều</b>: <b>have</b> complained (hiện tại hoàn thành). has là số ít; is / was + complained sẽ thành bị động, sai nghĩa.<span class="dich">Dịch: Nhiều khách hàng đã phàn nàn về việc giao hàng trễ.</span>'},
+    {s:'The number of applicants for the position ___ increased sharply this year.',o:['have','are','were','has'],k:3,t:'v',
+     e:'<b>The number of</b> = "số lượng" → chủ ngữ thật là <b>the number</b> (số ít) → <b>has</b> increased. have / are / were là dạng số nhiều (bẫy chia theo "applicants").<span class="dich">Dịch: Số lượng ứng viên cho vị trí này đã tăng mạnh trong năm nay.</span>'},
+    {s:'Neither the manager nor the assistants ___ available on Friday afternoon.',o:['is','are','was','has been'],k:1,t:'v',
+     e:'<b>Neither A nor B</b> → động từ chia theo danh từ <b>gần nhất</b> là "the assistants" (số nhiều) → <b>are</b>. is / was / has been là dạng số ít (chia theo "the manager" là sai).<span class="dich">Dịch: Cả quản lý lẫn các trợ lý đều không rảnh vào chiều thứ Sáu.</span>'},
+    {s:'Either the sales director or her assistant usually ___ the clients at the airport.',o:['meet','meets','are meeting','have met'],k:1,t:'v',
+     e:'<b>Either A or B</b> → chia theo danh từ gần nhất "her assistant" (số ít). Có <b>usually</b> → thì hiện tại đơn → <b>meets</b>. meet / are meeting / have met đều là dạng số nhiều.<span class="dich">Dịch: Giám đốc kinh doanh hoặc trợ lý của cô ấy thường đón khách hàng ở sân bay.</span>'},
+    {s:'The information in these brochures ___ out of date.',o:['are','were','is','have been'],k:2,t:'v',
+     e:'Chủ ngữ thật là <b>The information</b>: danh từ <b>không đếm được</b> → động từ số ít → <b>is</b>. "in these brochures" là cụm giới từ chen giữa; are / were / have been là bẫy chia theo "brochures".<span class="dich">Dịch: Thông tin trong những cuốn sách giới thiệu này đã lỗi thời.</span>'},
+    {s:'There ___ several problems with the new online booking system last week.',o:['was','were','is','has'],k:1,t:'v',
+     e:'Với <b>There + be</b>, nhìn danh từ phía sau: <b>several problems</b> (số nhiều). Có <b>last week</b> → quá khứ → <b>were</b>. was / is / has là số ít; is còn sai thì.<span class="dich">Dịch: Tuần trước đã có một vài sự cố với hệ thống đặt chỗ trực tuyến mới.</span>'},
+    {s:'Employees who ___ to attend the workshop must register by Friday.',o:['wants','wanting','to want','want'],k:3,t:'v',
+     e:'Động từ sau <b>who</b> chia theo danh từ đứng ngay trước: <b>Employees</b> (số nhiều) → <b>want</b>. wants là số ít; wanting / to want không làm động từ của mệnh đề được.<span class="dich">Dịch: Những nhân viên muốn tham dự buổi hội thảo phải đăng ký trước thứ Sáu.</span>'},
+    {s:'The marketing manager, together with her team, ___ preparing the presentation for the clients.',o:['is','are','were','have been'],k:0,t:'v',
+     e:'<b>together with her team</b> nằm giữa hai dấu phẩy, không cộng thêm chủ ngữ → chủ ngữ thật là <b>The marketing manager</b> (số ít) → <b>is</b> preparing. are / were / have been là số nhiều (bẫy chia theo "team" hoặc tưởng là "and").<span class="dich">Dịch: Trưởng phòng tiếp thị cùng với nhóm của cô ấy đang chuẩn bị bài thuyết trình cho khách hàng.</span>'},
+    {s:'Every room in the hotel ___ free wireless Internet access.',o:['offer','are offering','offers','offering'],k:2,t:'v',
+     e:'<b>Every</b> + N số ít (room) → động từ <b>số ít</b>: <b>offers</b>. offer / are offering là số nhiều; offering không làm động từ chính.<span class="dich">Dịch: Mọi phòng trong khách sạn đều có truy cập Internet không dây miễn phí.</span>'},
+    {s:'Reviewing customer complaints ___ an important part of the job.',o:['are','is','were','have'],k:1,t:'v',
+     e:'Chủ ngữ là cụm <b>V-ing</b> (Reviewing customer complaints = việc xem xét khiếu nại) → luôn <b>số ít</b> → <b>is</b>. are / were / have là số nhiều (bẫy chia theo "complaints").<span class="dich">Dịch: Xem xét khiếu nại của khách hàng là một phần quan trọng của công việc.</span>'}
+  ];
+  var KEY='summaryOld.hoahop.quiz', L='ABCD';
+  var ans=(function(){try{var a=JSON.parse(localStorage.getItem(KEY)||'{}');return a&&typeof a==='object'?a:{};}catch(e){return {};}})();
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(ans));}catch(e){}}
+  var box=document.getElementById('ltQuiz');
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function render(){
+    box.innerHTML=Q.map(function(q,i){
+      var st=esc(q.s).replace('___','<span class="lt-blank" data-b="'+i+'">&nbsp;</span>');
+      return '<div class="lt-q" id="ltq'+i+'"><div class="num">Câu '+(i+1)+'</div><p class="st">'+st+'</p><div class="lt-opts">'+
+        q.o.map(function(o,j){return '<button type="button" class="lt-opt" data-q="'+i+'" data-o="'+j+'"><b>'+L[j]+'</b><span>'+esc(o)+'</span></button>';}).join('')+
+        '</div><div class="lt-fb" role="status"></div></div>';
+    }).join('');
+    Q.forEach(function(q,i){ if(ans[i]!==undefined) show(i,ans[i]); });
+    score();
+  }
+  function show(i,j){
+    var q=Q[i], el=document.getElementById('ltq'+i), ok=j===q.k;
+    [].forEach.call(el.querySelectorAll('.lt-opt'),function(b,x){
+      b.disabled=true;
+      if(x===q.k) b.classList.add('ok'); else if(x===j) b.classList.add('bad'); else b.classList.add('dim');
+    });
+    var bl=el.querySelector('.lt-blank'); bl.innerHTML='<span class="w '+q.t+'">'+esc(q.o[q.k])+'</span>';
+    var fb=el.querySelector('.lt-fb'); fb.className='lt-fb show '+(ok?'good':'wrong');
+    fb.innerHTML='<strong>'+(ok?'✓ Chính xác!':'✗ Chưa đúng. Đáp án: ('+L[q.k]+') '+esc(q.o[q.k]))+'</strong>'+q.e;
+  }
+  function score(){
+    var n=0,c=0; Q.forEach(function(q,i){ if(ans[i]!==undefined){n++; if(ans[i]===q.k)c++;} });
+    document.getElementById('ltScore').textContent='Đúng '+c+' / '+Q.length;
+    document.getElementById('ltDone').textContent='Đã làm '+n+'/'+Q.length;
+    document.getElementById('ltBar').style.width=(n/Q.length*100)+'%';
+    var end=document.getElementById('ltEnd');
+    if(n===Q.length){
+      end.classList.add('show');
+      document.getElementById('ltEndIc').textContent=c>=10?'🎉':c>=7?'👍':'💪';
+      document.getElementById('ltEndTxt').innerHTML='Bạn làm đúng <b>'+c+'/'+Q.length+'</b> câu. '+(c>=10?'Rất tốt! Bạn đã nắm chắc cách chia động từ theo chủ ngữ.':c>=7?'Khá lắm! Xem lại giải thích các câu sai nhé.':'Đọc lại phần 2, 3 và 8 (Mẹo Part 5) rồi làm lại nhé!');
+    } else end.classList.remove('show');
+  }
+  box.addEventListener('click',function(ev){
+    var b=ev.target.closest('.lt-opt'); if(!b||b.disabled) return;
+    var i=+b.dataset.q, j=+b.dataset.o; if(ans[i]!==undefined) return;
+    ans[i]=j; save(); show(i,j); score();
+    if(Object.keys(ans).length===Q.length) setTimeout(function(){document.getElementById('ltEnd').scrollIntoView({behavior:'smooth',block:'center'});},300);
+  });
+  function reset(){ ans={}; save(); render(); document.getElementById('ltq0').scrollIntoView({behavior:'smooth',block:'center'}); }
+  document.getElementById('ltAgain').onclick=reset;
+  document.getElementById('ltReset').onclick=reset;
+  render();
+})();
+</script>
+<script src="../flashcards.js" defer></script><script>window.ETSCFG=window.ETSCFG||{SCRIPT_URL:'https://script.google.com/macros/s/AKfycby3_45o2Zn3FMEMrVAg9nBCiQEIUvU9HgQxI2ZZtwJ4oUQ_bqXxj1vN0kL6cvhbDQCx/exec'};</script><script src="../assets/ui.js?v=3" data-site="summary"></script>
+</body></html>

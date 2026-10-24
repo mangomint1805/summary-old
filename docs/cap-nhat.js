@@ -1,6 +1,18 @@
 /* Có gì mới trên web Tóm tắt kiến thức TOEIC Pre — mới nhất ở trên cùng. Thêm mục mới vào ĐẦU danh sách; id là ngày (YYYY-MM-DD), cùng ngày thì thêm hậu tố (2026-10-21b). link (tuỳ chọn): [đường dẫn, chữ trên nút]. */
 window.MT_UPDATES = [
   {
+    id: '2026-10-24c', date: '24/10/2026',
+    title: 'Ôn tập Progress Test 2 và 8 chuyên đề mới',
+    link: ['index.html', 'Xem trên trang chủ'],
+    items: [
+      'Trang mới “Ôn tập trước Progress Test 2”: tóm tắt cách làm từng Part, bảng ngữ pháp của cả 12 bài Reading, mẹo làm bài ngày thi, 20 câu luyện Part 5–6 và 42 từ vựng. Trang tự mở sau buổi 22.',
+      '8 chuyên đề mới, mở sẵn cho mọi lớp: Liên từ, Đại từ quan hệ, To V và V-ing, So sánh, Sự hòa hợp chủ ngữ – động từ, Bẫy thường gặp ở Part 1, Câu trả lời gián tiếp ở Part 2, Nhận ra cách nói lại ở Part 3–4.',
+      'Mỗi chuyên đề có 12 câu luyện kèm giải thích tiếng Việt và flashcard từ vựng. Ba chuyên đề Listening luyện bằng cách đọc lời thoại để nhận ra bẫy.',
+      'Flashcard của các chuyên đề và bài ôn tập giờ đã có file phát âm 3 giọng (Mỹ nữ, Mỹ nam, Anh nữ), điện thoại nào cũng nghe được.',
+      'Sửa bảng từ vựng Listening Unit 9 và Unit 10: phiên âm của “Handicapped facility” và “Please note that” bị lệch cột, giờ đã hiện đúng.'
+    ]
+  },
+  {
     id: '2026-10-24b', date: '24/10/2026',
     title: '4 chuyên đề ngữ pháp mới cho Part 5',
     link: ['index.html', 'Xem trên trang chủ'],

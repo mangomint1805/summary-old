@@ -1,0 +1,331 @@
+<!doctype html><html lang="vi"><head>
+<script>try{var d=document.documentElement,k=JSON.parse(localStorage.getItem('mt.skin')||'""');if(k==='scifi')d.setAttribute('data-theme','dark');if(k)d.setAttribute('data-skin',k)}catch(e){}</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<title>Đại từ quan hệ trong TOEIC</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css"><script src="../classes.js"></script><link rel="icon" type="image/png" href="../icons/fav-64.png?v=3">
+<style>
+/* Chuyên đề đại từ quan hệ – màu cố định: Danh từ được bổ nghĩa xanh dương · Đại từ quan hệ đỏ · Trạng từ quan hệ xanh lá · Phần sau chỗ trống tím */
+:root{--lt-n:#1d5fa8;--lt-n-bg:#e4eefb;--lt-v:#b42318;--lt-v-bg:#fde9e6;--lt-a:#1f7a4d;--lt-a-bg:#e2f3ea;--lt-r:#6d3fb0;--lt-r-bg:#efe7fb;}
+.lt .w{font-weight:700;border-radius:5px;padding:0 4px;white-space:nowrap;}
+.lt .w.n{color:var(--lt-n);background:var(--lt-n-bg);}
+.lt .w.v{color:var(--lt-v);background:var(--lt-v-bg);}
+.lt .w.a{color:var(--lt-a);background:var(--lt-a-bg);}
+.lt .w.r{color:var(--lt-r);background:var(--lt-r-bg);}
+.lt-legend{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;}
+.lt-legend .w{font-size:14px;padding:3px 10px;}
+.lt-toc{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px;padding:0;list-style:none;}
+.lt-toc a{display:inline-block;font-size:14px;font-weight:600;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;background:var(--paper);}
+.lt-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0;}
+.lt-card{border:1.5px solid var(--line);border-left-width:6px;border-radius:12px;padding:12px 14px;background:var(--card);}
+.lt-card.n{border-left-color:var(--lt-n);} .lt-card.v{border-left-color:var(--lt-v);} .lt-card.a{border-left-color:var(--lt-a);} .lt-card.r{border-left-color:var(--lt-r);}
+.lt-card h3{margin:0 0 4px!important;font-size:17px;}
+.lt-card.n h3{color:var(--lt-n);} .lt-card.v h3{color:var(--lt-v);} .lt-card.a h3{color:var(--lt-a);} .lt-card.r h3{color:var(--lt-r);}
+.lt-card h3 small{font-weight:600;color:var(--dim);font-size:13.5px;}
+.lt-card p{font-size:15px;}
+.lt-card .ex{margin-top:8px;padding:8px 10px;background:var(--paper);border-radius:8px;font-size:15px;}
+.lt-card .ex i{display:block;font-style:normal;color:var(--dim);font-size:13.5px;}
+.lt-suf{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 16px;}
+.lt-suf h3{margin-bottom:4px!important;}
+.lt-suf table td:first-child{white-space:nowrap;font-weight:700;}
+.lt-h-n{color:var(--lt-n)!important;} .lt-h-v{color:var(--lt-v)!important;} .lt-h-a{color:var(--lt-a)!important;} .lt-h-r{color:var(--lt-r)!important;}
+.doc table.lt-t th.n{background:var(--lt-n-bg);color:var(--lt-n);} .doc table.lt-t th.v{background:var(--lt-v-bg);color:var(--lt-v);}
+.doc table.lt-t th.a{background:var(--lt-a-bg);color:var(--lt-a);} .doc table.lt-t th.r{background:var(--lt-r-bg);color:var(--lt-r);}
+.lt-trap{margin:14px 0;padding:14px 16px;border:1.5px dashed #c2410c;border-radius:12px;background:#fff6ef;}
+.lt-trap h3{color:#9a3412!important;margin:0 0 6px!important;}
+.lt-trap ol{margin:0;padding-left:22px;}
+.lt-trap li{margin:8px 0;}
+.lt-steps{counter-reset:s;list-style:none;margin:12px 0;padding:0;display:grid;gap:8px;}
+.lt-steps li{counter-increment:s;position:relative;padding:10px 12px 10px 52px;border:1px solid var(--line);border-radius:12px;background:var(--paper);}
+.lt-steps li::before{content:counter(s);position:absolute;left:12px;top:10px;width:28px;height:28px;border-radius:50%;background:var(--amber);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.lt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;}
+.lt-scroll table{margin:0!important;min-width:560px;}
+.lt-note{font-size:14px;color:var(--dim);}
+.lt-pos td:nth-child(2){white-space:nowrap;}
+/* so sánh 2 cột */
+.lt-vs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 0;}
+.lt-vs > div{padding:8px 10px;border-radius:8px;background:var(--paper);font-size:14.5px;}
+.lt-vs b{display:block;}
+.lt-vs i{display:block;font-style:normal;}
+/* bài luyện tập */
+.lt-score{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:10px 0 12px;padding:10px 14px;border-radius:12px;background:#fffaf0;border:1px solid #ecd3a6;font-weight:600;}
+.lt-score .bar{flex:1;min-width:120px;height:8px;border-radius:99px;background:var(--line);overflow:hidden;}
+.lt-score .bar i{display:block;height:100%;width:0;background:var(--teal);transition:width .3s;}
+.lt-q{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0;background:var(--card);}
+.lt-q .num{font-size:13px;font-weight:700;color:var(--amber-ink);letter-spacing:.04em;text-transform:uppercase;}
+.lt-q .st{font-size:16.5px;margin:4px 0 10px;line-height:1.55;}
+.lt-blank{display:inline-block;min-width:88px;border-bottom:2px solid var(--ink);text-align:center;font-weight:700;}
+.lt-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.lt-opt{font:inherit;font-size:15.5px;text-align:left;display:flex;gap:8px;align-items:center;min-height:46px;padding:9px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;}
+.lt-opt b{flex:none;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--line);font-size:13px;}
+.lt-opt:hover:not(:disabled){border-color:var(--amber);}
+.lt-opt:focus-visible{outline:3px solid var(--amber);outline-offset:2px;}
+.lt-opt:disabled{cursor:default;}
+.lt-opt.ok{border-color:#1f7a4d;background:#e2f3ea;}
+.lt-opt.ok b{background:#1f7a4d;border-color:#1f7a4d;color:#fff;}
+.lt-opt.bad{border-color:#b42318;background:#fde9e6;}
+.lt-opt.bad b{background:#b42318;border-color:#b42318;color:#fff;}
+.lt-opt.dim{opacity:.55;}
+.lt-fb{display:none;margin-top:10px;padding:10px 12px;border-radius:10px;font-size:15px;}
+.lt-fb.show{display:block;}
+.lt-fb.good{background:#e2f3ea;border:1px solid #9fd2b6;}
+.lt-fb.wrong{background:#fde9e6;border:1px solid #f0b4ab;}
+.lt-fb strong{display:block;margin-bottom:2px;}
+.lt-fb .dich{display:block;margin-top:6px;color:var(--dim);font-size:14px;}
+.lt-end{display:none;text-align:center;margin:16px 0 4px;padding:18px 16px;border-radius:14px;border:1.5px solid var(--amber);background:#fffaf0;}
+.lt-end.show{display:block;}
+.lt-end .big{font-size:40px;line-height:1;}
+.lt-end p{margin:8px 0;font-size:17px;}
+.lt-btn{font:inherit;font-weight:700;font-size:16px;border:0;border-radius:10px;padding:11px 20px;background:var(--amber);color:#fff;cursor:pointer;min-height:46px;}
+.lt-btn.alt{background:var(--card);color:var(--amber-ink);border:1.5px solid var(--amber);}
+.lt-again{text-align:right;margin:8px 0 0;}
+@media (max-width:480px){
+  .lt-cards,.lt-suf{grid-template-columns:1fr;}
+  .doc table{font-size:14.5px;}
+  .doc th,.doc td{padding:7px 8px;}
+  .lt-q{padding:12px;}
+  .lt-opt{font-size:15px;padding:8px 9px;}
+  .lt-pos td:nth-child(2){white-space:normal;}
+  .lt-vs{grid-template-columns:1fr;}
+  .lt-suf table td:first-child{white-space:normal;}
+}
+</style>
+</head><body data-nav="home"><header class="top"><a href="../index.html">TOEIC Pre · Tóm tắt kiến thức</a></header><main class="lt"><p class="sub"><a href="../index.html">← Tất cả bài</a></p><h1>Đại từ quan hệ trong TOEIC</h1><p class="sub">Chuyên đề bổ trợ · Who, whom, whose, which, that, where, when, why và mệnh đề quan hệ (Relative Pronouns)</p><div class="doc">
+<p><strong>Đại từ quan hệ</strong> (relative pronoun) là các từ <em>who, whom, whose, which, that</em> dùng để mở đầu một <strong>mệnh đề quan hệ</strong>: một mệnh đề đứng <strong>ngay sau danh từ</strong> để giải thích thêm cho danh từ đó. Trong <strong>Part 5</strong>, mỗi đề thường có 1–2 câu chọn đại từ quan hệ. Chỉ cần nhìn <strong>danh từ phía trước</strong> và <strong>phần phía sau</strong> chỗ trống là chọn được. Cả trang dùng các màu sau:</p>
+<div class="lt-legend"><span class="w n">Danh từ được bổ nghĩa</span><span class="w v">Đại từ quan hệ</span><span class="w a">Trạng từ quan hệ (where…)</span><span class="w r">Phần sau chỗ trống</span></div>
+<ul class="lt-toc"><li><a href="#lt-1">1. Mệnh đề quan hệ là gì</a></li><li><a href="#lt-2">2. Who / Whom / Whose / Which / That</a></li><li><a href="#lt-3">3. Where / When / Why</a></li><li><a href="#lt-4">4. Dấu phẩy &amp; giới từ</a></li><li><a href="#lt-5">5. Lược bỏ</a></li><li><a href="#lt-6">6. What hay That</a></li><li><a href="#lt-7">7. Mẹo Part 5</a></li><li><a href="#lt-8">8. Luyện tập</a></li><li><a href="#lt-9">9. Từ vựng</a></li></ul>
+
+<h2 id="lt-1">1. Mệnh đề quan hệ là gì? (một "tính từ dài")</h2>
+<p>Hãy xem mệnh đề quan hệ như một <strong>tính từ dài</strong>: nó đứng <strong>sau danh từ</strong> và trả lời câu hỏi "<em>người nào? cái nào?</em>".</p>
+<div class="lt-cards">
+<div class="lt-card n"><h3>Gộp 2 câu thành 1</h3>
+<div class="ex">I met <span class="w n">the manager</span>. <b>She</b> leads the sales team.<i>Tôi đã gặp người quản lý. Cô ấy dẫn dắt đội bán hàng.</i></div>
+<div class="ex">→ I met <span class="w n">the manager</span> <span class="w v">who</span> leads the sales team.<i>Tôi đã gặp người quản lý (người mà) dẫn dắt đội bán hàng.</i></div></div>
+<div class="lt-card v"><h3>Mệnh đề quan hệ luôn "thiếu" một chỗ</h3>
+<p>Đại từ quan hệ <strong>thay thế</strong> cho một thành phần của mệnh đề: <strong>chủ ngữ</strong>, <strong>tân ngữ</strong> hoặc <strong>sở hữu</strong>. Vì vậy phần phía sau đại từ quan hệ luôn <strong>thiếu</strong> đúng thành phần đó.</p>
+<p>VD: <em>the report <b>which</b> ___ <u>was submitted</u></em> → thiếu chủ ngữ; <em>the report <b>which</b> I <u>wrote</u> ___</em> → thiếu tân ngữ.</p></div>
+</div>
+
+<h2 id="lt-2">2. Who / Whom / Whose / Which / That</h2>
+<div class="lt-scroll"><table class="lt-t">
+<thead><tr><th>Đại từ</th><th class="n">Danh từ phía trước</th><th class="v">Vai trò</th><th class="r">Phía sau là</th><th>Ví dụ</th></tr></thead>
+<tbody>
+<tr><td><strong>who</strong></td><td>người</td><td>chủ ngữ (tân ngữ trong văn nói)</td><td><b>V</b> (động từ)</td><td>the clerk <b>who</b> <u>handles</u> orders</td></tr>
+<tr><td><strong>whom</strong></td><td>người</td><td>tân ngữ</td><td><b>S + V</b> (thiếu tân ngữ)</td><td>the client <b>whom</b> <u>we met</u></td></tr>
+<tr><td><strong>whose</strong></td><td>người / vật</td><td>sở hữu (của người / vật đó)</td><td><b>N</b> (danh từ, không có mạo từ)</td><td>the firm <b>whose</b> <u>profits</u> rose</td></tr>
+<tr><td><strong>which</strong></td><td>vật, sự việc</td><td>chủ ngữ / tân ngữ</td><td><b>V</b> hoặc <b>S + V</b></td><td>the file <b>which</b> <u>was sent</u></td></tr>
+<tr><td><strong>that</strong></td><td>người / vật</td><td>chủ ngữ / tân ngữ (thay who, whom, which)</td><td><b>V</b> hoặc <b>S + V</b></td><td>the item <b>that</b> <u>you ordered</u></td></tr>
+</tbody></table></div>
+<p class="lt-note">Trên điện thoại: vuốt ngang bảng để xem hết 5 cột.</p>
+<div class="lt-cards">
+<div class="lt-card v"><h3>WHO + V</h3>
+<div class="ex">Employees <span class="w v">who</span> <span class="w r">work</span> overtime will be paid extra.<i>Nhân viên làm thêm giờ sẽ được trả thêm tiền.</i></div></div>
+<div class="lt-card r"><h3>WHOM + S + V</h3>
+<div class="ex">The consultant <span class="w v">whom</span> <span class="w r">we hired</span> is very experienced.<i>Chuyên gia tư vấn mà chúng tôi thuê rất có kinh nghiệm.</i></div></div>
+<div class="lt-card a"><h3>WHOSE + N</h3>
+<div class="ex">We chose the supplier <span class="w v">whose</span> <span class="w r">prices</span> were the lowest.<i>Chúng tôi chọn nhà cung cấp có giá thấp nhất. (giá của nhà cung cấp đó)</i></div></div>
+<div class="lt-card n"><h3>WHICH / THAT cho vật</h3>
+<div class="ex">The laptop <span class="w v">which</span> <span class="w r">I ordered</span> has not arrived.<i>Chiếc laptop tôi đặt vẫn chưa đến.</i></div></div>
+</div>
+
+<h2 id="lt-3">3. Trạng từ quan hệ: Where / When / Why</h2>
+<p>Ba từ này thay cho <strong>giới từ + which</strong>. Điểm khác quan trọng: sau <b>where / when / why</b> là một <strong>mệnh đề ĐẦY ĐỦ</strong> (có đủ S + V + O, không thiếu gì).</p>
+<div class="lt-scroll"><table class="lt-t">
+<thead><tr><th class="a">Từ</th><th class="a">Danh từ phía trước</th><th class="a">= giới từ + which</th><th class="a">Ví dụ</th></tr></thead>
+<tbody>
+<tr><td><strong>where</strong></td><td>nơi chốn: office, hotel, city, room…</td><td>in / at / on which</td><td>the hotel <b>where</b> we stayed</td></tr>
+<tr><td><strong>when</strong></td><td>thời gian: day, year, week, time…</td><td>on / in / at which</td><td>the day <b>when</b> the store opened</td></tr>
+<tr><td><strong>why</strong></td><td>the reason</td><td>for which</td><td>the reason <b>why</b> he resigned</td></tr>
+</tbody></table></div>
+<div class="lt-cards">
+<div class="lt-card a"><h3>WHERE hay WHICH?</h3>
+<div class="lt-vs"><div><b>where + mệnh đề đầy đủ</b>the city <span class="w a">where</span> I <u>live</u><i class="lt-note">I live (in the city): đủ ý.</i></div><div><b>which + mệnh đề thiếu</b>the city <span class="w v">which</span> I <u>visited</u><i class="lt-note">visited ___ : thiếu tân ngữ.</i></div></div>
+<p class="lt-note">Danh từ chỉ nơi chốn chưa chắc dùng where! Phải nhìn phía sau có thiếu chủ ngữ / tân ngữ không.</p></div>
+<div class="lt-card n"><h3>Ví dụ</h3>
+<div class="ex">This is <span class="w n">the room</span> <span class="w a">where</span> the interviews will take place.<i>Đây là căn phòng nơi các buổi phỏng vấn sẽ diễn ra.</i></div>
+<div class="ex">Friday is <span class="w n">the day</span> <span class="w a">when</span> the report is due.<i>Thứ Sáu là ngày hạn chót nộp báo cáo.</i></div></div>
+</div>
+
+<h2 id="lt-4">4. Dấu phẩy và giới từ trước đại từ quan hệ</h2>
+<div class="lt-cards">
+<div class="lt-card v"><h3>Không có dấu phẩy <small>xác định</small></h3>
+<p>Mệnh đề <strong>cần thiết</strong> để biết đang nói về <strong>người / vật nào</strong>. Dùng được <b>that</b>.</p>
+<div class="ex">The employees <span class="w v">that</span> joined last month need training.<i>Những nhân viên vào làm tháng trước cần được đào tạo.</i></div></div>
+<div class="lt-card r"><h3>Có dấu phẩy <small>không xác định</small></h3>
+<p>Danh từ đã <strong>rõ ràng</strong> (tên riêng, "our CEO", "the Grand Hotel"…); mệnh đề chỉ thêm thông tin. <strong>KHÔNG dùng that.</strong></p>
+<div class="ex">Mr. Ito, <span class="w v">who</span> founded the company, will retire.<i>Ông Ito, người sáng lập công ty, sắp nghỉ hưu.</i></div></div>
+<div class="lt-card a"><h3>Giới từ + whom / which</h3>
+<p>Giới từ có thể đứng <strong>trước</strong> đại từ quan hệ, khi đó chỉ dùng <b>whom</b> (người) hoặc <b>which</b> (vật). <strong>Không</strong> dùng who / that sau giới từ.</p>
+<div class="ex">the person <span class="w v">to whom</span> you spoke · the folder <span class="w v">in which</span> I saved it</div>
+<p>Cụm số lượng: <b>some / many / most / all / none of whom / of which</b>: <em>ten applicants, <b>most of whom</b> were qualified</em>.</p></div>
+</div>
+
+<h2 id="lt-5">5. Lược bỏ đại từ quan hệ</h2>
+<div class="lt-cards">
+<div class="lt-card n"><h3>Bỏ đại từ quan hệ làm TÂN NGỮ</h3>
+<p>Khi phía sau là <strong>S + V</strong> (đại từ là tân ngữ) và <strong>không có dấu phẩy</strong>, có thể bỏ <b>whom / which / that</b>.</p>
+<div class="ex">The laptop (which) I ordered has arrived.<i>→ The laptop <b>I ordered</b> has arrived.</i></div></div>
+<div class="lt-card v"><h3>Rút gọn đại từ làm CHỦ NGỮ</h3>
+<p>Bỏ đại từ + <b>be</b>, hoặc đổi động từ thành V-ing / V3:</p>
+<p>• Chủ động → <b>V-ing</b>: <em>the woman (who is) <b>standing</b> at the desk</em> · <em>guests <b>wishing</b> to attend</em> (= who wish).</p>
+<p>• Bị động → <b>V3/ed</b>: <em>the report (which was) <b>submitted</b> yesterday</em>.</p></div>
+</div>
+
+<h2 id="lt-6">6. WHAT hay THAT?</h2>
+<div class="lt-cards">
+<div class="lt-card r"><h3>WHAT = the thing(s) that</h3>
+<p><b>what</b> đã <strong>chứa sẵn danh từ</strong> bên trong ("điều mà, cái mà"), nên <strong>phía trước KHÔNG có danh từ</strong>. Phía sau what là mệnh đề <strong>thiếu</strong>.</p>
+<div class="ex">Please tell me <span class="w v">what</span> you need.<i>Hãy cho tôi biết bạn cần gì. (need ___ thiếu tân ngữ)</i></div></div>
+<div class="lt-card n"><h3>THAT (đại từ quan hệ) cần danh từ phía trước</h3>
+<div class="ex">Please send me <span class="w n">the files</span> <span class="w v">that</span> you need.<i>Hãy gửi cho tôi những tệp bạn cần.</i></div>
+<p class="lt-note">Sau động từ như <em>say, know, announce</em>, <b>that</b> + mệnh đề <strong>đầy đủ</strong> (không thiếu gì) = "rằng": <em>They announced <b>that</b> the store will close.</em></p></div>
+</div>
+<div class="lt-trap"><h3>⚠️ Bẫy hay gặp</h3>
+<ol>
+<li><strong>"that" sau dấu phẩy là SAI:</strong> <em>The Grand Hotel, <s>that</s> <b>which</b> opened in 1990, …</em></li>
+<li><strong>"that" sau giới từ là SAI:</strong> <em>the room <s>in that</s> <b>in which</b> we met</em>.</li>
+<li><strong>whose + danh từ, không có mạo từ:</strong> <em>whose <s>the</s> office</em> là sai; chỉ nói <em>whose office</em>.</li>
+<li><strong>Không lặp lại chủ ngữ / tân ngữ:</strong> <em>the client whom we met <s>him</s></em> là sai, vì whom đã thay cho him.</li>
+<li><strong>Đại từ nhân xưng không nối được 2 mệnh đề:</strong> <em>…, most of <s>them</s> <b>whom</b> are engineers</em>. Cần đại từ quan hệ để nối.</li>
+</ol></div>
+
+<h2 id="lt-7">7. Mẹo làm Part 5 câu đại từ quan hệ</h2>
+<ol class="lt-steps">
+<li><strong>Nhìn danh từ TRƯỚC chỗ trống</strong>: người → who / whom / whose / that · vật → which / whose / that · nơi chốn / thời gian / lý do → có thể là where / when / why. <strong>Không có danh từ</strong> → nghĩ đến <b>what</b>.</li>
+<li><strong>Nhìn phần SAU chỗ trống</strong>: <span class="w r">V</span> (thiếu chủ ngữ) → who / which / that · <span class="w r">S + V</span> (thiếu tân ngữ) → whom / which / that · <span class="w r">N</span> → <b>whose</b> · <span class="w r">mệnh đề đầy đủ</span> → where / when / why.</li>
+<li><strong>Nhìn dấu phẩy và giới từ</strong>: có <b>,</b> hoặc giới từ ngay trước chỗ trống → <strong>loại that</strong> (sau giới từ chỉ còn whom / which).</li>
+<li><strong>Loại "bẫy" không phải đại từ quan hệ</strong>: he, they, them, it… không nối được 2 mệnh đề.</li>
+</ol>
+
+<h2 id="lt-8">8. Luyện tập (Part 5)</h2>
+<p>12 câu kiểu Part 5. Chạm vào một đáp án để xem đúng / sai, <strong>dấu hiệu</strong> giúp chọn đáp án và bản dịch.</p>
+<div class="lt-score" aria-live="polite"><span id="ltScore">Đúng 0 / 12</span><span class="bar"><i id="ltBar"></i></span><span id="ltDone">Đã làm 0/12</span></div>
+<div id="ltQuiz"></div>
+<div class="lt-end" id="ltEnd" aria-live="polite"><div class="big" id="ltEndIc">🎉</div><p id="ltEndTxt"></p><button type="button" class="lt-btn" id="ltAgain">↺ Làm lại</button></div>
+<p class="lt-again"><button type="button" class="lt-btn alt" id="ltReset">↺ Làm lại</button></p>
+
+<h2 id="lt-9">Bảng từ vựng (Vocabulary Sheet)</h2>
+<p><em>Từ vựng trong chuyên đề này (English – Pronunciation – Vietnamese).</em></p>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 32%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>English</strong></th>
+<th><strong>Pronunciation</strong></th>
+<th><strong>Vietnamese</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd"><td><strong>Relative pronoun (n)</strong></td><td>/ˌrelətɪv ˈprəʊnaʊn/</td><td>Đại từ quan hệ</td></tr>
+<tr class="even"><td><strong>Relative clause (n)</strong></td><td>/ˌrelətɪv ˈklɔːz/</td><td>Mệnh đề quan hệ</td></tr>
+<tr class="odd"><td><strong>Candidate (n)</strong></td><td>/ˈkændɪdət/</td><td>Ứng viên</td></tr>
+<tr class="even"><td><strong>Interview (v)</strong></td><td>/ˈɪntəvjuː/</td><td>Phỏng vấn</td></tr>
+<tr class="odd"><td><strong>Job offer (n)</strong></td><td>/ˈdʒɒb ˌɒfə(r)/</td><td>Lời mời làm việc</td></tr>
+<tr class="even"><td><strong>Attend (v)</strong></td><td>/əˈtend/</td><td>Tham dự</td></tr>
+<tr class="odd"><td><strong>Workshop (n)</strong></td><td>/ˈwɜːkʃɒp/</td><td>Hội thảo, buổi tập huấn</td></tr>
+<tr class="even"><td><strong>Supplier (n)</strong></td><td>/səˈplaɪə(r)/</td><td>Nhà cung cấp</td></tr>
+<tr class="odd"><td><strong>Bid (n)</strong></td><td>/bɪd/</td><td>Bản chào giá, sự đấu thầu</td></tr>
+<tr class="even"><td><strong>Reasonable (adj)</strong></td><td>/ˈriːznəbl/</td><td>Hợp lý (giá cả)</td></tr>
+<tr class="odd"><td><strong>Annual (adj)</strong></td><td>/ˈænjuəl/</td><td>Hằng năm, thường niên</td></tr>
+<tr class="even"><td><strong>Renovate (v)</strong></td><td>/ˈrenəveɪt/</td><td>Cải tạo, sửa sang</td></tr>
+<tr class="odd"><td><strong>Orientation (n)</strong></td><td>/ˌɔːriənˈteɪʃn/</td><td>Buổi định hướng (cho nhân viên mới)</td></tr>
+<tr class="even"><td><strong>Postpone (v)</strong></td><td>/pəˈspəʊn/</td><td>Hoãn lại</td></tr>
+<tr class="odd"><td><strong>Product launch (n)</strong></td><td>/ˈprɒdʌkt ˌlɔːntʃ/</td><td>Buổi ra mắt sản phẩm</td></tr>
+<tr class="even"><td><strong>Announce (v)</strong></td><td>/əˈnaʊns/</td><td>Thông báo, công bố</td></tr>
+<tr class="odd"><td><strong>Committee (n)</strong></td><td>/kəˈmɪti/</td><td>Ủy ban, hội đồng</td></tr>
+<tr class="even"><td><strong>Engineer (n)</strong></td><td>/ˌendʒɪˈnɪə(r)/</td><td>Kỹ sư</td></tr>
+<tr class="odd"><td><strong>Department (n)</strong></td><td>/dɪˈpɑːtmənt/</td><td>Phòng, ban, bộ phận</td></tr>
+<tr class="even"><td><strong>Application form (n)</strong></td><td>/ˌæplɪˈkeɪʃn fɔːm/</td><td>Mẫu đơn ứng tuyển</td></tr>
+<tr class="odd"><td><strong>Consultant (n)</strong></td><td>/kənˈsʌltənt/</td><td>Chuyên gia tư vấn</td></tr>
+<tr class="even"><td><strong>Overtime (adv)</strong></td><td>/ˈəʊvətaɪm/</td><td>Ngoài giờ, làm thêm giờ</td></tr>
+<tr class="odd"><td><strong>Found (v)</strong></td><td>/faʊnd/</td><td>Thành lập, sáng lập</td></tr>
+<tr class="even"><td><strong>Retire (v)</strong></td><td>/rɪˈtaɪə(r)/</td><td>Nghỉ hưu</td></tr>
+<tr class="odd"><td><strong>Resign (v)</strong></td><td>/rɪˈzaɪn/</td><td>Từ chức, nghỉ việc</td></tr>
+<tr class="even"><td><strong>Qualified (adj)</strong></td><td>/ˈkwɒlɪfaɪd/</td><td>Đủ năng lực, đủ tiêu chuẩn</td></tr>
+</tbody>
+</table>
+</div></main><footer>TOEIC Pre · Tóm tắt kiến thức</footer>
+<script>
+(function(){
+  'use strict';
+  // t: màu của đáp án đúng khi điền vào chỗ trống (v = đại từ quan hệ, a = trạng từ quan hệ)
+  var Q=[
+    {s:'Employees ___ wish to attend the leadership workshop should register by Friday.',o:['who','which','whose','whom'],k:0,t:'v',
+     e:'Trước chỗ trống là <b>người</b> (Employees), sau chỗ trống là <b>động từ</b> (wish) → thiếu chủ ngữ → <b>who</b>. which dùng cho vật; whose cần danh từ theo sau; whom cần S + V theo sau.<span class="dich">Dịch: Nhân viên nào muốn tham dự hội thảo về kỹ năng lãnh đạo nên đăng ký trước thứ Sáu.</span>'},
+    {s:'The candidate ___ we interviewed on Tuesday has accepted the job offer.',o:['whose','whom','which','what'],k:1,t:'v',
+     e:'Trước chỗ trống là <b>người</b> (The candidate), sau là <b>S + V</b> (we interviewed) thiếu tân ngữ → <b>whom</b>. whose cần danh từ theo sau; which dùng cho vật; what không đứng sau danh từ.<span class="dich">Dịch: Ứng viên mà chúng tôi phỏng vấn hôm thứ Ba đã nhận lời mời làm việc.</span>'},
+    {s:'After comparing several bids, we chose the supplier ___ prices were the most reasonable.',o:['who','which','whose','that'],k:2,t:'v',
+     e:'Sau chỗ trống là <b>danh từ</b> (prices) không có mạo từ, nghĩa "giá <b>của</b> nhà cung cấp đó" → <b>whose</b>. who / which / that không đứng ngay trước danh từ để chỉ sở hữu.<span class="dich">Dịch: Sau khi so sánh vài bản chào giá, chúng tôi đã chọn nhà cung cấp có giá hợp lý nhất.</span>'},
+    {s:'The laptop ___ I ordered from the online store last week has not arrived yet.',o:['who','whose','which','what'],k:2,t:'v',
+     e:'Trước chỗ trống là <b>vật</b> (The laptop), sau là <b>S + V</b> (I ordered) thiếu tân ngữ → <b>which</b>. who dùng cho người; whose cần danh từ; what không đứng sau danh từ.<span class="dich">Dịch: Chiếc laptop tôi đặt từ cửa hàng trực tuyến tuần trước vẫn chưa đến.</span>'},
+    {s:'The hotel ___ the annual conference will be held is only ten minutes from the airport.',o:['which','where','when','who'],k:1,t:'a',
+     e:'Trước là <b>nơi chốn</b> (The hotel), sau là mệnh đề <b>đầy đủ</b> (the annual conference will be held, bị động, không thiếu gì) → <b>where</b> (= at which). which cần mệnh đề thiếu chủ ngữ / tân ngữ; when chỉ thời gian; who chỉ người.<span class="dich">Dịch: Khách sạn nơi hội nghị thường niên sẽ được tổ chức chỉ cách sân bay 10 phút.</span>'},
+    {s:'The Grand Riverside Hotel, ___ was built in 1995, has recently been renovated.',o:['that','which','where','what'],k:1,t:'v',
+     e:'Có <b>dấu phẩy</b> trước chỗ trống → loại <b>that</b>. Sau chỗ trống là <b>động từ</b> (was built) → thiếu chủ ngữ → loại where (cần mệnh đề đầy đủ). Danh từ là vật → <b>which</b>.<span class="dich">Dịch: Khách sạn Grand Riverside, được xây năm 1995, vừa mới được cải tạo.</span>'},
+    {s:'Please read carefully ___ the manager wrote in yesterday\'s e-mail.',o:['what','which','that','whose'],k:0,t:'v',
+     e:'Trước chỗ trống <b>không có danh từ</b> (read là động từ), sau là mệnh đề thiếu tân ngữ (the manager wrote ___) → <b>what</b> (= the thing that, điều mà). which / that làm đại từ quan hệ cần danh từ đứng trước; whose cần danh từ theo sau.<span class="dich">Dịch: Vui lòng đọc kỹ những gì người quản lý đã viết trong e-mail hôm qua.</span>'},
+    {s:'Monday is the day ___ the new staff members will begin their orientation.',o:['which','where','when','why'],k:2,t:'a',
+     e:'Trước là danh từ <b>thời gian</b> (the day), sau là mệnh đề <b>đầy đủ</b> (the new staff members will begin their orientation) → <b>when</b> (= on which). which cần mệnh đề thiếu; where chỉ nơi chốn; why chỉ lý do.<span class="dich">Dịch: Thứ Hai là ngày các nhân viên mới sẽ bắt đầu buổi định hướng.</span>'},
+    {s:'The reason ___ the product launch was postponed has not been announced.',o:['whose','where','which','why'],k:3,t:'a',
+     e:'Trước là <b>the reason</b>, sau là mệnh đề <b>đầy đủ</b> (the product launch was postponed) → <b>why</b> (= for which). where chỉ nơi chốn; which cần mệnh đề thiếu; whose cần danh từ.<span class="dich">Dịch: Lý do buổi ra mắt sản phẩm bị hoãn vẫn chưa được công bố.</span>'},
+    {s:'Mr. Park, ___ office is on the fifth floor, is the head of the marketing team.',o:['who','whom','that','whose'],k:3,t:'v',
+     e:'Sau chỗ trống là <b>danh từ</b> (office), nghĩa "văn phòng <b>của</b> ông Park" → <b>whose</b>. who cần động từ; whom cần S + V; that không dùng sau dấu phẩy.<span class="dich">Dịch: Ông Park, người có văn phòng ở tầng 5, là trưởng nhóm marketing.</span>'},
+    {s:'The committee has twelve members, most of ___ are experienced engineers.',o:['whom','who','them','which'],k:0,t:'v',
+     e:'Sau giới từ <b>of</b> chỉ người → <b>whom</b> (most of whom = phần lớn trong số họ). who không đứng sau giới từ; them là đại từ nhân xưng, không nối được 2 mệnh đề; which dùng cho vật.<span class="dich">Dịch: Ủy ban có 12 thành viên, phần lớn trong số họ là kỹ sư giàu kinh nghiệm.</span>'},
+    {s:'Human Resources is the department to ___ you should send your application form.',o:['what','that','where','which'],k:3,t:'v',
+     e:'Ngay trước chỗ trống là giới từ <b>to</b>, danh từ là vật (the department) → <b>which</b> (to which = đến nơi mà). that không đứng sau giới từ; where không đi sau giới từ; what không có danh từ phía trước.<span class="dich">Dịch: Phòng Nhân sự là bộ phận mà bạn nên gửi mẫu đơn ứng tuyển đến.</span>'}
+  ];
+  var KEY='summaryOld.daituquanhe.quiz', L='ABCD';
+  var ans=(function(){try{var a=JSON.parse(localStorage.getItem(KEY)||'{}');return a&&typeof a==='object'?a:{};}catch(e){return {};}})();
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(ans));}catch(e){}}
+  var box=document.getElementById('ltQuiz');
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function render(){
+    box.innerHTML=Q.map(function(q,i){
+      var st=esc(q.s).replace('___','<span class="lt-blank" data-b="'+i+'">&nbsp;</span>');
+      return '<div class="lt-q" id="ltq'+i+'"><div class="num">Câu '+(i+1)+'</div><p class="st">'+st+'</p><div class="lt-opts">'+
+        q.o.map(function(o,j){return '<button type="button" class="lt-opt" data-q="'+i+'" data-o="'+j+'"><b>'+L[j]+'</b><span>'+esc(o)+'</span></button>';}).join('')+
+        '</div><div class="lt-fb" role="status"></div></div>';
+    }).join('');
+    Q.forEach(function(q,i){ if(ans[i]!==undefined) show(i,ans[i]); });
+    score();
+  }
+  function show(i,j){
+    var q=Q[i], el=document.getElementById('ltq'+i), ok=j===q.k;
+    [].forEach.call(el.querySelectorAll('.lt-opt'),function(b,x){
+      b.disabled=true;
+      if(x===q.k) b.classList.add('ok'); else if(x===j) b.classList.add('bad'); else b.classList.add('dim');
+    });
+    var bl=el.querySelector('.lt-blank'); bl.innerHTML='<span class="w '+q.t+'">'+esc(q.o[q.k])+'</span>';
+    var fb=el.querySelector('.lt-fb'); fb.className='lt-fb show '+(ok?'good':'wrong');
+    fb.innerHTML='<strong>'+(ok?'✓ Chính xác!':'✗ Chưa đúng. Đáp án: ('+L[q.k]+') '+esc(q.o[q.k]))+'</strong>'+q.e;
+  }
+  function score(){
+    var n=0,c=0; Q.forEach(function(q,i){ if(ans[i]!==undefined){n++; if(ans[i]===q.k)c++;} });
+    document.getElementById('ltScore').textContent='Đúng '+c+' / '+Q.length;
+    document.getElementById('ltDone').textContent='Đã làm '+n+'/'+Q.length;
+    document.getElementById('ltBar').style.width=(n/Q.length*100)+'%';
+    var end=document.getElementById('ltEnd');
+    if(n===Q.length){
+      end.classList.add('show');
+      document.getElementById('ltEndIc').textContent=c>=10?'🎉':c>=7?'👍':'💪';
+      document.getElementById('ltEndTxt').innerHTML='Bạn làm đúng <b>'+c+'/'+Q.length+'</b> câu. '+(c>=10?'Rất tốt! Bạn đã nắm chắc cách dùng đại từ quan hệ.':c>=7?'Khá lắm! Xem lại giải thích các câu sai nhé.':'Đọc lại phần 2, 3 và 7 (Mẹo Part 5) rồi làm lại nhé!');
+    } else end.classList.remove('show');
+  }
+  box.addEventListener('click',function(ev){
+    var b=ev.target.closest('.lt-opt'); if(!b||b.disabled) return;
+    var i=+b.dataset.q, j=+b.dataset.o; if(ans[i]!==undefined) return;
+    ans[i]=j; save(); show(i,j); score();
+    if(Object.keys(ans).length===Q.length) setTimeout(function(){document.getElementById('ltEnd').scrollIntoView({behavior:'smooth',block:'center'});},300);
+  });
+  function reset(){ ans={}; save(); render(); document.getElementById('ltq0').scrollIntoView({behavior:'smooth',block:'center'}); }
+  document.getElementById('ltAgain').onclick=reset;
+  document.getElementById('ltReset').onclick=reset;
+  render();
+})();
+</script>
+<script src="../flashcards.js" defer></script><script>window.ETSCFG=window.ETSCFG||{SCRIPT_URL:'https://script.google.com/macros/s/AKfycby3_45o2Zn3FMEMrVAg9nBCiQEIUvU9HgQxI2ZZtwJ4oUQ_bqXxj1vN0kL6cvhbDQCx/exec'};</script><script src="../assets/ui.js?v=3" data-site="summary"></script>
+</body></html>

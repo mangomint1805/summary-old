@@ -24,9 +24,10 @@ def words():
     out = {}
     for f in glob.glob(os.path.join(ROOT, '*', '*.html')):
         s = open(f, encoding='utf-8').read()
-        i = s.find('Bảng từ vựng')
-        if i < 0:
+        m = re.search(r'<h2[^>]*>[^<]*Bảng từ vựng', s)  # tiêu đề bảng, không phải dòng mục lục
+        if not m:
             continue
+        i = m.start()
         sec = s[i:]
         j = sec.find('<h2', 5)
         sec = sec[:j] if j > 0 else sec

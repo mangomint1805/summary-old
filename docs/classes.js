@@ -24,7 +24,8 @@ var SN_CLASSES = [
 var SN_SESSIONS = {
   R1: 1, L1: 2, R2: 3, L2: 4, R3: 5, L3: 6, R4: 7, L4: 8, R5: 9, L5: 10, R7: 11,
   L6: 13, R8: 14, L7: 15, R9: 16, L8: 17, R10: 18, L9: 19, R11: 20, L10: 21, R12: 22, L11: 23,
-  PT1: 12 /* trang Ôn tập sau Progress Test 1 – mở sau buổi kiểm tra */
+  PT1: 12, /* trang Ôn tập sau Progress Test 1 – mở sau buổi kiểm tra */
+  PT2: 22  /* trang Ôn tập trước Progress Test 2 – mở trước buổi thi vài ngày */
 };
 var SN_TOTAL = 24;
 /* Các buổi không có trang bài học */
@@ -32,6 +33,7 @@ var SN_OTHER = { 12: 'Progress Test 1', 24: 'Progress Test 2' };
 var SN_PREFIX = 'summaryOld';
 var SN_FILES = {
   'review/progress-test-1.html': 'PT1',
+  'review/progress-test-2.html': 'PT2',
   'reading/unit-01-nouns-pronouns.html': 'R1',
   'reading/unit-02-adjectives-adverbs.html': 'R2',
   'reading/unit-03-verb-tenses.html': 'R3',

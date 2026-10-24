@@ -1,0 +1,333 @@
+<!doctype html><html lang="vi"><head>
+<script>try{var d=document.documentElement,k=JSON.parse(localStorage.getItem('mt.skin')||'""');if(k==='scifi')d.setAttribute('data-theme','dark');if(k)d.setAttribute('data-skin',k)}catch(e){}</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<title>Bẫy thường gặp ở Part 1</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css"><script src="../classes.js"></script><link rel="icon" type="image/png" href="../icons/fav-64.png?v=3">
+<style>
+/* Chuyên đề Listening – Bẫy Part 1. Màu cố định: thứ thấy trong ảnh xanh dương · bẫy đỏ · đáp án đúng xanh lá · ngữ pháp tím */
+:root{--lt-n:#1d5fa8;--lt-n-bg:#e4eefb;--lt-v:#b42318;--lt-v-bg:#fde9e6;--lt-a:#1f7a4d;--lt-a-bg:#e2f3ea;--lt-r:#6d3fb0;--lt-r-bg:#efe7fb;}
+.lt .w{font-weight:700;border-radius:5px;padding:0 4px;white-space:nowrap;}
+.lt .w.n{color:var(--lt-n);background:var(--lt-n-bg);}
+.lt .w.v{color:var(--lt-v);background:var(--lt-v-bg);}
+.lt .w.a{color:var(--lt-a);background:var(--lt-a-bg);}
+.lt .w.r{color:var(--lt-r);background:var(--lt-r-bg);}
+.lt-legend{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;}
+.lt-legend .w{font-size:14px;padding:3px 10px;}
+.lt-toc{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px;padding:0;list-style:none;}
+.lt-toc a{display:inline-block;font-size:14px;font-weight:600;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;background:var(--paper);}
+.lt-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0;}
+.lt-card{border:1.5px solid var(--line);border-left-width:6px;border-radius:12px;padding:12px 14px;background:var(--card);}
+.lt-card.n{border-left-color:var(--lt-n);} .lt-card.v{border-left-color:var(--lt-v);} .lt-card.a{border-left-color:var(--lt-a);} .lt-card.r{border-left-color:var(--lt-r);}
+.lt-card h3{margin:0 0 4px!important;font-size:17px;}
+.lt-card.n h3{color:var(--lt-n);} .lt-card.v h3{color:var(--lt-v);} .lt-card.a h3{color:var(--lt-a);} .lt-card.r h3{color:var(--lt-r);}
+.lt-card h3 small{font-weight:600;color:var(--dim);font-size:13.5px;}
+.lt-card p{font-size:15px;}
+.lt-card .ex{margin-top:8px;padding:8px 10px;background:var(--paper);border-radius:8px;font-size:15px;}
+.lt-card .ex i{display:block;font-style:normal;color:var(--dim);font-size:13.5px;}
+.lt-suf{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 16px;}
+.lt-suf h3{margin-bottom:4px!important;}
+.lt-suf table td:first-child{white-space:nowrap;font-weight:700;}
+.lt-h-n{color:var(--lt-n)!important;} .lt-h-v{color:var(--lt-v)!important;} .lt-h-a{color:var(--lt-a)!important;} .lt-h-r{color:var(--lt-r)!important;}
+.doc table.lt-t th.n{background:var(--lt-n-bg);color:var(--lt-n);} .doc table.lt-t th.v{background:var(--lt-v-bg);color:var(--lt-v);}
+.doc table.lt-t th.a{background:var(--lt-a-bg);color:var(--lt-a);} .doc table.lt-t th.r{background:var(--lt-r-bg);color:var(--lt-r);}
+.lt-trap{margin:14px 0;padding:14px 16px;border:1.5px dashed #c2410c;border-radius:12px;background:#fff6ef;}
+.lt-trap h3{color:#9a3412!important;margin:0 0 6px!important;}
+.lt-trap ol{margin:0;padding-left:22px;}
+.lt-trap li{margin:8px 0;}
+.lt-steps{counter-reset:s;list-style:none;margin:12px 0;padding:0;display:grid;gap:8px;}
+.lt-steps li{counter-increment:s;position:relative;padding:10px 12px 10px 52px;border:1px solid var(--line);border-radius:12px;background:var(--paper);}
+.lt-steps li::before{content:counter(s);position:absolute;left:12px;top:10px;width:28px;height:28px;border-radius:50%;background:var(--amber);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.lt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;}
+.lt-scroll table{margin:0!important;min-width:560px;}
+.lt-note{font-size:14px;color:var(--dim);}
+.lt-pos td:nth-child(2){white-space:nowrap;}
+/* bài luyện tập */
+.lt-score{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:10px 0 12px;padding:10px 14px;border-radius:12px;background:#fffaf0;border:1px solid #ecd3a6;font-weight:600;}
+.lt-score .bar{flex:1;min-width:120px;height:8px;border-radius:99px;background:var(--line);overflow:hidden;}
+.lt-score .bar i{display:block;height:100%;width:0;background:var(--teal);transition:width .3s;}
+.lt-q{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0;background:var(--card);}
+.lt-q .num{font-size:13px;font-weight:700;color:var(--amber-ink);letter-spacing:.04em;text-transform:uppercase;}
+.lt-q .st{font-size:16.5px;margin:4px 0 10px;line-height:1.55;}
+.lt-blank{display:inline-block;min-width:88px;border-bottom:2px solid var(--ink);text-align:center;font-weight:700;}
+.lt-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.lt-opt{font:inherit;font-size:15.5px;text-align:left;display:flex;gap:8px;align-items:center;min-height:46px;padding:9px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;}
+.lt-opt b{flex:none;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--line);font-size:13px;}
+.lt-opt:hover:not(:disabled){border-color:var(--amber);}
+.lt-opt:focus-visible{outline:3px solid var(--amber);outline-offset:2px;}
+.lt-opt:disabled{cursor:default;}
+.lt-opt.ok{border-color:#1f7a4d;background:#e2f3ea;}
+.lt-opt.ok b{background:#1f7a4d;border-color:#1f7a4d;color:#fff;}
+.lt-opt.bad{border-color:#b42318;background:#fde9e6;}
+.lt-opt.bad b{background:#b42318;border-color:#b42318;color:#fff;}
+.lt-opt.dim{opacity:.55;}
+.lt-fb{display:none;margin-top:10px;padding:10px 12px;border-radius:10px;font-size:15px;}
+.lt-fb.show{display:block;}
+.lt-fb.good{background:#e2f3ea;border:1px solid #9fd2b6;}
+.lt-fb.wrong{background:#fde9e6;border:1px solid #f0b4ab;}
+.lt-fb strong{display:block;margin-bottom:2px;}
+.lt-fb .dich{display:block;margin-top:6px;color:var(--dim);font-size:14px;}
+.lt-end{display:none;text-align:center;margin:16px 0 4px;padding:18px 16px;border-radius:14px;border:1.5px solid var(--amber);background:#fffaf0;}
+.lt-end.show{display:block;}
+.lt-end .big{font-size:40px;line-height:1;}
+.lt-end p{margin:8px 0;font-size:17px;}
+.lt-btn{font:inherit;font-weight:700;font-size:16px;border:0;border-radius:10px;padding:11px 20px;background:var(--amber);color:#fff;cursor:pointer;min-height:46px;}
+.lt-btn.alt{background:var(--card);color:var(--amber-ink);border:1.5px solid var(--amber);}
+.lt-again{text-align:right;margin:8px 0 0;}
+@media (max-width:480px){
+  .lt-cards,.lt-suf{grid-template-columns:1fr;}
+  .doc table{font-size:14.5px;}
+  .doc th,.doc td{padding:7px 8px;}
+  .lt-q{padding:12px;}
+  .lt-opt{font-size:15px;padding:8px 9px;}
+  .lt-pos td:nth-child(2){white-space:normal;}
+  .lt-suf table td:first-child{white-space:normal;}
+}
+/* chuyên đề Listening: luyện bằng script (không có audio) */
+.lt-read{margin:12px 0;padding:12px 14px;border-radius:12px;background:#eef5fb;border:1px solid #bcd3ea;font-size:15px;}
+.lt-read strong{color:var(--lt-n);}
+.lt-tip{margin:14px 0;padding:12px 14px;border-radius:12px;background:#f1f8f3;border:1px solid #a9d3b8;font-size:15px;}
+.lt-tip > b:first-child{display:block;color:var(--lt-a);margin-bottom:4px;}
+.lt-ctx{margin:6px 0 8px;padding:10px 12px;border-radius:10px;background:var(--paper);border:1px dashed var(--line);font-size:15px;line-height:1.55;}
+.lt-ctx .lb{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--dim);margin-right:6px;}
+.lt-ctx p{margin:2px 0;}
+.lt-opts.one{grid-template-columns:1fr;}
+.lt-demo{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:6px;}
+.lt-demo li{padding:8px 10px;border-radius:8px;background:var(--paper);border:1px solid var(--line);font-size:15px;}
+.lt-demo li.ok{border-color:#9fd2b6;background:#e2f3ea;}
+.lt-demo li i{display:block;font-style:normal;color:var(--dim);font-size:13.5px;}
+.lt-mk{display:inline-block;min-width:22px;font-weight:700;}
+.lt-mk.o{color:#1f7a4d;} .lt-mk.x{color:#b42318;}
+.doc table.lt-cmp td:first-child{font-weight:600;}
+.lt .w{white-space:normal;-webkit-box-decoration-break:clone;box-decoration-break:clone;}
+@media (max-width:480px){
+  .lt-ctx{padding:9px 10px;}
+}
+</style>
+</head><body data-nav="home"><header class="top"><a href="../index.html">TOEIC Pre · Tóm tắt kiến thức</a></header><main class="lt"><p class="sub"><a href="../index.html">← Tất cả bài</a></p><h1>Bẫy thường gặp ở Part 1</h1><p class="sub">Chuyên đề bổ trợ Listening · Từ nghe giống, sai hành động, being vs been, suy diễn quá mức (Part 1 Traps)</p><div class="doc">
+<p>Ở <strong>Part 1</strong> (6 câu), bạn nhìn một bức ảnh và nghe 4 câu mô tả (A, B, C, D) rồi chọn câu <strong>đúng nhất</strong>. Đề không đánh đố bằng từ khó. Nó đánh lừa bằng <strong>bẫy</strong>: câu sai nghe rất "dính" tới bức ảnh nhưng <strong>sai một chi tiết nhỏ</strong>. Trang này gom <strong>6 loại bẫy</strong> hay gặp nhất và một <strong>checklist</strong> để bạn loại đáp án sai thật nhanh. Màu dùng trong trang:</p>
+<div class="lt-legend"><span class="w n">Thứ thấy trong ảnh</span><span class="w v">Bẫy (sai)</span><span class="w a">Đáp án đúng</span><span class="w r">Ngữ pháp cần nhớ</span></div>
+<ul class="lt-toc"><li><a href="#lt-1">1. Bẫy hoạt động thế nào</a></li><li><a href="#lt-2">2. Từ nghe giống</a></li><li><a href="#lt-3">3. Sai hành động</a></li><li><a href="#lt-4">4. being vs been</a></li><li><a href="#lt-5">5. Người / vật không có</a></li><li><a href="#lt-6">6. Sai đồ vật, vị trí</a></li><li><a href="#lt-7">7. Suy diễn quá mức</a></li><li><a href="#lt-8">8. Checklist</a></li><li><a href="#lt-9">9. Luyện tập</a></li><li><a href="#lt-10">10. Từ vựng</a></li></ul>
+
+<h2 id="lt-1">1. Part 1 đánh lừa bạn thế nào?</h2>
+<p>Xem một ví dụ. <strong>Ảnh:</strong> <span class="w n">một người phụ nữ ngồi ở bàn làm việc, đang gõ bàn phím máy tính</span>, áo khoác đã mặc sẵn trên người.</p>
+<ul class="lt-demo">
+<li><span class="lt-mk x">✗</span>(A) She's <span class="w v">walking</span> down a hallway.<i>Bẫy từ nghe giống: walking /ˈwɔːkɪŋ/ nghe gần giống working /ˈwɜːkɪŋ/.</i></li>
+<li class="ok"><span class="lt-mk o">✓</span>(B) She's <span class="w a">typing on a keyboard</span>.<i>Đúng: mô tả đúng hành động mắt nhìn thấy.</i></li>
+<li><span class="lt-mk x">✗</span>(C) She's <span class="w v">putting on</span> a jacket.<i>Bẫy sai hành động: áo đã mặc rồi → phải là is wearing, không phải đang mặc vào.</i></li>
+<li><span class="lt-mk x">✗</span>(D) She's <span class="w v">getting ready to leave</span> the office.<i>Bẫy suy diễn: ảnh không cho thấy cô ấy sắp về.</i></li>
+</ul>
+<div class="lt-tip"><b>👨‍🏫 Thầy dặn</b>Đáp án đúng ở Part 1 thường <strong>đơn giản</strong>, chỉ tả <strong>đúng cái mắt nhìn thấy</strong>. Câu nào có <strong>một chi tiết bạn không thấy trong ảnh</strong> (dù chỉ 1 từ) → loại ngay.</div>
+
+<h2 id="lt-2">2. Bẫy 1: Từ nghe giống nhau</h2>
+<p>Người ra đề cố tình dùng một từ <strong>phát âm gần giống</strong> tên đồ vật / hành động trong ảnh. Bạn nghe "na ná" là dễ chọn vội. Đây là bẫy <strong>hay gặp nhất</strong>.</p>
+<table>
+<colgroup><col style="width:30%"><col style="width:30%"><col style="width:40%"></colgroup>
+<thead><tr><th>Trong ảnh</th><th>Bẫy nghe giống</th><th>Ví dụ câu bẫy</th></tr></thead>
+<tbody>
+<tr><td><span class="w n">working</span> (làm việc)</td><td><span class="w v">walking</span> (đi bộ)</td><td>He's walking to the door.</td></tr>
+<tr><td><span class="w n">copies</span> (bản sao)</td><td><span class="w v">coffee</span> (cà phê)</td><td>She's making some coffee.</td></tr>
+<tr><td><span class="w n">glass</span> (ly, kính)</td><td><span class="w v">grass</span> (cỏ)</td><td>The grass is being cut.</td></tr>
+<tr><td><span class="w n">ladder</span> (cái thang)</td><td><span class="w v">letter</span> (lá thư)</td><td>He's reading a letter.</td></tr>
+<tr><td><span class="w n">boat</span> (thuyền)</td><td><span class="w v">board</span> (tấm ván, tấm bảng)</td><td>Some boards are stacked on a pier.</td></tr>
+</tbody></table>
+<p>Ngoài ra còn bẫy <strong>cùng một từ nhưng khác nghĩa</strong>:</p>
+<table>
+<colgroup><col style="width:22%"><col style="width:39%"><col style="width:39%"></colgroup>
+<thead><tr><th>Từ</th><th>Nghĩa 1</th><th>Nghĩa 2</th></tr></thead>
+<tbody>
+<tr><td><b>watch</b></td><td>đồng hồ đeo tay (n)</td><td>xem, theo dõi (v)</td></tr>
+<tr><td><b>plant</b></td><td>cây (n) / trồng (v)</td><td>nhà máy (n)</td></tr>
+<tr><td><b>board</b></td><td>tấm bảng, tấm ván (n)</td><td>lên tàu / xe / máy bay (v)</td></tr>
+<tr><td><b>sign</b></td><td>biển báo (n)</td><td>ký tên (v)</td></tr>
+</tbody></table>
+<div class="lt-trap"><h3>⚠️ Mẹo nhận ra</h3><p>Nghe thấy từ <strong>giống / gần giống</strong> tên đồ vật trong ảnh → <strong>đừng chọn ngay</strong>. Nghe hết câu rồi so lại với ảnh.</p></div>
+
+<h2 id="lt-3">3. Bẫy 2: Sai hành động / trạng thái</h2>
+<p>Câu bẫy có <strong>đúng chủ ngữ</strong> (đúng người), <strong>đúng đồ vật</strong>, nhưng <strong>sai động từ</strong>. Cặp hay ra nhất là <strong>trạng thái</strong> (đang ở trong tình trạng đó) và <strong>hành động</strong> (đang làm để đổi tình trạng):</p>
+<div class="lt-scroll"><table class="lt-t lt-cmp">
+<thead><tr><th>Ảnh thấy gì</th><th class="a">Trạng thái ✓</th><th class="v">Hành động (bẫy) ✗</th></tr></thead>
+<tbody>
+<tr><td>Người đã đeo kính, đội mũ, mặc áo</td><td>He's <b>wearing</b> glasses.</td><td>He's <b>putting on</b> / <b>taking off</b> his glasses.</td></tr>
+<tr><td>Người đang cầm sẵn một cái hộp</td><td>She's <b>holding</b> a box.</td><td>She's <b>picking up</b> / <b>putting down</b> a box.</td></tr>
+<tr><td>Người đang ngồi yên trên ghế</td><td>He's <b>sitting</b> on a bench.</td><td>He's <b>sitting down</b> / <b>getting up</b>.</td></tr>
+<tr><td>Người đang ngồi trên xe đạp, đang chạy</td><td>She's <b>riding</b> a bicycle.</td><td>She's <b>getting on</b> / <b>parking</b> a bicycle.</td></tr>
+<tr><td>Cửa đang mở sẵn</td><td>The door <b>is open</b>.</td><td>A man <b>is opening</b> the door.</td></tr>
+</tbody></table></div>
+<p class="lt-note">Trên điện thoại: vuốt ngang bảng để xem hết 3 cột.</p>
+<div class="lt-tip"><b>👨‍🏫 Thầy dặn</b><strong>wearing</strong> = đang mặc sẵn (trạng thái) → hay là đáp án đúng. <strong>putting on</strong> = đang mặc vào (động tác) → chỉ đúng khi ảnh chụp đúng lúc người đó đang xỏ tay vào áo, đội mũ lên đầu. Ảnh như vậy rất hiếm!</div>
+
+<h2 id="lt-4">4. Bẫy 3: <i>is being + V3</i> hay <i>has been + V3</i>?</h2>
+<p>Đây là bẫy ngữ pháp quan trọng nhất của <strong>tranh đồ vật / cảnh vật</strong>. Hai cấu trúc nghe gần giống nhau (being / been) nhưng nghĩa khác hẳn:</p>
+<table class="lt-t">
+<colgroup><col style="width:30%"><col style="width:34%"><col style="width:36%"></colgroup>
+<thead><tr><th class="r">Cấu trúc</th><th>Nghĩa</th><th>Ảnh phải có</th></tr></thead>
+<tbody>
+<tr><td><span class="w r">is / are being + V3</span></td><td>đang <b>được</b> làm (ngay lúc chụp)</td><td><b>CÓ người</b> đang làm việc đó</td></tr>
+<tr><td><span class="w r">has / have been + V3</span></td><td>đã được làm xong (chỉ thấy kết quả)</td><td><b>Không cần người</b></td></tr>
+<tr><td><span class="w r">is / are + V3</span> (placed, stacked, hung…)</td><td>đang ở trạng thái đó</td><td><b>Không cần người</b></td></tr>
+</tbody></table>
+<div class="lt-cards">
+<div class="lt-card v"><h3>Ảnh không có người <small>bẫy being</small></h3>
+<p>Ảnh: phòng họp trống, ghế xếp quanh bàn.</p>
+<div class="ex">✗ Chairs <span class="w v">are being arranged</span> around a table.<i>Sai: "đang được xếp" thì phải có người đang xếp.</i></div>
+<div class="ex">✓ Chairs <span class="w a">have been arranged</span> around a table.<i>Đúng: ghế đã được xếp sẵn quanh bàn.</i></div></div>
+<div class="lt-card a"><h3>Ảnh có người đang làm <small>being đúng</small></h3>
+<p>Ảnh: một người thợ đang sơn tường.</p>
+<div class="ex">✓ A wall <span class="w a">is being painted</span>.<i>Đúng: bức tường đang được (người thợ) sơn.</i></div>
+<div class="ex">✓ A man <span class="w a">is painting</span> a wall.<i>Cũng đúng: cùng ý, nói theo dạng chủ động.</i></div></div>
+</div>
+<p class="lt-note">Ngoại lệ hiếm: <b>is being displayed</b> (đang được trưng bày) vẫn dùng được khi không có người. Bạn chỉ cần nhớ quy tắc chính: <b>being + V3 → tìm người đang làm</b>.</p>
+
+<h2 id="lt-5">5. Bẫy 4: Nhắc tới người / vật không có trong ảnh</h2>
+<p>Câu nhắc tới <strong>người hoặc đồ vật bạn không nhìn thấy</strong> → sai, dù phần còn lại nghe hợp lý.</p>
+<div class="lt-cards">
+<div class="lt-card v"><h3>Ảnh không có người</h3>
+<p>Loại ngay các câu có chủ ngữ là người: <b>A man…, A woman…, They…, Some people…, The workers…</b> và câu <b>being + V3</b>.</p>
+<div class="ex">Ảnh: vài chiếc thuyền neo ở bến, không có ai.<br>✗ <span class="w v">Some people</span> are boarding a boat.</div></div>
+<div class="lt-card v"><h3>Sai số người</h3>
+<p>Ảnh có <b>1 người</b> mà câu nói <b>They / The women</b> → sai. Ảnh có nhiều người mà câu nói "<b>The man is…</b>", hãy kiểm tra có đúng một người đàn ông không.</p>
+<div class="ex">Ảnh: một người đàn ông đọc thực đơn.<br>✗ He's ordering from <span class="w v">a server</span>. (không thấy người phục vụ)</div></div>
+</div>
+
+<h2 id="lt-6">6. Bẫy 5: Đúng hành động, sai đồ vật hoặc sai vị trí</h2>
+<p>Động từ đúng, nhưng <strong>tân ngữ</strong> (đồ vật) hoặc <strong>giới từ chỉ vị trí</strong> bị đổi. Vì vậy phải nghe <strong>đến hết câu</strong>, đừng chỉ nghe động từ.</p>
+<table>
+<colgroup><col style="width:34%"><col style="width:33%"><col style="width:33%"></colgroup>
+<thead><tr><th>Ảnh</th><th>Đáp án đúng</th><th>Câu bẫy</th></tr></thead>
+<tbody>
+<tr><td>Anh ấy rót cà phê vào cốc</td><td>He's pouring coffee into <span class="w a">a cup</span>.</td><td>He's pouring coffee into <span class="w v">a bottle</span>.</td></tr>
+<tr><td>Người đàn ông đọc thực đơn</td><td>He's looking at <span class="w a">a menu</span>.</td><td>He's reading <span class="w v">a newspaper</span>.</td></tr>
+<tr><td>Đèn đặt <b>cạnh</b> chồng sách</td><td>A lamp is <span class="w a">next to</span> some books.</td><td>A lamp is <span class="w v">on top of</span> some books.</td></tr>
+</tbody></table>
+<p class="lt-note">Giới từ vị trí hay gặp: on (trên, chạm mặt), under (dưới), next to / beside (bên cạnh), in front of (phía trước), behind (phía sau), between (ở giữa 2 vật), against (tựa vào), along (dọc theo).</p>
+
+<h2 id="lt-7">7. Bẫy 6: Suy diễn quá mức</h2>
+<p>Part 1 chỉ mô tả <strong>những gì mắt thấy ngay lúc chụp</strong>. Câu nói về <strong>ý định, cảm xúc, lý do, nghề nghiệp, chuyện trước / sau</strong> mà ảnh không chứng minh được → sai.</p>
+<table>
+<colgroup><col style="width:38%"><col style="width:62%"></colgroup>
+<thead><tr><th>Ảnh</th><th>Câu suy diễn (sai)</th></tr></thead>
+<tbody>
+<tr><td>Hai người đứng trên vỉa hè</td><td>They're <span class="w v">waiting for</span> a bus. (không chắc họ chờ xe buýt)</td></tr>
+<tr><td>Người phụ nữ nhìn đồng hồ ở sân ga</td><td>She's <span class="w v">late for</span> her train. (không biết cô ấy có trễ không)</td></tr>
+<tr><td>Hai người nói chuyện trong văn phòng</td><td>They're <span class="w v">discussing a contract</span>. (không thấy hợp đồng)</td></tr>
+<tr><td>Cửa hàng không có khách</td><td>The store <span class="w v">is closed</span> for the day. (ảnh không cho biết)</td></tr>
+</tbody></table>
+<div class="lt-tip"><b>👨‍🏫 Thầy dặn</b>Cẩn thận với các cụm: <b>is about to</b> (sắp), <b>is preparing to / getting ready to</b> (chuẩn bị), <b>is waiting for</b> (đang đợi), <b>is going to</b> (sẽ), <b>is late</b> (trễ). Chúng thường nói về điều <strong>ảnh không chứng minh được</strong>.</div>
+
+<h2 id="lt-8">8. Checklist làm Part 1</h2>
+<p>Dùng 7 bước sau cho mỗi bức ảnh. Lúc đầu làm chậm, quen rồi bạn sẽ làm trong vài giây:</p>
+<ol class="lt-steps">
+<li><strong>Trước khi nghe</strong> (khi đọc hướng dẫn / câu trước vừa xong): nhìn ảnh và tự hỏi <b>Ai? Mấy người? Đang làm gì? Đồ vật nổi bật? Ở đâu?</b> Nghĩ sẵn vài từ tiếng Anh.</li>
+<li>Ảnh <strong>có người</strong> → tập trung nghe <b>động từ V-ing</b> (hành động). Ảnh <strong>không người</strong> → nghe <b>V3, There is / are, giới từ vị trí</b>.</li>
+<li>Nghe từng câu A, B, C, D và <strong>đánh dấu ngay</strong>: <b>O</b> (đúng), <b>X</b> (sai), <b>△</b> (chưa chắc).</li>
+<li>Nghe thấy từ <strong>giống / gần giống</strong> tên đồ vật trong ảnh → nghi ngờ, kiểm tra lại nghĩa cả câu.</li>
+<li>Nghe thấy <span class="w r">being + V3</span> → tìm người đang làm việc đó. Không có người → <b>X</b>.</li>
+<li>Câu có chi tiết <strong>không thấy trong ảnh</strong> (người, vật, ý định, lý do) → <b>X</b>.</li>
+<li>Chọn câu <b>O</b>. Không có câu O thì chọn câu <b>△</b> hợp lý nhất. <strong>Không bao giờ bỏ trống</strong>.</li>
+</ol>
+
+<h2 id="lt-9">9. Luyện tập (Part 1)</h2>
+<div class="lt-read"><strong>📖 Luyện bằng cách đọc script.</strong> Trang này không có audio. Mỗi câu có phần <b>mô tả bức ảnh</b> (bằng tiếng Việt) và 4 câu mô tả A–D <b>được viết ra</b> (trong đề thi thật, bạn chỉ được nghe, không được đọc). Hãy đọc to từng câu, đánh dấu O / X như khi nghe, rồi chạm vào đáp án để xem giải thích và <b>loại bẫy</b> trong mỗi câu sai.</div>
+<div class="lt-score" aria-live="polite"><span id="ltScore">Đúng 0 / 12</span><span class="bar"><i id="ltBar"></i></span><span id="ltDone">Đã làm 0/12</span></div>
+<div id="ltQuiz"></div>
+<div class="lt-end" id="ltEnd" aria-live="polite"><div class="big" id="ltEndIc">🎉</div><p id="ltEndTxt"></p><button type="button" class="lt-btn" id="ltAgain">↺ Làm lại</button></div>
+<p class="lt-again"><button type="button" class="lt-btn alt" id="ltReset">↺ Làm lại</button></p>
+
+<h2 id="lt-10">Bảng từ vựng (Vocabulary Sheet)</h2>
+<p><em>Từ vựng trong chuyên đề này (English – Pronunciation – Vietnamese).</em></p>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 32%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>English</strong></th>
+<th><strong>Pronunciation</strong></th>
+<th><strong>Vietnamese</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd"><td><strong>Describe (v)</strong></td><td>/dɪˈskraɪb/</td><td>Mô tả</td></tr>
+<tr class="even"><td><strong>Photograph (n)</strong></td><td>/ˈfəʊtəɡrɑːf/</td><td>Bức ảnh</td></tr>
+<tr class="odd"><td><strong>Wear (v)</strong></td><td>/weə(r)/</td><td>Mặc, đeo (đang mặc sẵn)</td></tr>
+<tr class="even"><td><strong>Put on (phr v)</strong></td><td>/ˌpʊt ˈɒn/</td><td>Mặc vào, đeo vào (động tác)</td></tr>
+<tr class="odd"><td><strong>Hold (v)</strong></td><td>/həʊld/</td><td>Cầm, giữ</td></tr>
+<tr class="even"><td><strong>Pick up (phr v)</strong></td><td>/ˌpɪk ˈʌp/</td><td>Nhặt lên, cầm lên</td></tr>
+<tr class="odd"><td><strong>Arrange (v)</strong></td><td>/əˈreɪndʒ/</td><td>Sắp xếp</td></tr>
+<tr class="even"><td><strong>Stack (n, v)</strong></td><td>/stæk/</td><td>Chồng; xếp chồng lên</td></tr>
+<tr class="odd"><td><strong>Pile (n)</strong></td><td>/paɪl/</td><td>Đống, chồng</td></tr>
+<tr class="even"><td><strong>Ladder (n)</strong></td><td>/ˈlædə(r)/</td><td>Cái thang</td></tr>
+<tr class="odd"><td><strong>Lamp (n)</strong></td><td>/læmp/</td><td>Đèn bàn, đèn</td></tr>
+<tr class="even"><td><strong>Pour (v)</strong></td><td>/pɔː(r)/</td><td>Rót, đổ (nước)</td></tr>
+<tr class="odd"><td><strong>Shake hands</strong></td><td>/ʃeɪk hændz/</td><td>Bắt tay</td></tr>
+<tr class="even"><td><strong>Sign (v)</strong></td><td>/saɪn/</td><td>Ký tên</td></tr>
+<tr class="odd"><td><strong>Contract (n)</strong></td><td>/ˈkɒntrækt/</td><td>Hợp đồng</td></tr>
+<tr class="even"><td><strong>Board (v)</strong></td><td>/bɔːd/</td><td>Lên (tàu, xe, máy bay)</td></tr>
+<tr class="odd"><td><strong>Dock (v)</strong></td><td>/dɒk/</td><td>Neo đậu (tàu, thuyền)</td></tr>
+<tr class="even"><td><strong>Harbor (n)</strong></td><td>/ˈhɑːbə(r)/</td><td>Bến cảng</td></tr>
+<tr class="odd"><td><strong>Pier (n)</strong></td><td>/pɪə(r)/</td><td>Cầu tàu, bến tàu</td></tr>
+<tr class="even"><td><strong>Display (n)</strong></td><td>/dɪˈspleɪ/</td><td>Sự trưng bày (on display: được bày ra)</td></tr>
+<tr class="odd"><td><strong>Water (v)</strong></td><td>/ˈwɔːtə(r)/</td><td>Tưới nước</td></tr>
+<tr class="even"><td><strong>Plant (n, v)</strong></td><td>/plɑːnt/</td><td>Cây; trồng (cây)</td></tr>
+<tr class="odd"><td><strong>Server (n)</strong></td><td>/ˈsɜːvə(r)/</td><td>Người phục vụ bàn</td></tr>
+<tr class="even"><td><strong>Monitor (n)</strong></td><td>/ˈmɒnɪtə(r)/</td><td>Màn hình máy tính</td></tr>
+<tr class="odd"><td><strong>Be about to</strong></td><td>/bi əˈbaʊt tə/</td><td>Sắp sửa (làm gì)</td></tr>
+</tbody>
+</table>
+</div></main><footer>TOEIC Pre · Tóm tắt kiến thức</footer>
+<script>
+(function(){
+  'use strict';
+  // h: mô tả ảnh / đoạn script (HTML) · s: câu hỏi · o: các đáp án · k: vị trí đáp án đúng (0 = A) · e: giải thích
+  var Q=[{"h": "<span class=\"lb\">Ảnh<\/span>Một người phụ nữ ngồi trước máy tính, hai tay đang gõ bàn phím.", "s": "Chọn câu mô tả đúng bức ảnh.", "o": ["She's walking to her office.", "She's working at a computer.", "She's turning off a monitor.", "She's putting a keyboard in a box."], "k": 1, "e": "<b>working at a computer<\/b> mô tả đúng hành động. (A) walking nghe giống working → <b>bẫy từ nghe giống<\/b>. (C), (D) đúng đồ vật (monitor, keyboard) nhưng <b>sai hành động<\/b>."}, {"h": "<span class=\"lb\">Ảnh<\/span>Một người đàn ông ngồi đọc tài liệu, mắt kính đã đeo sẵn trên mặt.", "s": "Chọn câu mô tả đúng bức ảnh.", "o": ["He's putting on his glasses.", "He's cleaning his glasses.", "He's pouring water into a glass.", "He's wearing glasses."], "k": 3, "e": "Kính đã ở trên mặt → trạng thái <b>wearing<\/b>. (A) putting on = đang đeo vào (động tác) → <b>sai hành động<\/b>. (C) glass (cái ly) là <b>bẫy cùng từ khác nghĩa<\/b> với glasses (mắt kính)."}, {"h": "<span class=\"lb\">Ảnh<\/span>Một phòng họp không có ai. Nhiều cái ghế được xếp ngay ngắn quanh một cái bàn dài.", "s": "Chọn câu mô tả đúng bức ảnh.", "o": ["Chairs are being arranged around a table.", "Some people are attending a meeting.", "Chairs have been placed around a table.", "A man is cleaning the table."], "k": 2, "e": "Ảnh không có người, ghế đã xếp xong → <b>have been placed<\/b> (đã được đặt). (A) <b>are being arranged<\/b> cần có người đang xếp → bẫy being. (B), (D) nhắc tới <b>người không có trong ảnh<\/b>."}, {"h": "<span class=\"lb\">Ảnh<\/span>Một người thợ đứng trên sàn, đang dùng con lăn sơn một bức tường.", "s": "Chọn câu mô tả đúng bức ảnh.", "o": ["A wall is being painted.", "A painting is hanging on the wall.", "He's hanging a picture.", "He's climbing down a ladder."], "k": 0, "e": "Có người đang sơn → dùng được <b>is being painted<\/b> (đang được sơn). (B) painting (bức tranh) nghe giống painted → <b>bẫy từ giống<\/b>. (C) sai hành động. (D) không thấy cái thang và người thợ đứng trên sàn."}, {"h": "<span class=\"lb\">Ảnh<\/span>Vài chiếc thuyền đang neo ở bến cảng, trên bến không có ai.", "s": "Chọn câu mô tả đúng bức ảnh.", "o": ["Some people are boarding a boat.", "Some boards are stacked on a pier.", "A boat is being repaired.", "Some boats are docked in a harbor."], "k": 3, "e": "<b>docked in a harbor<\/b> = neo đậu ở bến cảng → đúng. (A) không có người. (B) boards nghe gần giống boats → bẫy từ giống. (C) <b>is being repaired<\/b> cần có người đang sửa."}, {"h": "<span class=\"lb\">Ảnh<\/span>Hai người đàn ông mặc vest đứng trong văn phòng, đang bắt tay nhau và mỉm cười.", "s": "Chọn câu mô tả đúng bức ảnh.", "o": ["They're washing their hands.", "They're signing a contract.", "They're shaking hands.", "They're leaving the office."], "k": 2, "e": "<b>shaking hands<\/b> = bắt tay → đúng. (A) lặp lại từ hands nhưng sai hành động. (B) <b>suy diễn<\/b>: bắt tay không có nghĩa là đang ký hợp đồng. (D) không thấy họ đang rời đi."}, {"h": "<span class=\"lb\">Ảnh<\/span>Một người phụ nữ đứng ở sân ga, đang nhìn đồng hồ đeo tay của mình.", "s": "Chọn câu mô tả đúng bức ảnh.", "o": ["She's getting on a train.", "She's checking her watch.", "She's late for her train.", "She's watching a movie."], "k": 1, "e": "<b>checking her watch<\/b> = xem đồng hồ → đúng. (A) không thấy cô ấy lên tàu. (C) <b>suy diễn<\/b> (không biết có trễ hay không). (D) watch (xem) là <b>bẫy cùng từ khác nghĩa<\/b> với watch (đồng hồ)."}, {"h": "<span class=\"lb\">Ảnh<\/span>Một quầy trái cây ngoài chợ. Táo và cam được bày trong các thùng gỗ, không có người.", "s": "Chọn câu mô tả đúng bức ảnh.", "o": ["A customer is paying for some apples.", "Fruit is being put into boxes.", "Some fruit is on display.", "The market is closing for the day."], "k": 2, "e": "<b>on display<\/b> = được bày ra (trưng bày) → đúng. (A) không có khách. (B) being + V3 nhưng không có người. (D) <b>suy diễn<\/b>: ảnh không cho biết chợ sắp đóng cửa."}, {"h": "<span class=\"lb\">Ảnh<\/span>Một người đàn ông đứng yên ở hành lang, hai tay ôm một thùng các-tông.", "s": "Chọn câu mô tả đúng bức ảnh.", "o": ["He's opening a box.", "He's packing books into a box.", "He's knocking on a door.", "He's holding a box."], "k": 3, "e": "Đang ôm sẵn cái thùng → trạng thái <b>holding<\/b>. (A), (B) đúng đồ vật (box) nhưng <b>sai hành động<\/b>. (C) không thấy anh ấy gõ cửa."}, {"h": "<span class=\"lb\">Ảnh<\/span>Một người phụ nữ cầm bình tưới, đang tưới mấy chậu cây trong vườn.", "s": "Chọn câu mô tả đúng bức ảnh.", "o": ["She's watering some plants.", "She's planting a tree.", "She's planning a trip.", "She's buying some flowers."], "k": 0, "e": "<b>watering some plants<\/b> = tưới cây → đúng. (B) planting = trồng cây → <b>sai hành động<\/b>. (C) planning nghe giống planting / plants → bẫy từ giống. (D) không thấy mua bán."}, {"h": "<span class=\"lb\">Ảnh<\/span>Trên bàn có một chiếc đèn bàn đặt cạnh một chồng sách. Đèn đang tắt, không có người.", "s": "Chọn câu mô tả đúng bức ảnh.", "o": ["A lamp is being turned on.", "A lamp is next to a stack of books.", "A woman is reading a book.", "Some books are being put on a shelf."], "k": 1, "e": "<b>next to a stack of books<\/b> = cạnh một chồng sách → đúng vị trí. (A), (D) being + V3 nhưng <b>không có người<\/b>. (C) nhắc tới người không có trong ảnh."}, {"h": "<span class=\"lb\">Ảnh<\/span>Một người đàn ông ngồi một mình ở bàn nhà hàng, đang xem thực đơn. Không thấy nhân viên phục vụ.", "s": "Chọn câu mô tả đúng bức ảnh.", "o": ["He's looking at a menu.", "He's reading a newspaper.", "He's ordering a meal from a server.", "He's cooking in a kitchen."], "k": 0, "e": "<b>looking at a menu<\/b> → đúng. (B) đúng kiểu hành động \"đọc\" nhưng <b>sai đồ vật<\/b>. (C) không thấy người phục vụ (server) → <b>người không có trong ảnh<\/b> + suy diễn. (D) sai nơi chốn."}];
+  var KEY='summaryOld.baypart1.quiz', L='ABCD';
+  var ans=(function(){try{var a=JSON.parse(localStorage.getItem(KEY)||'{}');return a&&typeof a==='object'?a:{};}catch(e){return {};}})();
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(ans));}catch(e){}}
+  var box=document.getElementById('ltQuiz');
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function render(){
+    box.innerHTML=Q.map(function(q,i){
+      return '<div class="lt-q" id="ltq'+i+'"><div class="num">Câu '+(i+1)+(q.tag?' · '+q.tag:'')+'</div>'+(q.h?'<div class="lt-ctx">'+q.h+'</div>':'')+'<p class="st">'+q.s+'</p><div class="lt-opts one">'+
+        q.o.map(function(o,j){return '<button type="button" class="lt-opt" data-q="'+i+'" data-o="'+j+'"><b>'+L[j]+'</b><span>'+esc(o)+'</span></button>';}).join('')+
+        '</div><div class="lt-fb" role="status"></div></div>';
+    }).join('');
+    Q.forEach(function(q,i){ if(ans[i]!==undefined) show(i,ans[i]); });
+    score();
+  }
+  function show(i,j){
+    var q=Q[i], el=document.getElementById('ltq'+i), ok=j===q.k;
+    [].forEach.call(el.querySelectorAll('.lt-opt'),function(b,x){
+      b.disabled=true;
+      if(x===q.k) b.classList.add('ok'); else if(x===j) b.classList.add('bad'); else b.classList.add('dim');
+    });
+    var fb=el.querySelector('.lt-fb'); fb.className='lt-fb show '+(ok?'good':'wrong');
+    fb.innerHTML='<strong>'+(ok?'✓ Chính xác!':'✗ Chưa đúng. Đáp án: ('+L[q.k]+') '+esc(q.o[q.k]))+'</strong>'+q.e;
+  }
+  function score(){
+    var n=0,c=0; Q.forEach(function(q,i){ if(ans[i]!==undefined){n++; if(ans[i]===q.k)c++;} });
+    document.getElementById('ltScore').textContent='Đúng '+c+' / '+Q.length;
+    document.getElementById('ltDone').textContent='Đã làm '+n+'/'+Q.length;
+    document.getElementById('ltBar').style.width=(n/Q.length*100)+'%';
+    var end=document.getElementById('ltEnd');
+    if(n===Q.length){
+      end.classList.add('show');
+      document.getElementById('ltEndIc').textContent=c>=10?'🎉':c>=7?'👍':'💪';
+      document.getElementById('ltEndTxt').innerHTML='Bạn làm đúng <b>'+c+'/'+Q.length+'</b> câu. '+(c>=10?'Rất tốt! Bạn đã nhận ra hầu hết các bẫy Part 1.':c>=7?'Khá lắm! Xem lại giải thích các câu sai nhé.':'Đọc lại phần 8 (Checklist) rồi làm lại nhé!');
+    } else end.classList.remove('show');
+  }
+  box.addEventListener('click',function(ev){
+    var b=ev.target.closest('.lt-opt'); if(!b||b.disabled) return;
+    var i=+b.dataset.q, j=+b.dataset.o; if(ans[i]!==undefined) return;
+    ans[i]=j; save(); show(i,j); score();
+    if(Object.keys(ans).length===Q.length) setTimeout(function(){document.getElementById('ltEnd').scrollIntoView({behavior:'smooth',block:'center'});},300);
+  });
+  function reset(){ ans={}; save(); render(); document.getElementById('ltq0').scrollIntoView({behavior:'smooth',block:'center'}); }
+  document.getElementById('ltAgain').onclick=reset;
+  document.getElementById('ltReset').onclick=reset;
+  render();
+})();
+</script>
+<script src="../flashcards.js" defer></script><script>window.ETSCFG=window.ETSCFG||{SCRIPT_URL:'https://script.google.com/macros/s/AKfycby3_45o2Zn3FMEMrVAg9nBCiQEIUvU9HgQxI2ZZtwJ4oUQ_bqXxj1vN0kL6cvhbDQCx/exec'};</script><script src="../assets/ui.js?v=3" data-site="summary"></script>
+</body></html>

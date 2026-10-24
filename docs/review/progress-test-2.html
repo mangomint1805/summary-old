@@ -1,0 +1,428 @@
+<!doctype html><html lang="vi"><head>
+<script>try{var d=document.documentElement,k=JSON.parse(localStorage.getItem('mt.skin')||'""');if(k==='scifi')d.setAttribute('data-theme','dark');if(k)d.setAttribute('data-skin',k)}catch(e){}</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<title>Ôn tập trước Progress Test 2</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css"><script src="../classes.js"></script><link rel="icon" type="image/png" href="../icons/fav-64.png?v=3">
+<style>
+/* Ôn tập trước Progress Test 2 – tổng ôn cả khóa */
+.lt-toc{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 6px;padding:0;list-style:none;}
+.lt-toc a{display:inline-block;font-size:14px;font-weight:600;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;background:var(--paper);}
+.lt-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0;}
+.lt-card{border:1.5px solid var(--line);border-left:6px solid var(--amber);border-radius:12px;padding:12px 14px;background:var(--card);min-width:0;}
+.lt-card.b{border-left-color:#1d5fa8;} .lt-card.g{border-left-color:#1f7a4d;} .lt-card.p{border-left-color:#6d3fb0;}
+.lt-card h3{margin:0 0 6px!important;font-size:17px;}
+.lt-card h3 small{font-weight:600;color:var(--dim);font-size:13.5px;}
+.lt-card p,.lt-card li{font-size:15px;}
+.lt-card ul{margin:4px 0;padding-left:20px;}
+.lt-card .ex{margin-top:8px;padding:8px 10px;background:var(--paper);border-radius:8px;font-size:15px;}
+.lt-card .ex i{display:block;font-style:normal;color:var(--dim);font-size:13.5px;}
+.lt-trap{margin:14px 0;padding:14px 16px;border:1.5px dashed #c2410c;border-radius:12px;background:#fff6ef;}
+.lt-trap h3{color:#9a3412!important;margin:0 0 6px!important;}
+.lt-trap ol,.lt-trap ul{margin:0;padding-left:22px;}
+.lt-trap li{margin:6px 0;}
+.lt-steps{counter-reset:s;list-style:none;margin:12px 0;padding:0!important;display:grid;gap:8px;}
+.lt-steps li{counter-increment:s;position:relative;padding:10px 12px 10px 52px;border:1px solid var(--line);border-radius:12px;background:var(--paper);margin:0!important;}
+.lt-steps li::before{content:counter(s);position:absolute;left:12px;top:10px;width:28px;height:28px;border-radius:50%;background:var(--amber);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.lt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;}
+.lt-scroll table{margin:0!important;min-width:600px;}
+.lt-note{font-size:14px;color:var(--dim);}
+.lt-gram td:first-child{white-space:nowrap;font-weight:700;}
+.lt-gram td{vertical-align:top;font-size:15px;}
+.lt-gram td i{color:var(--dim);}
+.lt-score{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:10px 0 12px;padding:10px 14px;border-radius:12px;background:#fffaf0;border:1px solid #ecd3a6;font-weight:600;position:sticky;top:0;z-index:2;}
+.lt-score .bar{flex:1;min-width:120px;height:8px;border-radius:99px;background:var(--line);overflow:hidden;}
+.lt-score .bar i{display:block;height:100%;width:0;background:var(--teal);transition:width .3s;}
+.lt-grp{margin:18px 0 6px;font-weight:700;color:var(--amber-ink);}
+.lt-passage{border:1.5px solid var(--line);border-radius:12px;padding:12px 16px;margin:8px 0 12px;background:var(--paper);font-size:15.5px;line-height:1.6;}
+.lt-passage p{margin:6px 0;}
+.lt-passage .hd{font-size:14px;color:var(--dim);}
+.lt-q{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0;background:var(--card);}
+.lt-q .num{font-size:13px;font-weight:700;color:var(--amber-ink);letter-spacing:.04em;text-transform:uppercase;}
+.lt-q .num small{font-weight:600;color:var(--dim);text-transform:none;letter-spacing:0;}
+.lt-q .st{font-size:16.5px;margin:4px 0 10px;line-height:1.55;}
+.lt-blank{display:inline-block;min-width:88px;border-bottom:2px solid var(--ink);text-align:center;font-weight:700;}
+.lt-blank.on{color:#1f7a4d;}
+.lt-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.lt-opt{font:inherit;font-size:15.5px;text-align:left;display:flex;gap:8px;align-items:center;min-height:46px;padding:9px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;min-width:0;}
+.lt-opt span{min-width:0;overflow-wrap:anywhere;}
+.lt-opt b{flex:none;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--line);font-size:13px;}
+.lt-opt:hover:not(:disabled){border-color:var(--amber);}
+.lt-opt:focus-visible{outline:3px solid var(--amber);outline-offset:2px;}
+.lt-opt:disabled{cursor:default;}
+.lt-opt.ok{border-color:#1f7a4d;background:#e2f3ea;}
+.lt-opt.ok b{background:#1f7a4d;border-color:#1f7a4d;color:#fff;}
+.lt-opt.bad{border-color:#b42318;background:#fde9e6;}
+.lt-opt.bad b{background:#b42318;border-color:#b42318;color:#fff;}
+.lt-opt.dim{opacity:.55;}
+.lt-fb{display:none;margin-top:10px;padding:10px 12px;border-radius:10px;font-size:15px;}
+.lt-fb.show{display:block;}
+.lt-fb.good{background:#e2f3ea;border:1px solid #9fd2b6;}
+.lt-fb.wrong{background:#fde9e6;border:1px solid #f0b4ab;}
+.lt-fb strong{display:block;margin-bottom:2px;}
+.lt-end{display:none;text-align:center;margin:16px 0 4px;padding:18px 16px;border-radius:14px;border:1.5px solid var(--amber);background:#fffaf0;}
+.lt-end.show{display:block;}
+.lt-end .big{font-size:40px;line-height:1;}
+.lt-end p{margin:8px 0;font-size:17px;}
+.lt-btn{font:inherit;font-weight:700;font-size:16px;border:0;border-radius:10px;padding:11px 20px;background:var(--amber);color:#fff;cursor:pointer;min-height:46px;}
+.lt-btn.alt{background:var(--card);color:var(--amber-ink);border:1.5px solid var(--amber);}
+.lt-again{text-align:right;margin:8px 0 0;}
+@media (max-width:480px){
+  .lt-cards{grid-template-columns:1fr;}
+  .doc table{font-size:14.5px;}
+  .doc th,.doc td{padding:7px 8px;}
+  .lt-q{padding:12px;}
+  .lt-opts{grid-template-columns:1fr;}
+  .lt-opt{font-size:15px;padding:8px 9px;}
+  .lt-passage{padding:10px 12px;}
+}
+</style>
+</head><body data-nav="home"><header class="top"><a href="../index.html">TOEIC Pre · Tóm tắt kiến thức</a></header><main class="lt"><p class="sub"><a href="../index.html">← Tất cả bài</a></p><h1>Ôn tập trước Progress Test 2</h1><p class="sub">Tổng ôn cả khóa: mẹo từng Part, bảng ngữ pháp 12 unit, luyện tập và từ vựng</p><div class="doc">
+<p><strong>Progress Test 2</strong> là bài kiểm tra cuối khóa (buổi 24), có cả <strong>Nghe (Part 1–4)</strong> và <strong>Đọc (Part 5–7)</strong>, ra đề từ <strong>toàn bộ</strong> kiến thức đã học: Reading Unit 1–12 và Listening Unit 1–11. Trang này gom lại những điều <strong>quan trọng nhất</strong> của từng unit để các bạn ôn nhanh trong vài buổi tối.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>Cách ôn hiệu quả</strong></p>
+<p>1. Đọc mẹo của từng Part, phần nào thấy lạ thì bấm vào tên unit để mở lại bài tóm tắt.</p><p>2. Làm <strong>20 câu luyện tập</strong> ở phần 4 (tự chọn trước, đọc giải thích sau). Câu nào sai, ghi lại chủ điểm để ôn thêm.</p><p>3. Cuối trang có <strong>Bảng từ vựng</strong>: bấm “Flashcard từ vựng” để ôn bằng thẻ.</p><p>4. Đã có trang <a href="progress-test-1.html">Ôn tập sau Progress Test 1</a> (lỗi hay sai giữa khóa): xem lại nếu còn thời gian.</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="lt-toc"><li><a href="#pt-1">1. Listening</a></li><li><a href="#pt-2">2. Reading</a></li><li><a href="#pt-3">3. Bảng ngữ pháp</a></li><li><a href="#pt-4">4. Luyện tập</a></li><li><a href="#pt-5">5. Mẹo ngày thi</a></li><li><a href="#pt-6">6. Từ vựng</a></li></ul>
+
+<h2 id="pt-1">1. Listening: mẹo từng Part</h2>
+
+<h3>1.1. Part 1: Tranh (Listening Unit 1–2)</h3>
+<p>Nhìn tranh <strong>trước khi</strong> nghe: có người hay không có người? Mỗi trường hợp có cấu trúc câu riêng.</p>
+<div class="lt-cards">
+<div class="lt-card b"><h3>Tranh có người <small>(<a href="../listening/unit-01-photos-of-people.html">Unit 1</a>)</small></h3>
+<ul><li>Cấu trúc chính: <strong>S + be + V-ing</strong> (đang làm gì).</li>
+<li>1 người: <em>He / She / A man / A woman</em>. 2 người trở lên: <em>They / The men / Some of the…</em>; chỉ 1 người trong nhóm: <em>One of the women…</em></li>
+<li>Nghe kỹ <strong>động từ hành động</strong>: mắt (examine, review), tay (hold, reach for, sweep), chân (board, stroll), tư thế (lean against, lie down).</li></ul>
+<div class="ex">One of the men <b>is pointing at</b> a painting.<i>Một trong những người đàn ông đang chỉ vào bức tranh.</i></div></div>
+<div class="lt-card g"><h3>Tranh vật / cảnh <small>(<a href="../listening/unit-02-photos-of-objects-scenes.html">Unit 2</a>)</small></h3>
+<ul><li><strong>S + be + V3</strong> hoặc <strong>has/have been + V3</strong> (trạng thái): <em>Cars are parked on the road.</em></li>
+<li><strong>There is/are + N</strong> + vị trí: <em>There is a bench by the river.</em></li>
+<li><strong>S + be + vị trí</strong>: <em>Some pots are on a counter.</em></li></ul>
+<div class="ex">A projector <b>is attached</b> to the ceiling.<i>Máy chiếu được gắn trên trần nhà.</i></div></div>
+</div>
+<div class="lt-trap"><h3>⚠️ Bẫy Part 1</h3><ul>
+<li>Tranh <strong>không có người</strong> mà nghe <em>is/are <b>being</b> + V3</em> (đang được làm) → gần như chắc chắn <strong>sai</strong>.</li>
+<li>Đúng đồ vật nhưng <strong>sai vị trí</strong> (next to / on / under / in a row) → sai. Phải nghe hết câu.</li>
+<li>Đúng người nhưng <strong>sai động từ</strong> (đang cầm ≠ đang mở; đang đứng ≠ đang đi) → sai.</li></ul></div>
+
+<h3>1.2. Part 2: Hỏi – đáp (Listening Unit 3–6)</h3>
+<p>Part 2 không có gì in trên đề, nên phải nghe thật kỹ <strong>từ đầu tiên</strong> của câu hỏi. Dùng 4 nguyên tắc loại trừ (Unit 3):</p>
+<ol class="lt-steps">
+<li>Câu hỏi <strong>Wh-</strong> (Who, What, When, Where, Why, How) mà đáp án có <strong>Yes/No</strong> → loại.</li>
+<li>Đáp án có từ <strong>gần âm</strong> với câu hỏi (coffee – copies) → thường là bẫy.</li>
+<li>Đáp án <strong>lặp lại đúng từ</strong> của câu hỏi nhưng khác nghĩa (charge – service charge) → thường là bẫy.</li>
+<li>Đáp án kiểu <strong>“tôi không biết / chưa quyết định”</strong> (I have no idea, It hasn’t been decided yet, Ask the manager) → thường là <strong>đúng</strong>.</li>
+</ol>
+<div class="lt-scroll"><table>
+<thead><tr class="header"><th>Loại câu hỏi</th><th>Đáp án đúng thường là</th><th>Ví dụ</th></tr></thead>
+<tbody>
+<tr class="odd"><td><strong>Who</strong> <small>(<a href="../listening/unit-03-information-questions-1.html">U3</a>)</small></td><td>Tên người, chức vụ, phòng ban, tên công ty, “No one”</td><td>Who handles the refunds? → <b>The customer service team.</b></td></tr>
+<tr class="even"><td><strong>What / Which</strong> <small>(U3)</small></td><td>Giá, ý kiến (tính từ), giờ, màu; Which → <em>The one…</em></td><td>Which jacket is yours? → <b>The one on the chair.</b></td></tr>
+<tr class="odd"><td><strong>When / Where</strong> <small>(<a href="../listening/unit-04-information-questions-2.html">U4</a>)</small></td><td>When: giờ, thứ, ngày, <em>in two days</em>, <em>as soon as…</em>; Where: vị trí, hướng, tên người đang giữ đồ</td><td>Where is the stapler? → <b>Mr. Cole borrowed it.</b></td></tr>
+<tr class="even"><td><strong>Why</strong> <small>(U4)</small></td><td>Lý do (có hoặc không có <em>Because</em>), <em>To + V</em></td><td>Why is the shop closed? → <b>It’s being renovated.</b></td></tr>
+<tr class="odd"><td><strong>Why don’t you/we…?</strong> <small>(U4)</small></td><td>Đây là lời <strong>rủ / gợi ý</strong> → đồng ý hoặc từ chối (KHÔNG trả lời lý do)</td><td>Why don’t we take a taxi? → <b>Good idea.</b></td></tr>
+<tr class="even"><td><strong>How long / much / many / often</strong> <small>(U4)</small></td><td>Thời lượng / số tiền / số lượng / tần suất</td><td>How often is the gym cleaned? → <b>Twice a day.</b></td></tr>
+<tr class="odd"><td><strong>Yes/No (Be, Do, Have)</strong> <small>(<a href="../listening/unit-05-yes-no-questions.html">U5</a>)</small></td><td>Yes/No + chi tiết, hoặc chỉ chi tiết</td><td>Is the report ready? → <b>I’m printing it now.</b></td></tr>
+<tr class="even"><td><strong>Could you…? / Should we…?</strong> <small>(U5)</small></td><td>Đồng ý: <em>Sure, Of course, Sounds good</em>. Từ chối: <em>Sorry, I’m afraid…</em></td><td>Could you check this form? → <b>Sure, give me a minute.</b></td></tr>
+<tr class="odd"><td><strong>Phủ định / Câu hỏi đuôi</strong> <small>(<a href="../listening/unit-06-other-question-types.html">U6</a>)</small></td><td>Bỏ “not” đi rồi trả lời theo <strong>sự thật</strong>: Yes = có, No = không</td><td>Didn’t you call the client? → <b>Yes, this morning.</b></td></tr>
+<tr class="even"><td><strong>Gián tiếp</strong> (Do you know…?) <small>(U6)</small></td><td>Trả lời cho <strong>vế sau</strong> (who/where/when…)</td><td>Do you know where the files are? → <b>In the top drawer.</b></td></tr>
+<tr class="odd"><td><strong>Lựa chọn “or”</strong> <small>(U6)</small></td><td>KHÔNG Yes/No; chọn 1, <em>Either is fine</em>, <em>Neither</em>, hoặc phương án khác</td><td>Tea or coffee? → <b>Just water, please.</b></td></tr>
+</tbody></table></div>
+<p class="lt-note">Trên điện thoại: vuốt ngang bảng để xem hết các cột.</p>
+
+<h3>1.3. Part 3: Hội thoại (Listening Unit 7–9)</h3>
+<p>Mỗi đoạn hội thoại có <strong>3 câu hỏi in sẵn</strong> trên đề. Bí quyết số 1: <strong>đọc trước 3 câu hỏi</strong> (và 4 đáp án nếu kịp) trong lúc băng đọc hướng dẫn, gạch chân từ khóa.</p>
+<div class="lt-cards">
+<div class="lt-card"><h3>4 dạng câu hỏi <small>(<a href="../listening/unit-07-business-activities.html">Unit 7</a>)</small></h3>
+<ul><li><strong>Chung</strong> (chủ đề, nơi chốn, nghề nghiệp) → nghe <strong>phần đầu</strong> bài.</li>
+<li><strong>Chi tiết</strong> (why, what…) → nghe từ khóa trong câu hỏi.</li>
+<li><strong>Việc sắp làm</strong> (do next) → thường ở <strong>cuối</strong> bài: <em>I’ll…, I’m going to…, I need to…</em></li>
+<li><strong>Hàm ý câu nói</strong> (“…mean when she says…”) → nghe câu trước và sau câu trích, không dịch từng chữ.</li></ul></div>
+<div class="lt-card b"><h3>Từ khóa cần bắt <small>(Unit 7–9)</small></h3>
+<ul><li>Gợi ý: <em>Let’s…, Why don’t you…, I think we should…, Maybe we can…</em></li>
+<li>Kế hoạch: <em>The first thing we should do is…, I’m going to…</em></li>
+<li>Lý do: <em>because, since, so, to / in order to + V</em></li>
+<li>Câu hỏi tần suất: chú ý thông tin <strong>ngay sau</strong> từ nối chuyển ý (but, actually, so…).</li></ul></div>
+<div class="lt-card g"><h3>Đoán nơi chốn / nghề <small>(<a href="../listening/unit-08-daily-activities.html">Unit 8</a>, <a href="../listening/unit-09-at-public-places.html">9</a>)</small></h3>
+<ul><li>Cửa hàng: <em>refund, receipt, on sale, out of stock</em></li>
+<li>Nhà hàng: <em>reservation, main course, appetizer</em></li>
+<li>Khách sạn: <em>check in, vacancy, accommodation</em></li>
+<li>Sân bay: <em>boarding pass, baggage claim, connecting flight</em></li>
+<li>Câu hỏi có hình (bản đồ, lịch, bảng giá): nhìn hình trước, nghe từ chỉ vị trí <em>across from, next to</em>.</li></ul></div>
+</div>
+
+<h3>1.4. Part 4: Bài nói (Listening Unit 10–11)</h3>
+<p>Chỉ có <strong>1 người nói</strong> (tin nhắn thoại, thông báo, quảng cáo, bản tin, bài phát biểu). Cách làm giống Part 3: đọc trước câu hỏi. Câu mở đầu cho biết <strong>loại bài nói</strong> và <strong>người nói là ai</strong>:</p>
+<ul>
+<li><em>Hi, this is… calling about…</em> → tin nhắn thoại; <em>Attention, please / Welcome aboard</em> → thông báo công cộng; <em>May I have your attention?</em> → thông báo nội bộ công ty; <em>Stay tuned</em> → radio.</li>
+<li><strong>Câu hỏi yêu cầu</strong> (What does the speaker ask listeners to do?) → nghe <em>please, must, should, ask, request</em> hoặc câu mệnh lệnh.</li>
+<li><strong>Câu hỏi lời khuyên</strong> → nghe <em>suggest, recommend, advise, you’d better, it’s a good idea to…</em></li>
+<li>Bản tin thời tiết / giao thông → chú ý <strong>thì của động từ</strong> (đã xảy ra, đang xảy ra hay sắp xảy ra).</li>
+</ul>
+<div class="lt-trap"><h3>⚠️ Bẫy lớn nhất Part 3–4: đáp án đúng thường được nói KHÁC ĐI</h3>
+<p>Đáp án hiếm khi lặp đúng từ trong bài nghe, mà dùng <strong>từ đồng nghĩa</strong> (Unit 10). Đáp án nào lặp y nguyên một từ nghe được thì càng phải cẩn thận.</p>
+<ul><li><em>musical performance</em> → <b>concert</b>; <em>excursion</em> → <b>trip / tour</b>; <em>department head</em> → <b>manager</b></li>
+<li><em>purchase</em> → <b>buy</b>; <em>retailer</em> → <b>store</b>; <em>depart</em> → <b>leave</b>; <em>position</em> → <b>job</b></li></ul></div>
+
+<h2 id="pt-2">2. Reading: mẹo từng Part</h2>
+
+<h3>2.1. Part 5: Điền vào câu</h3>
+<p>Làm theo <strong>4 bước</strong>, không cần dịch cả câu nếu là câu ngữ pháp:</p>
+<ol class="lt-steps">
+<li><strong>Nhìn 4 đáp án trước</strong> để biết đây là câu gì: cùng gốc từ (apply / application / applicant…) → <strong>loại từ</strong>; cùng động từ khác dạng (opens / opened / has opened…) → <strong>thì / bị động / To V–V-ing</strong>; 4 từ nối (although / despite…) → <strong>liên từ – giới từ</strong>; 4 từ khác nghĩa → <strong>từ vựng</strong>.</li>
+<li><strong>Nhìn ngay trước và sau chỗ trống</strong>: mạo từ, tính từ sở hữu, giới từ, động từ <em>be</em>, có tân ngữ hay không, sau đó là danh từ hay mệnh đề (S + V)?</li>
+<li><strong>Tìm dấu hiệu</strong>: từ chỉ thời gian (since, by, yesterday), chủ ngữ số ít/số nhiều, cặp từ (both… and, either… or).</li>
+<li>Chọn đáp án, <strong>đọc lại cả câu một lần</strong> cho chắc, rồi đi tiếp. Câu từ vựng khó quá thì đoán và đánh dấu để quay lại.</li>
+</ol>
+<div class="lt-scroll"><table>
+<thead><tr class="header"><th>Vị trí chỗ trống</th><th>Chọn</th><th>Ví dụ</th></tr></thead>
+<tbody>
+<tr class="odd"><td>Sau <em>a/an/the</em>, <em>my/your/its…</em>, sau tính từ; sau giới từ</td><td><strong>Danh từ</strong></td><td>the <b>delay</b> / your <b>application</b> / a new <b>policy</b></td></tr>
+<tr class="even"><td>Trước danh từ; sau <em>be, become, seem, remain</em>; <em>make/keep/find + O + ___</em></td><td><strong>Tính từ</strong></td><td>a <b>convenient</b> location / The data is <b>accurate</b>.</td></tr>
+<tr class="odd"><td>Trước tính từ; trước/sau động từ; câu đã đủ thành phần</td><td><strong>Trạng từ</strong></td><td><b>highly</b> effective / work <b>efficiently</b></td></tr>
+<tr class="even"><td>Trước động từ, chưa có chủ ngữ</td><td><strong>Đại từ chủ ngữ</strong> (I, he, they…)</td><td>If <b>you</b> have questions…</td></tr>
+<tr class="odd"><td>Câu chưa có động từ chính</td><td><strong>Động từ chia thì</strong> (không chọn V-ing / to V)</td><td>The manager <b>approved</b> the plan.</td></tr>
+</tbody></table></div>
+
+<h3>2.2. Part 6: Điền vào đoạn văn</h3>
+<p>Ngữ pháp giống hệt Part 5, nhưng đáp án phụ thuộc vào <strong>cả đoạn</strong>, không chỉ một câu:</p>
+<ul>
+<li><strong>Thì</strong>: nhìn ngày gửi email và các câu xung quanh. Sự kiện “next week” → tương lai; việc “đã xong” → quá khứ / hiện tại hoàn thành.</li>
+<li><strong>Đại từ</strong> (it / they / its / their): tìm danh từ được nhắc tới ở <strong>câu trước</strong>.</li>
+<li><strong>Từ nối</strong> (however, so, because…): đọc câu trước và câu sau để biết hai ý <strong>cùng chiều</strong> hay <strong>trái ngược</strong>.</li>
+<li>Câu chọn câu văn điền vào: chọn câu <strong>nối được ý</strong> với câu ngay trước và ngay sau chỗ trống.</li>
+</ul>
+
+<h3>2.3. Part 7: Đọc hiểu</h3>
+<ul>
+<li><strong>Đọc câu hỏi trước</strong>, gạch từ khóa (tên người, ngày, số tiền), rồi mới quay vào bài tìm. Không cần dịch hết bài.</li>
+<li>Câu hỏi mục đích (<em>Why was the e-mail written?</em>) → thường nằm ở <strong>2–3 câu đầu</strong>.</li>
+<li>Đáp án đúng thường được <strong>nói khác đi</strong> bằng từ đồng nghĩa, giống mẹo Part 4.</li>
+<li>Câu hỏi <strong>NOT true / NOT mentioned</strong>: dò từng đáp án, cái nào tìm thấy trong bài thì loại.</li>
+<li>Thời gian sắp hết: làm trước các bài ngắn (tin nhắn, thông báo), bài dài nhiều đoạn để sau.</li>
+</ul>
+
+<h2 id="pt-3">3. Bảng tổng hợp ngữ pháp 12 unit Reading</h2>
+<p>Mỗi hàng là một unit. Cột giữa là <strong>dấu hiệu nhận biết trong đề</strong>, cột phải là <strong>công thức cần nhớ</strong>. Bấm tên unit để mở bài tóm tắt.</p>
+<div class="lt-scroll"><table class="lt-gram">
+<thead><tr class="header"><th>Unit</th><th>Thấy gì trong đề?</th><th>Nhớ gì?</th></tr></thead>
+<tbody>
+<tr class="odd"><td><a href="../reading/unit-01-nouns-pronouns.html">U1</a> Danh từ &amp; Đại từ</td><td>Chỗ trống sau <em>a/the, my/their</em>, sau tính từ; 4 đáp án là he/him/his/himself</td><td>Mạo từ / TT sở hữu (+ Adj) + <b>N</b>. Đếm được: many, a few, a number of; không đếm được: much, a little. Đại từ: chủ ngữ + V; V/giới từ + tân ngữ; <b>my/his/their + N</b>; mine/hers đứng một mình; by + <b>himself</b>.</td></tr>
+<tr class="even"><td><a href="../reading/unit-02-adjectives-adverbs.html">U2</a> Tính từ &amp; Trạng từ</td><td>Chỗ trống trước N, sau be/seem/remain; trước tính từ hoặc bổ nghĩa động từ; có <em>than</em>, <em>the most</em></td><td>(a/the) + <b>Adj</b> + N; be/become + <b>Adj</b>; keep/make + O + <b>Adj</b>. <b>Adv</b> + Adj; <b>Adv</b> + V; V + O + <b>Adv</b>. Tính từ đuôi -ly: friendly, costly, timely. So sánh: -er/more … than; the -est / the most.</td></tr>
+<tr class="odd"><td><a href="../reading/unit-03-verb-tenses.html">U3</a> Thì</td><td>yesterday/ago/last; now; since/for/already; tomorrow/next; by + mốc tương lai; by the time</td><td>Quá khứ đơn V2; hiện tại tiếp diễn am/is/are + V-ing; hiện tại hoàn thành <b>have/has + V3</b> (since, for); tương lai will + V; <b>will have + V3</b> (by + tương lai); <b>had + V3</b> (việc xảy ra trước trong quá khứ). Sau when/if/as soon as: <b>hiện tại đơn</b> thay cho will.</td></tr>
+<tr class="even"><td><a href="../reading/unit-04-active-passive-voice.html">U4</a> Bị động</td><td>Đáp án có cả dạng chủ động và <em>be + V3</em>; xem sau chỗ trống có tân ngữ không</td><td><b>be + V3</b>; can/must/will + <b>be + V3</b>; has been + V3; is being + V3. Có tân ngữ → chủ động; không có → bị động. Cụm: satisfied/pleased with, interested/involved in, accustomed/dedicated to, concerned about.</td></tr>
+<tr class="odd"><td><a href="../reading/unit-05-to-infinitives-gerunds.html">U5–6</a> To V &amp; V-ing</td><td>Động từ đứng trước chỗ trống; giới từ đứng trước chỗ trống</td><td>want, decide, agree, hope, afford, fail + <b>to V</b>; ask, allow, encourage, expect + O + <b>to V</b>; opportunity/effort + to V; glad/pleased + to V. enjoy, avoid, consider, recommend, mind + <b>V-ing</b>; <b>giới từ + V-ing</b>; look forward to / be used to + V-ing.</td></tr>
+<tr class="even"><td><a href="../reading/unit-07-participles.html">U7</a> Phân từ</td><td>Chỗ trống sau danh từ khi câu đã có động từ chính; trước danh từ; đầu câu trước dấu phẩy</td><td>N + <b>V-ing</b> (chủ động) / N + <b>V3</b> (bị động). Trước N: rising, existing, leading, missing; enclosed, limited, experienced. Vật gây cảm xúc → boring; người cảm thấy → bored. Đầu câu: <b>V-ing…,</b> (chủ ngữ tự làm) / <b>V3…,</b> (chủ ngữ bị/được làm).</td></tr>
+<tr class="odd"><td><a href="../reading/unit-08-conjunctions.html">U8</a> Liên từ</td><td>4 đáp án là từ nối; có both/either/neither/not only</td><td>and, but, or, so. both…<b>and</b>; either…<b>or</b>; neither…<b>nor</b>; not only…<b>but also</b>. + <b>S + V</b>: because, although, so that, unless, as soon as. so + adj + that; such + (a) adj + N + that. Không dùng because… so trong cùng câu.</td></tr>
+<tr class="even"><td><a href="../reading/unit-09-prepositions.html">U9</a> Giới từ</td><td>Chỗ trống trước mốc thời gian, nơi chốn hoặc cụm danh từ</td><td>in (năm, tháng), on (thứ, ngày), at (giờ). for + khoảng thời gian; during + sự kiện. <b>by</b> Friday = hạn chót; <b>until</b> Friday = kéo dài đến. + <b>N</b>: because of, due to, despite, in spite of, during.</td></tr>
+<tr class="odd"><td><a href="../reading/unit-10-relative-pronouns-adverbs.html">U10</a> Mệnh đề quan hệ</td><td>Chỗ trống ngay sau một danh từ, phía sau là V hoặc S + V</td><td>Người: <b>who</b> + V, <b>whom</b> + S + V. Vật: <b>which</b> (+ V hoặc S + V). <b>whose + N</b> (người và vật). <b>where</b> + S + V (nơi chốn), when (thời gian). that thay who/which khi không có dấu phẩy.</td></tr>
+<tr class="even"><td><a href="../reading/unit-11-subjunctive-mood.html">U11</a> Câu điều kiện</td><td>Có <em>If</em> / <em>Unless</em>; vế còn lại có would/will</td><td>Loại 1: If + hiện tại, <b>will</b> + V. Loại 2: If + V2/<b>were</b>, <b>would</b> + V. Loại 3: If + <b>had V3</b>, would <b>have V3</b>. Unless = If… not.</td></tr>
+<tr class="odd"><td><a href="../reading/unit-12-agreement.html">U12</a> Hòa hợp</td><td>Chọn is/are, has/have, V/V-s; chủ ngữ dài có cụm chen giữa</td><td>Động từ theo <b>chủ ngữ thật</b> (bỏ qua cụm giới từ chen giữa). V-ing / To V / N không đếm được làm chủ ngữ → <b>số ít</b>. A number of + N số nhiều → V số nhiều; <b>The number of</b> → V <b>số ít</b>. Each/Every + N → số ít.</td></tr>
+</tbody></table></div>
+<p class="lt-note">Trên điện thoại: vuốt ngang bảng để xem hết 3 cột.</p>
+<div class="lt-trap"><h3>⚠️ 5 lỗi hay mất điểm nhất</h3><ol>
+<li>Thấy <em>to</em> là chọn V nguyên mẫu: <em>look forward <b>to seeing</b></em>, <em>be used <b>to working</b></em> → <strong>to</strong> ở đây là giới từ, nên đi với V-ing.</li>
+<li>Nhầm <strong>despite + N</strong> với <strong>although + S + V</strong>: luôn kiểm tra phía sau chỗ trống là danh từ hay mệnh đề.</li>
+<li>Dùng <em>will</em> sau <em>if / when / as soon as</em>: <em>as soon as he <b>arrives</b></em> (không phải <em>will arrive</em>).</li>
+<li>Chia động từ theo danh từ <strong>gần nhất</strong> thay vì chủ ngữ thật: <em>The list <u>of new products</u> <b>is</b> ready.</em></li>
+<li><em>by</em> và <em>until</em>: <em>submit … <b>by</b> Friday</em> (hạn chót) nhưng <em>stay open <b>until</b> 9 p.m.</em> (kéo dài).</li>
+</ol></div>
+
+<h2 id="pt-4">4. Luyện tập: 20 câu Part 5 &amp; Part 6</h2>
+<p>16 câu Part 5 (mỗi câu một chủ điểm của 12 unit) và 1 đoạn Part 6 có 4 chỗ trống. Chạm vào đáp án để xem đúng / sai và <strong>giải thích</strong>. Kết quả được lưu trên máy của bạn, bấm “Làm lại” để làm từ đầu.</p>
+<div class="lt-score" aria-live="polite"><span id="ltScore">Đúng 0 / 20</span><span class="bar"><i id="ltBar"></i></span><span id="ltDone">Đã làm 0/20</span></div>
+<div id="ltQuiz"></div>
+<div class="lt-end" id="ltEnd" aria-live="polite"><div class="big" id="ltEndIc">🎉</div><p id="ltEndTxt"></p><button type="button" class="lt-btn" id="ltAgain">↺ Làm lại</button></div>
+<p class="lt-again"><button type="button" class="lt-btn alt" id="ltReset">↺ Làm lại</button></p>
+
+<h2 id="pt-5">5. Mẹo ngày thi</h2>
+<ul>
+<li><strong>Tối hôm trước</strong>: chỉ ôn lại bảng ngữ pháp và lướt flashcard, <strong>ngủ đủ giấc</strong>. Thức khuya làm thêm đề không giúp được nhiều.</li>
+<li><strong>Không bỏ trống câu nào.</strong> Câu không biết vẫn chọn một đáp án, đoán vẫn có cơ hội đúng.</li>
+<li><strong>Listening</strong>: lỡ một câu thì <strong>bỏ qua ngay</strong>, chọn đại một đáp án và chuyển sang đọc câu hỏi tiếp theo. Tiếc câu cũ sẽ làm mất luôn câu sau.</li>
+<li>Trong lúc băng đọc hướng dẫn Part 3 và Part 4, tranh thủ <strong>đọc trước câu hỏi</strong> của đoạn đầu tiên.</li>
+<li><strong>Reading</strong>: làm Part 5 nhanh (câu ngữ pháp không cần dịch cả câu), dành thời gian cho Part 7. Câu nào nghĩ quá lâu thì đánh dấu, làm xong quay lại.</li>
+<li>Đọc kỹ đề có <strong>NOT</strong> (không đúng, không được nhắc đến) để không chọn ngược.</li>
+<li>Còn thời gian thì kiểm tra lại các câu đã đánh dấu và xem có câu nào <strong>chưa chọn đáp án</strong> không.</li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>Lời nhắn của thầy</strong></p><p>Progress Test 2 là để các bạn <strong>tự đo xem mình đã tiến bộ tới đâu</strong> sau cả khóa. Cứ bình tĩnh làm hết sức, áp dụng đúng các mẹo đã học. Sau bài kiểm tra, câu nào sai thì mình cùng xem lại để biết cần luyện thêm phần nào. Chúc các bạn làm bài thật tốt! 💪</p></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="pt-6">6. Bảng từ vựng (Vocabulary Sheet)</h2>
+<p><em>Từ vựng chọn lọc từ bảng từ vựng của các unit trong khóa (English – Pronunciation – Vietnamese).</em></p>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 32%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>English</strong></th>
+<th><strong>Pronunciation</strong></th>
+<th><strong>Vietnamese</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd"><td><strong>Application (n)</strong></td><td>/ˌæplɪˈkeɪʃn/</td><td>Đơn đăng ký, đơn xin việc</td></tr>
+<tr class="even"><td><strong>Competitor (n)</strong></td><td>/kəmˈpetɪtə(r)/</td><td>Đối thủ cạnh tranh</td></tr>
+<tr class="odd"><td><strong>Regulation (n)</strong></td><td>/ˌreɡjuˈleɪʃn/</td><td>Quy định</td></tr>
+<tr class="even"><td><strong>Defect (n)</strong></td><td>/ˈdiːfekt/</td><td>Lỗi, khuyết điểm</td></tr>
+<tr class="odd"><td><strong>Submit (v)</strong></td><td>/səbˈmɪt/</td><td>Nộp, gửi</td></tr>
+<tr class="even"><td><strong>Profitable (adj)</strong></td><td>/ˈprɒfɪtəbl/</td><td>Có lợi nhuận, có lãi</td></tr>
+<tr class="odd"><td><strong>Confidential (adj)</strong></td><td>/ˌkɒnfɪˈdenʃl/</td><td>Bảo mật, kín</td></tr>
+<tr class="even"><td><strong>Convenient (adj)</strong></td><td>/kənˈviːniənt/</td><td>Thuận tiện</td></tr>
+<tr class="odd"><td><strong>Accurate (adj)</strong></td><td>/ˈækjərət/</td><td>Chính xác</td></tr>
+<tr class="even"><td><strong>Complaint (n)</strong></td><td>/kəmˈpleɪnt/</td><td>Lời phàn nàn</td></tr>
+<tr class="odd"><td><strong>Distribute (v)</strong></td><td>/dɪˈstrɪbjuːt/</td><td>Phân phát, phân phối</td></tr>
+<tr class="even"><td><strong>Release (v)</strong></td><td>/rɪˈliːs/</td><td>Phát hành, công bố</td></tr>
+<tr class="odd"><td><strong>Promote (v)</strong></td><td>/prəˈməʊt/</td><td>Thăng chức; quảng bá</td></tr>
+<tr class="even"><td><strong>Handle (v)</strong></td><td>/ˈhændl/</td><td>Xử lý, giải quyết</td></tr>
+<tr class="odd"><td><strong>Procedure (n)</strong></td><td>/prəˈsiːdʒə(r)/</td><td>Thủ tục, quy trình</td></tr>
+<tr class="even"><td><strong>Afford (v)</strong></td><td>/əˈfɔːd/</td><td>Đủ khả năng (chi trả)</td></tr>
+<tr class="odd"><td><strong>Encourage (v)</strong></td><td>/ɪnˈkʌrɪdʒ/</td><td>Khuyến khích</td></tr>
+<tr class="even"><td><strong>Appointment (n)</strong></td><td>/əˈpɔɪntmənt/</td><td>Cuộc hẹn</td></tr>
+<tr class="odd"><td><strong>Technician (n)</strong></td><td>/tekˈnɪʃn/</td><td>Kỹ thuật viên</td></tr>
+<tr class="even"><td><strong>Enclosed (adj)</strong></td><td>/ɪnˈkləʊzd/</td><td>Được đính kèm</td></tr>
+<tr class="odd"><td><strong>Limited (adj)</strong></td><td>/ˈlɪmɪtɪd/</td><td>Có giới hạn</td></tr>
+<tr class="even"><td><strong>Incentive (n)</strong></td><td>/ɪnˈsentɪv/</td><td>Khoản thưởng khuyến khích</td></tr>
+<tr class="odd"><td><strong>Branch (n)</strong></td><td>/brɑːntʃ/</td><td>Chi nhánh</td></tr>
+<tr class="even"><td><strong>Reasonable (adj)</strong></td><td>/ˈriːznəbl/</td><td>Hợp lý, (giá) phải chăng</td></tr>
+<tr class="odd"><td><strong>Inspection (n)</strong></td><td>/ɪnˈspekʃn/</td><td>Sự kiểm tra</td></tr>
+<tr class="even"><td><strong>Banquet (n)</strong></td><td>/ˈbæŋkwɪt/</td><td>Tiệc lớn, yến tiệc</td></tr>
+<tr class="odd"><td><strong>Renovation (n)</strong></td><td>/ˌrenəˈveɪʃn/</td><td>Sự sửa chữa, cải tạo</td></tr>
+<tr class="even"><td><strong>Workload (n)</strong></td><td>/ˈwɜːkləʊd/</td><td>Khối lượng công việc</td></tr>
+<tr class="odd"><td><strong>Malfunction (n)</strong></td><td>/ˌmælˈfʌŋkʃn/</td><td>Sự trục trặc (máy móc)</td></tr>
+<tr class="even"><td><strong>Maintenance (n)</strong></td><td>/ˈmeɪntənəns/</td><td>Sự bảo trì, bảo dưỡng</td></tr>
+<tr class="odd"><td><strong>Registration (n)</strong></td><td>/ˌredʒɪˈstreɪʃn/</td><td>Sự đăng ký</td></tr>
+<tr class="even"><td><strong>Examine (v)</strong></td><td>/ɪɡˈzæmɪn/</td><td>Xem xét kỹ, kiểm tra</td></tr>
+<tr class="odd"><td><strong>Pedestrian (n)</strong></td><td>/pəˈdestriən/</td><td>Người đi bộ</td></tr>
+<tr class="even"><td><strong>Quarterly report (n)</strong></td><td>/ˈkwɔːtəli rɪˈpɔːt/</td><td>Báo cáo hàng quý</td></tr>
+<tr class="odd"><td><strong>Complimentary (adj)</strong></td><td>/ˌkɒmplɪˈmentri/</td><td>Miễn phí, tặng kèm</td></tr>
+<tr class="even"><td><strong>Participant (n)</strong></td><td>/pɑːˈtɪsɪpənt/</td><td>Người tham gia</td></tr>
+<tr class="odd"><td><strong>Warranty (n)</strong></td><td>/ˈwɒrənti/</td><td>Sự bảo hành, giấy bảo hành</td></tr>
+<tr class="even"><td><strong>Refund (n)</strong></td><td>/ˈriːfʌnd/</td><td>Tiền hoàn lại</td></tr>
+<tr class="odd"><td><strong>Accommodation (n)</strong></td><td>/əˌkɒməˈdeɪʃn/</td><td>Chỗ ở</td></tr>
+<tr class="even"><td><strong>Boarding pass (n)</strong></td><td>/ˈbɔːdɪŋ pɑːs/</td><td>Thẻ lên máy bay</td></tr>
+<tr class="odd"><td><strong>Itinerary (n)</strong></td><td>/aɪˈtɪnərəri/</td><td>Lịch trình (chuyến đi)</td></tr>
+<tr class="even"><td><strong>Eligible (adj)</strong></td><td>/ˈelɪdʒəbl/</td><td>Đủ điều kiện, đủ tư cách</td></tr>
+</tbody>
+</table>
+</div></main><footer>TOEIC Pre · Tóm tắt kiến thức</footer>
+<script>
+(function(){
+  'use strict';
+  // s: câu (___ = chỗ trống) · o: 4 đáp án · k: đáp án đúng · u: chủ điểm · h: tiêu đề/đoạn văn chèn trước câu (nếu có)
+  var P6='<div class="lt-grp">Part 6 · Câu 17–20: đọc đoạn email, rồi chọn đáp án cho từng chỗ trống</div>'+
+    '<div class="lt-passage"><p class="hd"><b>To:</b> All staff<br><b>Subject:</b> Third-floor renovation</p>'+
+    '<p>Dear staff,</p><p>Please note that the third floor of our building <b>(17)</b> ______ next week. During this time, the meeting rooms on that floor will be closed. Employees <b>(18)</b> ______ usually work on the third floor will move to the second floor until Friday.</p>'+
+    '<p><b>(19)</b> ______ you need a quiet place for a client call, please book Room 205 in advance. Each of the new rooms on the second floor <b>(20)</b> ______ a large screen and a projector.</p><p>We are sorry for any inconvenience.</p><p>Office Management Team</p></div>';
+  var Q=[
+    {h:'<div class="lt-grp">Part 5 · Câu 1–16</div>',u:'R1 · Danh từ',
+     s:'Please send your ___ to the human resources department by Friday.',o:['apply','application','applied','applicable'],k:1,
+     e:'Sau <b>tính từ sở hữu your</b> cần một <b>danh từ</b> → <b>application</b> (đơn đăng ký). apply là động từ, applied là V2/V3, applicable là tính từ.<br>Dịch: Vui lòng gửi đơn của bạn đến phòng nhân sự trước thứ Sáu.'},
+    {u:'R2 · Trạng từ',s:'The new software helps our staff complete their tasks more ___.',o:['efficient','efficiency','efficiently','efficiencies'],k:2,
+     e:'Câu đã đủ: staff complete their tasks (chủ ngữ + động từ + tân ngữ). Chỗ trống bổ nghĩa cho <b>động từ complete</b> → cần <b>trạng từ</b>: V + O + <b>Adv</b> → <b>efficiently</b>.<br>Dịch: Phần mềm mới giúp nhân viên hoàn thành công việc hiệu quả hơn.'},
+    {u:'R2 · Tính từ',s:'The manager tried to remain ___ even after several customers complained.',o:['calm','calmly','calmness','calming'],k:0,
+     e:'<b>remain</b> là động từ liên kết (giống be, seem, become) → theo sau là <b>tính từ</b>: remain <b>calm</b> = giữ bình tĩnh. Không dùng trạng từ calmly sau remain.<br>Dịch: Người quản lý cố giữ bình tĩnh dù có vài khách hàng phàn nàn.'},
+    {u:'R3 · Thì',s:'Ms. Tran ___ at our company since 2019.',o:['works','worked','will work','has worked'],k:3,
+     e:'Dấu hiệu <b>since + mốc thời gian</b> (từ 2019 đến giờ) → <b>hiện tại hoàn thành</b>: has + V3 → <b>has worked</b>.<br>Dịch: Cô Trần đã làm việc ở công ty chúng tôi từ năm 2019.'},
+    {u:'R3 · Thì',s:'By the end of next month, the company ___ its third branch in the city.',o:['opens','opened','has opened','will have opened'],k:3,
+     e:'Dấu hiệu <b>by + mốc tương lai</b> (by the end of next month) → <b>tương lai hoàn thành</b>: will have + V3 → <b>will have opened</b>.<br>Dịch: Đến cuối tháng sau, công ty sẽ mở xong chi nhánh thứ ba trong thành phố.'},
+    {u:'R3/R8 · Mệnh đề thời gian',s:'We will start the training session as soon as the technician ___.',o:['arrives','will arrive','arrived','arriving'],k:0,
+     e:'Sau liên từ thời gian <b>as soon as</b> (cũng như when, before, if) dùng <b>hiện tại đơn</b> dù nghĩa là tương lai → <b>arrives</b>. Không dùng will sau as soon as.<br>Dịch: Chúng ta sẽ bắt đầu buổi đào tạo ngay khi kỹ thuật viên tới.'},
+    {u:'R4 · Bị động',s:'All visitors\' bags must ___ at the main entrance.',o:['check','be checked','checking','have checked'],k:1,
+     e:'Túi xách không tự kiểm tra được, và sau chỗ trống <b>không có tân ngữ</b> → <b>bị động</b>. Sau must: <b>must be + V3</b> → <b>be checked</b>.<br>Dịch: Túi xách của mọi khách tham quan phải được kiểm tra ở lối vào chính.'},
+    {u:'R5–6 · To V',s:'The store manager decided ___ two more cashiers for the holiday season.',o:['hire','hiring','to hire','hired'],k:2,
+     e:'<b>decide + to V</b> (giống want, agree, hope, afford) → <b>to hire</b>.<br>Dịch: Quản lý cửa hàng quyết định thuê thêm hai thu ngân cho mùa lễ.'},
+    {u:'R5–6 · V-ing',s:'We look forward to ___ you at the opening ceremony next week.',o:['see','seeing','seen','be seen'],k:1,
+     e:'<b>look forward to + V-ing</b>: to ở đây là <b>giới từ</b>, nên theo sau là V-ing → <b>seeing</b>. Đây là bẫy rất hay gặp!<br>Dịch: Chúng tôi rất mong được gặp bạn tại lễ khai trương tuần sau.'},
+    {u:'R7 · Phân từ',s:'Please read the ___ contract carefully before you sign it.',o:['enclose','enclosing','enclosed','encloses'],k:2,
+     e:'Chỗ trống đứng <b>trước danh từ contract</b> → cần phân từ làm tính từ. Hợp đồng <b>được đính kèm</b> (bị động) → V3: <b>enclosed</b>. Nhớ cụm: the enclosed form / map / contract.<br>Dịch: Vui lòng đọc kỹ bản hợp đồng đính kèm trước khi ký.'},
+    {u:'R7 · Cụm phân từ',s:'___ by a famous architect, the new library attracts many visitors.',o:['Design','Designing','To design','Designed'],k:3,
+     e:'Ghép chủ ngữ sau dấu phẩy với động từ: thư viện <b>được thiết kế</b> bởi kiến trúc sư (thư viện không tự thiết kế), lại có <b>by</b> → bị động → <b>Designed</b>.<br>Dịch: Được thiết kế bởi một kiến trúc sư nổi tiếng, thư viện mới thu hút rất nhiều khách.'},
+    {u:'R8/R9 · Liên từ – Giới từ',s:'___ the heavy traffic, the airport bus arrived on time.',o:['Although','Despite','Because','Unless'],k:1,
+     e:'Sau chỗ trống là <b>cụm danh từ</b> (the heavy traffic), không phải mệnh đề S + V → cần <b>giới từ</b>. Nghĩa: kẹt xe nhưng vẫn đúng giờ (trái ngược) → <b>Despite</b>. Although, Because, Unless phải đi với S + V.<br>Dịch: Mặc dù kẹt xe nặng, xe buýt sân bay vẫn đến đúng giờ.'},
+    {u:'R8 · Liên từ cặp',s:'Applicants can submit their forms either online ___ by mail.',o:['and','nor','or','but'],k:2,
+     e:'Thấy <b>either</b> → chọn <b>or</b>: either A or B = hoặc A hoặc B. (both → and; neither → nor; not only → but also.)<br>Dịch: Người nộp đơn có thể gửi đơn trực tuyến hoặc qua đường bưu điện.'},
+    {u:'R9 · Giới từ',s:'The quarterly report must be submitted ___ Friday at 5 p.m.',o:['during','for','since','by'],k:3,
+     e:'<b>by + mốc thời gian</b> = hạn chót, không muộn hơn thời điểm đó → <b>by</b> Friday. during + sự kiện; for + khoảng thời gian; since dùng với thì hoàn thành.<br>Dịch: Báo cáo quý phải được nộp trước 5 giờ chiều thứ Sáu.'},
+    {u:'R10 · Mệnh đề quan hệ',s:'The employee ___ car is parked near the loading dock should move it today.',o:['who','whom','which','whose'],k:3,
+     e:'Sau chỗ trống là <b>danh từ car</b>, và nghĩa là “xe <b>của</b> nhân viên đó” → sở hữu → <b>whose + N</b>.<br>Dịch: Nhân viên có xe đậu gần khu bốc dỡ hàng nên dời xe đi trong hôm nay.'},
+    {u:'R11 · Câu điều kiện',s:'If the store ___ open on Sundays, more customers would come.',o:['is','were','will be','has been'],k:1,
+     e:'Vế sau có <b>would + V</b> → câu điều kiện <b>loại 2</b> (không có thật ở hiện tại). Vế If dùng quá khứ, với be dùng <b>were</b> cho mọi chủ ngữ → <b>were</b>.<br>Dịch: Nếu cửa hàng mở cửa vào Chủ nhật thì sẽ có nhiều khách hơn. (thực tế: Chủ nhật không mở)'},
+    {h:P6,u:'Part 6 · Bị động + thì',s:'(17) The third floor of our building ___ next week.',o:['renovated','will renovate','will be renovated','renovating'],k:2,
+     e:'Có <b>next week</b> → tương lai. Tầng 3 <b>được sửa chữa</b> (tòa nhà không tự sửa) và không có tân ngữ phía sau → bị động tương lai: <b>will be + V3</b> → <b>will be renovated</b>.<br>Dịch: Tầng 3 của tòa nhà sẽ được sửa chữa vào tuần sau.'},
+    {u:'Part 6 · Mệnh đề quan hệ',s:'(18) Employees ___ usually work on the third floor will move to the second floor.',o:['who','which','whose','where'],k:0,
+     e:'Danh từ đứng trước là <b>người</b> (Employees), sau chỗ trống là <b>động từ work</b> (thiếu chủ ngữ) → <b>who</b> + V.<br>Dịch: Những nhân viên thường làm việc ở tầng 3 sẽ chuyển xuống tầng 2.'},
+    {u:'Part 6 · Liên từ điều kiện',s:'(19) ___ you need a quiet place for a client call, please book Room 205 in advance.',o:['If','Despite','Because of','So'],k:0,
+     e:'Sau chỗ trống là <b>mệnh đề</b> (you need…) → cần liên từ, loại Despite và Because of (đi với danh từ). Nghĩa: <b>nếu</b> bạn cần chỗ yên tĩnh thì hãy đặt phòng → <b>If</b> (câu điều kiện loại 1 với câu mệnh lệnh). So không đứng đầu câu kiểu này.<br>Dịch: Nếu bạn cần chỗ yên tĩnh để gọi cho khách hàng, vui lòng đặt phòng 205 trước.'},
+    {u:'Part 6 · Hòa hợp chủ ngữ – động từ',s:'(20) Each of the new rooms on the second floor ___ a large screen and a projector.',o:['have','has','having','to have'],k:1,
+     e:'Câu cần <b>động từ chính</b> → loại having, to have. Chủ ngữ là <b>Each of the + N số nhiều</b> → động từ <b>số ít</b> → <b>has</b>. Đừng chia theo “rooms” hay “floor” đứng gần.<br>Dịch: Mỗi phòng mới ở tầng 2 đều có một màn hình lớn và một máy chiếu.'}
+  ];
+  var KEY='summaryOld.pt2.quiz', L='ABCD';
+  var ans=(function(){try{var a=JSON.parse(localStorage.getItem(KEY)||'{}');return a&&typeof a==='object'?a:{};}catch(e){return {};}})();
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(ans));}catch(e){}}
+  var box=document.getElementById('ltQuiz');
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function render(){
+    box.innerHTML=Q.map(function(q,i){
+      var st=esc(q.s).replace('___','<span class="lt-blank">&nbsp;</span>');
+      return (q.h||'')+'<div class="lt-q" id="ltq'+i+'"><div class="num">Câu '+(i+1)+' <small>· '+esc(q.u)+'</small></div><p class="st">'+st+'</p><div class="lt-opts">'+
+        q.o.map(function(o,j){return '<button type="button" class="lt-opt" data-q="'+i+'" data-o="'+j+'"><b>'+L[j]+'</b><span>'+esc(o)+'</span></button>';}).join('')+
+        '</div><div class="lt-fb" role="status"></div></div>';
+    }).join('');
+    Q.forEach(function(q,i){ if(typeof ans[i]==='number' && ans[i]>=0 && ans[i]<4) show(i,ans[i]); else delete ans[i]; });
+    score();
+  }
+  function show(i,j){
+    var q=Q[i], el=document.getElementById('ltq'+i), ok=j===q.k;
+    [].forEach.call(el.querySelectorAll('.lt-opt'),function(b,x){
+      b.disabled=true;
+      if(x===q.k) b.classList.add('ok'); else if(x===j) b.classList.add('bad'); else b.classList.add('dim');
+    });
+    var bl=el.querySelector('.lt-blank'); bl.textContent=q.o[q.k]; bl.classList.add('on');
+    var fb=el.querySelector('.lt-fb'); fb.className='lt-fb show '+(ok?'good':'wrong');
+    fb.innerHTML='<strong>'+(ok?'✓ Chính xác!':'✗ Chưa đúng. Đáp án: ('+L[q.k]+') '+esc(q.o[q.k]))+'</strong>'+q.e;
+  }
+  function score(){
+    var n=0,c=0; Q.forEach(function(q,i){ if(ans[i]!==undefined){n++; if(ans[i]===q.k)c++;} });
+    document.getElementById('ltScore').textContent='Đúng '+c+' / '+Q.length;
+    document.getElementById('ltDone').textContent='Đã làm '+n+'/'+Q.length;
+    document.getElementById('ltBar').style.width=(n/Q.length*100)+'%';
+    var end=document.getElementById('ltEnd');
+    if(n===Q.length){
+      end.classList.add('show');
+      document.getElementById('ltEndIc').textContent=c>=16?'🎉':c>=11?'👍':'💪';
+      document.getElementById('ltEndTxt').innerHTML='Bạn làm đúng <b>'+c+'/'+Q.length+'</b> câu. '+(c>=16?'Rất tốt! Bạn đã sẵn sàng cho Progress Test 2.':c>=11?'Khá lắm! Đọc lại giải thích các câu sai và xem lại unit tương ứng trong bảng ngữ pháp nhé.':'Đừng lo! Ôn lại phần 3 (Bảng ngữ pháp), mở lại các unit hay sai rồi làm lại nhé.');
+    } else end.classList.remove('show');
+  }
+  box.addEventListener('click',function(ev){
+    var b=ev.target.closest('.lt-opt'); if(!b||b.disabled) return;
+    var i=+b.dataset.q, j=+b.dataset.o; if(ans[i]!==undefined) return;
+    ans[i]=j; save(); show(i,j); score();
+    if(Object.keys(ans).length===Q.length) setTimeout(function(){document.getElementById('ltEnd').scrollIntoView({behavior:'smooth',block:'center'});},300);
+  });
+  function reset(){ ans={}; save(); render(); document.getElementById('ltq0').scrollIntoView({behavior:'smooth',block:'center'}); }
+  document.getElementById('ltAgain').onclick=reset;
+  document.getElementById('ltReset').onclick=reset;
+  render();
+})();
+</script>
+<script src="../flashcards.js" defer></script><script>window.ETSCFG=window.ETSCFG||{SCRIPT_URL:'https://script.google.com/macros/s/AKfycby3_45o2Zn3FMEMrVAg9nBCiQEIUvU9HgQxI2ZZtwJ4oUQ_bqXxj1vN0kL6cvhbDQCx/exec'};</script><script src="../assets/ui.js?v=3" data-site="summary"></script>
+</body></html>

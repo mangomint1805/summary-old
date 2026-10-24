@@ -1,0 +1,391 @@
+<!doctype html><html lang="vi"><head>
+<script>try{var d=document.documentElement,k=JSON.parse(localStorage.getItem('mt.skin')||'""');if(k==='scifi')d.setAttribute('data-theme','dark');if(k)d.setAttribute('data-skin',k)}catch(e){}</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<title>To V và V-ing trong TOEIC</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css"><script src="../classes.js"></script><link rel="icon" type="image/png" href="../icons/fav-64.png?v=3">
+<style>
+/* Chuyên đề To V / V-ing – màu cố định: Từ quyết định tím · To V đỏ · V-ing xanh dương · Đi được cả hai xanh lá */
+:root{--lt-n:#1d5fa8;--lt-n-bg:#e4eefb;--lt-v:#b42318;--lt-v-bg:#fde9e6;--lt-a:#1f7a4d;--lt-a-bg:#e2f3ea;--lt-r:#6d3fb0;--lt-r-bg:#efe7fb;}
+.lt .w{font-weight:700;border-radius:5px;padding:0 4px;white-space:nowrap;}
+.lt .w.n{color:var(--lt-n);background:var(--lt-n-bg);}
+.lt .w.v{color:var(--lt-v);background:var(--lt-v-bg);}
+.lt .w.a{color:var(--lt-a);background:var(--lt-a-bg);}
+.lt .w.r{color:var(--lt-r);background:var(--lt-r-bg);}
+.lt-legend{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;}
+.lt-legend .w{font-size:14px;padding:3px 10px;}
+.lt-toc{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px;padding:0;list-style:none;}
+.lt-toc a{display:inline-block;font-size:14px;font-weight:600;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;background:var(--paper);}
+.lt-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0;}
+.lt-card{border:1.5px solid var(--line);border-left-width:6px;border-radius:12px;padding:12px 14px;background:var(--card);}
+.lt-card.n{border-left-color:var(--lt-n);} .lt-card.v{border-left-color:var(--lt-v);} .lt-card.a{border-left-color:var(--lt-a);} .lt-card.r{border-left-color:var(--lt-r);}
+.lt-card h3{margin:0 0 4px!important;font-size:17px;}
+.lt-card.n h3{color:var(--lt-n);} .lt-card.v h3{color:var(--lt-v);} .lt-card.a h3{color:var(--lt-a);} .lt-card.r h3{color:var(--lt-r);}
+.lt-card h3 small{font-weight:600;color:var(--dim);font-size:13.5px;}
+.lt-card p{font-size:15px;}
+.lt-card .ex{margin-top:8px;padding:8px 10px;background:var(--paper);border-radius:8px;font-size:15px;}
+.lt-card .ex i{display:block;font-style:normal;color:var(--dim);font-size:13.5px;}
+.lt-suf{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 16px;}
+.lt-suf h3{margin-bottom:4px!important;}
+.lt-suf table td:first-child{white-space:nowrap;font-weight:700;}
+.lt-h-n{color:var(--lt-n)!important;} .lt-h-v{color:var(--lt-v)!important;} .lt-h-a{color:var(--lt-a)!important;} .lt-h-r{color:var(--lt-r)!important;}
+.doc table.lt-t th.n{background:var(--lt-n-bg);color:var(--lt-n);} .doc table.lt-t th.v{background:var(--lt-v-bg);color:var(--lt-v);}
+.doc table.lt-t th.a{background:var(--lt-a-bg);color:var(--lt-a);} .doc table.lt-t th.r{background:var(--lt-r-bg);color:var(--lt-r);}
+.lt-trap{margin:14px 0;padding:14px 16px;border:1.5px dashed #c2410c;border-radius:12px;background:#fff6ef;}
+.lt-trap h3{color:#9a3412!important;margin:0 0 6px!important;}
+.lt-trap ol{margin:0;padding-left:22px;}
+.lt-trap li{margin:8px 0;}
+.lt-steps{counter-reset:s;list-style:none;margin:12px 0;padding:0;display:grid;gap:8px;}
+.lt-steps li{counter-increment:s;position:relative;padding:10px 12px 10px 52px;border:1px solid var(--line);border-radius:12px;background:var(--paper);}
+.lt-steps li::before{content:counter(s);position:absolute;left:12px;top:10px;width:28px;height:28px;border-radius:50%;background:var(--amber);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.lt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;}
+.lt-scroll table{margin:0!important;min-width:560px;}
+.lt-note{font-size:14px;color:var(--dim);}
+.lt-pos td:nth-child(2){white-space:nowrap;}
+/* so sánh 2 cột */
+.lt-vs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 0;}
+.lt-vs > div{padding:8px 10px;border-radius:8px;background:var(--paper);font-size:14.5px;}
+.lt-vs b{display:block;}
+.lt-vs i{display:block;font-style:normal;}
+/* bài luyện tập */
+.lt-score{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:10px 0 12px;padding:10px 14px;border-radius:12px;background:#fffaf0;border:1px solid #ecd3a6;font-weight:600;}
+.lt-score .bar{flex:1;min-width:120px;height:8px;border-radius:99px;background:var(--line);overflow:hidden;}
+.lt-score .bar i{display:block;height:100%;width:0;background:var(--teal);transition:width .3s;}
+.lt-q{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0;background:var(--card);}
+.lt-q .num{font-size:13px;font-weight:700;color:var(--amber-ink);letter-spacing:.04em;text-transform:uppercase;}
+.lt-q .st{font-size:16.5px;margin:4px 0 10px;line-height:1.55;}
+.lt-blank{display:inline-block;min-width:88px;border-bottom:2px solid var(--ink);text-align:center;font-weight:700;}
+.lt-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.lt-opt{font:inherit;font-size:15.5px;text-align:left;display:flex;gap:8px;align-items:center;min-height:46px;padding:9px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;}
+.lt-opt b{flex:none;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--line);font-size:13px;}
+.lt-opt:hover:not(:disabled){border-color:var(--amber);}
+.lt-opt:focus-visible{outline:3px solid var(--amber);outline-offset:2px;}
+.lt-opt:disabled{cursor:default;}
+.lt-opt.ok{border-color:#1f7a4d;background:#e2f3ea;}
+.lt-opt.ok b{background:#1f7a4d;border-color:#1f7a4d;color:#fff;}
+.lt-opt.bad{border-color:#b42318;background:#fde9e6;}
+.lt-opt.bad b{background:#b42318;border-color:#b42318;color:#fff;}
+.lt-opt.dim{opacity:.55;}
+.lt-fb{display:none;margin-top:10px;padding:10px 12px;border-radius:10px;font-size:15px;}
+.lt-fb.show{display:block;}
+.lt-fb.good{background:#e2f3ea;border:1px solid #9fd2b6;}
+.lt-fb.wrong{background:#fde9e6;border:1px solid #f0b4ab;}
+.lt-fb strong{display:block;margin-bottom:2px;}
+.lt-fb .dich{display:block;margin-top:6px;color:var(--dim);font-size:14px;}
+.lt-end{display:none;text-align:center;margin:16px 0 4px;padding:18px 16px;border-radius:14px;border:1.5px solid var(--amber);background:#fffaf0;}
+.lt-end.show{display:block;}
+.lt-end .big{font-size:40px;line-height:1;}
+.lt-end p{margin:8px 0;font-size:17px;}
+.lt-btn{font:inherit;font-weight:700;font-size:16px;border:0;border-radius:10px;padding:11px 20px;background:var(--amber);color:#fff;cursor:pointer;min-height:46px;}
+.lt-btn.alt{background:var(--card);color:var(--amber-ink);border:1.5px solid var(--amber);}
+.lt-again{text-align:right;margin:8px 0 0;}
+@media (max-width:480px){
+  .lt-cards,.lt-suf{grid-template-columns:1fr;}
+  .doc table{font-size:14.5px;}
+  .doc th,.doc td{padding:7px 8px;}
+  .lt-q{padding:12px;}
+  .lt-opt{font-size:15px;padding:8px 9px;}
+  .lt-pos td:nth-child(2){white-space:normal;}
+  .lt-vs{grid-template-columns:1fr;}
+  .lt-suf table td:first-child{white-space:normal;}
+}
+</style>
+</head><body data-nav="home"><header class="top"><a href="../index.html">TOEIC Pre · Tóm tắt kiến thức</a></header><main class="lt"><p class="sub"><a href="../index.html">← Tất cả bài</a></p><h1>To V và V-ing trong TOEIC</h1><p class="sub">Chuyên đề bổ trợ · Động từ + To V, động từ + V-ing, giới từ + V-ing và các cụm cố định (To-infinitives &amp; Gerunds)</p><div class="doc">
+<p>Khi hai động từ đứng cạnh nhau, động từ thứ hai thường ở dạng <strong>To V</strong> (to-infinitive: <em>to open, to send</em>) hoặc <strong>V-ing</strong> (gerund – danh động từ: <em>opening, sending</em>). Chọn dạng nào phụ thuộc vào <strong>từ đứng ngay trước</strong>: động từ, tính từ hay giới từ. Trong <strong>Part 5</strong>, dạng câu này gần như đề nào cũng có. Cả trang dùng các màu sau:</p>
+<div class="lt-legend"><span class="w r">Từ "quyết định" (V / adj / prep)</span><span class="w v">To V</span><span class="w n">V-ing</span><span class="w a">Đi được cả hai</span></div>
+<ul class="lt-toc"><li><a href="#lt-1">1. To V và V-ing là gì</a></li><li><a href="#lt-2">2. Động từ + To V</a></li><li><a href="#lt-3">3. Động từ + V-ing</a></li><li><a href="#lt-4">4. Đi được cả hai</a></li><li><a href="#lt-5">5. Giới từ + V-ing</a></li><li><a href="#lt-6">6. Mục đích &amp; tính từ + To V</a></li><li><a href="#lt-7">7. Cụm hay gặp</a></li><li><a href="#lt-8">8. Mẹo Part 5</a></li><li><a href="#lt-9">9. Luyện tập</a></li><li><a href="#lt-10">10. Từ vựng</a></li></ul>
+
+<h2 id="lt-1">1. To V và V-ing là gì?</h2>
+<div class="lt-cards">
+<div class="lt-card v"><h3>To V <small>to + động từ nguyên mẫu</small></h3>
+<p>Thường mang ý <strong>hướng tới tương lai</strong>: dự định, mong muốn, mục đích ("để làm gì").</p>
+<div class="ex">We <span class="w r">plan</span> <span class="w v">to open</span> a new store.<i>Chúng tôi dự định mở một cửa hàng mới.</i></div></div>
+<div class="lt-card n"><h3>V-ing <small>danh động từ (gerund)</small></h3>
+<p>Dùng <strong>như một danh từ</strong>: làm chủ ngữ, tân ngữ, hoặc đứng sau giới từ. Thường nói về <strong>việc nói chung / đã, đang xảy ra</strong>.</p>
+<div class="ex"><span class="w n">Recycling</span> paper saves money.<i>Tái chế giấy giúp tiết kiệm tiền. (V-ing làm chủ ngữ)</i></div></div>
+</div>
+
+<h2 id="lt-2">2. Động từ + To V</h2>
+<p>Các động từ dưới đây <strong>luôn</strong> đi với <span class="w v">to V</span>. Mẹo nhớ: phần lớn là động từ về <strong>kế hoạch, mong muốn, hứa hẹn</strong> (việc chưa xảy ra).</p>
+<div class="lt-suf">
+<div><h3 class="lt-h-v">V + to V</h3>
+<table class="lt-t"><thead><tr><th class="v">Động từ</th><th class="v">Nghĩa</th></tr></thead><tbody>
+<tr><td>decide / plan / intend</td><td>quyết định / dự định / có ý định</td></tr>
+<tr><td>want / hope / wish / expect</td><td>muốn / hy vọng / mong / trông đợi</td></tr>
+<tr><td>agree / refuse</td><td>đồng ý / từ chối</td></tr>
+<tr><td>offer / promise</td><td>đề nghị (làm giúp) / hứa</td></tr>
+<tr><td>need / aim / strive</td><td>cần / nhắm tới / nỗ lực</td></tr>
+<tr><td>manage / fail</td><td>xoay xở được / không làm được</td></tr>
+<tr><td>afford / hesitate</td><td>đủ khả năng (chi trả) / do dự</td></tr>
+<tr><td>seem / tend</td><td>có vẻ / có xu hướng</td></tr>
+</tbody></table></div>
+<div><h3 class="lt-h-v">V + O + to V</h3>
+<table class="lt-t"><thead><tr><th class="v">Động từ</th><th class="v">Nghĩa</th></tr></thead><tbody>
+<tr><td>ask / tell sb to V</td><td>yêu cầu / bảo ai làm gì</td></tr>
+<tr><td>allow / permit sb to V</td><td>cho phép ai làm gì</td></tr>
+<tr><td>encourage sb to V</td><td>khuyến khích ai làm gì</td></tr>
+<tr><td>require sb to V</td><td>yêu cầu (bắt buộc) ai làm gì</td></tr>
+<tr><td>remind sb to V</td><td>nhắc ai làm gì</td></tr>
+<tr><td>enable sb to V</td><td>giúp ai có thể làm gì</td></tr>
+<tr><td>invite / advise sb to V</td><td>mời / khuyên ai làm gì</td></tr>
+<tr><td>expect / want sb to V</td><td>mong / muốn ai làm gì</td></tr>
+</tbody></table></div>
+</div>
+<div class="lt-cards">
+<div class="lt-card v"><h3>Ví dụ</h3>
+<div class="ex">The company <span class="w r">decided</span> <span class="w v">to expand</span> overseas.<i>Công ty quyết định mở rộng ra nước ngoài.</i></div>
+<div class="ex">The new app <span class="w r">enables</span> customers <span class="w v">to track</span> their orders.<i>Ứng dụng mới giúp khách hàng theo dõi đơn hàng.</i></div></div>
+<div class="lt-card r"><h3>Dạng bị động: be + V3 + to V</h3>
+<p>Rất hay gặp trong thông báo TOEIC:</p>
+<p><b>be required to</b> (bắt buộc phải) · <b>be asked to</b> (được yêu cầu) · <b>be expected to</b> (được dự kiến) · <b>be allowed to</b> (được phép) · <b>be encouraged to</b> (được khuyến khích).</p>
+<div class="ex">All visitors <span class="w r">are required</span> <span class="w v">to sign</span> in.<i>Tất cả khách đến thăm đều phải ký tên khi vào.</i></div></div>
+</div>
+
+<h2 id="lt-3">3. Động từ + V-ing</h2>
+<p>Các động từ dưới đây <strong>luôn</strong> đi với <span class="w n">V-ing</span>. Thầy gợi ý nhóm lại theo nghĩa cho dễ nhớ:</p>
+<div class="lt-scroll"><table class="lt-t">
+<thead><tr><th class="n">Nhóm nghĩa</th><th class="n">Động từ + V-ing</th><th class="n">Ví dụ</th></tr></thead>
+<tbody>
+<tr><td><strong>Đề nghị, cân nhắc</strong></td><td>suggest, recommend, consider</td><td>He <b>suggested</b> <b>hiring</b> more staff.</td></tr>
+<tr><td><strong>Tránh, hoãn, ngừng</strong></td><td>avoid, postpone, delay, quit, discontinue</td><td>Please <b>avoid</b> <b>using</b> your phone here.</td></tr>
+<tr><td><strong>Hoàn thành, tiếp tục</strong></td><td>finish, keep, practice</td><td>She <b>finished</b> <b>writing</b> the report.</td></tr>
+<tr><td><strong>Thích, phiền, cảm kích</strong></td><td>enjoy, mind, appreciate</td><td>We <b>appreciate</b> <b>receiving</b> your feedback.</td></tr>
+<tr><td><strong>Bao gồm, liên quan</strong></td><td>include, involve, risk, deny</td><td>The job <b>involves</b> <b>meeting</b> clients.</td></tr>
+</tbody></table></div>
+<p class="lt-note">Trên điện thoại: vuốt ngang bảng để xem hết 3 cột.</p>
+<div class="lt-cards">
+<div class="lt-card n"><h3>Câu lịch sự hay gặp</h3>
+<div class="ex">Would you <span class="w r">mind</span> <span class="w n">sending</span> me the file?<i>Bạn có phiền gửi tôi tệp đó không?</i></div>
+<div class="ex">We <span class="w r">recommend</span> <span class="w n">booking</span> your tickets early.<i>Chúng tôi khuyên bạn nên đặt vé sớm.</i></div></div>
+<div class="lt-card r"><h3>Lưu ý</h3>
+<p><b>suggest / recommend</b> <strong>không</strong> đi với to V: <em>He suggested <s>to hire</s> <b>hiring</b>…</em></p>
+<p>Nhưng <b>recommend / advise + sb + to V</b> thì đúng: <em>She advised me <b>to wait</b>.</em></p></div>
+</div>
+
+<h2 id="lt-4">4. Động từ đi được cả To V và V-ing</h2>
+<div class="lt-cards">
+<div class="lt-card a"><h3>Nghĩa gần như không đổi</h3>
+<p><b>begin, start, continue, like, love, prefer, hate</b> + to V / V-ing.</p>
+<div class="ex">Prices will <span class="w r">continue</span> <span class="w a">to rise</span> / <span class="w a">rising</span>.<i>Giá sẽ tiếp tục tăng.</i></div></div>
+<div class="lt-card v"><h3>Nghĩa THAY ĐỔI <small>cần nhớ kỹ</small></h3>
+<p>Mẹo: <span class="w v">to V</span> = việc <strong>chưa làm</strong> (sắp làm) · <span class="w n">V-ing</span> = việc <strong>đã làm</strong> rồi.</p></div>
+</div>
+<div class="lt-scroll"><table class="lt-t">
+<thead><tr><th>Động từ</th><th class="v">+ to V</th><th class="n">+ V-ing</th></tr></thead>
+<tbody>
+<tr><td><strong>remember</strong></td><td>nhớ <strong>phải</strong> làm: <em>Remember <b>to lock</b> the door.</em></td><td>nhớ <strong>đã</strong> làm: <em>I remember <b>locking</b> it.</em></td></tr>
+<tr><td><strong>forget</strong></td><td>quên (không) làm việc cần làm: <em>Don't forget <b>to call</b> him.</em></td><td>(không) quên việc đã làm: <em>I'll never forget <b>meeting</b> her.</em></td></tr>
+<tr><td><strong>stop</strong></td><td>dừng lại <strong>để</strong> làm việc khác: <em>He stopped <b>to buy</b> coffee.</em></td><td>thôi, ngừng hẳn việc đang làm: <em>He stopped <b>smoking</b>.</em></td></tr>
+<tr><td><strong>try</strong></td><td>cố gắng: <em>Try <b>to finish</b> by noon.</em></td><td>thử làm: <em>Try <b>restarting</b> the computer.</em></td></tr>
+<tr><td><strong>regret</strong></td><td>lấy làm tiếc <strong>phải</strong> (báo tin): <em>We regret <b>to inform</b> you…</em></td><td>hối tiếc vì <strong>đã</strong> làm: <em>I regret <b>missing</b> the seminar.</em></td></tr>
+</tbody></table></div>
+
+<h2 id="lt-5">5. Giới từ + V-ing (và "to" là giới từ)</h2>
+<p>Quy tắc vàng: <strong>sau giới từ</strong> (in, on, at, for, of, about, by, without, before, after…) <strong>luôn dùng V-ing</strong>, không dùng V nguyên mẫu hay to V.</p>
+<div class="lt-cards">
+<div class="lt-card n"><h3>Giới từ + V-ing</h3>
+<div class="ex"><span class="w r">Before</span> <span class="w n">signing</span> the contract, read it carefully.<i>Trước khi ký hợp đồng, hãy đọc kỹ.</i></div>
+<div class="ex">Thank you <span class="w r">for</span> <span class="w n">choosing</span> our hotel.<i>Cảm ơn quý khách đã chọn khách sạn của chúng tôi.</i></div>
+<div class="ex">She is interested <span class="w r">in</span> <span class="w n">joining</span> the team.<i>Cô ấy quan tâm đến việc gia nhập nhóm.</i></div></div>
+<div class="lt-card r"><h3>"to" là GIỚI TỪ → + V-ing</h3>
+<p>Trong các cụm sau, <b>to</b> là giới từ (sau nó đặt được danh từ), nên phải dùng <span class="w n">V-ing</span>:</p>
+<p><b>look forward to</b> (mong chờ) · <b>be committed to</b> / <b>be dedicated to</b> / <b>be devoted to</b> (tận tâm, cam kết) · <b>be used to</b> / <b>be accustomed to</b> (quen với) · <b>object to</b> (phản đối) · <b>contribute to</b> (góp phần) · <b>in addition to</b> (ngoài … ra).</p>
+<div class="ex">We <span class="w r">look forward to</span> <span class="w n">working</span> with you.<i>Chúng tôi mong được hợp tác với quý vị.</i></div></div>
+</div>
+<div class="lt-trap"><h3>⚠️ Bẫy hay gặp</h3>
+<ol>
+<li><strong>Cách thử "to" là giới từ hay to V:</strong> thay bằng một danh từ. <em>look forward to <b>the meeting</b></em> ✓ → to là giới từ → <b>look forward to meeting</b>. <em>decide to <s>the meeting</s></em> ✗ → to V → <b>decide to meet</b>.</li>
+<li><strong>be used to + V-ing</strong> (quen với việc) ≠ <strong>used to + V</strong> (đã từng): <em>I am used to <b>working</b> late.</em> / <em>I used to <b>work</b> late.</em></li>
+<li><strong>"for + V" là SAI</strong> khi muốn nói "để": <em><s>for reduce</s></em> → <b>to reduce / in order to reduce</b>.</li>
+<li><strong>Đừng chọn danh từ khi phía sau còn tân ngữ:</strong> <em>after <b>reviewing</b> the plan</em> (V-ing + tân ngữ the plan), không chọn <em>after review the plan</em>.</li>
+</ol></div>
+
+<h2 id="lt-6">6. Mục đích (in order to) và Tính từ / Danh từ + To V</h2>
+<div class="lt-cards">
+<div class="lt-card v"><h3>Chỉ mục đích: "để"</h3>
+<p><b>to V</b> = <b>in order to V</b> = <b>so as to V</b>. Phủ định: <b>in order not to V</b> / <b>so as not to V</b>.</p>
+<div class="ex"><span class="w r">In order to</span> <span class="w v">reduce</span> costs, the factory switched to LED lights.<i>Để giảm chi phí, nhà máy chuyển sang đèn LED.</i></div>
+<p class="lt-note">So sánh: <b>so that</b> + S + V (liên từ) · <b>in order to</b> + V nguyên mẫu.</p></div>
+<div class="lt-card a"><h3>Tính từ + to V</h3>
+<p><b>be able to</b> (có thể) · <b>be likely to</b> (có khả năng) · <b>be eager to</b> (háo hức) · <b>be willing to</b> (sẵn lòng) · <b>be ready to</b> (sẵn sàng) · <b>be pleased / happy to</b> (vui lòng) · <b>be reluctant to</b> (miễn cưỡng) · <b>be sure to</b> (nhớ, chắc chắn) · <b>be eligible to</b> (đủ điều kiện).</p>
+<p>Cấu trúc <b>It is + adj + to V</b>: <em>It is important <b>to arrive</b> on time.</em></p></div>
+<div class="lt-card n"><h3>Danh từ + to V</h3>
+<p><b>a plan to</b> · <b>a decision to</b> · <b>an effort to</b> · <b>the ability to</b> · <b>an opportunity to</b> · <b>a chance to</b> · <b>a way to</b> · <b>the right to</b>.</p>
+<div class="ex">This is a great <span class="w r">opportunity</span> <span class="w v">to meet</span> new clients.<i>Đây là cơ hội tuyệt vời để gặp khách hàng mới.</i></div></div>
+</div>
+
+<h2 id="lt-7">7. Cụm cố định hay gặp trong TOEIC</h2>
+<div class="lt-suf">
+<div><h3 class="lt-h-v">Cụm + to V</h3>
+<table class="lt-t"><thead><tr><th class="v">Cụm</th><th class="v">Nghĩa</th></tr></thead><tbody>
+<tr><td>do not hesitate to V</td><td>đừng ngần ngại làm gì</td></tr>
+<tr><td>feel free to V</td><td>cứ tự nhiên làm gì</td></tr>
+<tr><td>make an effort to V</td><td>nỗ lực làm gì</td></tr>
+<tr><td>be about to V</td><td>sắp sửa làm gì</td></tr>
+<tr><td>be supposed to V</td><td>được cho là phải làm gì</td></tr>
+<tr><td>be scheduled to V</td><td>được lên lịch làm gì</td></tr>
+<tr><td>take steps to V</td><td>thực hiện biện pháp để</td></tr>
+</tbody></table></div>
+<div><h3 class="lt-h-n">Cụm + V-ing</h3>
+<table class="lt-t"><thead><tr><th class="n">Cụm</th><th class="n">Nghĩa</th></tr></thead><tbody>
+<tr><td>spend time / money V-ing</td><td>dành thời gian / tiền làm gì</td></tr>
+<tr><td>have difficulty (in) V-ing</td><td>gặp khó khăn khi làm gì</td></tr>
+<tr><td>be busy V-ing</td><td>bận làm gì</td></tr>
+<tr><td>be worth V-ing</td><td>đáng để làm gì</td></tr>
+<tr><td>it is no use V-ing</td><td>làm gì cũng vô ích</td></tr>
+<tr><td>be capable of V-ing</td><td>có khả năng làm gì</td></tr>
+<tr><td>be responsible for V-ing</td><td>chịu trách nhiệm làm gì</td></tr>
+</tbody></table></div>
+</div>
+<div class="lt-cards">
+<div class="lt-card v"><h3>Ví dụ</h3>
+<div class="ex">Please <span class="w r">do not hesitate</span> <span class="w v">to contact</span> us.<i>Xin đừng ngần ngại liên hệ với chúng tôi.</i></div>
+<div class="ex">The meeting <span class="w r">is scheduled</span> <span class="w v">to begin</span> at 9 A.M.<i>Cuộc họp được lên lịch bắt đầu lúc 9 giờ sáng.</i></div></div>
+<div class="lt-card n"><h3>Ví dụ</h3>
+<div class="ex">Our team <span class="w r">spent</span> two weeks <span class="w n">testing</span> the system.<i>Nhóm chúng tôi dành hai tuần để kiểm tra hệ thống.</i></div>
+<div class="ex">The museum <span class="w r">is worth</span> <span class="w n">visiting</span>.<i>Bảo tàng đáng để tham quan.</i></div></div>
+</div>
+
+<h2 id="lt-8">8. Mẹo làm Part 5 câu To V / V-ing</h2>
+<ol class="lt-steps">
+<li><strong>Nhìn 4 đáp án</strong>: có cả <em>V nguyên mẫu, to V, V-ing, V3</em> của cùng một động từ → câu chọn dạng động từ.</li>
+<li><strong>Nhìn từ NGAY TRƯỚC chỗ trống</strong>: là <span class="w r">giới từ</span> (for, by, before, after, without, look forward to, committed to…) → chọn <span class="w n">V-ing</span>.</li>
+<li><strong>Là động từ</strong>: nhớ bảng ở phần 2 và 3 (decide, plan, agree → <span class="w v">to V</span>; avoid, suggest, consider → <span class="w n">V-ing</span>). Có tân ngữ chen giữa (ask / allow / enable <em>sb</em> ___) → <span class="w v">to V</span>.</li>
+<li><strong>Là tính từ / danh từ</strong> (able, eager, willing, opportunity, effort…) → <span class="w v">to V</span>. Đầu câu + dấu phẩy, nghĩa "để" → <b>In order to / To</b>.</li>
+<li><strong>Kiểm tra nghĩa</strong> với remember / forget / stop / try / regret: việc sắp làm → to V; việc đã làm → V-ing.</li>
+</ol>
+
+<h2 id="lt-9">9. Luyện tập (Part 5)</h2>
+<p>12 câu kiểu Part 5. Chạm vào một đáp án để xem đúng / sai, <strong>dấu hiệu</strong> giúp chọn đáp án và bản dịch.</p>
+<div class="lt-score" aria-live="polite"><span id="ltScore">Đúng 0 / 12</span><span class="bar"><i id="ltBar"></i></span><span id="ltDone">Đã làm 0/12</span></div>
+<div id="ltQuiz"></div>
+<div class="lt-end" id="ltEnd" aria-live="polite"><div class="big" id="ltEndIc">🎉</div><p id="ltEndTxt"></p><button type="button" class="lt-btn" id="ltAgain">↺ Làm lại</button></div>
+<p class="lt-again"><button type="button" class="lt-btn alt" id="ltReset">↺ Làm lại</button></p>
+
+<h2 id="lt-10">Bảng từ vựng (Vocabulary Sheet)</h2>
+<p><em>Từ vựng trong chuyên đề này (English – Pronunciation – Vietnamese).</em></p>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 32%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>English</strong></th>
+<th><strong>Pronunciation</strong></th>
+<th><strong>Vietnamese</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd"><td><strong>Infinitive (n)</strong></td><td>/ɪnˈfɪnətɪv/</td><td>Động từ nguyên mẫu</td></tr>
+<tr class="even"><td><strong>Gerund (n)</strong></td><td>/ˈdʒerənd/</td><td>Danh động từ (V-ing)</td></tr>
+<tr class="odd"><td><strong>Decide (v)</strong></td><td>/dɪˈsaɪd/</td><td>Quyết định</td></tr>
+<tr class="even"><td><strong>Intend (v)</strong></td><td>/ɪnˈtend/</td><td>Có ý định</td></tr>
+<tr class="odd"><td><strong>Refuse (v)</strong></td><td>/rɪˈfjuːz/</td><td>Từ chối</td></tr>
+<tr class="even"><td><strong>Afford (v)</strong></td><td>/əˈfɔːd/</td><td>Có đủ khả năng (chi trả)</td></tr>
+<tr class="odd"><td><strong>Hesitate (v)</strong></td><td>/ˈhezɪteɪt/</td><td>Do dự, ngần ngại</td></tr>
+<tr class="even"><td><strong>Avoid (v)</strong></td><td>/əˈvɔɪd/</td><td>Tránh</td></tr>
+<tr class="odd"><td><strong>Consider (v)</strong></td><td>/kənˈsɪdə(r)/</td><td>Cân nhắc, xem xét</td></tr>
+<tr class="even"><td><strong>Suggest (v)</strong></td><td>/səˈdʒest/</td><td>Đề nghị, gợi ý</td></tr>
+<tr class="odd"><td><strong>Recommend (v)</strong></td><td>/ˌrekəˈmend/</td><td>Khuyên, đề xuất</td></tr>
+<tr class="even"><td><strong>Postpone (v)</strong></td><td>/pəˈspəʊn/</td><td>Hoãn lại</td></tr>
+<tr class="odd"><td><strong>Appreciate (v)</strong></td><td>/əˈpriːʃieɪt/</td><td>Cảm kích, đánh giá cao</td></tr>
+<tr class="even"><td><strong>Discontinue (v)</strong></td><td>/ˌdɪskənˈtɪnjuː/</td><td>Ngừng (sản xuất, cung cấp)</td></tr>
+<tr class="odd"><td><strong>Encourage (v)</strong></td><td>/ɪnˈkʌrɪdʒ/</td><td>Khuyến khích</td></tr>
+<tr class="even"><td><strong>Require (v)</strong></td><td>/rɪˈkwaɪə(r)/</td><td>Yêu cầu, đòi hỏi</td></tr>
+<tr class="odd"><td><strong>Enable (v)</strong></td><td>/ɪˈneɪbl/</td><td>Giúp cho (ai) có thể</td></tr>
+<tr class="even"><td><strong>Remind (v)</strong></td><td>/rɪˈmaɪnd/</td><td>Nhắc nhở</td></tr>
+<tr class="odd"><td><strong>Eager (adj)</strong></td><td>/ˈiːɡə(r)/</td><td>Háo hức, hăng hái</td></tr>
+<tr class="even"><td><strong>Willing (adj)</strong></td><td>/ˈwɪlɪŋ/</td><td>Sẵn lòng</td></tr>
+<tr class="odd"><td><strong>Reluctant (adj)</strong></td><td>/rɪˈlʌktənt/</td><td>Miễn cưỡng, ngần ngại</td></tr>
+<tr class="even"><td><strong>Committed (adj)</strong></td><td>/kəˈmɪtɪd/</td><td>Cam kết, tận tâm</td></tr>
+<tr class="odd"><td><strong>Dedicated (adj)</strong></td><td>/ˈdedɪkeɪtɪd/</td><td>Tận tụy, chuyên tâm</td></tr>
+<tr class="even"><td><strong>Accustomed (adj)</strong></td><td>/əˈkʌstəmd/</td><td>Quen với</td></tr>
+<tr class="odd"><td><strong>Look forward to (phr)</strong></td><td>/lʊk ˈfɔːwəd tə/</td><td>Mong chờ, mong đợi</td></tr>
+<tr class="even"><td><strong>Trade fair (n)</strong></td><td>/ˈtreɪd feə(r)/</td><td>Hội chợ thương mại</td></tr>
+<tr class="odd"><td><strong>Reliable (adj)</strong></td><td>/rɪˈlaɪəbl/</td><td>Đáng tin cậy</td></tr>
+<tr class="even"><td><strong>Laboratory (n)</strong></td><td>/ləˈbɒrətri/</td><td>Phòng thí nghiệm</td></tr>
+</tbody>
+</table>
+</div></main><footer>TOEIC Pre · Tóm tắt kiến thức</footer>
+<script>
+(function(){
+  'use strict';
+  // t: màu của đáp án đúng khi điền vào chỗ trống (v = to V, n = V-ing)
+  var Q=[
+    {s:'After months of planning, the company has decided ___ a new branch in Da Nang.',o:['open','opening','to open','opened'],k:2,t:'v',
+     e:'Động từ <b>decide</b> luôn đi với <b>to V</b> → <b>to open</b>. Không nói "decide opening". open / opened không đứng ngay sau decided.<span class="dich">Dịch: Sau nhiều tháng lên kế hoạch, công ty đã quyết định mở chi nhánh mới ở Đà Nẵng.</span>'},
+    {s:'Customers should avoid ___ their passwords with anyone, including bank employees.',o:['share','to share','shared','sharing'],k:3,t:'n',
+     e:'Động từ <b>avoid</b> luôn đi với <b>V-ing</b> → <b>sharing</b>. "avoid to share" là sai; share / shared không đứng sau avoid.<span class="dich">Dịch: Khách hàng nên tránh chia sẻ mật khẩu với bất kỳ ai, kể cả nhân viên ngân hàng.</span>'},
+    {s:'We look forward to ___ you at our annual trade fair next month.',o:['see','seeing','be seen','saw'],k:1,t:'n',
+     e:'Trong cụm <b>look forward to</b>, "to" là <b>giới từ</b> (có thể nói look forward to <i>the fair</i>) → sau đó dùng <b>V-ing</b> → <b>seeing</b>. see / be seen / saw đều sai sau giới từ.<span class="dich">Dịch: Chúng tôi mong được gặp quý vị tại hội chợ thương mại thường niên vào tháng tới.</span>'},
+    {s:'Bright Star Logistics is committed to ___ fast and reliable delivery to every customer.',o:['providing','provide','provided','provides'],k:0,t:'n',
+     e:'<b>be committed to</b> (cam kết): "to" là <b>giới từ</b> → theo sau là <b>V-ing</b> → <b>providing</b>. Đây là bẫy: nhiều bạn thấy "to" liền chọn provide.<span class="dich">Dịch: Bright Star Logistics cam kết giao hàng nhanh chóng và đáng tin cậy cho mọi khách hàng.</span>'},
+    {s:'___ reduce energy costs, the factory replaced all of its old lights with LED bulbs.',o:['In order to','Because','In order that','For'],k:0,t:'v',
+     e:'Sau chỗ trống là <b>động từ nguyên mẫu</b> (reduce), nghĩa "<b>để</b>" → <b>In order to</b> + V. Because / In order that là liên từ, cần S + V; "For reduce" là sai (for + N / V-ing).<span class="dich">Dịch: Để giảm chi phí năng lượng, nhà máy đã thay toàn bộ đèn cũ bằng bóng LED.</span>'},
+    {s:'All visitors to the laboratory are required ___ safety glasses at all times.',o:['wear','wearing','to wear','worn'],k:2,t:'v',
+     e:'Cấu trúc bị động <b>be required to V</b> (bắt buộc phải làm gì) → <b>to wear</b>. wearing / wear / worn không đi sau are required.<span class="dich">Dịch: Tất cả khách vào phòng thí nghiệm bắt buộc phải đeo kính bảo hộ mọi lúc.</span>'},
+    {s:'Please remember ___ off the air conditioner before you leave the office tonight.',o:['turn','to turn','turning','turned'],k:1,t:'v',
+     e:'Việc tắt máy lạnh <b>chưa làm</b> (trước khi về tối nay) → <b>remember to V</b> (nhớ phải làm) → <b>to turn</b>. remember turning = nhớ là đã làm rồi, không hợp nghĩa.<span class="dich">Dịch: Vui lòng nhớ tắt máy lạnh trước khi rời văn phòng tối nay.</span>'},
+    {s:'Mr. Diaz suggested ___ the client meeting until the new budget is approved.',o:['postpone','to postpone','postponed','postponing'],k:3,t:'n',
+     e:'Động từ <b>suggest</b> đi với <b>V-ing</b> → <b>postponing</b>. "suggest to postpone" là lỗi rất hay gặp; postpone / postponed không đứng sau suggested.<span class="dich">Dịch: Anh Diaz đề nghị hoãn cuộc họp với khách hàng cho đến khi ngân sách mới được duyệt.</span>'},
+    {s:'If you have any questions about your order, please do not hesitate ___ our customer service team.',o:['contact','contacting','to contact','contacted'],k:2,t:'v',
+     e:'Cụm cố định <b>do not hesitate to V</b> (đừng ngần ngại làm gì) → <b>to contact</b>. Câu này rất hay xuất hiện ở cuối thư / e-mail trong TOEIC.<span class="dich">Dịch: Nếu có thắc mắc về đơn hàng, xin đừng ngần ngại liên hệ đội chăm sóc khách hàng của chúng tôi.</span>'},
+    {s:'After ___ the proposal carefully, the board of directors approved the budget.',o:['review','reviewing','to review','reviewed'],k:1,t:'n',
+     e:'Trước chỗ trống là giới từ <b>After</b> → dùng <b>V-ing</b> → <b>reviewing</b> (phía sau còn tân ngữ the proposal). review / to review sai sau giới từ; reviewed không đứng sau after khi không có chủ ngữ.<span class="dich">Dịch: Sau khi xem xét kỹ đề xuất, hội đồng quản trị đã phê duyệt ngân sách.</span>'},
+    {s:'The new scheduling system will enable employees ___ their shifts online.',o:['manage','managing','managed','to manage'],k:3,t:'v',
+     e:'Cấu trúc <b>enable + sb + to V</b> (giúp ai có thể làm gì): enable <i>employees</i> <b>to manage</b>. Không nói "enable sb managing".<span class="dich">Dịch: Hệ thống xếp lịch mới sẽ giúp nhân viên quản lý ca làm việc trực tuyến.</span>'},
+    {s:'The design team is eager ___ the project ahead of schedule.',o:['to complete','completing','complete','completion'],k:0,t:'v',
+     e:'Tính từ <b>eager</b> (háo hức) đi với <b>to V</b>: be eager <b>to complete</b>. completing / complete sai sau eager; completion là danh từ, không có tân ngữ the project theo sau.<span class="dich">Dịch: Nhóm thiết kế háo hức hoàn thành dự án sớm hơn kế hoạch.</span>'}
+  ];
+  var KEY='summaryOld.tovving.quiz', L='ABCD';
+  var ans=(function(){try{var a=JSON.parse(localStorage.getItem(KEY)||'{}');return a&&typeof a==='object'?a:{};}catch(e){return {};}})();
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(ans));}catch(e){}}
+  var box=document.getElementById('ltQuiz');
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function render(){
+    box.innerHTML=Q.map(function(q,i){
+      var st=esc(q.s).replace('___','<span class="lt-blank" data-b="'+i+'">&nbsp;</span>');
+      return '<div class="lt-q" id="ltq'+i+'"><div class="num">Câu '+(i+1)+'</div><p class="st">'+st+'</p><div class="lt-opts">'+
+        q.o.map(function(o,j){return '<button type="button" class="lt-opt" data-q="'+i+'" data-o="'+j+'"><b>'+L[j]+'</b><span>'+esc(o)+'</span></button>';}).join('')+
+        '</div><div class="lt-fb" role="status"></div></div>';
+    }).join('');
+    Q.forEach(function(q,i){ if(ans[i]!==undefined) show(i,ans[i]); });
+    score();
+  }
+  function show(i,j){
+    var q=Q[i], el=document.getElementById('ltq'+i), ok=j===q.k;
+    [].forEach.call(el.querySelectorAll('.lt-opt'),function(b,x){
+      b.disabled=true;
+      if(x===q.k) b.classList.add('ok'); else if(x===j) b.classList.add('bad'); else b.classList.add('dim');
+    });
+    var bl=el.querySelector('.lt-blank'); bl.innerHTML='<span class="w '+q.t+'">'+esc(q.o[q.k])+'</span>';
+    var fb=el.querySelector('.lt-fb'); fb.className='lt-fb show '+(ok?'good':'wrong');
+    fb.innerHTML='<strong>'+(ok?'✓ Chính xác!':'✗ Chưa đúng. Đáp án: ('+L[q.k]+') '+esc(q.o[q.k]))+'</strong>'+q.e;
+  }
+  function score(){
+    var n=0,c=0; Q.forEach(function(q,i){ if(ans[i]!==undefined){n++; if(ans[i]===q.k)c++;} });
+    document.getElementById('ltScore').textContent='Đúng '+c+' / '+Q.length;
+    document.getElementById('ltDone').textContent='Đã làm '+n+'/'+Q.length;
+    document.getElementById('ltBar').style.width=(n/Q.length*100)+'%';
+    var end=document.getElementById('ltEnd');
+    if(n===Q.length){
+      end.classList.add('show');
+      document.getElementById('ltEndIc').textContent=c>=10?'🎉':c>=7?'👍':'💪';
+      document.getElementById('ltEndTxt').innerHTML='Bạn làm đúng <b>'+c+'/'+Q.length+'</b> câu. '+(c>=10?'Rất tốt! Bạn đã nắm chắc cách dùng To V và V-ing.':c>=7?'Khá lắm! Xem lại giải thích các câu sai nhé.':'Đọc lại phần 2, 3, 5 và 8 (Mẹo Part 5) rồi làm lại nhé!');
+    } else end.classList.remove('show');
+  }
+  box.addEventListener('click',function(ev){
+    var b=ev.target.closest('.lt-opt'); if(!b||b.disabled) return;
+    var i=+b.dataset.q, j=+b.dataset.o; if(ans[i]!==undefined) return;
+    ans[i]=j; save(); show(i,j); score();
+    if(Object.keys(ans).length===Q.length) setTimeout(function(){document.getElementById('ltEnd').scrollIntoView({behavior:'smooth',block:'center'});},300);
+  });
+  function reset(){ ans={}; save(); render(); document.getElementById('ltq0').scrollIntoView({behavior:'smooth',block:'center'}); }
+  document.getElementById('ltAgain').onclick=reset;
+  document.getElementById('ltReset').onclick=reset;
+  render();
+})();
+</script>
+<script src="../flashcards.js" defer></script><script>window.ETSCFG=window.ETSCFG||{SCRIPT_URL:'https://script.google.com/macros/s/AKfycby3_45o2Zn3FMEMrVAg9nBCiQEIUvU9HgQxI2ZZtwJ4oUQ_bqXxj1vN0kL6cvhbDQCx/exec'};</script><script src="../assets/ui.js?v=3" data-site="summary"></script>
+</body></html>

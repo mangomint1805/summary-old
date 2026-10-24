@@ -1,0 +1,358 @@
+<!doctype html><html lang="vi"><head>
+<script>try{var d=document.documentElement,k=JSON.parse(localStorage.getItem('mt.skin')||'""');if(k==='scifi')d.setAttribute('data-theme','dark');if(k)d.setAttribute('data-skin',k)}catch(e){}</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<title>So sánh trong TOEIC</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css"><script src="../classes.js"></script><link rel="icon" type="image/png" href="../icons/fav-64.png?v=3">
+<style>
+/* Chuyên đề so sánh – màu cố định: nguyên mẫu xanh dương · so sánh hơn xanh lá · so sánh nhất tím · từ tín hiệu đỏ */
+:root{--lt-n:#1d5fa8;--lt-n-bg:#e4eefb;--lt-v:#b42318;--lt-v-bg:#fde9e6;--lt-a:#1f7a4d;--lt-a-bg:#e2f3ea;--lt-r:#6d3fb0;--lt-r-bg:#efe7fb;}
+.lt .w{font-weight:700;border-radius:5px;padding:0 4px;white-space:nowrap;}
+.lt .w.n{color:var(--lt-n);background:var(--lt-n-bg);}
+.lt .w.v{color:var(--lt-v);background:var(--lt-v-bg);}
+.lt .w.a{color:var(--lt-a);background:var(--lt-a-bg);}
+.lt .w.r{color:var(--lt-r);background:var(--lt-r-bg);}
+.lt-legend{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;}
+.lt-legend .w{font-size:14px;padding:3px 10px;}
+.lt-toc{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px;padding:0;list-style:none;}
+.lt-toc a{display:inline-block;font-size:14px;font-weight:600;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;background:var(--paper);}
+.lt-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0;}
+.lt-card{border:1.5px solid var(--line);border-left-width:6px;border-radius:12px;padding:12px 14px;background:var(--card);}
+.lt-card.n{border-left-color:var(--lt-n);} .lt-card.v{border-left-color:var(--lt-v);} .lt-card.a{border-left-color:var(--lt-a);} .lt-card.r{border-left-color:var(--lt-r);}
+.lt-card h3{margin:0 0 4px!important;font-size:17px;}
+.lt-card.n h3{color:var(--lt-n);} .lt-card.v h3{color:var(--lt-v);} .lt-card.a h3{color:var(--lt-a);} .lt-card.r h3{color:var(--lt-r);}
+.lt-card h3 small{font-weight:600;color:var(--dim);font-size:13.5px;}
+.lt-card p{font-size:15px;}
+.lt-card .ex{margin-top:8px;padding:8px 10px;background:var(--paper);border-radius:8px;font-size:15px;}
+.lt-card .ex i{display:block;font-style:normal;color:var(--dim);font-size:13.5px;}
+.lt-suf{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 16px;}
+.lt-suf h3{margin-bottom:4px!important;}
+.lt-suf table td:first-child{white-space:nowrap;font-weight:700;}
+.lt-h-n{color:var(--lt-n)!important;} .lt-h-v{color:var(--lt-v)!important;} .lt-h-a{color:var(--lt-a)!important;} .lt-h-r{color:var(--lt-r)!important;}
+.doc table.lt-t th.n{background:var(--lt-n-bg);color:var(--lt-n);} .doc table.lt-t th.v{background:var(--lt-v-bg);color:var(--lt-v);}
+.doc table.lt-t th.a{background:var(--lt-a-bg);color:var(--lt-a);} .doc table.lt-t th.r{background:var(--lt-r-bg);color:var(--lt-r);}
+.lt-trap{margin:14px 0;padding:14px 16px;border:1.5px dashed #c2410c;border-radius:12px;background:#fff6ef;}
+.lt-trap h3{color:#9a3412!important;margin:0 0 6px!important;}
+.lt-trap ol{margin:0;padding-left:22px;}
+.lt-trap li{margin:8px 0;}
+.lt-steps{counter-reset:s;list-style:none;margin:12px 0;padding:0;display:grid;gap:8px;}
+.lt-steps li{counter-increment:s;position:relative;padding:10px 12px 10px 52px;border:1px solid var(--line);border-radius:12px;background:var(--paper);}
+.lt-steps li::before{content:counter(s);position:absolute;left:12px;top:10px;width:28px;height:28px;border-radius:50%;background:var(--amber);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.lt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;}
+.lt-scroll table{margin:0!important;min-width:560px;}
+.lt-note{font-size:14px;color:var(--dim);}
+.lt-pos td:nth-child(2){white-space:nowrap;}
+/* riêng trang so sánh */
+.ss-big td:first-child{font-weight:700;white-space:nowrap;}
+.ss-vs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 0;}
+.ss-vs > div{padding:8px 10px;border-radius:8px;background:var(--paper);font-size:14.5px;}
+.ss-vs b{display:block;}
+.ss-vs i{display:block;font-style:normal;}
+.ss-formula{display:block;margin:6px 0;padding:8px 10px;border-radius:8px;background:#fffaf0;border:1px solid #ecd3a6;font-weight:600;font-size:15px;}
+@media (max-width:480px){
+  .ss-vs{grid-template-columns:1fr;}
+  .ss-big td:first-child{white-space:normal;}
+}
+/* bài luyện tập */
+.lt-score{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:10px 0 12px;padding:10px 14px;border-radius:12px;background:#fffaf0;border:1px solid #ecd3a6;font-weight:600;}
+.lt-score .bar{flex:1;min-width:120px;height:8px;border-radius:99px;background:var(--line);overflow:hidden;}
+.lt-score .bar i{display:block;height:100%;width:0;background:var(--teal);transition:width .3s;}
+.lt-q{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0;background:var(--card);}
+.lt-q .num{font-size:13px;font-weight:700;color:var(--amber-ink);letter-spacing:.04em;text-transform:uppercase;}
+.lt-q .st{font-size:16.5px;margin:4px 0 10px;line-height:1.55;}
+.lt-blank{display:inline-block;min-width:88px;border-bottom:2px solid var(--ink);text-align:center;font-weight:700;}
+.lt-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.lt-opt{font:inherit;font-size:15.5px;text-align:left;display:flex;gap:8px;align-items:center;min-height:46px;padding:9px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;}
+.lt-opt b{flex:none;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--line);font-size:13px;}
+.lt-opt:hover:not(:disabled){border-color:var(--amber);}
+.lt-opt:focus-visible{outline:3px solid var(--amber);outline-offset:2px;}
+.lt-opt:disabled{cursor:default;}
+.lt-opt.ok{border-color:#1f7a4d;background:#e2f3ea;}
+.lt-opt.ok b{background:#1f7a4d;border-color:#1f7a4d;color:#fff;}
+.lt-opt.bad{border-color:#b42318;background:#fde9e6;}
+.lt-opt.bad b{background:#b42318;border-color:#b42318;color:#fff;}
+.lt-opt.dim{opacity:.55;}
+.lt-fb{display:none;margin-top:10px;padding:10px 12px;border-radius:10px;font-size:15px;}
+.lt-fb.show{display:block;}
+.lt-fb.good{background:#e2f3ea;border:1px solid #9fd2b6;}
+.lt-fb.wrong{background:#fde9e6;border:1px solid #f0b4ab;}
+.lt-fb strong{display:block;margin-bottom:2px;}
+.lt-fb .dich{display:block;margin-top:6px;color:var(--dim);font-size:14px;}
+.lt-end{display:none;text-align:center;margin:16px 0 4px;padding:18px 16px;border-radius:14px;border:1.5px solid var(--amber);background:#fffaf0;}
+.lt-end.show{display:block;}
+.lt-end .big{font-size:40px;line-height:1;}
+.lt-end p{margin:8px 0;font-size:17px;}
+.lt-btn{font:inherit;font-weight:700;font-size:16px;border:0;border-radius:10px;padding:11px 20px;background:var(--amber);color:#fff;cursor:pointer;min-height:46px;}
+.lt-btn.alt{background:var(--card);color:var(--amber-ink);border:1.5px solid var(--amber);}
+.lt-again{text-align:right;margin:8px 0 0;}
+@media (max-width:480px){
+  .lt-cards,.lt-suf{grid-template-columns:1fr;}
+  .doc table{font-size:14.5px;}
+  .doc th,.doc td{padding:7px 8px;}
+  .lt-q{padding:12px;}
+  .lt-opt{font-size:15px;padding:8px 9px;}
+  .lt-pos td:nth-child(2){white-space:normal;}
+  .lt-suf table td:first-child{white-space:normal;}
+}
+</style>
+</head><body data-nav="home"><header class="top"><a href="../index.html">TOEIC Pre · Tóm tắt kiến thức</a></header><main class="lt"><p class="sub"><a href="../index.html">← Tất cả bài</a></p><h1>So sánh trong TOEIC</h1><p class="sub">Chuyên đề bổ trợ · So sánh bằng, so sánh hơn, so sánh nhất và các cấu trúc đặc biệt (Comparisons)</p><div class="doc">
+<p><strong>So sánh</strong> (comparison) dùng để nói một người / vật <em>bằng</em>, <em>hơn</em> hay <em>nhất</em> so với người / vật khác. Trong <strong>Part 5</strong>, câu so sánh thường <strong>rất dễ lấy điểm</strong> vì luôn có <strong>từ tín hiệu</strong> trong câu (than, as, the, of all…). Chỉ cần tìm đúng tín hiệu là chọn được đáp án, nhiều khi không cần dịch cả câu. Cả trang dùng các màu sau:</p>
+<div class="lt-legend"><span class="w n">Tính từ / trạng từ gốc</span><span class="w a">So sánh hơn (-er / more)</span><span class="w r">So sánh nhất (-est / most)</span><span class="w v">Từ tín hiệu (than, as, the…)</span></div>
+<ul class="lt-toc"><li><a href="#lt-1">1. Ba cấp độ</a></li><li><a href="#lt-2">2. So sánh bằng</a></li><li><a href="#lt-3">3. So sánh hơn</a></li><li><a href="#lt-4">4. So sánh nhất</a></li><li><a href="#lt-5">5. Bất quy tắc</a></li><li><a href="#lt-6">6. Cấu trúc đặc biệt</a></li><li><a href="#lt-7">7. Mẹo Part 5</a></li><li><a href="#lt-8">8. Luyện tập</a></li><li><a href="#lt-9">9. Từ vựng</a></li></ul>
+
+<h2 id="lt-1">1. Ba cấp độ so sánh (nhìn một lần là nhớ)</h2>
+<p>Thầy tóm tắt cả bài trong một bảng. Hãy để ý: <strong>mỗi cấp độ có một từ tín hiệu riêng</strong>. Thấy tín hiệu nào → chọn dạng đó.</p>
+<div class="lt-scroll"><table class="lt-t ss-big">
+<thead><tr><th>Cấp độ</th><th class="n">Công thức</th><th class="v">Tín hiệu</th><th>Ví dụ</th></tr></thead>
+<tbody>
+<tr><td>So sánh bằng</td><td><b>as</b> + adj / adv (nguyên mẫu) + <b>as</b></td><td>as … as</td><td>as <span class="w n">fast</span> as · as <span class="w n">reliable</span> as</td></tr>
+<tr><td>So sánh hơn</td><td>adj-<b>er</b> / <b>more</b> + adj + <b>than</b></td><td>than</td><td><span class="w a">faster</span> than · <span class="w a">more reliable</span> than</td></tr>
+<tr><td>So sánh nhất</td><td><b>the</b> + adj-<b>est</b> / <b>the most</b> + adj</td><td>the, of all, in + nơi, ever</td><td>the <span class="w r">fastest</span> · the <span class="w r">most reliable</span></td></tr>
+</tbody></table></div>
+<p class="lt-note">Trên điện thoại: vuốt ngang bảng để xem hết 4 cột.</p>
+<div class="lt-cards">
+<div class="lt-card a"><h3>Tính từ ngắn <small>1 âm tiết (và 2 âm tiết tận cùng -y)</small></h3>
+<p>Thêm <b>-er</b> / <b>-est</b>: cheap → cheaper → the cheapest; fast → faster → the fastest; busy → busier → the busiest.</p></div>
+<div class="lt-card r"><h3>Tính từ dài <small>2 âm tiết trở lên</small></h3>
+<p>Thêm <b>more</b> / <b>the most</b> phía trước: expensive → more expensive → the most expensive; efficient → more efficient → the most efficient.</p>
+<p>Trạng từ đuôi <b>-ly</b> cũng dùng more / most: quickly → <b>more quickly</b> → the most quickly.</p></div>
+</div>
+
+<h2 id="lt-2">2. So sánh bằng: AS … AS</h2>
+<span class="ss-formula">S + V + <span class="w v">as</span> + <span class="w n">adj / adv nguyên mẫu</span> + <span class="w v">as</span> + đối tượng so sánh</span>
+<p>Giữa hai chữ <b>as</b> luôn là dạng <strong>nguyên mẫu</strong> (không có -er, không có more). Muốn biết chọn <strong>tính từ</strong> hay <strong>trạng từ</strong> thì <strong>che "as … as" đi</strong> rồi xem câu cần gì:</p>
+<div class="lt-cards">
+<div class="lt-card n"><h3>Sau động từ "be" → tính từ</h3>
+<div class="ex">The new model is <span class="w v">as</span> <span class="w n">light</span> <span class="w v">as</span> the old one.<i>Mẫu mới nhẹ bằng mẫu cũ. (is + light → tính từ)</i></div></div>
+<div class="lt-card a"><h3>Sau động từ thường → trạng từ</h3>
+<div class="ex">Please reply <span class="w v">as</span> <span class="w n">quickly</span> <span class="w v">as</span> possible.<i>Vui lòng trả lời càng nhanh càng tốt. (reply + quickly → trạng từ)</i></div></div>
+<div class="lt-card r"><h3>Các dạng mở rộng</h3>
+<p>• <b>not as / not so … as</b> = không bằng.</p>
+<p>• <b>as many</b> + N số nhiều + as · <b>as much</b> + N không đếm được + as.</p>
+<p>• <b>twice / three times as … as</b> = gấp 2 / gấp 3 lần.</p>
+<p>• <b>the same</b> + (N) + <b>as</b> = giống như (không dùng "the same than").</p>
+<div class="ex">Our rent is <span class="w v">twice as</span> <span class="w n">high</span> <span class="w v">as</span> theirs.<i>Tiền thuê của chúng tôi cao gấp đôi của họ.</i></div></div>
+</div>
+
+<h2 id="lt-3">3. So sánh hơn: -ER / MORE + THAN</h2>
+<span class="ss-formula">S + V + <span class="w a">adj-er / more + adj</span> + <span class="w v">than</span> + đối tượng so sánh</span>
+<h3>Quy tắc thêm -er (chính tả)</h3>
+<table class="ss-big">
+<thead><tr><th>Trường hợp</th><th>Cách thêm</th><th>Ví dụ</th></tr></thead>
+<tbody>
+<tr><td>Thông thường</td><td>+ er</td><td>cheap → cheaper, fast → faster</td></tr>
+<tr><td>Tận cùng -e</td><td>+ r</td><td>large → larger, safe → safer</td></tr>
+<tr><td>Tận cùng phụ âm + -y</td><td>y → ier</td><td>easy → easier, busy → busier</td></tr>
+<tr><td>1 nguyên âm + 1 phụ âm</td><td>gấp đôi phụ âm</td><td>big → bigger, hot → hotter</td></tr>
+</tbody></table>
+<div class="lt-cards">
+<div class="lt-card a"><h3>Ví dụ</h3>
+<div class="ex">The new office is <span class="w a">larger</span> <span class="w v">than</span> the old one.<i>Văn phòng mới rộng hơn văn phòng cũ.</i></div>
+<div class="ex">Online ads are <span class="w a">more effective</span> <span class="w v">than</span> print ads.<i>Quảng cáo trực tuyến hiệu quả hơn quảng cáo in.</i></div></div>
+<div class="lt-card n"><h3>Kém hơn: LESS + adj + THAN</h3>
+<p><b>less</b> = ít hơn, kém hơn. Dùng với mọi tính từ (kể cả tính từ ngắn): less expensive, less busy.</p>
+<div class="ex">The train is <span class="w a">less expensive</span> <span class="w v">than</span> the plane.<i>Đi tàu rẻ hơn (ít đắt hơn) đi máy bay.</i></div>
+<p class="lt-note">less + N không đếm được (less time) · <b>fewer</b> + N số nhiều (fewer mistakes).</p></div>
+</div>
+<div class="lt-card v" style="margin:12px 0"><h3>Nhấn mạnh so sánh hơn: MUCH / FAR / EVEN / STILL / A LOT</h3>
+<p>Muốn nói "<strong>hơn nhiều</strong>" thì đặt <b>much, far, even, still, a lot, significantly, considerably</b> trước dạng so sánh hơn. <strong>Không dùng "very"</strong> trước so sánh hơn. Muốn nói "hơn một chút" dùng <b>slightly</b> / <b>a little</b>.</p>
+<div class="ss-vs"><div><b>✓ Đúng</b>Sales were <span class="w v">much</span> <span class="w a">higher</span> than expected.<i class="lt-note">Doanh số cao hơn nhiều so với dự kiến.</i></div><div><b>✗ Sai</b>Sales were <s>very higher</s> than expected.<i class="lt-note">very chỉ đứng trước tính từ nguyên mẫu: very high.</i></div></div></div>
+
+<h2 id="lt-4">4. So sánh nhất: THE -EST / THE MOST</h2>
+<span class="ss-formula"><span class="w v">the</span> + <span class="w r">adj-est / most + adj</span> + (N) + <span class="w v">in</span> + nơi chốn / <span class="w v">of</span> + nhóm / mệnh đề có <span class="w v">ever</span></span>
+<p>Dùng khi so sánh <strong>từ 3 người / vật trở lên</strong>, chọn ra cái <strong>nhất</strong>. Hầu như luôn có <b>the</b> (hoặc tính từ sở hữu: our <b>best</b> seller) đứng trước.</p>
+<div class="lt-cards">
+<div class="lt-card r"><h3>Tín hiệu hay gặp</h3>
+<p>• <b>the</b> ___ · <b>of all</b> (the candidates) · <b>in</b> the city / the region / the company</p>
+<p>• <b>… that we have ever + V3</b> (từng … nhất)</p>
+<p>• <b>one of the</b> + so sánh nhất + <strong>N số nhiều</strong></p>
+<div class="ex">This is <span class="w v">the</span> <span class="w r">most popular</span> product <span class="w v">we have ever</span> launched.<i>Đây là sản phẩm được ưa chuộng nhất mà chúng tôi từng ra mắt.</i></div></div>
+<div class="lt-card n"><h3>One of the + nhất + N số nhiều</h3>
+<div class="ex">Ms. Lin is <span class="w v">one of the</span> <span class="w r">best</span> <b>designers</b> in the company.<i>Chị Lin là một trong những nhà thiết kế giỏi nhất trong công ty. (designers có -s)</i></div>
+<p class="lt-note">Chủ ngữ "One of the …" đi với động từ số ít: One of the designers <b>is</b> …</p></div>
+</div>
+
+<h2 id="lt-5">5. Tính từ / trạng từ bất quy tắc (học thuộc)</h2>
+<div class="lt-scroll"><table class="lt-t ss-big">
+<thead><tr><th class="n">Nguyên mẫu</th><th class="a">So sánh hơn</th><th class="r">So sánh nhất</th><th>Nghĩa</th></tr></thead>
+<tbody>
+<tr><td>good / well</td><td>better</td><td>the best</td><td>tốt, giỏi</td></tr>
+<tr><td>bad / badly</td><td>worse</td><td>the worst</td><td>tệ, xấu</td></tr>
+<tr><td>many / much</td><td>more</td><td>the most</td><td>nhiều</td></tr>
+<tr><td>little</td><td>less</td><td>the least</td><td>ít</td></tr>
+<tr><td>far</td><td>farther / further</td><td>the farthest / the furthest</td><td>xa; <b>further</b> còn nghĩa "thêm" (further information)</td></tr>
+</tbody></table></div>
+<div class="lt-cards">
+<div class="lt-card a"><h3>Ví dụ</h3>
+<div class="ex">This month's results are <span class="w a">better</span> than last month's.<i>Kết quả tháng này tốt hơn tháng trước. (không nói "more good")</i></div>
+<div class="ex">For <span class="w a">further</span> information, please visit our website.<i>Để biết thêm thông tin, vui lòng truy cập trang web của chúng tôi.</i></div></div>
+<div class="lt-card r"><h3>Ví dụ</h3>
+<div class="ex">Friday is <span class="w v">the</span> <span class="w r">worst</span> day to send packages.<i>Thứ Sáu là ngày tệ nhất để gửi bưu kiện.</i></div>
+<div class="ex">Ms. Kato has <span class="w v">the</span> <span class="w r">most</span> experience on the team.<i>Chị Kato có nhiều kinh nghiệm nhất trong nhóm.</i></div></div>
+</div>
+
+<h2 id="lt-6">6. Cấu trúc đặc biệt hay ra trong Part 5</h2>
+<div class="lt-cards">
+<div class="lt-card v"><h3>THE + hơn …, THE + hơn … <small>càng … càng …</small></h3>
+<span class="ss-formula"><span class="w v">The</span> <span class="w a">-er / more</span> S + V, <span class="w v">the</span> <span class="w a">-er / more</span> S + V</span>
+<p>Thấy câu bắt đầu bằng <b>The ___ …, the …</b> → chỗ trống là <strong>so sánh HƠN</strong> (không phải so sánh nhất).</p>
+<div class="ex"><span class="w v">The</span> <span class="w a">earlier</span> you book, <span class="w v">the</span> <span class="w a">cheaper</span> the tickets are.<i>Bạn đặt càng sớm thì vé càng rẻ.</i></div></div>
+<div class="lt-card r"><h3>THE MOST ≠ MOST ≠ ALMOST</h3>
+<p>• <b>the most</b> + adj = nhất: the most useful tool.</p>
+<p>• <b>most</b> + N (không có the) = <strong>hầu hết</strong>: most employees, most of the employees.</p>
+<p>• <b>almost</b> là trạng từ = gần như: <b>almost all</b> employees (không nói "almost employees").</p>
+<div class="ex"><span class="w r">Most</span> customers pay online.<i>Hầu hết khách hàng thanh toán trực tuyến.</i></div></div>
+<div class="lt-card n"><h3>So sánh giữa HAI: the + hơn + of the two</h3>
+<p>Khi chỉ có <strong>2</strong> đối tượng nhưng có <b>the … of the two</b> → dùng so sánh hơn.</p>
+<div class="ex">Mr. Ruiz is <span class="w v">the</span> <span class="w a">taller</span> <span class="w v">of the two</span> candidates.<i>Anh Ruiz là người cao hơn trong hai ứng viên.</i></div></div>
+</div>
+<div class="lt-trap"><h3>⚠️ Bẫy hay gặp</h3>
+<ol>
+<li><strong>Không dùng 2 dấu hiệu cùng lúc:</strong> <s>more cheaper</s>, <s>the most fastest</s>. Tính từ ngắn đã có -er / -est thì không thêm more / most.</li>
+<li><strong>Thấy "than" là chọn so sánh hơn</strong>, dù trong đáp án có cả dạng nhất. Thấy "as … as" là chọn nguyên mẫu.</li>
+<li><strong>"very" + so sánh hơn là SAI.</strong> Dùng <span class="w v">much / far / even</span> + <span class="w a">-er / more</span>.</li>
+<li><strong>Tính từ hay trạng từ?</strong> So sánh không đổi vị trí từ loại: sau <em>be / become / seem</em> → tính từ (more <b>careful</b>); bổ nghĩa cho động từ thường → trạng từ (more <b>carefully</b>).</li>
+<li><strong>"the same than"</strong> và <strong>"different than"</strong> trong TOEIC thường là đáp án sai → dùng <b>the same as</b>, <b>different from</b>.</li>
+</ol></div>
+
+<h2 id="lt-7">7. Mẹo làm Part 5 câu so sánh</h2>
+<ol class="lt-steps">
+<li><strong>Nhìn 4 đáp án</strong>: nếu là một từ với nhiều dạng (fast / faster / fastest / more fast) → đây là câu <strong>so sánh</strong>.</li>
+<li><strong>Tìm tín hiệu trong câu</strong>: <span class="w v">than</span> → so sánh hơn · <span class="w v">as … as</span> → nguyên mẫu · <span class="w v">the … of all / in / ever</span>, <span class="w v">one of the</span> → so sánh nhất · <span class="w v">The ___, the …</span> → so sánh hơn.</li>
+<li><strong>Tính từ ngắn hay dài?</strong> Ngắn → -er / -est. Dài → more / most. Bất quy tắc (good, bad, many, little) → dùng bảng ở phần 5.</li>
+<li><strong>Tính từ hay trạng từ?</strong> Che phần so sánh đi, xem câu cần tính từ (sau be) hay trạng từ (sau động từ thường).</li>
+<li><strong>Chỗ trống đứng trước so sánh hơn?</strong> Chọn <b>much / far / even / still</b>, loại <b>very / so / too</b>.</li>
+</ol>
+
+<h2 id="lt-8">8. Luyện tập (Part 5)</h2>
+<p>12 câu kiểu Part 5. Chạm vào một đáp án để xem đúng / sai, <strong>dấu hiệu</strong> giúp chọn đáp án và bản dịch.</p>
+<div class="lt-score" aria-live="polite"><span id="ltScore">Đúng 0 / 12</span><span class="bar"><i id="ltBar"></i></span><span id="ltDone">Đã làm 0/12</span></div>
+<div id="ltQuiz"></div>
+<div class="lt-end" id="ltEnd" aria-live="polite"><div class="big" id="ltEndIc">🎉</div><p id="ltEndTxt"></p><button type="button" class="lt-btn" id="ltAgain">↺ Làm lại</button></div>
+<p class="lt-again"><button type="button" class="lt-btn alt" id="ltReset">↺ Làm lại</button></p>
+
+<h2 id="lt-9">Bảng từ vựng (Vocabulary Sheet)</h2>
+<p><em>Từ vựng trong chuyên đề này (English – Pronunciation – Vietnamese).</em></p>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 32%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>English</strong></th>
+<th><strong>Pronunciation</strong></th>
+<th><strong>Vietnamese</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd"><td><strong>Comparison (n)</strong></td><td>/kəmˈpærɪsn/</td><td>Sự so sánh</td></tr>
+<tr class="even"><td><strong>Comparative (n/adj)</strong></td><td>/kəmˈpærətɪv/</td><td>(Dạng) so sánh hơn</td></tr>
+<tr class="odd"><td><strong>Superlative (n/adj)</strong></td><td>/suːˈpɜːlətɪv/</td><td>(Dạng) so sánh nhất</td></tr>
+<tr class="even"><td><strong>Efficient (adj)</strong></td><td>/ɪˈfɪʃnt/</td><td>Hiệu quả, năng suất</td></tr>
+<tr class="odd"><td><strong>Reliable (adj)</strong></td><td>/rɪˈlaɪəbl/</td><td>Đáng tin cậy</td></tr>
+<tr class="even"><td><strong>Affordable (adj)</strong></td><td>/əˈfɔːdəbl/</td><td>Giá phải chăng</td></tr>
+<tr class="odd"><td><strong>Convenient (adj)</strong></td><td>/kənˈviːniənt/</td><td>Thuận tiện</td></tr>
+<tr class="even"><td><strong>Competitive (adj)</strong></td><td>/kəmˈpetətɪv/</td><td>Cạnh tranh (giá cạnh tranh)</td></tr>
+<tr class="odd"><td><strong>Profitable (adj)</strong></td><td>/ˈprɒfɪtəbl/</td><td>Có lãi, sinh lời</td></tr>
+<tr class="even"><td><strong>Successful (adj)</strong></td><td>/səkˈsesfl/</td><td>Thành công</td></tr>
+<tr class="odd"><td><strong>Effective (adj)</strong></td><td>/ɪˈfektɪv/</td><td>Có hiệu quả</td></tr>
+<tr class="even"><td><strong>Durable (adj)</strong></td><td>/ˈdjʊərəbl/</td><td>Bền</td></tr>
+<tr class="odd"><td><strong>Spacious (adj)</strong></td><td>/ˈspeɪʃəs/</td><td>Rộng rãi</td></tr>
+<tr class="even"><td><strong>Previous (adj)</strong></td><td>/ˈpriːviəs/</td><td>Trước đó</td></tr>
+<tr class="odd"><td><strong>Significantly (adv)</strong></td><td>/sɪɡˈnɪfɪkəntli/</td><td>Đáng kể</td></tr>
+<tr class="even"><td><strong>Considerably (adv)</strong></td><td>/kənˈsɪdərəbli/</td><td>Đáng kể, khá nhiều</td></tr>
+<tr class="odd"><td><strong>Slightly (adv)</strong></td><td>/ˈslaɪtli/</td><td>Hơi, một chút</td></tr>
+<tr class="even"><td><strong>Further (adj/adv)</strong></td><td>/ˈfɜːðə/</td><td>Thêm, hơn nữa; xa hơn</td></tr>
+<tr class="odd"><td><strong>Candidate (n)</strong></td><td>/ˈkændɪdət/</td><td>Ứng viên</td></tr>
+<tr class="even"><td><strong>Competitor (n)</strong></td><td>/kəmˈpetɪtə/</td><td>Đối thủ cạnh tranh</td></tr>
+<tr class="odd"><td><strong>Revenue (n)</strong></td><td>/ˈrevənjuː/</td><td>Doanh thu</td></tr>
+<tr class="even"><td><strong>Profit (n)</strong></td><td>/ˈprɒfɪt/</td><td>Lợi nhuận</td></tr>
+<tr class="odd"><td><strong>Packaging (n)</strong></td><td>/ˈpækɪdʒɪŋ/</td><td>Bao bì</td></tr>
+<tr class="even"><td><strong>Feedback (n)</strong></td><td>/ˈfiːdbæk/</td><td>Ý kiến phản hồi</td></tr>
+<tr class="odd"><td><strong>Rent (n)</strong></td><td>/rent/</td><td>Tiền thuê (nhà, văn phòng)</td></tr>
+<tr class="even"><td><strong>Suburban (adj)</strong></td><td>/səˈbɜːbən/</td><td>Thuộc ngoại ô</td></tr>
+</tbody>
+</table>
+</div></main><footer>TOEIC Pre · Tóm tắt kiến thức</footer>
+<script>
+(function(){
+  'use strict';
+  // t: màu của đáp án đúng khi điền vào chỗ trống (n = nguyên mẫu, a = so sánh hơn, r = so sánh nhất, v = từ nhấn mạnh)
+  var Q=[
+    {s:'The new color printer prints ___ than the old model in the copy room.',o:['fast','faster','fastest','more fast'],k:1,t:'a',
+     e:'Có tín hiệu <b>than</b> → cần <b>so sánh hơn</b>. fast là từ ngắn (1 âm tiết) → thêm -er: <b>faster</b>. "more fast" sai vì từ ngắn không dùng more; fastest là so sánh nhất; fast là nguyên mẫu.<span class="dich">Dịch: Máy in màu mới in nhanh hơn mẫu cũ trong phòng photocopy.</span>'},
+    {s:'Of all the candidates, Ms. Okafor has the ___ experience in international sales.',o:['more','much','most','many'],k:2,t:'r',
+     e:'Tín hiệu <b>Of all</b> (trong tất cả) và <b>the</b> → cần <b>so sánh nhất</b>: <b>the most</b> experience (nhiều kinh nghiệm nhất). more là so sánh hơn (cần than); much / many là nguyên mẫu, không đi với "the … of all". Lưu ý experience không đếm được nên "many" càng sai.<span class="dich">Dịch: Trong tất cả các ứng viên, chị Okafor có nhiều kinh nghiệm nhất về bán hàng quốc tế.</span>'},
+    {s:'Second-quarter profits were ___ higher than the board had expected.',o:['much','very','so','too'],k:0,t:'v',
+     e:'Sau chỗ trống là <b>so sánh hơn</b> (higher than) → cần từ nhấn mạnh <b>much</b> (hơn nhiều). <b>very, so, too</b> chỉ đứng trước tính từ nguyên mẫu (very high), không đứng trước dạng -er.<span class="dich">Dịch: Lợi nhuận quý hai cao hơn nhiều so với hội đồng quản trị đã dự kiến.</span>'},
+    {s:'Our delivery service is as ___ as any other service in the region.',o:['more reliable','reliably','most reliable','reliable'],k:3,t:'n',
+     e:'Cấu trúc <b>as … as</b> → giữa hai chữ as là dạng <b>nguyên mẫu</b>. Đứng sau động từ <b>is</b> → cần <b>tính từ</b>: <b>reliable</b>. reliably là trạng từ; more / most reliable là dạng hơn / nhất, không dùng trong as … as.<span class="dich">Dịch: Dịch vụ giao hàng của chúng tôi đáng tin cậy như bất kỳ dịch vụ nào khác trong khu vực.</span>'},
+    {s:'Harbor View Hotel is one of the ___ hotels in the downtown area.',o:['large','largest','larger','most large'],k:1,t:'r',
+     e:'Cấu trúc <b>one of the</b> + <b>so sánh nhất</b> + N số nhiều (hotels). large là từ ngắn → <b>largest</b>. "most large" sai vì từ ngắn không dùng most; larger là so sánh hơn; large là nguyên mẫu.<span class="dich">Dịch: Khách sạn Harbor View là một trong những khách sạn lớn nhất ở khu trung tâm.</span>'},
+    {s:'The ___ you submit your application, the sooner you will receive a reply.',o:['earliest','early','earlier','more early'],k:2,t:'a',
+     e:'Cấu trúc <b>The + so sánh hơn …, the + so sánh hơn …</b> (càng … càng …). Vế sau có "the sooner" → vế trước cũng là so sánh hơn: <b>earlier</b> (early tận cùng -y → -ier). earliest là so sánh nhất; "more early" sai chính tả so sánh.<span class="dich">Dịch: Bạn nộp đơn càng sớm thì bạn càng sớm nhận được phản hồi.</span>'},
+    {s:'The updated software runs ___ than the previous version did.',o:['smooth','smoothly','most smoothly','more smoothly'],k:3,t:'a',
+     e:'Có <b>than</b> → so sánh hơn. Chỗ trống bổ nghĩa cho động từ thường <b>runs</b> → cần <b>trạng từ</b>. Trạng từ đuôi -ly dùng more → <b>more smoothly</b>. smooth là tính từ; smoothly thiếu dạng so sánh; most smoothly là so sánh nhất.<span class="dich">Dịch: Phần mềm cập nhật chạy mượt hơn phiên bản trước.</span>'},
+    {s:'Customer feedback on the new menu was ___ than the restaurant manager had hoped.',o:['better','good','well','best'],k:0,t:'a',
+     e:'Có <b>than</b> → so sánh hơn. good là tính từ <b>bất quy tắc</b>: good → <b>better</b> → the best. good / well là nguyên mẫu; best là so sánh nhất (cần the).<span class="dich">Dịch: Phản hồi của khách hàng về thực đơn mới tốt hơn mong đợi của quản lý nhà hàng.</span>'},
+    {s:'___ employees prefer flexible working hours, according to a recent survey.',o:['Almost','The most','Most','Mostly'],k:2,t:'r',
+     e:'<b>Most</b> + danh từ số nhiều (không có the) = <b>hầu hết</b>: Most employees. "The most" + N mang nghĩa "nhiều … nhất", không hợp. Almost và Mostly là trạng từ, không đứng trực tiếp trước danh từ (phải nói almost all employees).<span class="dich">Dịch: Theo một khảo sát gần đây, hầu hết nhân viên thích giờ làm việc linh hoạt.</span>'},
+    {s:'This is the ___ efficient engine that our company has ever produced.',o:['more','most','much','many'],k:1,t:'r',
+     e:'Tín hiệu <b>the</b> + <b>has ever produced</b> (từng sản xuất) → <b>so sánh nhất</b>. efficient là tính từ dài → <b>the most</b> efficient. more là so sánh hơn (cần than); much / many không bổ nghĩa cho tính từ theo cách này.<span class="dich">Dịch: Đây là động cơ tiết kiệm (hiệu quả) nhất mà công ty chúng tôi từng sản xuất.</span>'},
+    {s:'The rent for the downtown office is twice as ___ as the rent for the suburban one.',o:['high','higher','highest','highly'],k:0,t:'n',
+     e:'Cấu trúc <b>twice as … as</b> (gấp đôi) → dùng <b>nguyên mẫu</b>. Sau động từ <b>is</b> → cần tính từ: <b>high</b>. higher / highest là dạng hơn / nhất; highly là trạng từ (nghĩa "rất, hết sức").<span class="dich">Dịch: Tiền thuê văn phòng ở trung tâm cao gấp đôi tiền thuê văn phòng ở ngoại ô.</span>'},
+    {s:'The new packaging is ___ expensive than the old design, so the company will save money.',o:['least','fewer','less','little'],k:2,t:'a',
+     e:'Có <b>than</b> → so sánh hơn. Nghĩa "ít đắt hơn, rẻ hơn" (vì công ty tiết kiệm được tiền) → <b>less</b> expensive. least là so sánh nhất; fewer đi với danh từ số nhiều (fewer boxes), không đi với tính từ; little là nguyên mẫu.<span class="dich">Dịch: Bao bì mới rẻ hơn thiết kế cũ, vì vậy công ty sẽ tiết kiệm được tiền.</span>'}
+  ];
+  var KEY='summaryOld.sosanh.quiz', L='ABCD';
+  var ans=(function(){try{var a=JSON.parse(localStorage.getItem(KEY)||'{}');return a&&typeof a==='object'?a:{};}catch(e){return {};}})();
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(ans));}catch(e){}}
+  var box=document.getElementById('ltQuiz');
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function render(){
+    box.innerHTML=Q.map(function(q,i){
+      var st=esc(q.s).replace('___','<span class="lt-blank" data-b="'+i+'">&nbsp;</span>');
+      return '<div class="lt-q" id="ltq'+i+'"><div class="num">Câu '+(i+1)+'</div><p class="st">'+st+'</p><div class="lt-opts">'+
+        q.o.map(function(o,j){return '<button type="button" class="lt-opt" data-q="'+i+'" data-o="'+j+'"><b>'+L[j]+'</b><span>'+esc(o)+'</span></button>';}).join('')+
+        '</div><div class="lt-fb" role="status"></div></div>';
+    }).join('');
+    Q.forEach(function(q,i){ if(ans[i]!==undefined) show(i,ans[i]); });
+    score();
+  }
+  function show(i,j){
+    var q=Q[i], el=document.getElementById('ltq'+i), ok=j===q.k;
+    [].forEach.call(el.querySelectorAll('.lt-opt'),function(b,x){
+      b.disabled=true;
+      if(x===q.k) b.classList.add('ok'); else if(x===j) b.classList.add('bad'); else b.classList.add('dim');
+    });
+    var bl=el.querySelector('.lt-blank'); bl.innerHTML='<span class="w '+q.t+'">'+esc(q.o[q.k])+'</span>';
+    var fb=el.querySelector('.lt-fb'); fb.className='lt-fb show '+(ok?'good':'wrong');
+    fb.innerHTML='<strong>'+(ok?'✓ Chính xác!':'✗ Chưa đúng. Đáp án: ('+L[q.k]+') '+esc(q.o[q.k]))+'</strong>'+q.e;
+  }
+  function score(){
+    var n=0,c=0; Q.forEach(function(q,i){ if(ans[i]!==undefined){n++; if(ans[i]===q.k)c++;} });
+    document.getElementById('ltScore').textContent='Đúng '+c+' / '+Q.length;
+    document.getElementById('ltDone').textContent='Đã làm '+n+'/'+Q.length;
+    document.getElementById('ltBar').style.width=(n/Q.length*100)+'%';
+    var end=document.getElementById('ltEnd');
+    if(n===Q.length){
+      end.classList.add('show');
+      document.getElementById('ltEndIc').textContent=c>=10?'🎉':c>=7?'👍':'💪';
+      document.getElementById('ltEndTxt').innerHTML='Bạn làm đúng <b>'+c+'/'+Q.length+'</b> câu. '+(c>=10?'Rất tốt! Bạn đã nắm chắc các dạng so sánh.':c>=7?'Khá lắm! Xem lại giải thích các câu sai nhé.':'Đọc lại phần 1, 5 và 7 (Mẹo Part 5) rồi làm lại nhé!');
+    } else end.classList.remove('show');
+  }
+  box.addEventListener('click',function(ev){
+    var b=ev.target.closest('.lt-opt'); if(!b||b.disabled) return;
+    var i=+b.dataset.q, j=+b.dataset.o; if(ans[i]!==undefined) return;
+    ans[i]=j; save(); show(i,j); score();
+    if(Object.keys(ans).length===Q.length) setTimeout(function(){document.getElementById('ltEnd').scrollIntoView({behavior:'smooth',block:'center'});},300);
+  });
+  function reset(){ ans={}; save(); render(); document.getElementById('ltq0').scrollIntoView({behavior:'smooth',block:'center'}); }
+  document.getElementById('ltAgain').onclick=reset;
+  document.getElementById('ltReset').onclick=reset;
+  render();
+})();
+</script>
+<script src="../flashcards.js" defer></script><script>window.ETSCFG=window.ETSCFG||{SCRIPT_URL:'https://script.google.com/macros/s/AKfycby3_45o2Zn3FMEMrVAg9nBCiQEIUvU9HgQxI2ZZtwJ4oUQ_bqXxj1vN0kL6cvhbDQCx/exec'};</script><script src="../assets/ui.js?v=3" data-site="summary"></script>
+</body></html>

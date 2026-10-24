@@ -1,0 +1,353 @@
+<!doctype html><html lang="vi"><head>
+<script>try{var d=document.documentElement,k=JSON.parse(localStorage.getItem('mt.skin')||'""');if(k==='scifi')d.setAttribute('data-theme','dark');if(k)d.setAttribute('data-skin',k)}catch(e){}</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<title>Liên từ trong TOEIC</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css"><script src="../classes.js"></script><link rel="icon" type="image/png" href="../icons/fav-64.png?v=3">
+<style>
+/* Chuyên đề liên từ – màu cố định: Liên từ đỏ · Giới từ / cặp tương quan tím · Trạng từ liên kết xanh lá · Cụm danh từ xanh dương */
+:root{--lt-n:#1d5fa8;--lt-n-bg:#e4eefb;--lt-v:#b42318;--lt-v-bg:#fde9e6;--lt-a:#1f7a4d;--lt-a-bg:#e2f3ea;--lt-r:#6d3fb0;--lt-r-bg:#efe7fb;}
+.lt .w{font-weight:700;border-radius:5px;padding:0 4px;white-space:nowrap;}
+.lt .w.n{color:var(--lt-n);background:var(--lt-n-bg);}
+.lt .w.v{color:var(--lt-v);background:var(--lt-v-bg);}
+.lt .w.a{color:var(--lt-a);background:var(--lt-a-bg);}
+.lt .w.r{color:var(--lt-r);background:var(--lt-r-bg);}
+.lt-legend{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;}
+.lt-legend .w{font-size:14px;padding:3px 10px;}
+.lt-toc{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px;padding:0;list-style:none;}
+.lt-toc a{display:inline-block;font-size:14px;font-weight:600;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;background:var(--paper);}
+.lt-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0;}
+.lt-card{border:1.5px solid var(--line);border-left-width:6px;border-radius:12px;padding:12px 14px;background:var(--card);}
+.lt-card.n{border-left-color:var(--lt-n);} .lt-card.v{border-left-color:var(--lt-v);} .lt-card.a{border-left-color:var(--lt-a);} .lt-card.r{border-left-color:var(--lt-r);}
+.lt-card h3{margin:0 0 4px!important;font-size:17px;}
+.lt-card.n h3{color:var(--lt-n);} .lt-card.v h3{color:var(--lt-v);} .lt-card.a h3{color:var(--lt-a);} .lt-card.r h3{color:var(--lt-r);}
+.lt-card h3 small{font-weight:600;color:var(--dim);font-size:13.5px;}
+.lt-card p{font-size:15px;}
+.lt-card .ex{margin-top:8px;padding:8px 10px;background:var(--paper);border-radius:8px;font-size:15px;}
+.lt-card .ex i{display:block;font-style:normal;color:var(--dim);font-size:13.5px;}
+.lt-suf{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 16px;}
+.lt-suf h3{margin-bottom:4px!important;}
+.lt-suf table td:first-child{white-space:nowrap;font-weight:700;}
+.lt-h-n{color:var(--lt-n)!important;} .lt-h-v{color:var(--lt-v)!important;} .lt-h-a{color:var(--lt-a)!important;} .lt-h-r{color:var(--lt-r)!important;}
+.doc table.lt-t th.n{background:var(--lt-n-bg);color:var(--lt-n);} .doc table.lt-t th.v{background:var(--lt-v-bg);color:var(--lt-v);}
+.doc table.lt-t th.a{background:var(--lt-a-bg);color:var(--lt-a);} .doc table.lt-t th.r{background:var(--lt-r-bg);color:var(--lt-r);}
+.lt-trap{margin:14px 0;padding:14px 16px;border:1.5px dashed #c2410c;border-radius:12px;background:#fff6ef;}
+.lt-trap h3{color:#9a3412!important;margin:0 0 6px!important;}
+.lt-trap ol{margin:0;padding-left:22px;}
+.lt-trap li{margin:8px 0;}
+.lt-steps{counter-reset:s;list-style:none;margin:12px 0;padding:0;display:grid;gap:8px;}
+.lt-steps li{counter-increment:s;position:relative;padding:10px 12px 10px 52px;border:1px solid var(--line);border-radius:12px;background:var(--paper);}
+.lt-steps li::before{content:counter(s);position:absolute;left:12px;top:10px;width:28px;height:28px;border-radius:50%;background:var(--amber);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.lt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;}
+.lt-scroll table{margin:0!important;min-width:560px;}
+.lt-note{font-size:14px;color:var(--dim);}
+.lt-pos td:nth-child(2){white-space:nowrap;}
+/* so sánh 2 cột */
+.lt-vs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 0;}
+.lt-vs > div{padding:8px 10px;border-radius:8px;background:var(--paper);font-size:14.5px;}
+.lt-vs b{display:block;}
+.lt-vs i{display:block;font-style:normal;}
+/* bài luyện tập */
+.lt-score{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:10px 0 12px;padding:10px 14px;border-radius:12px;background:#fffaf0;border:1px solid #ecd3a6;font-weight:600;}
+.lt-score .bar{flex:1;min-width:120px;height:8px;border-radius:99px;background:var(--line);overflow:hidden;}
+.lt-score .bar i{display:block;height:100%;width:0;background:var(--teal);transition:width .3s;}
+.lt-q{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0;background:var(--card);}
+.lt-q .num{font-size:13px;font-weight:700;color:var(--amber-ink);letter-spacing:.04em;text-transform:uppercase;}
+.lt-q .st{font-size:16.5px;margin:4px 0 10px;line-height:1.55;}
+.lt-blank{display:inline-block;min-width:88px;border-bottom:2px solid var(--ink);text-align:center;font-weight:700;}
+.lt-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.lt-opt{font:inherit;font-size:15.5px;text-align:left;display:flex;gap:8px;align-items:center;min-height:46px;padding:9px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;}
+.lt-opt b{flex:none;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--line);font-size:13px;}
+.lt-opt:hover:not(:disabled){border-color:var(--amber);}
+.lt-opt:focus-visible{outline:3px solid var(--amber);outline-offset:2px;}
+.lt-opt:disabled{cursor:default;}
+.lt-opt.ok{border-color:#1f7a4d;background:#e2f3ea;}
+.lt-opt.ok b{background:#1f7a4d;border-color:#1f7a4d;color:#fff;}
+.lt-opt.bad{border-color:#b42318;background:#fde9e6;}
+.lt-opt.bad b{background:#b42318;border-color:#b42318;color:#fff;}
+.lt-opt.dim{opacity:.55;}
+.lt-fb{display:none;margin-top:10px;padding:10px 12px;border-radius:10px;font-size:15px;}
+.lt-fb.show{display:block;}
+.lt-fb.good{background:#e2f3ea;border:1px solid #9fd2b6;}
+.lt-fb.wrong{background:#fde9e6;border:1px solid #f0b4ab;}
+.lt-fb strong{display:block;margin-bottom:2px;}
+.lt-fb .dich{display:block;margin-top:6px;color:var(--dim);font-size:14px;}
+.lt-end{display:none;text-align:center;margin:16px 0 4px;padding:18px 16px;border-radius:14px;border:1.5px solid var(--amber);background:#fffaf0;}
+.lt-end.show{display:block;}
+.lt-end .big{font-size:40px;line-height:1;}
+.lt-end p{margin:8px 0;font-size:17px;}
+.lt-btn{font:inherit;font-weight:700;font-size:16px;border:0;border-radius:10px;padding:11px 20px;background:var(--amber);color:#fff;cursor:pointer;min-height:46px;}
+.lt-btn.alt{background:var(--card);color:var(--amber-ink);border:1.5px solid var(--amber);}
+.lt-again{text-align:right;margin:8px 0 0;}
+@media (max-width:480px){
+  .lt-cards,.lt-suf{grid-template-columns:1fr;}
+  .doc table{font-size:14.5px;}
+  .doc th,.doc td{padding:7px 8px;}
+  .lt-q{padding:12px;}
+  .lt-opt{font-size:15px;padding:8px 9px;}
+  .lt-pos td:nth-child(2){white-space:normal;}
+  .lt-vs{grid-template-columns:1fr;}
+  .lt-suf table td:first-child{white-space:normal;}
+}
+</style>
+</head><body data-nav="home"><header class="top"><a href="../index.html">TOEIC Pre · Tóm tắt kiến thức</a></header><main class="lt"><p class="sub"><a href="../index.html">← Tất cả bài</a></p><h1>Liên từ trong TOEIC</h1><p class="sub">Chuyên đề bổ trợ · Liên từ kết hợp, tương quan, phụ thuộc và cách phân biệt với giới từ, trạng từ liên kết (Conjunctions)</p><div class="doc">
+<p><strong>Liên từ</strong> (conjunction) là từ dùng để <strong>nối</strong> hai từ, hai cụm từ hoặc hai mệnh đề với nhau: <em>and, but, or, both … and, because, although, when, if, unless…</em> Trong <strong>Part 5</strong> và <strong>Part 6</strong>, câu hỏi liên từ xuất hiện rất đều. Bí quyết là <strong>nhìn cấu trúc</strong> trước, dịch nghĩa sau. Cả trang dùng các màu sau:</p>
+<div class="lt-legend"><span class="w v">Liên từ (conj) + S + V</span><span class="w r">Giới từ (prep) + N</span><span class="w a">Trạng từ liên kết (however…)</span><span class="w n">Cụm danh từ / mệnh đề</span></div>
+<ul class="lt-toc"><li><a href="#lt-1">1. Ba loại liên từ</a></li><li><a href="#lt-2">2. Liên từ kết hợp</a></li><li><a href="#lt-3">3. Liên từ tương quan</a></li><li><a href="#lt-4">4. Liên từ phụ thuộc</a></li><li><a href="#lt-5">5. Liên từ – Giới từ – Trạng từ</a></li><li><a href="#lt-6">6. Mẹo Part 5</a></li><li><a href="#lt-7">7. Luyện tập</a></li><li><a href="#lt-8">8. Từ vựng</a></li></ul>
+
+<h2 id="lt-1">1. Ba loại liên từ cần biết</h2>
+<p>Thầy chia liên từ thành <strong>3 nhóm</strong>. Mỗi nhóm có một "dấu hiệu" riêng để nhận ra trong đề:</p>
+<div class="lt-cards">
+<div class="lt-card v"><h3>Liên từ kết hợp <small>Coordinating</small></h3>
+<p>Nối 2 thành phần <strong>ngang hàng</strong> (từ + từ, cụm + cụm, mệnh đề + mệnh đề). 7 từ: <b>for, and, nor, but, or, yet, so</b> (nhớ: <strong>FANBOYS</strong>).</p>
+<div class="ex">The room is small <span class="w v">but</span> bright.<i>Căn phòng nhỏ nhưng sáng sủa.</i></div></div>
+<div class="lt-card r"><h3>Liên từ tương quan <small>Correlative</small></h3>
+<p>Luôn đi thành <strong>cặp</strong>: <b>both … and</b>, <b>either … or</b>, <b>neither … nor</b>, <b>not only … but (also)</b>, <b>whether … or</b>.</p>
+<div class="ex"><span class="w r">Both</span> Ms. Lin <span class="w r">and</span> Mr. Cho will attend.<i>Cả chị Lin và anh Cho đều sẽ tham dự.</i></div></div>
+<div class="lt-card a"><h3>Liên từ phụ thuộc <small>Subordinating</small></h3>
+<p>Đứng đầu một <strong>mệnh đề phụ</strong> (S + V) để nói lý do, thời gian, điều kiện, nhượng bộ…: <b>because, although, when, if, unless, once…</b></p>
+<div class="ex"><span class="w v">Although</span> it was late, the team kept working.<i>Mặc dù đã muộn, cả nhóm vẫn tiếp tục làm việc.</i></div></div>
+</div>
+
+<h2 id="lt-2">2. Liên từ kết hợp (Coordinating conjunctions): FANBOYS</h2>
+<div class="lt-scroll"><table class="lt-t">
+<thead><tr><th class="v">Liên từ</th><th class="v">Nghĩa</th><th class="v">Ví dụ</th></tr></thead>
+<tbody>
+<tr><td><strong>and</strong></td><td>và (thêm ý)</td><td>She checked the figures <b>and</b> sent the report.</td></tr>
+<tr><td><strong>but</strong></td><td>nhưng (trái ngược)</td><td>The hotel is expensive, <b>but</b> it is very convenient.</td></tr>
+<tr><td><strong>yet</strong></td><td>nhưng, vậy mà</td><td>The plan was simple, <b>yet</b> it worked well.</td></tr>
+<tr><td><strong>or</strong></td><td>hoặc (lựa chọn)</td><td>You can pay by card <b>or</b> in cash.</td></tr>
+<tr><td><strong>so</strong></td><td>vì vậy, nên (kết quả)</td><td>The printer broke, <b>so</b> we called a technician.</td></tr>
+<tr><td><strong>for</strong></td><td>vì (lý do, văn trang trọng)</td><td>We left early, <b>for</b> the roads were busy.</td></tr>
+<tr><td><strong>nor</strong></td><td>cũng không (sau câu phủ định)</td><td>He did not call, <b>nor</b> did he send an e-mail.</td></tr>
+</tbody></table></div>
+<p class="lt-note">Trên điện thoại: vuốt ngang bảng để xem hết 3 cột.</p>
+<div class="lt-cards">
+<div class="lt-card v"><h3>Quy tắc dấu phẩy</h3>
+<p>• Nối <strong>2 mệnh đề</strong> (mỗi bên có S + V) → thường có <strong>dấu phẩy trước</strong> liên từ: <em>…, so we called…</em></p>
+<p>• Nối <strong>2 từ / 2 cụm từ</strong> → không cần dấu phẩy: <em>small but bright</em>.</p></div>
+<div class="lt-card n"><h3>Cấu trúc song song</h3>
+<p>Hai bên liên từ phải <strong>cùng loại</strong>: danh từ + danh từ, tính từ + tính từ, V-ing + V-ing…</p>
+<div class="ex">The job requires <span class="w n">patience</span> <span class="w v">and</span> <span class="w n">creativity</span>.<i>Công việc đòi hỏi sự kiên nhẫn và sáng tạo. (N + N)</i></div></div>
+</div>
+
+<h2 id="lt-3">3. Liên từ tương quan (Correlative conjunctions)</h2>
+<p>Đây là dạng <strong>dễ ăn điểm nhất</strong>: chỉ cần thấy <strong>một nửa của cặp</strong> trong câu là đoán được nửa còn lại.</p>
+<div class="lt-scroll"><table class="lt-t">
+<thead><tr><th class="r">Cặp liên từ</th><th class="r">Nghĩa</th><th class="r">Ví dụ</th></tr></thead>
+<tbody>
+<tr><td><strong>both A and B</strong></td><td>cả A và B</td><td><b>Both</b> the manager <b>and</b> the staff agreed.</td></tr>
+<tr><td><strong>either A or B</strong></td><td>hoặc A hoặc B</td><td>You can apply <b>either</b> online <b>or</b> in person.</td></tr>
+<tr><td><strong>neither A nor B</strong></td><td>không A cũng không B</td><td><b>Neither</b> the price <b>nor</b> the design was acceptable.</td></tr>
+<tr><td><strong>not only A but (also) B</strong></td><td>không những A mà còn B</td><td>The app is <b>not only</b> free <b>but also</b> easy to use.</td></tr>
+<tr><td><strong>whether A or B</strong></td><td>liệu A hay B</td><td>We must decide <b>whether</b> to rent <b>or</b> buy.</td></tr>
+<tr><td><strong>B as well as A</strong></td><td>B cũng như A</td><td>She speaks Korean <b>as well as</b> English.</td></tr>
+</tbody></table></div>
+<div class="lt-cards">
+<div class="lt-card r"><h3>Cặp nào đi với cặp nấy</h3>
+<p><b>both</b> → <b>and</b> · <b>either</b> → <b>or</b> · <b>neither</b> → <b>nor</b> · <b>not only</b> → <b>but also</b> · <b>whether</b> → <b>or</b>.</p>
+<p>Thấy <em>"___ … and"</em> → chọn <b>both</b>. Thấy <em>"neither … ___"</em> → chọn <b>nor</b>.</p></div>
+<div class="lt-card n"><h3>Chia động từ (chủ ngữ ghép)</h3>
+<p>• <b>Both A and B</b> → luôn <strong>số nhiều</strong>: <em>Both Anna and Tom <b>are</b> here.</em></p>
+<p>• <b>Either A or B / Neither A nor B / Not only A but also B</b> → động từ chia theo <strong>B</strong> (chủ ngữ gần động từ hơn): <em>Neither the staff nor the manager <b>is</b> ready.</em></p></div>
+</div>
+
+<h2 id="lt-4">4. Liên từ phụ thuộc (Subordinating conjunctions)</h2>
+<p>Liên từ phụ thuộc + <strong>S + V</strong> tạo thành <strong>mệnh đề phụ</strong>. Mệnh đề phụ có thể đứng <strong>đầu câu</strong> (có dấu phẩy) hoặc <strong>giữa câu</strong> (thường không cần dấu phẩy).</p>
+<div class="lt-scroll"><table class="lt-t">
+<thead><tr><th class="v">Ý nghĩa</th><th class="v">Liên từ</th><th class="v">Ví dụ</th></tr></thead>
+<tbody>
+<tr><td><strong>Lý do</strong> (vì)</td><td>because, since, as, now that</td><td><b>Because</b> the road was closed, we were late.</td></tr>
+<tr><td><strong>Nhượng bộ</strong> (mặc dù)</td><td>although, though, even though</td><td><b>Although</b> the price rose, sales stayed high.</td></tr>
+<tr><td><strong>Đối lập</strong> (trong khi)</td><td>while, whereas</td><td>Sales rose in Asia, <b>whereas</b> they fell in Europe.</td></tr>
+<tr><td><strong>Thời gian</strong></td><td>when, while, before, after, until, since, as soon as, once</td><td><b>As soon as</b> the order arrives, we will call you.</td></tr>
+<tr><td><strong>Điều kiện</strong></td><td>if, unless (= if … not), provided (that), as long as, in case</td><td>You cannot enter <b>unless</b> you have a pass.</td></tr>
+<tr><td><strong>Mục đích</strong> (để)</td><td>so that, in order that</td><td>Speak clearly <b>so that</b> everyone can hear.</td></tr>
+<tr><td><strong>Kết quả</strong> (quá … đến nỗi)</td><td>so + adj + that, such + N + that</td><td>The demand was <b>so</b> high <b>that</b> we ran out.</td></tr>
+</tbody></table></div>
+<div class="lt-cards">
+<div class="lt-card a"><h3>UNLESS = IF … NOT</h3>
+<p><b>unless</b> mang nghĩa phủ định sẵn ("trừ khi, nếu không"), nên vế sau unless thường ở dạng <strong>khẳng định</strong>.</p>
+<div class="ex">The event will be held outdoors <span class="w v">unless</span> it rains.<i>Sự kiện sẽ được tổ chức ngoài trời trừ khi trời mưa. (= if it does not rain)</i></div></div>
+<div class="lt-card v"><h3>ONCE / AS SOON AS / WHEN + hiện tại</h3>
+<p>Trong mệnh đề <strong>thời gian / điều kiện</strong>, nói về tương lai nhưng dùng <strong>thì hiện tại</strong>, không dùng will.</p>
+<div class="ex"><span class="w v">Once</span> the contract <b>is</b> signed, we will start the project.<i>Một khi hợp đồng được ký, chúng tôi sẽ bắt đầu dự án. (không nói "will be signed")</i></div></div>
+</div>
+
+<h2 id="lt-5">5. Liên từ, giới từ hay trạng từ liên kết?</h2>
+<p>Ba loại từ này có thể <strong>cùng nghĩa</strong> nhưng đứng ở <strong>vị trí khác nhau</strong>. Đây là bẫy số 1 của Part 5:</p>
+<ul>
+<li><span class="w v">Liên từ</span> + <strong>S + V</strong> (mệnh đề), nối 2 mệnh đề trong <strong>một câu</strong>.</li>
+<li><span class="w r">Giới từ</span> + <span class="w n">N / V-ing</span> (không có động từ chia).</li>
+<li><span class="w a">Trạng từ liên kết</span> đứng <strong>đầu câu mới</strong> hoặc <strong>sau dấu chấm phẩy (;)</strong>, và có <strong>dấu phẩy ngay sau</strong>: <em>. However, … / ; therefore, …</em></li>
+</ul>
+<div class="lt-scroll"><table class="lt-t">
+<thead><tr><th>Nghĩa</th><th class="v">Liên từ + S + V</th><th class="r">Giới từ + N</th><th class="a">Trạng từ liên kết</th></tr></thead>
+<tbody>
+<tr><td><strong>Vì / Vì vậy</strong></td><td>because, since, as</td><td>because of, due to, owing to</td><td>therefore, thus, consequently, as a result</td></tr>
+<tr><td><strong>Mặc dù / Tuy nhiên</strong></td><td>although, though, even though</td><td>despite, in spite of</td><td>however, nevertheless</td></tr>
+<tr><td><strong>Trong khi / Trong lúc đó</strong></td><td>while</td><td>during</td><td>meanwhile</td></tr>
+<tr><td><strong>Nếu không</strong></td><td>unless, if … not</td><td>without</td><td>otherwise</td></tr>
+<tr><td><strong>Thêm vào đó</strong></td><td>and</td><td>in addition to, besides</td><td>moreover, furthermore, in addition</td></tr>
+</tbody></table></div>
+<p class="lt-note">Trên điện thoại: vuốt ngang bảng để xem hết 4 cột.</p>
+<div class="lt-cards">
+<div class="lt-card v"><h3>Cùng một ý, 3 cách viết</h3>
+<div class="ex"><span class="w v">Although</span> the price was high, many people bought it.</div>
+<div class="ex"><span class="w r">Despite</span> <span class="w n">the high price</span>, many people bought it.</div>
+<div class="ex">The price was high. <span class="w a">However,</span> many people bought it.<i>Giá cao nhưng nhiều người vẫn mua.</i></div></div>
+<div class="lt-card a"><h3>Trạng từ liên kết KHÔNG nối 2 mệnh đề bằng dấu phẩy</h3>
+<p>Sai: <em>The price was high, however many people bought it.</em></p>
+<p>Đúng: <em>The price was high<b>;</b> <b>however,</b> many people bought it.</em></p>
+<p>Trong Part 5, thấy chỗ trống nằm <strong>sau dấu ";"</strong> hoặc <strong>đầu câu + dấu phẩy ngay sau</strong> → nghĩ đến <b>however / therefore / moreover</b>.</p></div>
+</div>
+<div class="lt-trap"><h3>⚠️ Bẫy hay gặp</h3>
+<ol>
+<li><strong>Đếm động từ sau chỗ trống:</strong> có động từ chia (is, was, arrives…) → <span class="w v">liên từ</span>. Chỉ có danh từ (dù dài) → <span class="w r">giới từ</span>.<br>VD: ___ <em>the heavy traffic</em> → <b>because of</b>; ___ <em>the traffic was heavy</em> → <b>because</b>.</li>
+<li><strong>Không dùng 2 liên từ cho 2 mệnh đề:</strong> <em>"Although it rained, <s>but</s> we went out."</em> là SAI. Chỉ chọn một: although <strong>hoặc</strong> but.</li>
+<li><strong>"both … or", "either … and", "neither … or"</strong> đều SAI. Cặp phải đúng đôi.</li>
+<li><strong>so vs so that:</strong> <em>so</em> = vì vậy (kết quả); <em>so that</em> = để (mục đích), sau so that thường có <b>can / could / will</b>.</li>
+<li><strong>while</strong> là liên từ (+ S + V hoặc + V-ing), <strong>during</strong> là giới từ (+ N): <em>while <b>I was</b> waiting</em> / <em>during <b>the meeting</b></em>.</li>
+</ol></div>
+
+<h2 id="lt-6">6. Mẹo làm Part 5 câu liên từ</h2>
+<ol class="lt-steps">
+<li><strong>Tìm "nửa cặp"</strong>: trong câu có <em>both, either, neither, not only, whether</em> hoặc <em>and, or, nor, but also</em>? → chọn nửa còn lại cho đúng cặp. Xong, không cần dịch.</li>
+<li><strong>Nhìn phần SAU chỗ trống</strong>: <span class="w n">cụm danh từ</span> → <span class="w r">giới từ</span>. Mệnh đề <strong>S + V</strong> → <span class="w v">liên từ</span>.</li>
+<li><strong>Nhìn dấu câu</strong>: chỗ trống sau <strong>dấu chấm phẩy ;</strong> hoặc đầu câu và <strong>có dấu phẩy ngay sau</strong> → <span class="w a">trạng từ liên kết</span> (however, therefore…).</li>
+<li><strong>Còn lại nhiều liên từ cùng loại</strong> → dịch nghĩa 2 vế: <em>nguyên nhân – kết quả</em> (because), <em>trái ngược</em> (although), <em>điều kiện</em> (if / unless), <em>thời gian</em> (when / once / until).</li>
+<li><strong>Kiểm tra lại</strong>: câu chỉ có <strong>1 từ nối</strong> cho 2 mệnh đề; mệnh đề thời gian / điều kiện dùng thì hiện tại cho tương lai.</li>
+</ol>
+
+<h2 id="lt-7">7. Luyện tập (Part 5)</h2>
+<p>12 câu kiểu Part 5. Chạm vào một đáp án để xem đúng / sai, <strong>dấu hiệu</strong> giúp chọn đáp án và bản dịch.</p>
+<div class="lt-score" aria-live="polite"><span id="ltScore">Đúng 0 / 12</span><span class="bar"><i id="ltBar"></i></span><span id="ltDone">Đã làm 0/12</span></div>
+<div id="ltQuiz"></div>
+<div class="lt-end" id="ltEnd" aria-live="polite"><div class="big" id="ltEndIc">🎉</div><p id="ltEndTxt"></p><button type="button" class="lt-btn" id="ltAgain">↺ Làm lại</button></div>
+<p class="lt-again"><button type="button" class="lt-btn alt" id="ltReset">↺ Làm lại</button></p>
+
+<h2 id="lt-8">Bảng từ vựng (Vocabulary Sheet)</h2>
+<p><em>Từ vựng trong chuyên đề này (English – Pronunciation – Vietnamese).</em></p>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 32%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>English</strong></th>
+<th><strong>Pronunciation</strong></th>
+<th><strong>Vietnamese</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd"><td><strong>Conjunction (n)</strong></td><td>/kənˈdʒʌŋkʃn/</td><td>Liên từ</td></tr>
+<tr class="even"><td><strong>Although (conj)</strong></td><td>/ɔːlˈðəʊ/</td><td>Mặc dù</td></tr>
+<tr class="odd"><td><strong>Unless (conj)</strong></td><td>/ənˈles/</td><td>Trừ khi, nếu không</td></tr>
+<tr class="even"><td><strong>Once (conj)</strong></td><td>/wʌns/</td><td>Một khi, ngay khi</td></tr>
+<tr class="odd"><td><strong>Whereas (conj)</strong></td><td>/ˌweərˈæz/</td><td>Trong khi (đối lập)</td></tr>
+<tr class="even"><td><strong>As soon as (conj)</strong></td><td>/əz ˈsuːn əz/</td><td>Ngay khi</td></tr>
+<tr class="odd"><td><strong>So that (conj)</strong></td><td>/ˈsəʊ ðət/</td><td>Để (mục đích)</td></tr>
+<tr class="even"><td><strong>Provided that (conj)</strong></td><td>/prəˈvaɪdɪd ðət/</td><td>Miễn là, với điều kiện là</td></tr>
+<tr class="odd"><td><strong>Either … or (conj)</strong></td><td>/ˈaɪðə(r) … ɔː(r)/</td><td>Hoặc … hoặc</td></tr>
+<tr class="even"><td><strong>Neither … nor (conj)</strong></td><td>/ˈnaɪðə(r) … nɔː(r)/</td><td>Không … cũng không</td></tr>
+<tr class="odd"><td><strong>However (adv)</strong></td><td>/haʊˈevə(r)/</td><td>Tuy nhiên</td></tr>
+<tr class="even"><td><strong>Therefore (adv)</strong></td><td>/ˈðeəfɔː(r)/</td><td>Vì vậy, do đó</td></tr>
+<tr class="odd"><td><strong>Consequently (adv)</strong></td><td>/ˈkɒnsɪkwəntli/</td><td>Do đó, kết quả là</td></tr>
+<tr class="even"><td><strong>Moreover (adv)</strong></td><td>/mɔːrˈəʊvə(r)/</td><td>Hơn nữa</td></tr>
+<tr class="odd"><td><strong>Otherwise (adv)</strong></td><td>/ˈʌðəwaɪz/</td><td>Nếu không thì</td></tr>
+<tr class="even"><td><strong>Meanwhile (adv)</strong></td><td>/ˈmiːnwaɪl/</td><td>Trong lúc đó</td></tr>
+<tr class="odd"><td><strong>Applicant (n)</strong></td><td>/ˈæplɪkənt/</td><td>Người nộp đơn, ứng viên</td></tr>
+<tr class="even"><td><strong>Résumé (n)</strong></td><td>/ˈrezjumeɪ/</td><td>Sơ yếu lý lịch (CV)</td></tr>
+<tr class="odd"><td><strong>Cover letter (n)</strong></td><td>/ˈkʌvə ˌletə(r)/</td><td>Thư xin việc</td></tr>
+<tr class="even"><td><strong>Shipment (n)</strong></td><td>/ˈʃɪpmənt/</td><td>Lô hàng</td></tr>
+<tr class="odd"><td><strong>Inspect (v)</strong></td><td>/ɪnˈspekt/</td><td>Kiểm tra kỹ</td></tr>
+<tr class="even"><td><strong>Fully booked (adj)</strong></td><td>/ˌfʊli ˈbʊkt/</td><td>Kín chỗ, hết phòng</td></tr>
+<tr class="odd"><td><strong>Organizer (n)</strong></td><td>/ˈɔːɡənaɪzə(r)/</td><td>Người / ban tổ chức</td></tr>
+<tr class="even"><td><strong>Cancel (v)</strong></td><td>/ˈkænsl/</td><td>Hủy bỏ</td></tr>
+<tr class="odd"><td><strong>Quarter (n)</strong></td><td>/ˈkwɔːtə(r)/</td><td>Quý (3 tháng)</td></tr>
+<tr class="even"><td><strong>Contract (n)</strong></td><td>/ˈkɒntrækt/</td><td>Hợp đồng</td></tr>
+</tbody>
+</table>
+</div></main><footer>TOEIC Pre · Tóm tắt kiến thức</footer>
+<script>
+(function(){
+  'use strict';
+  // t: màu của đáp án đúng khi điền vào chỗ trống (v = liên từ, r = giới từ / cặp tương quan, a = trạng từ liên kết)
+  var Q=[
+    {s:'Applicants must submit ___ a résumé and a cover letter by May 10.',o:['either','both','neither','whether'],k:1,t:'r',
+     e:'Phía sau có <b>and</b> (a résumé <b>and</b> a cover letter) → cặp <b>both … and</b> (cả … và). either đi với or, neither đi với nor, whether đi với or.<span class="dich">Dịch: Ứng viên phải nộp cả sơ yếu lý lịch và thư xin việc trước ngày 10 tháng 5.</span>'},
+    {s:'Customers can contact our support team either by phone ___ by e-mail.',o:['and','nor','or','but'],k:2,t:'r',
+     e:'Phía trước có <b>either</b> → cặp <b>either … or</b> (hoặc … hoặc). and đi với both; nor đi với neither; but đi với not only.<span class="dich">Dịch: Khách hàng có thể liên hệ đội hỗ trợ của chúng tôi qua điện thoại hoặc qua e-mail.</span>'},
+    {s:'Neither the sales manager ___ her assistant was available for the conference call.',o:['or','and','nor','but'],k:2,t:'r',
+     e:'Phía trước có <b>Neither</b> → cặp <b>neither … nor</b> (không … cũng không). Động từ <b>was</b> chia theo chủ ngữ gần nhất (her assistant, số ít).<span class="dich">Dịch: Cả trưởng phòng kinh doanh lẫn trợ lý của cô ấy đều không có mặt cho cuộc gọi hội nghị.</span>'},
+    {s:'The new accounting software is not only faster ___ easier to use than the old one.',o:['and also','but also','or else','so that'],k:1,t:'r',
+     e:'Phía trước có <b>not only</b> → cặp <b>not only … but also</b> (không những … mà còn). Hai bên song song: faster / easier (đều là tính từ so sánh hơn).<span class="dich">Dịch: Phần mềm kế toán mới không những nhanh hơn mà còn dễ dùng hơn phần mềm cũ.</span>'},
+    {s:'___ the shipment arrives, please inspect each box for damage.',o:['Once','Despite','However','During'],k:0,t:'v',
+     e:'Sau chỗ trống là <b>mệnh đề</b> (the shipment <b>arrives</b>) và còn một mệnh đề chính phía sau → cần <b>liên từ</b>. <b>Once</b> = một khi, ngay khi. Despite / During là giới từ (+ N); However là trạng từ, không nối được 2 mệnh đề.<span class="dich">Dịch: Ngay khi lô hàng đến, vui lòng kiểm tra từng thùng xem có hư hỏng không.</span>'},
+    {s:'The company picnic will be held in Riverside Park ___ it rains heavily.',o:['if','unless','because','so'],k:1,t:'v',
+     e:'Cần liên từ điều kiện mang nghĩa "<b>trừ khi</b>" → <b>unless</b> (= if it does not rain). Chọn if thì nghĩa vô lý: "tổ chức ở công viên nếu trời mưa to". because (vì) và so (vì vậy) không hợp nghĩa.<span class="dich">Dịch: Buổi dã ngoại của công ty sẽ được tổ chức ở công viên Riverside trừ khi trời mưa to.</span>'},
+    {s:'___ the hotel was fully booked, the organizers found rooms for all guests nearby.',o:['Despite','However','Because of','Although'],k:3,t:'v',
+     e:'Sau chỗ trống là <b>mệnh đề</b> (the hotel <b>was</b> fully booked) → cần <b>liên từ</b>. Hai vế trái ngược (hết phòng ↔ vẫn tìm được phòng) → <b>Although</b>. Despite / Because of là giới từ; However không nối được 2 mệnh đề bằng dấu phẩy.<span class="dich">Dịch: Mặc dù khách sạn đã kín phòng, ban tổ chức vẫn tìm được phòng gần đó cho tất cả khách.</span>'},
+    {s:'Several morning flights were canceled ___ heavy fog at the airport.',o:['because','although','because of','therefore'],k:2,t:'r',
+     e:'Sau chỗ trống chỉ là <b>cụm danh từ</b> (heavy fog at the airport), không có động từ chia → cần <b>giới từ</b>. Nghĩa "vì" → <b>because of</b>. because / although là liên từ (+ S + V); therefore là trạng từ.<span class="dich">Dịch: Một số chuyến bay buổi sáng đã bị hủy vì sương mù dày đặc ở sân bay.</span>'},
+    {s:'Sales increased sharply last quarter; ___, the company plans to hire ten new employees.',o:['therefore','because','although','unless'],k:0,t:'a',
+     e:'Chỗ trống nằm <b>sau dấu chấm phẩy (;)</b> và có <b>dấu phẩy ngay sau</b> → cần <b>trạng từ liên kết</b>. Vế 1 là nguyên nhân, vế 2 là kết quả → <b>therefore</b> (vì vậy). because / although / unless là liên từ, không đứng ở vị trí này.<span class="dich">Dịch: Doanh số tăng mạnh vào quý trước; vì vậy, công ty dự định tuyển thêm 10 nhân viên mới.</span>'},
+    {s:'The office printer is quite old. ___, it still produces high-quality copies.',o:['Despite','Because','So that','However'],k:3,t:'a',
+     e:'Chỗ trống ở <b>đầu câu mới</b> và có <b>dấu phẩy ngay sau</b> → <b>trạng từ liên kết</b>. Hai câu trái ngược (cũ ↔ vẫn in đẹp) → <b>However</b> (tuy nhiên). Because / So that là liên từ; Despite là giới từ, cần danh từ phía sau.<span class="dich">Dịch: Máy in của văn phòng khá cũ. Tuy nhiên, nó vẫn in ra bản sao chất lượng cao.</span>'},
+    {s:'Ms. Lee will review the contract ___ she returns from her business trip.',o:['as soon as','in spite of','due to','so that'],k:0,t:'v',
+     e:'Sau chỗ trống là <b>mệnh đề</b> (she <b>returns</b>) → cần <b>liên từ</b>; nghĩa thời gian → <b>as soon as</b> (ngay khi). Lưu ý: nói về tương lai nhưng mệnh đề thời gian dùng thì hiện tại (returns). in spite of / due to là giới từ; so that (để) không hợp nghĩa.<span class="dich">Dịch: Chị Lee sẽ xem lại hợp đồng ngay khi chị ấy đi công tác về.</span>'},
+    {s:'Please arrive ten minutes early ___ the training session can start on time.',o:['or','because of','although','so that'],k:3,t:'v',
+     e:'Vế sau nói về <b>mục đích</b> (để buổi đào tạo bắt đầu đúng giờ) và có <b>can</b> → <b>so that</b> (để). because of là giới từ; although (mặc dù) và or (hoặc) không hợp nghĩa.<span class="dich">Dịch: Vui lòng đến sớm 10 phút để buổi đào tạo có thể bắt đầu đúng giờ.</span>'}
+  ];
+  var KEY='summaryOld.lientu.quiz', L='ABCD';
+  var ans=(function(){try{var a=JSON.parse(localStorage.getItem(KEY)||'{}');return a&&typeof a==='object'?a:{};}catch(e){return {};}})();
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(ans));}catch(e){}}
+  var box=document.getElementById('ltQuiz');
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function render(){
+    box.innerHTML=Q.map(function(q,i){
+      var st=esc(q.s).replace('___','<span class="lt-blank" data-b="'+i+'">&nbsp;</span>');
+      return '<div class="lt-q" id="ltq'+i+'"><div class="num">Câu '+(i+1)+'</div><p class="st">'+st+'</p><div class="lt-opts">'+
+        q.o.map(function(o,j){return '<button type="button" class="lt-opt" data-q="'+i+'" data-o="'+j+'"><b>'+L[j]+'</b><span>'+esc(o)+'</span></button>';}).join('')+
+        '</div><div class="lt-fb" role="status"></div></div>';
+    }).join('');
+    Q.forEach(function(q,i){ if(ans[i]!==undefined) show(i,ans[i]); });
+    score();
+  }
+  function show(i,j){
+    var q=Q[i], el=document.getElementById('ltq'+i), ok=j===q.k;
+    [].forEach.call(el.querySelectorAll('.lt-opt'),function(b,x){
+      b.disabled=true;
+      if(x===q.k) b.classList.add('ok'); else if(x===j) b.classList.add('bad'); else b.classList.add('dim');
+    });
+    var bl=el.querySelector('.lt-blank'); bl.innerHTML='<span class="w '+q.t+'">'+esc(q.o[q.k])+'</span>';
+    var fb=el.querySelector('.lt-fb'); fb.className='lt-fb show '+(ok?'good':'wrong');
+    fb.innerHTML='<strong>'+(ok?'✓ Chính xác!':'✗ Chưa đúng. Đáp án: ('+L[q.k]+') '+esc(q.o[q.k]))+'</strong>'+q.e;
+  }
+  function score(){
+    var n=0,c=0; Q.forEach(function(q,i){ if(ans[i]!==undefined){n++; if(ans[i]===q.k)c++;} });
+    document.getElementById('ltScore').textContent='Đúng '+c+' / '+Q.length;
+    document.getElementById('ltDone').textContent='Đã làm '+n+'/'+Q.length;
+    document.getElementById('ltBar').style.width=(n/Q.length*100)+'%';
+    var end=document.getElementById('ltEnd');
+    if(n===Q.length){
+      end.classList.add('show');
+      document.getElementById('ltEndIc').textContent=c>=10?'🎉':c>=7?'👍':'💪';
+      document.getElementById('ltEndTxt').innerHTML='Bạn làm đúng <b>'+c+'/'+Q.length+'</b> câu. '+(c>=10?'Rất tốt! Bạn đã nắm chắc cách dùng liên từ.':c>=7?'Khá lắm! Xem lại giải thích các câu sai nhé.':'Đọc lại phần 3, 5 và 6 (Mẹo Part 5) rồi làm lại nhé!');
+    } else end.classList.remove('show');
+  }
+  box.addEventListener('click',function(ev){
+    var b=ev.target.closest('.lt-opt'); if(!b||b.disabled) return;
+    var i=+b.dataset.q, j=+b.dataset.o; if(ans[i]!==undefined) return;
+    ans[i]=j; save(); show(i,j); score();
+    if(Object.keys(ans).length===Q.length) setTimeout(function(){document.getElementById('ltEnd').scrollIntoView({behavior:'smooth',block:'center'});},300);
+  });
+  function reset(){ ans={}; save(); render(); document.getElementById('ltq0').scrollIntoView({behavior:'smooth',block:'center'}); }
+  document.getElementById('ltAgain').onclick=reset;
+  document.getElementById('ltReset').onclick=reset;
+  render();
+})();
+</script>
+<script src="../flashcards.js" defer></script><script>window.ETSCFG=window.ETSCFG||{SCRIPT_URL:'https://script.google.com/macros/s/AKfycby3_45o2Zn3FMEMrVAg9nBCiQEIUvU9HgQxI2ZZtwJ4oUQ_bqXxj1vN0kL6cvhbDQCx/exec'};</script><script src="../assets/ui.js?v=3" data-site="summary"></script>
+</body></html>

@@ -1,0 +1,317 @@
+<!doctype html><html lang="vi"><head>
+<script>try{var d=document.documentElement,k=JSON.parse(localStorage.getItem('mt.skin')||'""');if(k==='scifi')d.setAttribute('data-theme','dark');if(k)d.setAttribute('data-skin',k)}catch(e){}</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<title>Câu trả lời gián tiếp ở Part 2</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css"><script src="../classes.js"></script><link rel="icon" type="image/png" href="../icons/fav-64.png?v=3">
+<style>
+/* Chuyên đề Listening – Trả lời gián tiếp Part 2. Màu cố định: từ để hỏi xanh dương · bẫy đỏ · câu trả lời đúng xanh lá · mẫu câu tím */
+:root{--lt-n:#1d5fa8;--lt-n-bg:#e4eefb;--lt-v:#b42318;--lt-v-bg:#fde9e6;--lt-a:#1f7a4d;--lt-a-bg:#e2f3ea;--lt-r:#6d3fb0;--lt-r-bg:#efe7fb;}
+.lt .w{font-weight:700;border-radius:5px;padding:0 4px;white-space:nowrap;}
+.lt .w.n{color:var(--lt-n);background:var(--lt-n-bg);}
+.lt .w.v{color:var(--lt-v);background:var(--lt-v-bg);}
+.lt .w.a{color:var(--lt-a);background:var(--lt-a-bg);}
+.lt .w.r{color:var(--lt-r);background:var(--lt-r-bg);}
+.lt-legend{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;}
+.lt-legend .w{font-size:14px;padding:3px 10px;}
+.lt-toc{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px;padding:0;list-style:none;}
+.lt-toc a{display:inline-block;font-size:14px;font-weight:600;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;background:var(--paper);}
+.lt-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0;}
+.lt-card{border:1.5px solid var(--line);border-left-width:6px;border-radius:12px;padding:12px 14px;background:var(--card);}
+.lt-card.n{border-left-color:var(--lt-n);} .lt-card.v{border-left-color:var(--lt-v);} .lt-card.a{border-left-color:var(--lt-a);} .lt-card.r{border-left-color:var(--lt-r);}
+.lt-card h3{margin:0 0 4px!important;font-size:17px;}
+.lt-card.n h3{color:var(--lt-n);} .lt-card.v h3{color:var(--lt-v);} .lt-card.a h3{color:var(--lt-a);} .lt-card.r h3{color:var(--lt-r);}
+.lt-card h3 small{font-weight:600;color:var(--dim);font-size:13.5px;}
+.lt-card p{font-size:15px;}
+.lt-card .ex{margin-top:8px;padding:8px 10px;background:var(--paper);border-radius:8px;font-size:15px;}
+.lt-card .ex i{display:block;font-style:normal;color:var(--dim);font-size:13.5px;}
+.lt-suf{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 16px;}
+.lt-suf h3{margin-bottom:4px!important;}
+.lt-suf table td:first-child{white-space:nowrap;font-weight:700;}
+.lt-h-n{color:var(--lt-n)!important;} .lt-h-v{color:var(--lt-v)!important;} .lt-h-a{color:var(--lt-a)!important;} .lt-h-r{color:var(--lt-r)!important;}
+.doc table.lt-t th.n{background:var(--lt-n-bg);color:var(--lt-n);} .doc table.lt-t th.v{background:var(--lt-v-bg);color:var(--lt-v);}
+.doc table.lt-t th.a{background:var(--lt-a-bg);color:var(--lt-a);} .doc table.lt-t th.r{background:var(--lt-r-bg);color:var(--lt-r);}
+.lt-trap{margin:14px 0;padding:14px 16px;border:1.5px dashed #c2410c;border-radius:12px;background:#fff6ef;}
+.lt-trap h3{color:#9a3412!important;margin:0 0 6px!important;}
+.lt-trap ol{margin:0;padding-left:22px;}
+.lt-trap li{margin:8px 0;}
+.lt-steps{counter-reset:s;list-style:none;margin:12px 0;padding:0;display:grid;gap:8px;}
+.lt-steps li{counter-increment:s;position:relative;padding:10px 12px 10px 52px;border:1px solid var(--line);border-radius:12px;background:var(--paper);}
+.lt-steps li::before{content:counter(s);position:absolute;left:12px;top:10px;width:28px;height:28px;border-radius:50%;background:var(--amber);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.lt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;}
+.lt-scroll table{margin:0!important;min-width:560px;}
+.lt-note{font-size:14px;color:var(--dim);}
+.lt-pos td:nth-child(2){white-space:nowrap;}
+/* bài luyện tập */
+.lt-score{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:10px 0 12px;padding:10px 14px;border-radius:12px;background:#fffaf0;border:1px solid #ecd3a6;font-weight:600;}
+.lt-score .bar{flex:1;min-width:120px;height:8px;border-radius:99px;background:var(--line);overflow:hidden;}
+.lt-score .bar i{display:block;height:100%;width:0;background:var(--teal);transition:width .3s;}
+.lt-q{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0;background:var(--card);}
+.lt-q .num{font-size:13px;font-weight:700;color:var(--amber-ink);letter-spacing:.04em;text-transform:uppercase;}
+.lt-q .st{font-size:16.5px;margin:4px 0 10px;line-height:1.55;}
+.lt-blank{display:inline-block;min-width:88px;border-bottom:2px solid var(--ink);text-align:center;font-weight:700;}
+.lt-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.lt-opt{font:inherit;font-size:15.5px;text-align:left;display:flex;gap:8px;align-items:center;min-height:46px;padding:9px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;}
+.lt-opt b{flex:none;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--line);font-size:13px;}
+.lt-opt:hover:not(:disabled){border-color:var(--amber);}
+.lt-opt:focus-visible{outline:3px solid var(--amber);outline-offset:2px;}
+.lt-opt:disabled{cursor:default;}
+.lt-opt.ok{border-color:#1f7a4d;background:#e2f3ea;}
+.lt-opt.ok b{background:#1f7a4d;border-color:#1f7a4d;color:#fff;}
+.lt-opt.bad{border-color:#b42318;background:#fde9e6;}
+.lt-opt.bad b{background:#b42318;border-color:#b42318;color:#fff;}
+.lt-opt.dim{opacity:.55;}
+.lt-fb{display:none;margin-top:10px;padding:10px 12px;border-radius:10px;font-size:15px;}
+.lt-fb.show{display:block;}
+.lt-fb.good{background:#e2f3ea;border:1px solid #9fd2b6;}
+.lt-fb.wrong{background:#fde9e6;border:1px solid #f0b4ab;}
+.lt-fb strong{display:block;margin-bottom:2px;}
+.lt-fb .dich{display:block;margin-top:6px;color:var(--dim);font-size:14px;}
+.lt-end{display:none;text-align:center;margin:16px 0 4px;padding:18px 16px;border-radius:14px;border:1.5px solid var(--amber);background:#fffaf0;}
+.lt-end.show{display:block;}
+.lt-end .big{font-size:40px;line-height:1;}
+.lt-end p{margin:8px 0;font-size:17px;}
+.lt-btn{font:inherit;font-weight:700;font-size:16px;border:0;border-radius:10px;padding:11px 20px;background:var(--amber);color:#fff;cursor:pointer;min-height:46px;}
+.lt-btn.alt{background:var(--card);color:var(--amber-ink);border:1.5px solid var(--amber);}
+.lt-again{text-align:right;margin:8px 0 0;}
+@media (max-width:480px){
+  .lt-cards,.lt-suf{grid-template-columns:1fr;}
+  .doc table{font-size:14.5px;}
+  .doc th,.doc td{padding:7px 8px;}
+  .lt-q{padding:12px;}
+  .lt-opt{font-size:15px;padding:8px 9px;}
+  .lt-pos td:nth-child(2){white-space:normal;}
+  .lt-suf table td:first-child{white-space:normal;}
+}
+/* chuyên đề Listening: luyện bằng script (không có audio) */
+.lt-read{margin:12px 0;padding:12px 14px;border-radius:12px;background:#eef5fb;border:1px solid #bcd3ea;font-size:15px;}
+.lt-read strong{color:var(--lt-n);}
+.lt-tip{margin:14px 0;padding:12px 14px;border-radius:12px;background:#f1f8f3;border:1px solid #a9d3b8;font-size:15px;}
+.lt-tip > b:first-child{display:block;color:var(--lt-a);margin-bottom:4px;}
+.lt-ctx{margin:6px 0 8px;padding:10px 12px;border-radius:10px;background:var(--paper);border:1px dashed var(--line);font-size:15px;line-height:1.55;}
+.lt-ctx .lb{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--dim);margin-right:6px;}
+.lt-ctx p{margin:2px 0;}
+.lt-opts.one{grid-template-columns:1fr;}
+.lt-demo{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:6px;}
+.lt-demo li{padding:8px 10px;border-radius:8px;background:var(--paper);border:1px solid var(--line);font-size:15px;}
+.lt-demo li.ok{border-color:#9fd2b6;background:#e2f3ea;}
+.lt-demo li i{display:block;font-style:normal;color:var(--dim);font-size:13.5px;}
+.lt-mk{display:inline-block;min-width:22px;font-weight:700;}
+.lt-mk.o{color:#1f7a4d;} .lt-mk.x{color:#b42318;}
+.doc table.lt-cmp td:first-child{font-weight:600;}
+.lt .w{white-space:normal;-webkit-box-decoration-break:clone;box-decoration-break:clone;}
+@media (max-width:480px){
+  .lt-ctx{padding:9px 10px;}
+}
+</style>
+</head><body data-nav="home"><header class="top"><a href="../index.html">TOEIC Pre · Tóm tắt kiến thức</a></header><main class="lt"><p class="sub"><a href="../index.html">← Tất cả bài</a></p><h1>Câu trả lời gián tiếp ở Part 2</h1><p class="sub">Chuyên đề bổ trợ Listening · Không biết / để tôi kiểm tra, hỏi lại, bẫy lặp từ, bẫy Yes/No (Indirect Responses)</p><div class="doc">
+<p>Ở <strong>Part 2</strong> (25 câu), bạn nghe 1 câu hỏi hoặc câu nói và 3 câu trả lời (A, B, C). Nhiều bạn chỉ chờ nghe câu trả lời "thẳng" (hỏi giờ → nói giờ). Nhưng trong đề thật, đáp án đúng rất hay là câu trả lời <strong>gián tiếp</strong>: "Tôi không chắc", "Để tôi kiểm tra", hoặc <strong>hỏi lại</strong>. Còn câu nghe "quen tai" nhất lại thường là <strong>bẫy</strong>. Màu dùng trong trang:</p>
+<div class="lt-legend"><span class="w n">Từ để hỏi / ý chính câu hỏi</span><span class="w v">Bẫy (sai)</span><span class="w a">Câu trả lời đúng</span><span class="w r">Mẫu câu cần thuộc</span></div>
+<ul class="lt-toc"><li><a href="#lt-1">1. Trả lời gián tiếp là gì</a></li><li><a href="#lt-2">2. Không biết / kiểm tra / tùy</a></li><li><a href="#lt-3">3. Hỏi lại</a></li><li><a href="#lt-4">4. Bẫy lặp từ</a></li><li><a href="#lt-5">5. Bẫy Yes/No</a></li><li><a href="#lt-6">6. Câu hỏi lựa chọn</a></li><li><a href="#lt-7">7. Đề nghị &amp; câu trần thuật</a></li><li><a href="#lt-8">8. Các bước làm</a></li><li><a href="#lt-9">9. Luyện tập</a></li><li><a href="#lt-10">10. Từ vựng</a></li></ul>
+
+<h2 id="lt-1">1. Câu trả lời gián tiếp là gì?</h2>
+<p>Là câu trả lời <strong>không đưa thông tin được hỏi</strong>, nhưng vẫn là một phản hồi <strong>hợp lý</strong> trong đời thật. Ví dụ:</p>
+<p><b>Q:</b> <span class="w n">When</span> is the sales report due? <i>(Khi nào phải nộp báo cáo doanh số?)</i></p>
+<ul class="lt-demo">
+<li><span class="lt-mk x">✗</span>(A) <span class="w v">Yes</span>, it's due.<i>Câu hỏi When không trả lời Yes / No.</i></li>
+<li><span class="lt-mk x">✗</span>(B) In the <span class="w v">reporter's</span> office.<i>reporter nghe giống report; lại trả lời "ở đâu" chứ không phải "khi nào".</i></li>
+<li class="ok"><span class="lt-mk o">✓</span>(C) <span class="w a">Didn't Mr. Kim send you an e-mail about it?</span><i>Không nói ngày, nhưng hợp lý: "Ông Kim chưa gửi e-mail cho bạn à?" (ý là thông tin có trong e-mail).</i></li>
+</ul>
+<div class="lt-tip"><b>👨‍🏫 Thầy dặn</b>Ở Part 2, đừng tìm câu trả lời "đúng ngữ pháp với câu hỏi". Hãy tìm câu mà <strong>một người thật sẽ nói</strong> khi nghe câu hỏi đó. Cách chắc ăn nhất: <strong>loại 2 câu sai</strong> (bẫy), câu còn lại là đáp án.</div>
+
+<h2 id="lt-2">2. Nhóm "Tôi không biết / để tôi kiểm tra / còn tùy"</h2>
+<p>Những câu này hợp với <strong>gần như mọi loại câu hỏi</strong> (Wh, Yes/No, lựa chọn…). Gặp chúng, bạn nên <strong>ưu tiên cân nhắc</strong>, nhưng vẫn phải loại 2 câu kia trước khi chọn.</p>
+<table class="lt-t">
+<colgroup><col style="width:52%"><col style="width:48%"></colgroup>
+<thead><tr><th class="r">Mẫu câu</th><th>Nghĩa</th></tr></thead>
+<tbody>
+<tr><td><span class="w r">I'm not sure.</span> / <span class="w r">I have no idea.</span></td><td>Tôi không chắc. / Tôi không biết.</td></tr>
+<tr><td><span class="w r">Let me check.</span> / <span class="w r">I'll find out.</span></td><td>Để tôi kiểm tra. / Tôi sẽ tìm hiểu.</td></tr>
+<tr><td><span class="w r">It hasn't been decided yet.</span></td><td>Vẫn chưa được quyết định.</td></tr>
+<tr><td><span class="w r">It depends on</span> the weather / the price.</td><td>Còn tùy vào thời tiết / giá cả.</td></tr>
+<tr><td><span class="w r">Ask Ms. Lee.</span> She's in charge of that.</td><td>Hỏi cô Lee đi. Cô ấy phụ trách việc đó.</td></tr>
+<tr><td><span class="w r">Check the schedule</span> / the notice board.</td><td>Xem lịch / bảng thông báo đi.</td></tr>
+<tr><td><span class="w r">I just started working here.</span></td><td>Tôi mới bắt đầu làm ở đây. (nên không biết)</td></tr>
+<tr><td><span class="w r">I haven't heard anything yet.</span></td><td>Tôi chưa nghe gì cả.</td></tr>
+</tbody></table>
+<div class="ex lt-ctx"><b>Q:</b> Who's going to lead the training session?<br>✓ <span class="w a">It hasn't been decided yet.</span> (Vẫn chưa quyết định.)<br><b>Q:</b> How long will the repairs take?<br>✓ <span class="w a">It depends on the parts.</span> (Còn tùy vào linh kiện.)</div>
+
+<h2 id="lt-3">3. Trả lời câu hỏi bằng một câu hỏi</h2>
+<p>Trong đời thật, nhiều khi ta <strong>hỏi lại</strong> thay vì trả lời ngay. Đề TOEIC rất thích kiểu này. Có 3 dạng hay gặp:</p>
+<div class="lt-cards">
+<div class="lt-card a"><h3>Hỏi lại cho rõ <small>clarify</small></h3>
+<p>Chưa hiểu rõ người kia muốn gì → hỏi thêm.</p>
+<div class="ex">Q: Where should I put these boxes?<br>✓ <span class="w a">Are they for the conference?</span><i>Chúng là đồ cho hội nghị à? (để biết nên để đâu)</i></div></div>
+<div class="lt-card a"><h3>Hỏi ngược để nhắc thông tin <small>Didn't / Isn't…?</small></h3>
+<p>Ý là "thông tin đó có sẵn rồi mà".</p>
+<div class="ex">Q: What time does the meeting start?<br>✓ <span class="w a">Didn't you get the e-mail?</span><i>Bạn chưa nhận được e-mail à?</i></div></div>
+<div class="lt-card a"><h3>Hỏi lại về chi tiết <small>Sure, but…?</small></h3>
+<p>Đồng ý nhưng cần thêm thông tin.</p>
+<div class="ex">Q: Could you help me move these chairs?<br>✓ <span class="w a">Sure, what time?</span><i>Được chứ, mấy giờ?</i></div></div>
+</div>
+
+<h2 id="lt-4">4. Bẫy lặp từ và từ nghe giống</h2>
+<p>Đáp án <strong>lặp lại đúng một từ</strong> trong câu hỏi (hoặc có từ <strong>nghe giống</strong>) thường là <strong>bẫy</strong>. Người ra đề biết bạn sẽ chọn câu "nghe quen tai".</p>
+<div class="lt-scroll"><table class="lt-cmp">
+<thead><tr><th>Câu hỏi</th><th>Đáp án bẫy</th><th>Vì sao sai</th></tr></thead>
+<tbody>
+<tr><td>Who is in <b>charge</b> of the meeting?</td><td>The service <span class="w v">charge</span> is high.</td><td>Lặp từ charge nhưng nghĩa khác (phí dịch vụ)</td></tr>
+<tr><td>Would you like some <b>coffee</b>?</td><td>The <span class="w v">copies</span> are ready.</td><td>copies nghe giống coffee</td></tr>
+<tr><td>Did you send the <b>invoice</b>?</td><td>A <span class="w v">voice</span> message.</td><td>voice nằm trong invoice</td></tr>
+<tr><td>What time does the bank <b>close</b>?</td><td>It's <span class="w v">close</span> to here.</td><td>close (đóng cửa) ≠ close (gần)</td></tr>
+<tr><td>Who's leading the <b>training</b> session?</td><td>The <span class="w v">train</span> leaves at nine.</td><td>train nghe giống training</td></tr>
+</tbody></table></div>
+<p class="lt-note">Trên điện thoại: vuốt ngang bảng để xem hết 3 cột. Lưu ý: lặp từ là "thường sai", không phải "luôn sai". Nếu câu lặp từ mà vẫn trả lời đúng ý thì vẫn chọn được.</p>
+
+<h2 id="lt-5">5. Bẫy Yes / No cho câu hỏi Wh</h2>
+<p>Câu hỏi bắt đầu bằng <span class="w n">Who, What, When, Where, Why, How, Which</span> là hỏi <strong>thông tin</strong>. Đáp án mở đầu bằng <span class="w v">Yes / No</span> → <strong>loại ngay</strong>, dù phần sau nghe hợp lý.</p>
+<div class="lt-cards">
+<div class="lt-card v"><h3>Wh-question</h3>
+<div class="ex">Q: <span class="w n">Which</span> hotel did you book?<br>✗ <span class="w v">Yes</span>, the booking is confirmed.<br>✓ <span class="w a">The one near the convention center.</span></div></div>
+<div class="lt-card n"><h3>Nhưng: câu hỏi Yes/No</h3>
+<p>Câu hỏi Yes/No (Is…? Did…? Can…?) thì đáp án <b>có thể</b> có Yes/No, nhưng cũng rất hay <b>không có</b>.</p>
+<div class="ex">Q: Did you finish the report?<br>✓ <span class="w a">I'll be done by noon.</span><i>Tôi sẽ xong trước trưa. (= chưa xong)</i></div></div>
+</div>
+<p class="lt-note">Cẩn thận câu hỏi gián tiếp: <b>Do you know where…? / Can you tell me when…?</b> Câu trả lời đáp cho phần Wh phía sau (where, when), ví dụ: <i>Do you know where Keiko's office is? → It's on the second floor.</i></p>
+
+<h2 id="lt-6">6. Câu hỏi lựa chọn (A or B?)</h2>
+<p>Gặp câu có <b>or</b> (tea <b>or</b> coffee? Monday <b>or</b> Tuesday?), câu trả lời đúng có 4 kiểu. Đáp án <span class="w v">Yes / No</span> gần như <strong>luôn sai</strong>.</p>
+<table class="lt-t">
+<colgroup><col style="width:34%"><col style="width:66%"></colgroup>
+<thead><tr><th>Kiểu trả lời</th><th class="r">Ví dụ (Q: Should we meet on Monday or Tuesday?)</th></tr></thead>
+<tbody>
+<tr><td>Chọn 1 trong 2 (thường nói khác đi)</td><td><span class="w a">Earlier in the week is better.</span> (= Monday)</td></tr>
+<tr><td>Cái nào cũng được</td><td><span class="w r">Either day works for me.</span> / <span class="w r">Whichever is convenient for you.</span> / <span class="w r">I don't mind.</span></td></tr>
+<tr><td>Không chọn cái nào</td><td><span class="w r">Neither</span>. I'm away all week. / How about Wednesday?</td></tr>
+<tr><td>Trả lời gián tiếp</td><td><span class="w r">Let me check my calendar.</span></td></tr>
+</tbody></table>
+
+<h2 id="lt-7">7. Câu đề nghị, gợi ý và câu trần thuật</h2>
+<h3>7.1. Đề nghị / gợi ý / yêu cầu</h3>
+<p>Dấu hiệu: <b>Why don't we…? / How about…? / Would you like…? / Could you…? / Can you…?</b> Câu trả lời đúng là <strong>đồng ý</strong> hoặc <strong>từ chối lịch sự</strong> (thường kèm lý do):</p>
+<table>
+<colgroup><col style="width:50%"><col style="width:50%"></colgroup>
+<thead><tr><th>Đồng ý</th><th>Từ chối lịch sự</th></tr></thead>
+<tbody>
+<tr><td><span class="w a">Sure.</span> / <span class="w a">Of course.</span> / <span class="w a">No problem.</span></td><td><span class="w a">I'd love to, but</span> I have a meeting.</td></tr>
+<tr><td><span class="w a">That's a good idea.</span> / <span class="w a">Sounds great.</span></td><td><span class="w a">Sorry, I'm busy</span> this afternoon.</td></tr>
+<tr><td><span class="w a">I'd be happy to.</span></td><td><span class="w a">Thanks, but</span> I've already eaten.</td></tr>
+</tbody></table>
+<h3>7.2. Câu trần thuật (statement)</h3>
+<p>Người nói <strong>không hỏi gì</strong>, chỉ thông báo một việc. Câu trả lời đúng thường là <strong>đồng tình</strong>, <strong>đưa giải pháp</strong>, hoặc <strong>hỏi thêm</strong>:</p>
+<div class="ex lt-ctx"><b>"The printer on the third floor isn't working."</b><br>✓ <span class="w a">I'll call the repair person.</span> (đưa giải pháp)<br>✓ <span class="w a">Again? It was fixed yesterday.</span> (ngạc nhiên / hỏi thêm)<br>✗ He <span class="w v">works</span> on the third floor. (lặp "third floor", works nghe giống working)</div>
+
+<h2 id="lt-8">8. Các bước làm một câu Part 2</h2>
+<ol class="lt-steps">
+<li><strong>Nghe thật kỹ 2–3 từ đầu</strong> của câu hỏi: từ để hỏi (Who / When / Where…), trợ động từ (Did / Can / Is…), hay câu đề nghị (Why don't we / Could you…).</li>
+<li>Câu Wh → loại đáp án <span class="w v">Yes / No</span>. Câu có <b>or</b> → cũng loại Yes / No.</li>
+<li>Loại đáp án <strong>lặp từ / có từ nghe giống</strong> nhưng sai nghĩa.</li>
+<li>Loại đáp án <strong>trả lời sai loại thông tin</strong> (hỏi When mà trả lời nơi chốn, hỏi Who mà trả lời thời gian…).</li>
+<li>Còn lại câu <strong>gián tiếp</strong> (không biết, kiểm tra, còn tùy, hỏi lại)? Thử hỏi: "Người thật có nói vậy không?" Có → chọn.</li>
+</ol>
+
+<h2 id="lt-9">9. Luyện tập (Part 2)</h2>
+<div class="lt-read"><strong>📖 Luyện bằng cách đọc script.</strong> Trang này không có audio, nên câu hỏi và 3 câu trả lời được <b>viết ra</b> (trong đề thi thật, bạn chỉ được nghe). Hãy đọc to câu hỏi, rồi đọc từng câu trả lời và loại bẫy theo các bước ở phần 8. Chạm vào đáp án để xem giải thích.</div>
+<div class="lt-score" aria-live="polite"><span id="ltScore">Đúng 0 / 12</span><span class="bar"><i id="ltBar"></i></span><span id="ltDone">Đã làm 0/12</span></div>
+<div id="ltQuiz"></div>
+<div class="lt-end" id="ltEnd" aria-live="polite"><div class="big" id="ltEndIc">🎉</div><p id="ltEndTxt"></p><button type="button" class="lt-btn" id="ltAgain">↺ Làm lại</button></div>
+<p class="lt-again"><button type="button" class="lt-btn alt" id="ltReset">↺ Làm lại</button></p>
+
+<h2 id="lt-10">Bảng từ vựng (Vocabulary Sheet)</h2>
+<p><em>Từ vựng trong chuyên đề này (English – Pronunciation – Vietnamese).</em></p>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 32%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>English</strong></th>
+<th><strong>Pronunciation</strong></th>
+<th><strong>Vietnamese</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd"><td><strong>Response (n)</strong></td><td>/rɪˈspɒns/</td><td>Câu trả lời, sự phản hồi</td></tr>
+<tr class="even"><td><strong>Indirect (adj)</strong></td><td>/ˌɪndəˈrekt/</td><td>Gián tiếp</td></tr>
+<tr class="odd"><td><strong>Statement (n)</strong></td><td>/ˈsteɪtmənt/</td><td>Câu trần thuật, lời phát biểu</td></tr>
+<tr class="even"><td><strong>Suggestion (n)</strong></td><td>/səˈdʒestʃən/</td><td>Lời gợi ý, đề nghị</td></tr>
+<tr class="odd"><td><strong>Due (adj)</strong></td><td>/djuː/</td><td>Đến hạn (phải nộp, phải trả)</td></tr>
+<tr class="even"><td><strong>Install (v)</strong></td><td>/ɪnˈstɔːl/</td><td>Cài đặt, lắp đặt</td></tr>
+<tr class="odd"><td><strong>Software (n)</strong></td><td>/ˈsɒftweə(r)/</td><td>Phần mềm</td></tr>
+<tr class="even"><td><strong>Training session (n)</strong></td><td>/ˈtreɪnɪŋ ˌseʃn/</td><td>Buổi đào tạo</td></tr>
+<tr class="odd"><td><strong>Decide (v)</strong></td><td>/dɪˈsaɪd/</td><td>Quyết định</td></tr>
+<tr class="even"><td><strong>Depend on (phr v)</strong></td><td>/dɪˈpend ɒn/</td><td>Tùy thuộc vào</td></tr>
+<tr class="odd"><td><strong>Find out (phr v)</strong></td><td>/ˌfaɪnd ˈaʊt/</td><td>Tìm hiểu, tìm ra</td></tr>
+<tr class="even"><td><strong>In charge of</strong></td><td>/ɪn ˈtʃɑːdʒ əv/</td><td>Phụ trách, chịu trách nhiệm</td></tr>
+<tr class="odd"><td><strong>Notice board (n)</strong></td><td>/ˈnəʊtɪs bɔːd/</td><td>Bảng thông báo</td></tr>
+<tr class="even"><td><strong>Ship (v)</strong></td><td>/ʃɪp/</td><td>Gửi hàng, vận chuyển</td></tr>
+<tr class="odd"><td><strong>Package (n)</strong></td><td>/ˈpækɪdʒ/</td><td>Bưu kiện, gói hàng</td></tr>
+<tr class="even"><td><strong>Overseas (adv)</strong></td><td>/ˌəʊvəˈsiːz/</td><td>Ra nước ngoài, ở nước ngoài</td></tr>
+<tr class="odd"><td><strong>Weight (n)</strong></td><td>/weɪt/</td><td>Trọng lượng, cân nặng</td></tr>
+<tr class="even"><td><strong>Invoice (n)</strong></td><td>/ˈɪnvɔɪs/</td><td>Hóa đơn</td></tr>
+<tr class="odd"><td><strong>Repair person (n)</strong></td><td>/rɪˈpeə ˌpɜːsn/</td><td>Thợ sửa chữa</td></tr>
+<tr class="even"><td><strong>Book (v)</strong></td><td>/bʊk/</td><td>Đặt (phòng, vé, chỗ)</td></tr>
+<tr class="odd"><td><strong>Confirm (v)</strong></td><td>/kənˈfɜːm/</td><td>Xác nhận</td></tr>
+<tr class="even"><td><strong>Convention center (n)</strong></td><td>/kənˈvenʃn ˌsentə(r)/</td><td>Trung tâm hội nghị</td></tr>
+<tr class="odd"><td><strong>Either (pron)</strong></td><td>/ˈaɪðə(r)/</td><td>Một trong hai (cái nào cũng được)</td></tr>
+<tr class="even"><td><strong>Neither (pron)</strong></td><td>/ˈnaɪðə(r)/</td><td>Không cái nào (trong hai)</td></tr>
+<tr class="odd"><td><strong>Whichever (pron)</strong></td><td>/wɪtʃˈevə(r)/</td><td>Cái nào cũng được</td></tr>
+<tr class="even"><td><strong>Convenient (adj)</strong></td><td>/kənˈviːniənt/</td><td>Thuận tiện</td></tr>
+</tbody>
+</table>
+</div></main><footer>TOEIC Pre · Tóm tắt kiến thức</footer>
+<script>
+(function(){
+  'use strict';
+  // h: mô tả ảnh / đoạn script (HTML) · s: câu hỏi · o: các đáp án · k: vị trí đáp án đúng (0 = A) · e: giải thích
+  var Q=[{"h": "<span class=\"lb\">Câu hỏi<\/span><b>When will the new software be installed?<\/b>", "s": "Chọn câu trả lời phù hợp nhất.", "o": ["Yes, it was installed yesterday.", "In the software store.", "I'm not sure. Let me ask the IT team."], "k": 2, "e": "Câu trả lời gián tiếp \"Tôi không chắc, để tôi hỏi bộ phận IT\" → hợp lý. (A) câu hỏi <b>When<\/b> không trả lời <b>Yes<\/b>, lại lặp từ installed. (B) lặp từ software và trả lời nơi chốn, không phải thời gian."}, {"h": "<span class=\"lb\">Câu hỏi<\/span><b>Where should I put these boxes?<\/b>", "s": "Chọn câu trả lời phù hợp nhất.", "o": ["About twenty boxes.", "Are they for the conference?", "Yes, put them there."], "k": 1, "e": "<b>Hỏi lại cho rõ<\/b>: \"Chúng là đồ cho hội nghị à?\" (để biết nên để ở đâu). (A) lặp từ boxes, trả lời số lượng. (C) câu hỏi <b>Where<\/b> không trả lời <b>Yes<\/b>."}, {"h": "<span class=\"lb\">Câu hỏi<\/span><b>Who's going to lead the training session?<\/b>", "s": "Chọn câu trả lời phù hợp nhất.", "o": ["It hasn't been decided yet.", "The train leaves at nine.", "Yes, I'm going."], "k": 0, "e": "\"Vẫn chưa được quyết định\" → câu gián tiếp hợp với câu hỏi Who. (B) train nghe giống training → <b>bẫy từ giống<\/b>. (C) câu Wh không trả lời Yes, lại lặp từ going."}, {"h": "<span class=\"lb\">Câu hỏi<\/span><b>How much does it cost to ship this package overseas?<\/b>", "s": "Chọn câu trả lời phù hợp nhất.", "o": ["The ship is in the harbor.", "Yes, it's very expensive.", "It depends on the weight."], "k": 2, "e": "\"Còn tùy vào trọng lượng\" → hợp lý, vì giá gửi hàng phụ thuộc cân nặng. (A) ship (con tàu) ≠ ship (gửi hàng) → <b>bẫy cùng từ khác nghĩa<\/b>. (B) câu <b>How much<\/b> không trả lời Yes."}, {"h": "<span class=\"lb\">Câu hỏi<\/span><b>Would you like tea or coffee?<\/b>", "s": "Chọn câu trả lời phù hợp nhất.", "o": ["Just water for me, thanks.", "Yes, I would.", "The copies are on your desk."], "k": 0, "e": "Câu hỏi lựa chọn → đáp án đúng là <b>không chọn cái nào<\/b>, xin thứ khác: \"Cho tôi nước lọc thôi, cảm ơn.\" (B) câu hỏi có <b>or<\/b> mà trả lời Yes → sai. (C) copies nghe giống coffee."}, {"h": "<span class=\"lb\">Câu hỏi<\/span><b>Why don't we take a taxi to the airport?<\/b>", "s": "Chọn câu trả lời phù hợp nhất.", "o": ["He took the three o'clock flight.", "That's a good idea.", "At the airport."], "k": 1, "e": "<b>Why don't we…?<\/b> là lời <b>gợi ý<\/b>, không phải hỏi lý do → đáp \"Ý hay đó\". (A) took nghe giống take, flight liên quan airport → bẫy. (C) lặp từ airport, trả lời nơi chốn."}, {"h": "<span class=\"lb\">Câu hỏi<\/span><b>The printer on the third floor isn't working.<\/b>", "s": "Chọn câu trả lời phù hợp nhất.", "o": ["He works on the third floor.", "Print two copies, please.", "I'll call the repair person."], "k": 2, "e": "Câu trần thuật báo một vấn đề → đáp án đúng <b>đưa ra giải pháp<\/b>: \"Tôi sẽ gọi thợ sửa.\" (A) lặp \"third floor\", works nghe giống working. (B) print nghe giống printer."}, {"h": "<span class=\"lb\">Câu hỏi<\/span><b>Did you send the invoice to Mr. Patel?<\/b>", "s": "Chọn câu trả lời phù hợp nhất.", "o": ["A voice message.", "I was going to do it after lunch.", "Send it by express mail."], "k": 1, "e": "\"Tôi định làm sau bữa trưa\" = <b>chưa gửi<\/b>, trả lời gián tiếp, không cần nói No. (A) voice nghe giống invoice. (C) lặp từ send nhưng không trả lời \"đã gửi chưa\"."}, {"h": "<span class=\"lb\">Câu hỏi<\/span><b>Could you help me move these chairs this afternoon?<\/b>", "s": "Chọn câu trả lời phù hợp nhất.", "o": ["Sure, what time?", "The chairs are comfortable.", "He moved last month."], "k": 0, "e": "Lời nhờ vả → <b>đồng ý và hỏi lại chi tiết<\/b>: \"Được chứ, mấy giờ?\" (B) lặp từ chairs. (C) lặp từ move (moved = chuyển nhà) nhưng sai nghĩa."}, {"h": "<span class=\"lb\">Câu hỏi<\/span><b>Which hotel did you book for the conference?<\/b>", "s": "Chọn câu trả lời phù hợp nhất.", "o": ["Yes, the booking is confirmed.", "A book about hotels.", "The one near the convention center."], "k": 2, "e": "<b>Which<\/b> hỏi \"cái nào\" → \"Cái gần trung tâm hội nghị\" (the one = the hotel). (A) câu Wh không trả lời Yes. (B) book (quyển sách) ≠ book (đặt phòng), lặp hotels."}, {"h": "<span class=\"lb\">Câu hỏi<\/span><b>Should we hold the meeting on Monday or Tuesday?<\/b>", "s": "Chọn câu trả lời phù hợp nhất.", "o": ["It was a long meeting.", "Either day works for me.", "Yes, we should."], "k": 1, "e": "Câu hỏi lựa chọn → <b>\"Ngày nào cũng được\"<\/b> (Either day works for me). (A) lặp từ meeting, sai thì (was). (C) câu có <b>or<\/b> mà trả lời Yes, lặp should."}, {"h": "<span class=\"lb\">Câu hỏi<\/span><b>What time does the bank close today?<\/b>", "s": "Chọn câu trả lời phù hợp nhất.", "o": ["Check the sign on the door.", "Yes, it's close to here.", "Last Friday."], "k": 0, "e": "\"Xem tấm biển trên cửa đi\" → gián tiếp nhưng hợp lý (giờ mở cửa ghi trên biển). (B) câu Wh không trả lời Yes; close (gần) ≠ close (đóng cửa). (C) nói về quá khứ, không hợp với \"today\"."}];
+  var KEY='summaryOld.giantieppart2.quiz', L='ABCD';
+  var ans=(function(){try{var a=JSON.parse(localStorage.getItem(KEY)||'{}');return a&&typeof a==='object'?a:{};}catch(e){return {};}})();
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(ans));}catch(e){}}
+  var box=document.getElementById('ltQuiz');
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function render(){
+    box.innerHTML=Q.map(function(q,i){
+      return '<div class="lt-q" id="ltq'+i+'"><div class="num">Câu '+(i+1)+(q.tag?' · '+q.tag:'')+'</div>'+(q.h?'<div class="lt-ctx">'+q.h+'</div>':'')+'<p class="st">'+q.s+'</p><div class="lt-opts one">'+
+        q.o.map(function(o,j){return '<button type="button" class="lt-opt" data-q="'+i+'" data-o="'+j+'"><b>'+L[j]+'</b><span>'+esc(o)+'</span></button>';}).join('')+
+        '</div><div class="lt-fb" role="status"></div></div>';
+    }).join('');
+    Q.forEach(function(q,i){ if(ans[i]!==undefined) show(i,ans[i]); });
+    score();
+  }
+  function show(i,j){
+    var q=Q[i], el=document.getElementById('ltq'+i), ok=j===q.k;
+    [].forEach.call(el.querySelectorAll('.lt-opt'),function(b,x){
+      b.disabled=true;
+      if(x===q.k) b.classList.add('ok'); else if(x===j) b.classList.add('bad'); else b.classList.add('dim');
+    });
+    var fb=el.querySelector('.lt-fb'); fb.className='lt-fb show '+(ok?'good':'wrong');
+    fb.innerHTML='<strong>'+(ok?'✓ Chính xác!':'✗ Chưa đúng. Đáp án: ('+L[q.k]+') '+esc(q.o[q.k]))+'</strong>'+q.e;
+  }
+  function score(){
+    var n=0,c=0; Q.forEach(function(q,i){ if(ans[i]!==undefined){n++; if(ans[i]===q.k)c++;} });
+    document.getElementById('ltScore').textContent='Đúng '+c+' / '+Q.length;
+    document.getElementById('ltDone').textContent='Đã làm '+n+'/'+Q.length;
+    document.getElementById('ltBar').style.width=(n/Q.length*100)+'%';
+    var end=document.getElementById('ltEnd');
+    if(n===Q.length){
+      end.classList.add('show');
+      document.getElementById('ltEndIc').textContent=c>=10?'🎉':c>=7?'👍':'💪';
+      document.getElementById('ltEndTxt').innerHTML='Bạn làm đúng <b>'+c+'/'+Q.length+'</b> câu. '+(c>=10?'Rất tốt! Bạn đã nhận ra câu trả lời gián tiếp và các bẫy Part 2.':c>=7?'Khá lắm! Xem lại giải thích các câu sai nhé.':'Đọc lại phần 8 (Các bước làm) rồi làm lại nhé!');
+    } else end.classList.remove('show');
+  }
+  box.addEventListener('click',function(ev){
+    var b=ev.target.closest('.lt-opt'); if(!b||b.disabled) return;
+    var i=+b.dataset.q, j=+b.dataset.o; if(ans[i]!==undefined) return;
+    ans[i]=j; save(); show(i,j); score();
+    if(Object.keys(ans).length===Q.length) setTimeout(function(){document.getElementById('ltEnd').scrollIntoView({behavior:'smooth',block:'center'});},300);
+  });
+  function reset(){ ans={}; save(); render(); document.getElementById('ltq0').scrollIntoView({behavior:'smooth',block:'center'}); }
+  document.getElementById('ltAgain').onclick=reset;
+  document.getElementById('ltReset').onclick=reset;
+  render();
+})();
+</script>
+<script src="../flashcards.js" defer></script><script>window.ETSCFG=window.ETSCFG||{SCRIPT_URL:'https://script.google.com/macros/s/AKfycby3_45o2Zn3FMEMrVAg9nBCiQEIUvU9HgQxI2ZZtwJ4oUQ_bqXxj1vN0kL6cvhbDQCx/exec'};</script><script src="../assets/ui.js?v=3" data-site="summary"></script>
+</body></html>
