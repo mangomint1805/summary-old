@@ -1,0 +1,319 @@
+<!doctype html><html lang="vi"><head>
+<script>try{var d=document.documentElement,k=JSON.parse(localStorage.getItem('mt.skin')||'""');if(k==='scifi')d.setAttribute('data-theme','dark');if(k)d.setAttribute('data-skin',k)}catch(e){}</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<title>Đại từ trong TOEIC</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css"><script src="../classes.js"></script><link rel="icon" type="image/png" href="../icons/fav-64.png?v=3">
+<style>
+/* Chuyên đề đại từ – 5 màu cố định: chủ ngữ xanh dương · tân ngữ đỏ · TT sở hữu xanh lá · ĐT sở hữu tím · phản thân cam */
+:root{--lt-n:#1d5fa8;--lt-n-bg:#e4eefb;--lt-v:#b42318;--lt-v-bg:#fde9e6;--lt-a:#1f7a4d;--lt-a-bg:#e2f3ea;--lt-r:#6d3fb0;--lt-r-bg:#efe7fb;}
+.lt .w{font-weight:700;border-radius:5px;padding:0 4px;white-space:nowrap;}
+.lt .w.n{color:var(--lt-n);background:var(--lt-n-bg);}
+.lt .w.v{color:var(--lt-v);background:var(--lt-v-bg);}
+.lt .w.a{color:var(--lt-a);background:var(--lt-a-bg);}
+.lt .w.r{color:var(--lt-r);background:var(--lt-r-bg);}
+.lt-legend{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;}
+.lt-legend .w{font-size:14px;padding:3px 10px;}
+.lt-toc{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px;padding:0;list-style:none;}
+.lt-toc a{display:inline-block;font-size:14px;font-weight:600;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;background:var(--paper);}
+.lt-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0;}
+.lt-card{border:1.5px solid var(--line);border-left-width:6px;border-radius:12px;padding:12px 14px;background:var(--card);}
+.lt-card.n{border-left-color:var(--lt-n);} .lt-card.v{border-left-color:var(--lt-v);} .lt-card.a{border-left-color:var(--lt-a);} .lt-card.r{border-left-color:var(--lt-r);}
+.lt-card h3{margin:0 0 4px!important;font-size:17px;}
+.lt-card.n h3{color:var(--lt-n);} .lt-card.v h3{color:var(--lt-v);} .lt-card.a h3{color:var(--lt-a);} .lt-card.r h3{color:var(--lt-r);}
+.lt-card h3 small{font-weight:600;color:var(--dim);font-size:13.5px;}
+.lt-card p{font-size:15px;}
+.lt-card .ex{margin-top:8px;padding:8px 10px;background:var(--paper);border-radius:8px;font-size:15px;}
+.lt-card .ex i{display:block;font-style:normal;color:var(--dim);font-size:13.5px;}
+.lt-suf{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 16px;}
+.lt-suf h3{margin-bottom:4px!important;}
+.lt-suf table td:first-child{white-space:nowrap;font-weight:700;}
+.lt-h-n{color:var(--lt-n)!important;} .lt-h-v{color:var(--lt-v)!important;} .lt-h-a{color:var(--lt-a)!important;} .lt-h-r{color:var(--lt-r)!important;}
+.doc table.lt-t th.n{background:var(--lt-n-bg);color:var(--lt-n);} .doc table.lt-t th.v{background:var(--lt-v-bg);color:var(--lt-v);}
+.doc table.lt-t th.a{background:var(--lt-a-bg);color:var(--lt-a);} .doc table.lt-t th.r{background:var(--lt-r-bg);color:var(--lt-r);}
+.lt-trap{margin:14px 0;padding:14px 16px;border:1.5px dashed #c2410c;border-radius:12px;background:#fff6ef;}
+.lt-trap h3{color:#9a3412!important;margin:0 0 6px!important;}
+.lt-trap ol{margin:0;padding-left:22px;}
+.lt-trap li{margin:8px 0;}
+.lt-steps{counter-reset:s;list-style:none;margin:12px 0;padding:0;display:grid;gap:8px;}
+.lt-steps li{counter-increment:s;position:relative;padding:10px 12px 10px 52px;border:1px solid var(--line);border-radius:12px;background:var(--paper);}
+.lt-steps li::before{content:counter(s);position:absolute;left:12px;top:10px;width:28px;height:28px;border-radius:50%;background:var(--amber);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.lt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;}
+.lt-scroll table{margin:0!important;min-width:560px;}
+.lt-note{font-size:14px;color:var(--dim);}
+.lt-pos td:nth-child(2){white-space:nowrap;}
+/* bài luyện tập */
+.lt-score{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:10px 0 12px;padding:10px 14px;border-radius:12px;background:#fffaf0;border:1px solid #ecd3a6;font-weight:600;}
+.lt-score .bar{flex:1;min-width:120px;height:8px;border-radius:99px;background:var(--line);overflow:hidden;}
+.lt-score .bar i{display:block;height:100%;width:0;background:var(--teal);transition:width .3s;}
+.lt-q{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0;background:var(--card);}
+.lt-q .num{font-size:13px;font-weight:700;color:var(--amber-ink);letter-spacing:.04em;text-transform:uppercase;}
+.lt-q .st{font-size:16.5px;margin:4px 0 10px;line-height:1.55;}
+.lt-blank{display:inline-block;min-width:88px;border-bottom:2px solid var(--ink);text-align:center;font-weight:700;}
+.lt-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.lt-opt{font:inherit;font-size:15.5px;text-align:left;display:flex;gap:8px;align-items:center;min-height:46px;padding:9px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;}
+.lt-opt b{flex:none;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--line);font-size:13px;}
+.lt-opt:hover:not(:disabled){border-color:var(--amber);}
+.lt-opt:focus-visible{outline:3px solid var(--amber);outline-offset:2px;}
+.lt-opt:disabled{cursor:default;}
+.lt-opt.ok{border-color:#1f7a4d;background:#e2f3ea;}
+.lt-opt.ok b{background:#1f7a4d;border-color:#1f7a4d;color:#fff;}
+.lt-opt.bad{border-color:#b42318;background:#fde9e6;}
+.lt-opt.bad b{background:#b42318;border-color:#b42318;color:#fff;}
+.lt-opt.dim{opacity:.55;}
+.lt-fb{display:none;margin-top:10px;padding:10px 12px;border-radius:10px;font-size:15px;}
+.lt-fb.show{display:block;}
+.lt-fb.good{background:#e2f3ea;border:1px solid #9fd2b6;}
+.lt-fb.wrong{background:#fde9e6;border:1px solid #f0b4ab;}
+.lt-fb strong{display:block;margin-bottom:2px;}
+.lt-end{display:none;text-align:center;margin:16px 0 4px;padding:18px 16px;border-radius:14px;border:1.5px solid var(--amber);background:#fffaf0;}
+.lt-end.show{display:block;}
+.lt-end .big{font-size:40px;line-height:1;}
+.lt-end p{margin:8px 0;font-size:17px;}
+.lt-btn{font:inherit;font-weight:700;font-size:16px;border:0;border-radius:10px;padding:11px 20px;background:var(--amber);color:#fff;cursor:pointer;min-height:46px;}
+.lt-btn.alt{background:var(--card);color:var(--amber-ink);border:1.5px solid var(--amber);}
+.lt-again{text-align:right;margin:8px 0 0;}
+@media (max-width:480px){
+  .lt-cards,.lt-suf{grid-template-columns:1fr;}
+  .doc table{font-size:14.5px;}
+  .doc th,.doc td{padding:7px 8px;}
+  .lt-q{padding:12px;}
+  .lt-opt{font-size:15px;padding:8px 9px;}
+  .lt-pos td:nth-child(2){white-space:normal;}
+}
+/* thêm màu thứ 5: đại từ phản thân (cam) */
+:root{--lt-x:#b45309;--lt-x-bg:#fdefd9;}
+.lt .w.x{color:var(--lt-x);background:var(--lt-x-bg);}
+.lt-card.x{border-left-color:var(--lt-x);} .lt-card.x h3{color:var(--lt-x);}
+.lt-h-x{color:var(--lt-x)!important;}
+.doc table.lt-t th.x{background:var(--lt-x-bg);color:var(--lt-x);}
+.lt-pro td{text-align:center;font-weight:600;}
+.lt-pro td:first-child{text-align:left;font-weight:500;color:var(--dim);white-space:nowrap;}
+.lt-pro .lt-pos-row td{font-size:13.5px;font-weight:500;color:var(--dim);background:var(--paper);}
+</style>
+</head><body data-nav="home"><header class="top"><a href="../index.html">TOEIC Pre · Tóm tắt kiến thức</a></header><main class="lt"><p class="sub"><a href="../index.html">← Tất cả bài</a></p><h1>Đại từ trong TOEIC</h1><p class="sub">Chuyên đề bổ trợ · Đại từ nhân xưng, sở hữu, phản thân và đại từ bất định (Pronouns)</p><div class="doc">
+<p>Trong <strong>Part 5</strong>, mỗi đề thường có <strong>1–2 câu đại từ</strong>: 4 đáp án là <strong>cùng một đại từ ở 4 dạng</strong> (VD: he / him / his / himself). Đây là dạng câu <strong>dễ ăn điểm nhất</strong> nếu bạn thuộc bảng và biết nhìn vị trí. Cả trang dùng 5 màu cố định:</p>
+<div class="lt-legend"><span class="w n">Chủ ngữ</span><span class="w v">Tân ngữ</span><span class="w a">Tính từ sở hữu</span><span class="w r">Đại từ sở hữu</span><span class="w x">Phản thân</span></div>
+<ul class="lt-toc"><li><a href="#lt-1">1. Bảng đại từ</a></li><li><a href="#lt-2">2. Vị trí</a></li><li><a href="#lt-3">3. Cách dùng đặc biệt</a></li><li><a href="#lt-4">4. Đại từ bất định</a></li><li><a href="#lt-5">5. Mẹo Part 5</a></li><li><a href="#lt-6">6. Luyện tập</a></li><li><a href="#lt-7">7. Từ vựng</a></li></ul>
+
+<h2 id="lt-1">1. Bảng đại từ (học thuộc theo hàng ngang)</h2>
+<p>Mỗi ngôi có <strong>5 dạng</strong>. Học theo hàng ngang: <b>I – me – my – mine – myself</b>, giống như học một "họ từ".</p>
+<div class="lt-scroll"><table class="lt-t lt-pro">
+<thead><tr><th>Ngôi</th><th class="n">Chủ ngữ</th><th class="v">Tân ngữ</th><th class="a">Tính từ sở hữu</th><th class="r">Đại từ sở hữu</th><th class="x">Phản thân</th></tr></thead>
+<tbody>
+<tr class="lt-pos-row"><td>Đứng ở đâu?</td><td>trước động từ</td><td>sau động từ / giới từ</td><td>trước danh từ</td><td>đứng một mình</td><td>by…, nhấn mạnh</td></tr>
+<tr><td>Tôi</td><td>I</td><td>me</td><td>my</td><td>mine</td><td>myself</td></tr>
+<tr><td>Bạn</td><td>you</td><td>you</td><td>your</td><td>yours</td><td>yourself</td></tr>
+<tr><td>Anh ấy</td><td>he</td><td>him</td><td>his</td><td>his</td><td>himself</td></tr>
+<tr><td>Cô ấy</td><td>she</td><td>her</td><td>her</td><td>hers</td><td>herself</td></tr>
+<tr><td>Nó (công ty, sản phẩm…)</td><td>it</td><td>it</td><td>its</td><td>—</td><td>itself</td></tr>
+<tr><td>Chúng tôi</td><td>we</td><td>us</td><td>our</td><td>ours</td><td>ourselves</td></tr>
+<tr><td>Các bạn</td><td>you</td><td>you</td><td>your</td><td>yours</td><td>yourselves</td></tr>
+<tr><td>Họ / chúng</td><td>they</td><td>them</td><td>their</td><td>theirs</td><td>themselves</td></tr>
+</tbody></table></div>
+<p class="lt-note">Trên điện thoại: vuốt ngang bảng để xem hết 5 cột.</p>
+<div class="lt-trap"><h3>⚠️ Chú ý</h3>
+<ol>
+<li><strong>her</strong> vừa là <span class="w v">tân ngữ</span> vừa là <span class="w a">tính từ sở hữu</span>; <strong>his</strong> vừa là <span class="w a">tính từ sở hữu</span> vừa là <span class="w r">đại từ sở hữu</span>. Phải nhìn từ đứng sau!</li>
+<li><strong>its</strong> (của nó) ≠ <strong>it's</strong> (= it is). VD: The company changed <span class="w a">its</span> logo. (Công ty đã đổi logo của nó.)</li>
+<li><strong>Công ty, phòng ban, sản phẩm</strong> số ít → dùng <b>it / its</b>; số nhiều (employees, customers) → <b>they / them / their</b>.</li>
+<li>Số nhiều của phản thân là <b>-selves</b>: ourselves, yourselves, themselves.</li>
+</ol></div>
+
+<h2 id="lt-2">2. Mỗi dạng đứng ở vị trí nào?</h2>
+<div class="lt-cards">
+<div class="lt-card n"><h3>Đại từ chủ ngữ <small>Subject</small></h3>
+<p><strong>Làm chủ ngữ</strong>, đứng <strong>trước động từ</strong> (thường ở đầu câu hoặc đầu mệnh đề).</p>
+<div class="ex"><span class="w n">She</span> will reschedule the meeting.<i>Cô ấy sẽ dời lịch cuộc họp.</i></div></div>
+<div class="lt-card v"><h3>Đại từ tân ngữ <small>Object</small></h3>
+<p>Đứng <strong>sau động từ</strong> hoặc <strong>sau giới từ</strong> (to, for, with, by, from…).</p>
+<div class="ex">The manager thanked <span class="w v">us</span>. Please send the file to <span class="w v">him</span>.<i>Quản lý đã cảm ơn chúng tôi. Vui lòng gửi tệp cho anh ấy.</i></div></div>
+<div class="lt-card a"><h3>Tính từ sở hữu <small>Possessive adjective</small></h3>
+<p>Luôn đứng <strong>trước danh từ</strong> (có thể có tính từ chen giữa). Không đứng một mình.</p>
+<div class="ex">Please submit <span class="w a">your</span> expense report. <span class="w a">Their</span> new office is downtown.<i>Vui lòng nộp báo cáo chi phí của bạn. Văn phòng mới của họ ở trung tâm.</i></div></div>
+<div class="lt-card r"><h3>Đại từ sở hữu <small>Possessive pronoun</small></h3>
+<p><strong>Đứng một mình</strong>, thay cho "tính từ sở hữu + danh từ" đã nói trước đó. Sau nó <strong>không có danh từ</strong>.</p>
+<div class="ex">This laptop is <span class="w r">mine</span>. (= my laptop)<i>Cái laptop này là của tôi.</i></div></div>
+<div class="lt-card x"><h3>Đại từ phản thân <small>Reflexive</small></h3>
+<p>Dùng khi <strong>chủ ngữ và tân ngữ là một người</strong>, sau <strong>by</strong>, hoặc để <strong>nhấn mạnh</strong>.</p>
+<div class="ex">He introduced <span class="w x">himself</span> to the new clients.<i>Anh ấy tự giới thiệu bản thân với các khách hàng mới.</i></div></div>
+</div>
+
+<table class="lt-pos">
+<colgroup><col style="width:38%"><col style="width:22%"><col style="width:40%"></colgroup>
+<thead><tr><th>Nhìn quanh chỗ trống</th><th>Cần</th><th>Ví dụ</th></tr></thead>
+<tbody>
+<tr><td>Sau chỗ trống là <b>động từ</b> (will, can, has, V-s…)</td><td><span class="w n">Chủ ngữ</span></td><td><span class="w n">They</span> have signed the contract.</td></tr>
+<tr><td>Trước chỗ trống là <b>động từ</b> (thank, call, help, contact…)</td><td><span class="w v">Tân ngữ</span></td><td>Please contact <span class="w v">me</span> by e-mail.</td></tr>
+<tr><td>Trước chỗ trống là <b>giới từ</b> (to, for, with, from…)</td><td><span class="w v">Tân ngữ</span></td><td>Ms. Lee works with <span class="w v">them</span>.</td></tr>
+<tr><td>Sau chỗ trống là <b>danh từ</b> (hoặc tính từ + danh từ)</td><td><span class="w a">TT sở hữu</span></td><td>We value <span class="w a">our</span> loyal customers.</td></tr>
+<tr><td>Sau chỗ trống <b>không có gì</b> (dấu chấm), hoặc sau <b>than / is / of</b>, và nghĩa là "cái của…"</td><td><span class="w r">ĐT sở hữu</span></td><td>Their price is lower than <span class="w r">ours</span>.</td></tr>
+<tr><td>Trước chỗ trống là <b>by</b>; hoặc câu đã đủ thành phần, chỉ muốn nhấn mạnh</td><td><span class="w x">Phản thân</span></td><td>She finished the report by <span class="w x">herself</span>.</td></tr>
+</tbody></table>
+
+<h2 id="lt-3">3. Cách dùng đặc biệt hay ra trong Part 5</h2>
+<div class="lt-cards">
+<div class="lt-card x"><h3>by + phản thân <small>= alone, một mình</small></h3>
+<p><b>by myself / by himself / by themselves…</b> = tự mình làm, không có ai giúp. Gặp <b>by ___</b> + 4 dạng đại từ → gần như chắc chắn chọn phản thân.</p>
+<div class="ex">Mr. Diaz organized the conference by <span class="w x">himself</span>.<i>Ông Diaz đã tự mình tổ chức hội nghị.</i></div></div>
+<div class="lt-card x"><h3>Phản thân để nhấn mạnh <small>chính … đó</small></h3>
+<p>Đứng <strong>ngay sau chủ ngữ</strong> hoặc <strong>cuối câu</strong>. Bỏ đi câu vẫn đủ nghĩa, đúng ngữ pháp.</p>
+<div class="ex">The president <span class="w x">herself</span> answered the e-mail.<i>Chính bà chủ tịch đã trả lời e-mail.</i></div></div>
+<div class="lt-card a"><h3>of + one's own <small>của riêng ai</small></h3>
+<p><b>a/an + N + of + my/his/their… own</b>, hoặc <b>my/his/their own + N</b>. Trước <b>own</b> luôn là <span class="w a">tính từ sở hữu</span>, không dùng phản thân.</p>
+<div class="ex">She wants to open a business of <span class="w a">her</span> own. Each manager has <span class="w a">his</span> own office.<i>Cô ấy muốn mở một doanh nghiệp của riêng mình. Mỗi quản lý có văn phòng riêng.</i></div></div>
+<div class="lt-card v"><h3>each other / one another <small>lẫn nhau</small></h3>
+<p>Dùng khi <strong>2 người / nhiều người làm cho nhau</strong>. Khác phản thân: <b>themselves</b> = tự họ cho chính họ.</p>
+<div class="ex">The two teams help <span class="w v">each other</span> during busy seasons.<i>Hai đội giúp đỡ lẫn nhau vào mùa cao điểm.</i></div></div>
+</div>
+<p class="lt-note">So sánh: They introduced <b>themselves</b>. (Mỗi người tự giới thiệu mình) ≠ They introduced <b>each other</b>. (Người này giới thiệu người kia.)</p>
+
+<h2 id="lt-4">4. Đại từ bất định (Indefinite pronouns)</h2>
+<p>Là những đại từ <strong>không chỉ rõ người / vật nào</strong>. Điểm quan trọng nhất: hầu hết đi với <strong>động từ số ít</strong>.</p>
+<table>
+<thead><tr><th>Nhóm</th><th>Nghĩa / cách dùng</th><th>Ví dụ</th></tr></thead>
+<tbody>
+<tr><td><b>someone / somebody / something</b></td><td>ai đó, cái gì đó (câu khẳng định, lời mời, đề nghị)</td><td><b>Someone</b> from IT <b>is</b> fixing the printer.</td></tr>
+<tr><td><b>anyone / anybody / anything</b></td><td>bất kỳ ai; dùng trong câu hỏi, câu phủ định, câu điều kiện</td><td>Does <b>anyone</b> have a spare charger?</td></tr>
+<tr><td><b>everyone / everybody / everything</b></td><td>mọi người, mọi thứ → động từ <b>số ít</b></td><td><b>Everyone</b> in the office <b>needs</b> a new password.</td></tr>
+<tr><td><b>no one / nobody / nothing</b></td><td>không ai, không gì (đã mang nghĩa phủ định, không thêm not)</td><td><b>No one</b> <b>was</b> late for the meeting.</td></tr>
+<tr><td><b>each / every</b> + <b>N số ít</b></td><td>mỗi, mọi → danh từ số ít + động từ số ít. <b>each of the + N số nhiều</b></td><td><b>Every employee receives</b> a badge.<br><b>Each of the applicants has</b> an interview.</td></tr>
+<tr><td><b>those who</b> + V số nhiều</td><td>những người mà… (= the people who)</td><td><b>Those who</b> <b>want</b> to join the trip should register today.</td></tr>
+</tbody></table>
+<p class="lt-note">⚠️ Không viết "every employees" hay "each departments". Không dùng "them who"; phải là <b>those who</b>.</p>
+
+<h2 id="lt-5">5. Mẹo làm Part 5</h2>
+<p>Khi 4 đáp án là <strong>cùng một đại từ ở 4 dạng</strong> (I / me / my / mine…), <strong>đừng dịch cả câu</strong>. Chỉ cần nhìn <strong>từ ngay sau</strong> (và ngay trước) chỗ trống:</p>
+<ol class="lt-steps">
+<li>Sau chỗ trống là <strong>danh từ</strong> → <span class="w a">tính từ sở hữu</span> (my, his, their…). VD: ___ manager → <b>our</b> manager.</li>
+<li>Sau chỗ trống là <strong>động từ</strong> → <span class="w n">chủ ngữ</span> (I, he, they…). VD: ___ will call → <b>she</b> will call.</li>
+<li>Trước chỗ trống là <strong>động từ</strong> hoặc <strong>giới từ</strong> → <span class="w v">tân ngữ</span> (me, him, them…). VD: thank ___ / for ___ → thank <b>you</b> / for <b>them</b>.</li>
+<li>Sau chỗ trống <strong>không còn gì</strong>, hoặc ngay sau <strong>than</strong>, và nghĩa là "cái của…" → <span class="w r">đại từ sở hữu</span> (mine, ours…). VD: better than ___ → than <b>ours</b>.</li>
+<li>Trước chỗ trống là <strong>by</strong>, hoặc câu đã đủ mà vẫn còn chỗ trống → <span class="w x">phản thân</span> (myself, themselves…).</li>
+</ol>
+<p class="lt-note">Mẹo nhỏ: sau khi chọn, kiểm tra ngôi cho đúng: chủ ngữ là Ms. Park → her/herself; the company → its/itself; the employees → their/themselves.</p>
+
+<h2 id="lt-6">6. Luyện tập (Part 5)</h2>
+<p>12 câu kiểu Part 5. Chạm vào một đáp án để xem đúng / sai và <strong>dấu hiệu</strong> giúp chọn đáp án.</p>
+<div class="lt-score" aria-live="polite"><span id="ltScore">Đúng 0 / 12</span><span class="bar"><i id="ltBar"></i></span><span id="ltDone">Đã làm 0/12</span></div>
+<div id="ltQuiz"></div>
+<div class="lt-end" id="ltEnd" aria-live="polite"><div class="big" id="ltEndIc">🎉</div><p id="ltEndTxt"></p><button type="button" class="lt-btn" id="ltAgain">↺ Làm lại</button></div>
+<p class="lt-again"><button type="button" class="lt-btn alt" id="ltReset">↺ Làm lại</button></p>
+
+<h2 id="lt-7">Bảng từ vựng (Vocabulary Sheet)</h2>
+<p><em>Từ vựng trong chuyên đề này (English – Pronunciation – Vietnamese).</em></p>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 32%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>English</strong></th>
+<th><strong>Pronunciation</strong></th>
+<th><strong>Vietnamese</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd"><td><strong>Reschedule (v)</strong></td><td>/ˌriːˈʃedjuːl/</td><td>Dời lịch, sắp xếp lại lịch</td></tr>
+<tr class="even"><td><strong>Assistant (n)</strong></td><td>/əˈsɪstənt/</td><td>Trợ lý</td></tr>
+<tr class="odd"><td><strong>Contract (n)</strong></td><td>/ˈkɒntrækt/</td><td>Hợp đồng</td></tr>
+<tr class="even"><td><strong>Expense report (n)</strong></td><td>/ɪkˈspens rɪˌpɔːt/</td><td>Báo cáo chi phí</td></tr>
+<tr class="odd"><td><strong>Introduce (v)</strong></td><td>/ˌɪntrəˈdjuːs/</td><td>Giới thiệu</td></tr>
+<tr class="even"><td><strong>Client (n)</strong></td><td>/ˈklaɪənt/</td><td>Khách hàng</td></tr>
+<tr class="odd"><td><strong>Loyal (adj)</strong></td><td>/ˈlɔɪəl/</td><td>Trung thành, thân thiết</td></tr>
+<tr class="even"><td><strong>Organize (v)</strong></td><td>/ˈɔːɡənaɪz/</td><td>Tổ chức</td></tr>
+<tr class="odd"><td><strong>Conference (n)</strong></td><td>/ˈkɒnfərəns/</td><td>Hội nghị</td></tr>
+<tr class="even"><td><strong>President (n)</strong></td><td>/ˈprezɪdənt/</td><td>Chủ tịch, giám đốc</td></tr>
+<tr class="odd"><td><strong>Badge (n)</strong></td><td>/bædʒ/</td><td>Thẻ tên, thẻ nhân viên</td></tr>
+<tr class="even"><td><strong>Applicant (n)</strong></td><td>/ˈæplɪkənt/</td><td>Người nộp đơn, ứng viên</td></tr>
+<tr class="odd"><td><strong>Register (v)</strong></td><td>/ˈredʒɪstə(r)/</td><td>Đăng ký</td></tr>
+<tr class="even"><td><strong>Proposal (n)</strong></td><td>/prəˈpəʊzl/</td><td>Bản đề xuất</td></tr>
+<tr class="odd"><td><strong>Merger (n)</strong></td><td>/ˈmɜːdʒə(r)/</td><td>Sự sáp nhập (công ty)</td></tr>
+<tr class="even"><td><strong>Press conference (n)</strong></td><td>/ˈpres ˌkɒnfərəns/</td><td>Cuộc họp báo</td></tr>
+<tr class="odd"><td><strong>Policy (n)</strong></td><td>/ˈpɒləsi/</td><td>Chính sách, quy định</td></tr>
+<tr class="even"><td><strong>Headquarters (n)</strong></td><td>/ˌhedˈkwɔːtəz/</td><td>Trụ sở chính</td></tr>
+</tbody>
+</table>
+</div></main><footer>TOEIC Pre · Tóm tắt kiến thức</footer>
+<script>
+(function(){
+  'use strict';
+  // t: dạng đại từ của đáp án đúng (n chủ ngữ / v tân ngữ / a TT sở hữu / r ĐT sở hữu / x phản thân) để tô màu khi điền vào chỗ trống
+  var Q=[
+    {s:'Ms. Park asked ___ assistant to reschedule the meeting with the clients.',o:['she','her','hers','herself'],k:1,t:'a',
+     e:'Sau chỗ trống là <b>danh từ assistant</b> → cần <b>tính từ sở hữu</b>. Chủ ngữ là Ms. Park (nữ) → <b>her</b> assistant = trợ lý của cô ấy.<br>Dịch: Cô Park đã nhờ trợ lý của mình dời lịch cuộc họp với khách hàng.'},
+    {s:'The sales results were excellent, so the director thanked ___ at the monthly meeting.',o:['we','our','us','ourselves'],k:2,t:'v',
+     e:'Trước chỗ trống là <b>động từ thanked</b> → cần <b>tân ngữ</b>: thanked <b>us</b>. Không chọn ourselves vì chủ ngữ (the director) và tân ngữ không phải cùng một người.<br>Dịch: Kết quả bán hàng rất tốt, nên giám đốc đã cảm ơn chúng tôi trong cuộc họp hàng tháng.'},
+    {s:'Mr. Cole prefers to review the contracts by ___ before sending them to the legal team.',o:['he','him','his','himself'],k:3,t:'x',
+     e:'Có <b>by</b> + chỗ trống → <b>by himself</b> = tự mình, một mình (không ai giúp).<br>Dịch: Ông Cole thích tự mình xem lại các hợp đồng trước khi gửi chúng cho nhóm pháp lý.'},
+    {s:'If ___ have any questions about the new policy, please contact the human resources office.',o:['you','your','yours','yourself'],k:0,t:'n',
+     e:'Sau chỗ trống là <b>động từ have</b> và câu chưa có chủ ngữ → cần <b>đại từ chủ ngữ</b>: <b>you</b> have.<br>Dịch: Nếu bạn có bất kỳ câu hỏi nào về chính sách mới, vui lòng liên hệ phòng nhân sự.'},
+    {s:'Our proposal was accepted, but ___ was rejected because it was too expensive.',o:['they','them','their','theirs'],k:3,t:'r',
+     e:'Sau chỗ trống là <b>động từ was</b> nhưng không có danh từ nào → cần đại từ <b>đứng một mình</b> thay cho "their proposal" → <b>theirs</b>. "they was" sai vì they đi với were, và nghĩa không hợp.<br>Dịch: Bản đề xuất của chúng tôi được chấp nhận, nhưng của họ bị từ chối vì quá đắt.'},
+    {s:'The president ___ will announce the merger at tomorrow\'s press conference.',o:['she','her','hers','herself'],k:3,t:'x',
+     e:'Câu đã có chủ ngữ (The president) và động từ (will announce). Chỗ trống đứng ngay sau chủ ngữ để <b>nhấn mạnh</b> → <b>herself</b> = chính bà ấy. Bỏ herself đi câu vẫn đúng.<br>Dịch: Chính bà chủ tịch sẽ công bố việc sáp nhập tại buổi họp báo ngày mai.'},
+    {s:'After the move, the two departments began sharing ___ equipment more efficiently.',o:['their','they','them','theirs'],k:0,t:'a',
+     e:'Sau chỗ trống là <b>danh từ equipment</b> → cần <b>tính từ sở hữu</b>. "the two departments" là số nhiều → <b>their</b> equipment.<br>Dịch: Sau khi chuyển văn phòng, hai phòng ban bắt đầu dùng chung thiết bị của họ hiệu quả hơn.'},
+    {s:'___ who wish to attend the workshop must register by October 30.',o:['They','Them','Those','Their'],k:2,t:'n',
+     e:'Cấu trúc <b>Those who + V</b> = những người mà… Không dùng "They who" hay "Them who".<br>Dịch: Những ai muốn tham dự buổi hội thảo phải đăng ký trước ngày 30 tháng 10.'},
+    {s:'Every ___ is required to wear an ID badge inside the building.',o:['employees','employee','employing','employs'],k:1,t:'n',
+     e:'<b>Every + danh từ số ít</b> (và động từ số ít "is") → <b>employee</b>. "every employees" là sai.<br>Dịch: Mọi nhân viên đều phải đeo thẻ nhân viên trong tòa nhà.'},
+    {s:'Ms. Ito and Mr. Grant have worked together for years, so they trust ___ completely.',o:['themselves','each other','theirs','their'],k:1,t:'v',
+     e:'Hai người tin tưởng <b>lẫn nhau</b> → <b>each other</b>. themselves = mỗi người tự tin chính mình, không hợp nghĩa.<br>Dịch: Cô Ito và ông Grant đã làm việc cùng nhau nhiều năm, nên họ hoàn toàn tin tưởng lẫn nhau.'},
+    {s:'Ms. Kim\'s presentation was much clearer than ___.',o:['I','me','my','mine'],k:3,t:'r',
+     e:'Sau <b>than</b>, cuối câu, <b>không có danh từ</b> → so sánh "bài thuyết trình của cô Kim" với "bài thuyết trình của tôi" → <b>mine</b> (= my presentation).<br>Dịch: Bài thuyết trình của cô Kim rõ ràng hơn của tôi nhiều.'},
+    {s:'After ten years of growth, the company finally opened a headquarters of ___ own.',o:['it','its','it\'s','itself'],k:1,t:'a',
+     e:'Cấu trúc <b>of + tính từ sở hữu + own</b> = của riêng… "the company" là số ít → <b>its</b> own. it\'s = it is (sai); không dùng phản thân trước own.<br>Dịch: Sau mười năm phát triển, công ty cuối cùng đã mở trụ sở chính của riêng mình.'}
+  ];
+  var KEY='summaryOld.daitu.quiz', L='ABCD';
+  var ans=(function(){try{var a=JSON.parse(localStorage.getItem(KEY)||'{}');return a&&typeof a==='object'?a:{};}catch(e){return {};}})();
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(ans));}catch(e){}}
+  var box=document.getElementById('ltQuiz');
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function render(){
+    box.innerHTML=Q.map(function(q,i){
+      var st=esc(q.s).replace('___','<span class="lt-blank" data-b="'+i+'">&nbsp;</span>');
+      return '<div class="lt-q" id="ltq'+i+'"><div class="num">Câu '+(i+1)+'</div><p class="st">'+st+'</p><div class="lt-opts">'+
+        q.o.map(function(o,j){return '<button type="button" class="lt-opt" data-q="'+i+'" data-o="'+j+'"><b>'+L[j]+'</b><span>'+esc(o)+'</span></button>';}).join('')+
+        '</div><div class="lt-fb" role="status"></div></div>';
+    }).join('');
+    Q.forEach(function(q,i){ if(ans[i]!==undefined) show(i,ans[i]); });
+    score();
+  }
+  function show(i,j){
+    var q=Q[i], el=document.getElementById('ltq'+i), ok=j===q.k;
+    [].forEach.call(el.querySelectorAll('.lt-opt'),function(b,x){
+      b.disabled=true;
+      if(x===q.k) b.classList.add('ok'); else if(x===j) b.classList.add('bad'); else b.classList.add('dim');
+    });
+    var bl=el.querySelector('.lt-blank'); bl.innerHTML='<span class="w '+q.t+'">'+esc(q.o[q.k])+'</span>';
+    var fb=el.querySelector('.lt-fb'); fb.className='lt-fb show '+(ok?'good':'wrong');
+    fb.innerHTML='<strong>'+(ok?'✓ Chính xác!':'✗ Chưa đúng. Đáp án: ('+L[q.k]+') '+esc(q.o[q.k]))+'</strong>'+q.e;
+  }
+  function score(){
+    var n=0,c=0; Q.forEach(function(q,i){ if(ans[i]!==undefined){n++; if(ans[i]===q.k)c++;} });
+    document.getElementById('ltScore').textContent='Đúng '+c+' / '+Q.length;
+    document.getElementById('ltDone').textContent='Đã làm '+n+'/'+Q.length;
+    document.getElementById('ltBar').style.width=(n/Q.length*100)+'%';
+    var end=document.getElementById('ltEnd');
+    if(n===Q.length){
+      end.classList.add('show');
+      document.getElementById('ltEndIc').textContent=c>=10?'🎉':c>=7?'👍':'💪';
+      document.getElementById('ltEndTxt').innerHTML='Bạn làm đúng <b>'+c+'/'+Q.length+'</b> câu. '+(c>=10?'Rất tốt! Bạn đã nắm chắc cách chọn đại từ.':c>=7?'Khá lắm! Xem lại giải thích các câu sai nhé.':'Đọc lại phần 5 (Mẹo làm Part 5) rồi làm lại nhé!');
+    } else end.classList.remove('show');
+  }
+  box.addEventListener('click',function(ev){
+    var b=ev.target.closest('.lt-opt'); if(!b||b.disabled) return;
+    var i=+b.dataset.q, j=+b.dataset.o; if(ans[i]!==undefined) return;
+    ans[i]=j; save(); show(i,j); score();
+    if(Object.keys(ans).length===Q.length) setTimeout(function(){document.getElementById('ltEnd').scrollIntoView({behavior:'smooth',block:'center'});},300);
+  });
+  function reset(){ ans={}; save(); render(); document.getElementById('ltq0').scrollIntoView({behavior:'smooth',block:'center'}); }
+  document.getElementById('ltAgain').onclick=reset;
+  document.getElementById('ltReset').onclick=reset;
+  render();
+})();
+</script>
+<script src="../flashcards.js" defer></script><script>window.ETSCFG=window.ETSCFG||{SCRIPT_URL:'https://script.google.com/macros/s/AKfycby3_45o2Zn3FMEMrVAg9nBCiQEIUvU9HgQxI2ZZtwJ4oUQ_bqXxj1vN0kL6cvhbDQCx/exec'};</script><script src="../assets/ui.js?v=3" data-site="summary"></script>
+</body></html>

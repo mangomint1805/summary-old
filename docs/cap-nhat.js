@@ -1,6 +1,18 @@
 /* Có gì mới trên web Tóm tắt kiến thức TOEIC Pre — mới nhất ở trên cùng. Thêm mục mới vào ĐẦU danh sách; id là ngày (YYYY-MM-DD), cùng ngày thì thêm hậu tố (2026-10-21b). link (tuỳ chọn): [đường dẫn, chữ trên nút]. */
 window.MT_UPDATES = [
   {
+    id: '2026-10-24b', date: '24/10/2026',
+    title: '4 chuyên đề ngữ pháp mới cho Part 5',
+    link: ['index.html', 'Xem trên trang chủ'],
+    items: [
+      'Các thì của động từ: cách dùng và dấu hiệu nhận biết từng thì.',
+      'Giới từ thường gặp: at/on/in, by/until, for/during/since, despite và although, cụm giới từ cố định.',
+      'Đại từ: nhân xưng, sở hữu, phản thân và cách nhìn chỗ trống để chọn đúng dạng.',
+      'Câu bị động: be + V3 ở các thì, khi nào dùng chủ động hay bị động.',
+      'Mỗi chuyên đề có 12 câu luyện Part 5 giải thích tiếng Việt và flashcard từ vựng; mở sẵn cho mọi lớp.'
+    ]
+  },
+  {
     id: '2026-10-24', date: '24/10/2026',
     title: 'Chuyên đề mới: Phân biệt loại từ Tính – Danh – Động – Trạng',
     link: ['chuyen-de/phan-biet-loai-tu.html', 'Mở chuyên đề'],

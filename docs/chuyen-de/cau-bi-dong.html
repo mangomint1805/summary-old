@@ -1,0 +1,357 @@
+<!doctype html><html lang="vi"><head>
+<script>try{var d=document.documentElement,k=JSON.parse(localStorage.getItem('mt.skin')||'""');if(k==='scifi')d.setAttribute('data-theme','dark');if(k)d.setAttribute('data-skin',k)}catch(e){}</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<title>Câu bị động trong TOEIC</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css"><script src="../classes.js"></script><link rel="icon" type="image/png" href="../icons/fav-64.png?v=3">
+<style>
+/* Chuyên đề câu bị động – 4 màu cố định: Chủ ngữ/tân ngữ xanh dương · V chủ động đỏ · be + V3 tím · by + người làm xanh lá */
+:root{--lt-n:#1d5fa8;--lt-n-bg:#e4eefb;--lt-v:#b42318;--lt-v-bg:#fde9e6;--lt-a:#1f7a4d;--lt-a-bg:#e2f3ea;--lt-r:#6d3fb0;--lt-r-bg:#efe7fb;}
+.lt .w{font-weight:700;border-radius:5px;padding:0 4px;white-space:nowrap;}
+.lt .w.n{color:var(--lt-n);background:var(--lt-n-bg);}
+.lt .w.v{color:var(--lt-v);background:var(--lt-v-bg);}
+.lt .w.a{color:var(--lt-a);background:var(--lt-a-bg);}
+.lt .w.r{color:var(--lt-r);background:var(--lt-r-bg);}
+.lt-legend{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;}
+.lt-legend .w{font-size:14px;padding:3px 10px;}
+.lt-toc{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px;padding:0;list-style:none;}
+.lt-toc a{display:inline-block;font-size:14px;font-weight:600;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;background:var(--paper);}
+.lt-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0;}
+.lt-card{border:1.5px solid var(--line);border-left-width:6px;border-radius:12px;padding:12px 14px;background:var(--card);}
+.lt-card.n{border-left-color:var(--lt-n);} .lt-card.v{border-left-color:var(--lt-v);} .lt-card.a{border-left-color:var(--lt-a);} .lt-card.r{border-left-color:var(--lt-r);}
+.lt-card h3{margin:0 0 4px!important;font-size:17px;}
+.lt-card.n h3{color:var(--lt-n);} .lt-card.v h3{color:var(--lt-v);} .lt-card.a h3{color:var(--lt-a);} .lt-card.r h3{color:var(--lt-r);}
+.lt-card h3 small{font-weight:600;color:var(--dim);font-size:13.5px;}
+.lt-card p{font-size:15px;}
+.lt-card .ex{margin-top:8px;padding:8px 10px;background:var(--paper);border-radius:8px;font-size:15px;}
+.lt-card .ex i{display:block;font-style:normal;color:var(--dim);font-size:13.5px;}
+.lt-h-n{color:var(--lt-n)!important;} .lt-h-v{color:var(--lt-v)!important;} .lt-h-a{color:var(--lt-a)!important;} .lt-h-r{color:var(--lt-r)!important;}
+.doc table.lt-t th.n{background:var(--lt-n-bg);color:var(--lt-n);} .doc table.lt-t th.v{background:var(--lt-v-bg);color:var(--lt-v);}
+.doc table.lt-t th.a{background:var(--lt-a-bg);color:var(--lt-a);} .doc table.lt-t th.r{background:var(--lt-r-bg);color:var(--lt-r);}
+.lt-trap{margin:14px 0;padding:14px 16px;border:1.5px dashed #c2410c;border-radius:12px;background:#fff6ef;}
+.lt-trap h3{color:#9a3412!important;margin:0 0 6px!important;}
+.lt-trap ol{margin:0;padding-left:22px;}
+.lt-trap li{margin:8px 0;}
+.lt-steps{counter-reset:s;list-style:none;margin:12px 0;padding:0;display:grid;gap:8px;}
+.lt-steps li{counter-increment:s;position:relative;padding:10px 12px 10px 52px;border:1px solid var(--line);border-radius:12px;background:var(--paper);}
+.lt-steps li::before{content:counter(s);position:absolute;left:12px;top:10px;width:28px;height:28px;border-radius:50%;background:var(--amber);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.lt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;}
+.lt-scroll table{margin:0!important;min-width:560px;}
+.lt-note{font-size:14px;color:var(--dim);}
+/* riêng trang bị động */
+.bd-formula{margin:12px 0;padding:14px 16px;border-radius:12px;border:1.5px solid var(--lt-r);background:var(--lt-r-bg);text-align:center;font-size:18px;font-weight:700;color:var(--lt-r);line-height:1.6;}
+.bd-formula small{display:block;font-size:14px;font-weight:500;color:var(--ink);}
+.bd-flip{display:grid;grid-template-columns:1fr;gap:6px;margin:10px 0;}
+.bd-flip div{padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:var(--paper);font-size:15.5px;}
+.bd-flip div b.lab{display:inline-block;min-width:92px;font-size:13px;color:var(--dim);text-transform:uppercase;letter-spacing:.03em;}
+.bd-tense td:first-child{font-weight:700;}
+.bd-irr td:nth-child(2),.bd-irr td:nth-child(3){font-weight:700;color:var(--lt-r);white-space:nowrap;}
+.bd-irr td:first-child{font-weight:700;white-space:nowrap;}
+/* bài luyện tập */
+.lt-score{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:10px 0 12px;padding:10px 14px;border-radius:12px;background:#fffaf0;border:1px solid #ecd3a6;font-weight:600;}
+.lt-score .bar{flex:1;min-width:120px;height:8px;border-radius:99px;background:var(--line);overflow:hidden;}
+.lt-score .bar i{display:block;height:100%;width:0;background:var(--teal);transition:width .3s;}
+.lt-q{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0;background:var(--card);}
+.lt-q .num{font-size:13px;font-weight:700;color:var(--amber-ink);letter-spacing:.04em;text-transform:uppercase;}
+.lt-q .st{font-size:16.5px;margin:4px 0 10px;line-height:1.55;}
+.lt-blank{display:inline-block;min-width:88px;border-bottom:2px solid var(--ink);text-align:center;font-weight:700;}
+.lt-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.lt-opt{font:inherit;font-size:15.5px;text-align:left;display:flex;gap:8px;align-items:center;min-height:46px;padding:9px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;}
+.lt-opt b{flex:none;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--line);font-size:13px;}
+.lt-opt:hover:not(:disabled){border-color:var(--amber);}
+.lt-opt:focus-visible{outline:3px solid var(--amber);outline-offset:2px;}
+.lt-opt:disabled{cursor:default;}
+.lt-opt.ok{border-color:#1f7a4d;background:#e2f3ea;}
+.lt-opt.ok b{background:#1f7a4d;border-color:#1f7a4d;color:#fff;}
+.lt-opt.bad{border-color:#b42318;background:#fde9e6;}
+.lt-opt.bad b{background:#b42318;border-color:#b42318;color:#fff;}
+.lt-opt.dim{opacity:.55;}
+.lt-fb{display:none;margin-top:10px;padding:10px 12px;border-radius:10px;font-size:15px;}
+.lt-fb.show{display:block;}
+.lt-fb.good{background:#e2f3ea;border:1px solid #9fd2b6;}
+.lt-fb.wrong{background:#fde9e6;border:1px solid #f0b4ab;}
+.lt-fb strong{display:block;margin-bottom:2px;}
+.lt-fb .dich{display:block;margin-top:6px;color:var(--dim);font-size:14.5px;}
+.lt-end{display:none;text-align:center;margin:16px 0 4px;padding:18px 16px;border-radius:14px;border:1.5px solid var(--amber);background:#fffaf0;}
+.lt-end.show{display:block;}
+.lt-end .big{font-size:40px;line-height:1;}
+.lt-end p{margin:8px 0;font-size:17px;}
+.lt-btn{font:inherit;font-weight:700;font-size:16px;border:0;border-radius:10px;padding:11px 20px;background:var(--amber);color:#fff;cursor:pointer;min-height:46px;}
+.lt-btn.alt{background:var(--card);color:var(--amber-ink);border:1.5px solid var(--amber);}
+.lt-again{text-align:right;margin:8px 0 0;}
+@media (max-width:480px){
+  .lt-cards{grid-template-columns:1fr;}
+  .doc table{font-size:14.5px;}
+  .doc th,.doc td{padding:7px 8px;}
+  .lt-q{padding:12px;}
+  .lt-opt{font-size:15px;padding:8px 9px;}
+  .lt .w{white-space:normal;}
+  .bd-formula{font-size:16.5px;}
+}
+</style>
+</head><body data-nav="home"><header class="top"><a href="../index.html">TOEIC Pre · Tóm tắt kiến thức</a></header><main class="lt"><p class="sub"><a href="../index.html">← Tất cả bài</a></p><h1>Câu bị động trong TOEIC</h1><p class="sub">Chuyên đề bổ trợ · Câu chủ động và câu bị động (Active &amp; Passive Voice)</p><div class="doc">
+<p>Trong <strong>Part 5</strong>, rất nhiều câu cho 4 đáp án là <strong>cùng một động từ ở nhiều dạng</strong> (VD: review / reviewed / is reviewing / is reviewed). Muốn chọn đúng, bạn phải trả lời được: <strong>chủ ngữ tự làm hành động</strong> hay <strong>bị / được người khác làm</strong>? Cả trang dùng 4 màu cố định:</p>
+<div class="lt-legend"><span class="w n">Chủ ngữ / Tân ngữ</span><span class="w v">Động từ chủ động</span><span class="w r">be + V3 (bị động)</span><span class="w a">by + người làm</span></div>
+<ul class="lt-toc"><li><a href="#lt-1">1. Chủ động – Bị động</a></li><li><a href="#lt-2">2. Công thức</a></li><li><a href="#lt-3">3. Các thì</a></li><li><a href="#lt-4">4. Khi nào dùng</a></li><li><a href="#lt-5">5. V3 bất quy tắc</a></li><li><a href="#lt-6">6. Mẹo Part 5</a></li><li><a href="#lt-7">7. Luyện tập</a></li><li><a href="#lt-8">8. Từ vựng</a></li></ul>
+
+<h2 id="lt-1">1. Chủ động và bị động khác nhau thế nào?</h2>
+<p>Chỉ cần hỏi một câu: <strong>chủ ngữ LÀM hành động, hay BỊ (được) làm?</strong></p>
+<div class="lt-cards">
+<div class="lt-card v"><h3>Câu chủ động <small>Active voice</small></h3>
+<p>Chủ ngữ <strong>tự làm</strong> hành động. Sau động từ thường có <strong>tân ngữ</strong> (người / vật nhận hành động).</p>
+<div class="ex"><span class="w n">The manager</span> <span class="w v">signed</span> <span class="w n">the contract</span>.<i>Người quản lý đã ký hợp đồng. → Người quản lý tự ký.</i></div></div>
+<div class="lt-card r"><h3>Câu bị động <small>Passive voice</small></h3>
+<p>Chủ ngữ <strong>không tự làm</strong> mà <strong>bị / được</strong> người khác làm. Thường <strong>không có tân ngữ</strong> sau động từ.</p>
+<div class="ex"><span class="w n">The contract</span> <span class="w r">was signed</span> <span class="w a">by the manager</span>.<i>Hợp đồng đã được người quản lý ký. → Hợp đồng không thể tự ký.</i></div></div>
+</div>
+<p>Hai câu trên <strong>cùng nghĩa</strong>, chỉ khác điều người nói muốn nhấn mạnh: câu chủ động nhấn mạnh <strong>người làm</strong>, câu bị động nhấn mạnh <strong>sự việc / đồ vật</strong> được làm.</p>
+
+<h2 id="lt-2">2. Công thức: be + V3 (V-ed)</h2>
+<div class="bd-formula">S + be + V3 / V-ed (+ by + người làm)<small>be chia theo thì và theo chủ ngữ · V3 = quá khứ phân từ (cột 3 bảng động từ bất quy tắc)</small></div>
+<p>Động từ <strong>có quy tắc</strong>: V3 = thêm <b>-ed</b> (deliver → delivered, cancel → cancelled). Động từ <strong>bất quy tắc</strong>: phải học thuộc (write → written, send → sent). Xem bảng ở phần 5.</p>
+<h3>Chuyển câu chủ động sang bị động: 3 bước</h3>
+<ol class="lt-steps">
+<li><strong>Lấy tân ngữ</strong> của câu chủ động đưa lên làm <strong>chủ ngữ mới</strong>.</li>
+<li><strong>Giữ nguyên thì</strong>, đổi động từ thành <strong>be (chia theo thì) + V3</strong>.</li>
+<li><strong>Chủ ngữ cũ</strong> chuyển ra sau <strong>by</strong> (hoặc bỏ đi nếu không quan trọng).</li>
+</ol>
+<div class="bd-flip">
+<div><b class="lab">Chủ động</b><span class="w n">Our team</span> <span class="w v">delivers</span> <span class="w n">the orders</span> every morning.</div>
+<div><b class="lab">Bị động</b><span class="w n">The orders</span> <span class="w r">are delivered</span> every morning <span class="w a">by our team</span>.</div>
+</div>
+<p class="lt-note">Dịch: Các đơn hàng được nhóm của chúng tôi giao vào mỗi buổi sáng. (Chủ ngữ mới là số nhiều "The orders" → dùng <b>are</b>.)</p>
+
+<h2 id="lt-3">3. Bị động ở các thì hay gặp</h2>
+<p>Mẹo nhớ: <strong>giữ nguyên "khung" của thì</strong>, chỉ thay động từ chính bằng <b>be</b> ở dạng phù hợp + <b>V3</b>.</p>
+<div class="lt-scroll"><table class="lt-t bd-tense">
+<colgroup><col style="width:22%"><col style="width:24%"><col style="width:54%"></colgroup>
+<thead><tr><th class="n">Thì</th><th class="r">Bị động</th><th class="v">Ví dụ (TOEIC)</th></tr></thead>
+<tbody>
+<tr><td>Hiện tại đơn</td><td>am / is / are + V3</td><td>Lunch <span class="w r">is served</span> in the cafeteria at noon.<br><span class="lt-note">Bữa trưa được phục vụ ở căng tin lúc 12 giờ.</span></td></tr>
+<tr><td>Quá khứ đơn</td><td>was / were + V3</td><td>The invoices <span class="w r">were sent</span> to the client last Friday.<br><span class="lt-note">Các hóa đơn đã được gửi cho khách hàng thứ Sáu tuần trước.</span></td></tr>
+<tr><td>Tương lai đơn</td><td>will be + V3</td><td>The winners <span class="w r">will be announced</span> next week.<br><span class="lt-note">Người thắng cuộc sẽ được công bố vào tuần sau.</span></td></tr>
+<tr><td>Hiện tại hoàn thành</td><td>has / have been + V3</td><td>The meeting <span class="w r">has been postponed</span> until Monday.<br><span class="lt-note">Cuộc họp đã bị hoãn đến thứ Hai.</span></td></tr>
+<tr><td>Hiện tại tiếp diễn</td><td>am / is / are being + V3</td><td>The lobby <span class="w r">is being renovated</span> this month.<br><span class="lt-note">Sảnh đang được sửa sang trong tháng này.</span></td></tr>
+<tr><td>Quá khứ tiếp diễn</td><td>was / were being + V3</td><td>The printer <span class="w r">was being repaired</span> when I arrived.<br><span class="lt-note">Máy in đang được sửa khi tôi đến.</span></td></tr>
+<tr><td>Động từ khuyết thiếu<br><small>can / must / should / may</small></td><td>modal + be + V3</td><td>Expense reports <span class="w r">must be submitted</span> by Friday.<br><span class="lt-note">Báo cáo chi phí phải được nộp trước thứ Sáu.</span></td></tr>
+<tr><td>Sau to / be going to</td><td>to be + V3</td><td>The new system is going <span class="w r">to be installed</span> soon.<br><span class="lt-note">Hệ thống mới sắp được lắp đặt.</span></td></tr>
+</tbody></table></div>
+<p class="lt-note">Trên điện thoại: vuốt ngang bảng để xem hết các cột.</p>
+
+<h2 id="lt-4">4. Khi nào TOEIC hay dùng câu bị động?</h2>
+<div class="lt-cards">
+<div class="lt-card r"><h3>Thông báo, nội quy <small>Notices &amp; rules</small></h3>
+<p>Nói về quy định chung, không cần biết ai đặt ra.</p>
+<div class="ex">All visitors <span class="w r">are required</span> to sign in at the front desk.<i>Tất cả khách đến thăm đều phải ký tên ở quầy lễ tân.</i></div>
+<div class="ex">Smoking <span class="w r">is not permitted</span> inside the building.<i>Không được phép hút thuốc trong tòa nhà.</i></div></div>
+<div class="lt-card r"><h3>Thông báo thay đổi <small>Announcements</small></h3>
+<p>Lịch họp, sự kiện bị hoãn, hủy, dời.</p>
+<div class="ex">The meeting <span class="w r">has been postponed</span>.<i>Cuộc họp đã bị hoãn lại.</i></div>
+<div class="ex">Flight 207 <span class="w r">has been cancelled</span> due to bad weather.<i>Chuyến bay 207 đã bị hủy vì thời tiết xấu.</i></div></div>
+<div class="lt-card r"><h3>Quy trình, sản xuất <small>Processes</small></h3>
+<p>Mô tả các bước làm, sản phẩm được làm ra như thế nào.</p>
+<div class="ex">The products <span class="w r">are packed</span> and <span class="w r">shipped</span> within 24 hours.<i>Sản phẩm được đóng gói và vận chuyển trong vòng 24 giờ.</i></div></div>
+<div class="lt-card r"><h3>Người làm không quan trọng <small>Unknown doer</small></h3>
+<p>Không biết, hoặc không cần nói ai làm.</p>
+<div class="ex">My wallet <span class="w r">was found</span> in the conference room.<i>Ví của tôi đã được tìm thấy trong phòng họp.</i></div></div>
+</div>
+
+<h3>Phần "by + người làm" (by + agent)</h3>
+<p>Muốn nói <strong>ai là người làm</strong> trong câu bị động, thêm <span class="w a">by + người / công ty</span> phía sau.</p>
+<div class="bd-flip">
+<div>The training session <span class="w r">was led</span> <span class="w a">by Ms. Chen</span>. <span class="lt-note">(Buổi đào tạo do cô Chen hướng dẫn.)</span></div>
+<div>The office building <span class="w r">was designed</span> <span class="w a">by a famous architect</span>. <span class="lt-note">(Tòa nhà văn phòng được một kiến trúc sư nổi tiếng thiết kế.)</span></div>
+</div>
+<ul>
+<li>Thường <strong>bỏ by</strong> khi người làm là "người ta", "ai đó" hoặc đã rõ ràng: <i>The report was printed</i> (không cần <s>by someone</s>).</li>
+<li>Trong Part 5, thấy <strong>by + người / công ty</strong> ngay sau chỗ trống → rất có thể cần <strong>bị động</strong>.</li>
+<li>⚠️ Không phải cứ có "by" là bị động: <i>by Friday</i> (trước thứ Sáu), <i>by email</i> (qua email), <i>by bus</i> (bằng xe buýt) chỉ thời gian / cách thức.</li>
+</ul>
+
+<h2 id="lt-5">5. V3 bất quy tắc hay gặp trong TOEIC</h2>
+<p>Những động từ này <strong>không thêm -ed</strong>. Học thuộc cột V3 vì đây là dạng dùng trong câu bị động.</p>
+<div class="lt-scroll"><table class="lt-t bd-irr">
+<colgroup><col style="width:13%"><col style="width:13%"><col style="width:14%"><col style="width:18%"><col style="width:42%"></colgroup>
+<thead><tr><th class="v">V1</th><th class="r">V2</th><th class="r">V3</th><th class="n">Nghĩa</th><th class="a">Ví dụ bị động</th></tr></thead>
+<tbody>
+<tr><td>send</td><td>sent</td><td>sent</td><td>gửi</td><td>The package was <b>sent</b> yesterday.</td></tr>
+<tr><td>write</td><td>wrote</td><td>written</td><td>viết</td><td>The manual is <b>written</b> in English.</td></tr>
+<tr><td>hold</td><td>held</td><td>held</td><td>tổ chức</td><td>The conference will be <b>held</b> in Da Nang.</td></tr>
+<tr><td>give</td><td>gave</td><td>given</td><td>đưa, cho</td><td>Each guest is <b>given</b> a name badge.</td></tr>
+<tr><td>take</td><td>took</td><td>taken</td><td>lấy, chụp</td><td>Photos are not allowed to be <b>taken</b> here.</td></tr>
+<tr><td>make</td><td>made</td><td>made</td><td>làm, đưa ra</td><td>A final decision has been <b>made</b>.</td></tr>
+<tr><td>build</td><td>built</td><td>built</td><td>xây</td><td>The factory was <b>built</b> in 2019.</td></tr>
+<tr><td>choose</td><td>chose</td><td>chosen</td><td>chọn</td><td>Mr. Ito was <b>chosen</b> as team leader.</td></tr>
+<tr><td>buy</td><td>bought</td><td>bought</td><td>mua</td><td>New laptops were <b>bought</b> for the staff.</td></tr>
+<tr><td>pay</td><td>paid</td><td>paid</td><td>trả tiền</td><td>Salaries are <b>paid</b> on the 5th of each month.</td></tr>
+<tr><td>leave</td><td>left</td><td>left</td><td>để lại, rời đi</td><td>A message was <b>left</b> on your desk.</td></tr>
+<tr><td>show</td><td>showed</td><td>shown</td><td>cho xem, chỉ</td><td>Visitors will be <b>shown</b> around the plant.</td></tr>
+<tr><td>keep</td><td>kept</td><td>kept</td><td>giữ</td><td>All files are <b>kept</b> in a locked cabinet.</td></tr>
+<tr><td>sell</td><td>sold</td><td>sold</td><td>bán</td><td>The tickets were <b>sold</b> out in one day.</td></tr>
+<tr><td>find</td><td>found</td><td>found</td><td>tìm thấy</td><td>The missing files were <b>found</b> in the archive.</td></tr>
+</tbody></table></div>
+<p class="lt-note">Bẫy hay gặp: <b>V2 ≠ V3</b> ở write / give / take / choose / show. Sau <b>be</b> hoặc <b>have/has been</b> luôn dùng <b>V3</b>: was <s>wrote</s> → was <b>written</b>.</p>
+
+<h2 id="lt-6">6. Mẹo làm Part 5: chọn chủ động hay bị động?</h2>
+<p>Khi 4 đáp án là cùng một động từ ở dạng khác nhau, hãy kiểm tra <strong>2 điều</strong>:</p>
+<div class="lt-cards">
+<div class="lt-card n"><h3>① Sau chỗ trống có tân ngữ không?</h3>
+<p><strong>Có</strong> danh từ / cụm danh từ ngay sau → thường <strong>chủ động</strong>.<br><strong>Không có</strong> (sau là by…, giới từ, trạng từ, dấu chấm) → thường <strong>bị động</strong>.</p>
+<div class="ex">The company <span class="w v">hired</span> <span class="w n">five new engineers</span>.<i>Có tân ngữ → chủ động.</i></div>
+<div class="ex">Five new engineers <span class="w r">were hired</span> last month.<i>Không có tân ngữ → bị động.</i></div></div>
+<div class="lt-card a"><h3>② Chủ ngữ có tự làm được không?</h3>
+<p>Chủ ngữ là <strong>vật</strong> (report, product, meeting, order…) thường <strong>không tự làm</strong> được → bị động.<br>Chủ ngữ là <strong>người / công ty</strong> → thường chủ động (nhưng vẫn phải xét tân ngữ).</p>
+<div class="ex">The report <span class="w r">was reviewed</span> carefully.<i>Bản báo cáo không thể tự xem xét → bị động.</i></div></div>
+</div>
+<ol class="lt-steps">
+<li><strong>Nhìn 4 đáp án</strong>: cùng một động từ, có dạng <b>be + V3</b> (is done / was done / has been done)? → đây là câu chủ động / bị động.</li>
+<li><strong>Nhìn ngay sau chỗ trống</strong>: có tân ngữ → chủ động; không có tân ngữ, hoặc có <b>by + người làm</b> → bị động.</li>
+<li><strong>Kiểm tra nghĩa chủ ngữ</strong>: người/vật đó tự làm được hành động không?</li>
+<li><strong>Chọn đúng thì</strong> theo dấu hiệu thời gian: yesterday / last → quá khứ; since / already → hoàn thành; tomorrow / next → will; sau can / must / should → <b>be + V3</b>. Nhớ chia <b>is / are</b> theo chủ ngữ số ít / nhiều.</li>
+</ol>
+
+<div class="lt-trap"><h3>⚠️ Bẫy: nội động từ KHÔNG có bị động</h3>
+<ol>
+<li><strong>Nội động từ</strong> là động từ không cần tân ngữ, nên <strong>không bao giờ chia bị động</strong>: <b>arrive, happen, occur, take place, rise, fall, go, come, remain, exist, appear, disappear, depart</b>.<br>VD: The shipment <span class="w v">arrived</span> late. (không viết <s>was arrived</s>) · The incident <span class="w v">occurred</span> on Monday. (không viết <s>was occurred</s>)</li>
+<li><strong>take place</strong> = diễn ra (không dùng bị động) – nhưng <strong>be held</strong> = được tổ chức (bị động).<br>VD: The seminar <span class="w v">will take place</span> in Hall B. = The seminar <span class="w r">will be held</span> in Hall B.</li>
+<li><strong>rise</strong> (nội động từ, tự tăng) ≠ <strong>raise</strong> (ngoại động từ, nâng/tăng cái gì).<br>VD: Prices <span class="w v">rose</span> by 5%. · Prices <span class="w r">were raised</span> by 5%.</li>
+<li>Câu bị động vẫn có thể có danh từ phía sau với các động từ <b>give, send, offer, award</b> (có 2 tân ngữ).<br>VD: Ms. Park <span class="w r">was given</span> <span class="w n">an award</span>. (Cô Park được trao giải thưởng.)</li>
+</ol></div>
+
+<h2 id="lt-7">7. Luyện tập (Part 5)</h2>
+<p>12 câu kiểu Part 5. Chạm vào một đáp án để xem đúng / sai, <strong>dấu hiệu</strong> giúp chọn đáp án và <strong>bản dịch</strong>.</p>
+<div class="lt-score" aria-live="polite"><span id="ltScore">Đúng 0 / 12</span><span class="bar"><i id="ltBar"></i></span><span id="ltDone">Đã làm 0/12</span></div>
+<div id="ltQuiz"></div>
+<div class="lt-end" id="ltEnd" aria-live="polite"><div class="big" id="ltEndIc">🎉</div><p id="ltEndTxt"></p><button type="button" class="lt-btn" id="ltAgain">↺ Làm lại</button></div>
+<p class="lt-again"><button type="button" class="lt-btn alt" id="ltReset">↺ Làm lại</button></p>
+
+<h2 id="lt-8">Bảng từ vựng (Vocabulary Sheet)</h2>
+<p><em>Từ vựng trong chuyên đề này (English – Pronunciation – Vietnamese).</em></p>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 32%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>English</strong></th>
+<th><strong>Pronunciation</strong></th>
+<th><strong>Vietnamese</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd"><td><strong>Postpone (v)</strong></td><td>/pəˈspəʊn/</td><td>Hoãn lại</td></tr>
+<tr class="even"><td><strong>Require (v)</strong></td><td>/rɪˈkwaɪə/</td><td>Yêu cầu, đòi hỏi</td></tr>
+<tr class="odd"><td><strong>Permit (v)</strong></td><td>/pəˈmɪt/</td><td>Cho phép</td></tr>
+<tr class="even"><td><strong>Announce (v)</strong></td><td>/əˈnaʊns/</td><td>Thông báo, công bố</td></tr>
+<tr class="odd"><td><strong>Renovate (v)</strong></td><td>/ˈrenəveɪt/</td><td>Sửa sang, cải tạo</td></tr>
+<tr class="even"><td><strong>Install (v)</strong></td><td>/ɪnˈstɔːl/</td><td>Lắp đặt, cài đặt</td></tr>
+<tr class="odd"><td><strong>Submit (v)</strong></td><td>/səbˈmɪt/</td><td>Nộp, gửi</td></tr>
+<tr class="even"><td><strong>Invoice (n)</strong></td><td>/ˈɪnvɔɪs/</td><td>Hóa đơn</td></tr>
+<tr class="odd"><td><strong>Shipment (n)</strong></td><td>/ˈʃɪpmənt/</td><td>Lô hàng; việc vận chuyển</td></tr>
+<tr class="even"><td><strong>Warehouse (n)</strong></td><td>/ˈweəhaʊs/</td><td>Nhà kho</td></tr>
+<tr class="odd"><td><strong>Quarterly (adj)</strong></td><td>/ˈkwɔːtəli/</td><td>Hằng quý, theo quý</td></tr>
+<tr class="even"><td><strong>Intern (n)</strong></td><td>/ˈɪntɜːn/</td><td>Thực tập sinh</td></tr>
+<tr class="odd"><td><strong>Branch (n)</strong></td><td>/brɑːntʃ/</td><td>Chi nhánh</td></tr>
+<tr class="even"><td><strong>Supervisor (n)</strong></td><td>/ˈsuːpəvaɪzə/</td><td>Người giám sát, quản lý trực tiếp</td></tr>
+<tr class="odd"><td><strong>Refund (n)</strong></td><td>/ˈriːfʌnd/</td><td>Tiền hoàn lại</td></tr>
+<tr class="even"><td><strong>Receipt (n)</strong></td><td>/rɪˈsiːt/</td><td>Biên lai, hóa đơn thanh toán</td></tr>
+<tr class="odd"><td><strong>Occur (v)</strong></td><td>/əˈkɜː/</td><td>Xảy ra</td></tr>
+<tr class="even"><td><strong>Expense (n)</strong></td><td>/ɪkˈspens/</td><td>Chi phí, khoản chi</td></tr>
+</tbody>
+</table>
+</div></main><footer>TOEIC Pre · Tóm tắt kiến thức</footer>
+<script>
+(function(){
+  'use strict';
+  // t: màu của đáp án đúng khi điền vào chỗ trống (r = bị động be + V3, v = chủ động)
+  // d: bản dịch tiếng Việt, hiện ở cuối giải thích
+  var Q=[
+    {s:'The quarterly report ___ by the accounting team every March.',o:['prepares','is prepared','preparing','has prepared'],k:1,t:'r',
+     e:'Sau chỗ trống <b>không có tân ngữ</b> mà là <b>by the accounting team</b> (người làm). Bản báo cáo không thể tự chuẩn bị → cần <b>bị động</b>. "every March" (mỗi tháng Ba) → hiện tại đơn: <b>is prepared</b>.',
+     d:'Báo cáo quý được bộ phận kế toán chuẩn bị vào tháng Ba hằng năm.'},
+    {s:'All visitors ___ to wear a name badge while inside the building.',o:['are required','require','requiring','to require'],k:0,t:'r',
+     e:'Câu nội quy, khách <b>bị yêu cầu</b> chứ không tự yêu cầu. Cấu trúc hay gặp: <b>be required to + V</b> (bắt buộc phải làm gì). Chủ ngữ số nhiều (All visitors) → <b>are required</b>.',
+     d:'Tất cả khách đến thăm phải đeo thẻ tên khi ở trong tòa nhà.'},
+    {s:'Ms. Kim ___ the new interns to the staff yesterday afternoon.',o:['was introduced','is introduced','introduced','introducing'],k:2,t:'v',
+     e:'Sau chỗ trống có <b>tân ngữ "the new interns"</b>, và cô Kim (người) tự giới thiệu được → <b>chủ động</b>. "yesterday afternoon" → quá khứ đơn: <b>introduced</b>. introducing không làm động từ chính được.',
+     d:'Chiều hôm qua, cô Kim đã giới thiệu các thực tập sinh mới với nhân viên.'},
+    {s:'The board meeting ___ until next Thursday because of the CEO\'s business trip.',o:['postpones','has postponed','is postponing','has been postponed'],k:3,t:'r',
+     e:'Cuộc họp <b>không tự hoãn</b> được, và sau chỗ trống <b>không có tân ngữ</b> (chỉ có until next Thursday) → <b>bị động</b>. Chỉ có <b>has been postponed</b> (hiện tại hoàn thành bị động) là dạng bị động.',
+     d:'Cuộc họp hội đồng quản trị đã bị hoãn đến thứ Năm tuần sau vì chuyến công tác của tổng giám đốc.'},
+    {s:'The shipment from our supplier ___ at the warehouse two hours late.',o:['was arrived','is arrived','arrived','been arrived'],k:2,t:'v',
+     e:'<b>arrive</b> là <b>nội động từ</b> (không có tân ngữ) nên <b>không bao giờ chia bị động</b>. Loại was arrived, is arrived, been arrived → chọn <b>arrived</b> (quá khứ đơn).',
+     d:'Lô hàng từ nhà cung cấp của chúng tôi đã đến nhà kho trễ hai tiếng.'},
+    {s:'Your job application will ___ within five business days.',o:['review','reviewed','be reviewing','be reviewed'],k:3,t:'r',
+     e:'Đơn xin việc <b>được xem xét</b>, không tự xem xét. Sau <b>will</b> dùng dạng bị động <b>be + V3</b> → <b>be reviewed</b>. be reviewing là chủ động tiếp diễn.',
+     d:'Đơn xin việc của bạn sẽ được xem xét trong vòng năm ngày làm việc.'},
+    {s:'Employees should ___ any safety problems to their supervisor immediately.',o:['report','be reported','reported','reporting'],k:0,t:'v',
+     e:'Sau chỗ trống có <b>tân ngữ "any safety problems"</b>, và nhân viên tự báo cáo được → <b>chủ động</b>. Sau <b>should</b> dùng động từ nguyên mẫu → <b>report</b>.',
+     d:'Nhân viên nên báo cáo ngay mọi vấn đề an toàn cho người quản lý trực tiếp của mình.'},
+    {s:'The new branch office ___ by Hanson Construction last year.',o:['built','was built','has built','builds'],k:1,t:'r',
+     e:'Có <b>by Hanson Construction</b> (người làm) và <b>không có tân ngữ</b>; văn phòng không tự xây được → <b>bị động</b>. "last year" → quá khứ đơn: <b>was built</b> (build – built – built).',
+     d:'Văn phòng chi nhánh mới được công ty Xây dựng Hanson xây vào năm ngoái.'},
+    {s:'A small fire ___ in the kitchen of the staff cafeteria last night, but no one was hurt.',o:['was occurred','is occurred','has been occurred','occurred'],k:3,t:'v',
+     e:'<b>occur</b> (xảy ra) là <b>nội động từ</b>, giống happen / take place → <b>không có dạng bị động</b>. Loại 3 đáp án có be/been → chọn <b>occurred</b>.',
+     d:'Tối qua một đám cháy nhỏ đã xảy ra trong bếp của căng tin nhân viên, nhưng không ai bị thương.'},
+    {s:'The main conference room is currently ___, so today\'s meeting will be held in Room 204.',o:['renovating','being renovated','renovated by','renovate'],k:1,t:'r',
+     e:'Phòng họp <b>được sửa</b>, không tự sửa; "is currently" (hiện đang) → <b>hiện tại tiếp diễn bị động</b>: is <b>being renovated</b>. renovating là chủ động, thiếu tân ngữ.',
+     d:'Phòng họp chính hiện đang được sửa sang, nên cuộc họp hôm nay sẽ được tổ chức ở phòng 204.'},
+    {s:'Mr. Patel has ___ the sales team at our Hanoi branch since 2022.',o:['led','been led','leading','be led'],k:0,t:'v',
+     e:'Sau chỗ trống có <b>tân ngữ "the sales team"</b>, ông Patel tự lãnh đạo được → <b>chủ động</b>. Sau <b>has</b> dùng V3: <b>led</b> (lead – led – led). has been led là bị động, không hợp.',
+     d:'Ông Patel đã lãnh đạo đội bán hàng tại chi nhánh Hà Nội của chúng tôi từ năm 2022.'},
+    {s:'Refunds can only ___ if customers show the original receipt.',o:['give','giving','be given','have given'],k:2,t:'r',
+     e:'Tiền hoàn lại <b>được đưa</b> cho khách, không tự đưa; sau chỗ trống <b>không có tân ngữ</b> → bị động. Sau <b>can</b> dùng <b>be + V3</b> → <b>be given</b> (give – gave – given).',
+     d:'Tiền hoàn lại chỉ có thể được trả nếu khách hàng xuất trình biên lai gốc.'}
+  ];
+  var KEY='summaryOld.caubidong.quiz', L='ABCD';
+  var ans=(function(){try{var a=JSON.parse(localStorage.getItem(KEY)||'{}');return a&&typeof a==='object'?a:{};}catch(e){return {};}})();
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(ans));}catch(e){}}
+  var box=document.getElementById('ltQuiz');
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function render(){
+    box.innerHTML=Q.map(function(q,i){
+      var st=esc(q.s).replace('___','<span class="lt-blank" data-b="'+i+'">&nbsp;</span>');
+      return '<div class="lt-q" id="ltq'+i+'"><div class="num">Câu '+(i+1)+'</div><p class="st">'+st+'</p><div class="lt-opts">'+
+        q.o.map(function(o,j){return '<button type="button" class="lt-opt" data-q="'+i+'" data-o="'+j+'"><b>'+L[j]+'</b><span>'+esc(o)+'</span></button>';}).join('')+
+        '</div><div class="lt-fb" role="status"></div></div>';
+    }).join('');
+    Q.forEach(function(q,i){ if(ans[i]!==undefined) show(i,ans[i]); });
+    score();
+  }
+  function show(i,j){
+    var q=Q[i], el=document.getElementById('ltq'+i), ok=j===q.k;
+    [].forEach.call(el.querySelectorAll('.lt-opt'),function(b,x){
+      b.disabled=true;
+      if(x===q.k) b.classList.add('ok'); else if(x===j) b.classList.add('bad'); else b.classList.add('dim');
+    });
+    var bl=el.querySelector('.lt-blank'); bl.innerHTML='<span class="w '+q.t+'">'+esc(q.o[q.k])+'</span>';
+    var fb=el.querySelector('.lt-fb'); fb.className='lt-fb show '+(ok?'good':'wrong');
+    fb.innerHTML='<strong>'+(ok?'✓ Chính xác!':'✗ Chưa đúng. Đáp án: ('+L[q.k]+') '+esc(q.o[q.k]))+'</strong>'+q.e+'<span class="dich">Dịch: '+esc(q.d)+'</span>';
+  }
+  function score(){
+    var n=0,c=0; Q.forEach(function(q,i){ if(ans[i]!==undefined){n++; if(ans[i]===q.k)c++;} });
+    document.getElementById('ltScore').textContent='Đúng '+c+' / '+Q.length;
+    document.getElementById('ltDone').textContent='Đã làm '+n+'/'+Q.length;
+    document.getElementById('ltBar').style.width=(n/Q.length*100)+'%';
+    var end=document.getElementById('ltEnd');
+    if(n===Q.length){
+      end.classList.add('show');
+      document.getElementById('ltEndIc').textContent=c>=10?'🎉':c>=7?'👍':'💪';
+      document.getElementById('ltEndTxt').innerHTML='Bạn làm đúng <b>'+c+'/'+Q.length+'</b> câu. '+(c>=10?'Rất tốt! Bạn đã phân biệt chắc chủ động và bị động.':c>=7?'Khá lắm! Xem lại giải thích các câu sai nhé.':'Đọc lại phần 6 (Mẹo Part 5) rồi làm lại nhé!');
+    } else end.classList.remove('show');
+  }
+  box.addEventListener('click',function(ev){
+    var b=ev.target.closest('.lt-opt'); if(!b||b.disabled) return;
+    var i=+b.dataset.q, j=+b.dataset.o; if(ans[i]!==undefined) return;
+    ans[i]=j; save(); show(i,j); score();
+    if(Object.keys(ans).length===Q.length) setTimeout(function(){document.getElementById('ltEnd').scrollIntoView({behavior:'smooth',block:'center'});},300);
+  });
+  function reset(){ ans={}; save(); render(); document.getElementById('ltq0').scrollIntoView({behavior:'smooth',block:'center'}); }
+  document.getElementById('ltAgain').onclick=reset;
+  document.getElementById('ltReset').onclick=reset;
+  render();
+})();
+</script>
+<script src="../flashcards.js" defer></script><script>window.ETSCFG=window.ETSCFG||{SCRIPT_URL:'https://script.google.com/macros/s/AKfycby3_45o2Zn3FMEMrVAg9nBCiQEIUvU9HgQxI2ZZtwJ4oUQ_bqXxj1vN0kL6cvhbDQCx/exec'};</script><script src="../assets/ui.js?v=3" data-site="summary"></script>
+</body></html>

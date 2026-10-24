@@ -1,0 +1,377 @@
+<!doctype html><html lang="vi"><head>
+<script>try{var d=document.documentElement,k=JSON.parse(localStorage.getItem('mt.skin')||'""');if(k==='scifi')d.setAttribute('data-theme','dark');if(k)d.setAttribute('data-skin',k)}catch(e){}</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<title>Giới từ thường gặp trong TOEIC</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css"><script src="../classes.js"></script><link rel="icon" type="image/png" href="../icons/fav-64.png?v=3">
+<style>
+/* Chuyên đề giới từ – màu cố định: Giới từ tím · Cụm danh từ / V-ing xanh dương · Liên từ đỏ · Thời gian/nơi chốn xanh lá */
+:root{--lt-n:#1d5fa8;--lt-n-bg:#e4eefb;--lt-v:#b42318;--lt-v-bg:#fde9e6;--lt-a:#1f7a4d;--lt-a-bg:#e2f3ea;--lt-r:#6d3fb0;--lt-r-bg:#efe7fb;}
+.lt .w{font-weight:700;border-radius:5px;padding:0 4px;white-space:nowrap;}
+.lt .w.n{color:var(--lt-n);background:var(--lt-n-bg);}
+.lt .w.v{color:var(--lt-v);background:var(--lt-v-bg);}
+.lt .w.a{color:var(--lt-a);background:var(--lt-a-bg);}
+.lt .w.r{color:var(--lt-r);background:var(--lt-r-bg);}
+.lt-legend{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;}
+.lt-legend .w{font-size:14px;padding:3px 10px;}
+.lt-toc{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px;padding:0;list-style:none;}
+.lt-toc a{display:inline-block;font-size:14px;font-weight:600;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;background:var(--paper);}
+.lt-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0;}
+.lt-card{border:1.5px solid var(--line);border-left-width:6px;border-radius:12px;padding:12px 14px;background:var(--card);}
+.lt-card.n{border-left-color:var(--lt-n);} .lt-card.v{border-left-color:var(--lt-v);} .lt-card.a{border-left-color:var(--lt-a);} .lt-card.r{border-left-color:var(--lt-r);}
+.lt-card h3{margin:0 0 4px!important;font-size:17px;}
+.lt-card.n h3{color:var(--lt-n);} .lt-card.v h3{color:var(--lt-v);} .lt-card.a h3{color:var(--lt-a);} .lt-card.r h3{color:var(--lt-r);}
+.lt-card h3 small{font-weight:600;color:var(--dim);font-size:13.5px;}
+.lt-card p{font-size:15px;}
+.lt-card .ex{margin-top:8px;padding:8px 10px;background:var(--paper);border-radius:8px;font-size:15px;}
+.lt-card .ex i{display:block;font-style:normal;color:var(--dim);font-size:13.5px;}
+.lt-suf{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 16px;}
+.lt-suf h3{margin-bottom:4px!important;}
+.lt-suf table td:first-child{white-space:nowrap;font-weight:700;}
+.lt-h-n{color:var(--lt-n)!important;} .lt-h-v{color:var(--lt-v)!important;} .lt-h-a{color:var(--lt-a)!important;} .lt-h-r{color:var(--lt-r)!important;}
+.doc table.lt-t th.n{background:var(--lt-n-bg);color:var(--lt-n);} .doc table.lt-t th.v{background:var(--lt-v-bg);color:var(--lt-v);}
+.doc table.lt-t th.a{background:var(--lt-a-bg);color:var(--lt-a);} .doc table.lt-t th.r{background:var(--lt-r-bg);color:var(--lt-r);}
+.lt-trap{margin:14px 0;padding:14px 16px;border:1.5px dashed #c2410c;border-radius:12px;background:#fff6ef;}
+.lt-trap h3{color:#9a3412!important;margin:0 0 6px!important;}
+.lt-trap ol{margin:0;padding-left:22px;}
+.lt-trap li{margin:8px 0;}
+.lt-steps{counter-reset:s;list-style:none;margin:12px 0;padding:0;display:grid;gap:8px;}
+.lt-steps li{counter-increment:s;position:relative;padding:10px 12px 10px 52px;border:1px solid var(--line);border-radius:12px;background:var(--paper);}
+.lt-steps li::before{content:counter(s);position:absolute;left:12px;top:10px;width:28px;height:28px;border-radius:50%;background:var(--amber);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.lt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;}
+.lt-scroll table{margin:0!important;min-width:560px;}
+.lt-note{font-size:14px;color:var(--dim);}
+.lt-pos td:nth-child(2){white-space:nowrap;}
+/* riêng trang giới từ */
+.gt-big td:first-child{font-weight:700;font-size:17px;white-space:nowrap;}
+.gt-big td:first-child.at{color:var(--lt-n);} .gt-big td:first-child.on{color:var(--lt-a);} .gt-big td:first-child.in{color:var(--lt-r);}
+.gt-vs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 0;}
+.gt-vs > div{padding:8px 10px;border-radius:8px;background:var(--paper);font-size:14.5px;}
+.gt-vs b{display:block;}
+.gt-vs i{display:block;font-style:normal;}
+/* bài luyện tập */
+.lt-score{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:10px 0 12px;padding:10px 14px;border-radius:12px;background:#fffaf0;border:1px solid #ecd3a6;font-weight:600;}
+.lt-score .bar{flex:1;min-width:120px;height:8px;border-radius:99px;background:var(--line);overflow:hidden;}
+.lt-score .bar i{display:block;height:100%;width:0;background:var(--teal);transition:width .3s;}
+.lt-q{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0;background:var(--card);}
+.lt-q .num{font-size:13px;font-weight:700;color:var(--amber-ink);letter-spacing:.04em;text-transform:uppercase;}
+.lt-q .st{font-size:16.5px;margin:4px 0 10px;line-height:1.55;}
+.lt-blank{display:inline-block;min-width:88px;border-bottom:2px solid var(--ink);text-align:center;font-weight:700;}
+.lt-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.lt-opt{font:inherit;font-size:15.5px;text-align:left;display:flex;gap:8px;align-items:center;min-height:46px;padding:9px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;}
+.lt-opt b{flex:none;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--line);font-size:13px;}
+.lt-opt:hover:not(:disabled){border-color:var(--amber);}
+.lt-opt:focus-visible{outline:3px solid var(--amber);outline-offset:2px;}
+.lt-opt:disabled{cursor:default;}
+.lt-opt.ok{border-color:#1f7a4d;background:#e2f3ea;}
+.lt-opt.ok b{background:#1f7a4d;border-color:#1f7a4d;color:#fff;}
+.lt-opt.bad{border-color:#b42318;background:#fde9e6;}
+.lt-opt.bad b{background:#b42318;border-color:#b42318;color:#fff;}
+.lt-opt.dim{opacity:.55;}
+.lt-fb{display:none;margin-top:10px;padding:10px 12px;border-radius:10px;font-size:15px;}
+.lt-fb.show{display:block;}
+.lt-fb.good{background:#e2f3ea;border:1px solid #9fd2b6;}
+.lt-fb.wrong{background:#fde9e6;border:1px solid #f0b4ab;}
+.lt-fb strong{display:block;margin-bottom:2px;}
+.lt-fb .dich{display:block;margin-top:6px;color:var(--dim);font-size:14px;}
+.lt-end{display:none;text-align:center;margin:16px 0 4px;padding:18px 16px;border-radius:14px;border:1.5px solid var(--amber);background:#fffaf0;}
+.lt-end.show{display:block;}
+.lt-end .big{font-size:40px;line-height:1;}
+.lt-end p{margin:8px 0;font-size:17px;}
+.lt-btn{font:inherit;font-weight:700;font-size:16px;border:0;border-radius:10px;padding:11px 20px;background:var(--amber);color:#fff;cursor:pointer;min-height:46px;}
+.lt-btn.alt{background:var(--card);color:var(--amber-ink);border:1.5px solid var(--amber);}
+.lt-again{text-align:right;margin:8px 0 0;}
+@media (max-width:480px){
+  .lt-cards,.lt-suf{grid-template-columns:1fr;}
+  .doc table{font-size:14.5px;}
+  .doc th,.doc td{padding:7px 8px;}
+  .lt-q{padding:12px;}
+  .lt-opt{font-size:15px;padding:8px 9px;}
+  .lt-pos td:nth-child(2){white-space:normal;}
+  .gt-vs{grid-template-columns:1fr;}
+  .lt-suf table td:first-child{white-space:normal;}
+}
+</style>
+</head><body data-nav="home"><header class="top"><a href="../index.html">TOEIC Pre · Tóm tắt kiến thức</a></header><main class="lt"><p class="sub"><a href="../index.html">← Tất cả bài</a></p><h1>Giới từ thường gặp trong TOEIC</h1><p class="sub">Chuyên đề bổ trợ · Giới từ thời gian, nơi chốn, nguyên nhân và các cụm cố định (Prepositions)</p><div class="doc">
+<p><strong>Giới từ</strong> (preposition) là những từ ngắn như <em>at, on, in, by, for, despite…</em> đứng <strong>trước danh từ / cụm danh từ / V-ing</strong> để nối chúng với phần còn lại của câu. Trong <strong>Part 5</strong>, mỗi đề thường có vài câu hỏi giới từ: chọn đúng giới từ thời gian, nơi chốn, hoặc phân biệt <strong>giới từ</strong> với <strong>liên từ</strong>. Cả trang dùng các màu sau:</p>
+<div class="lt-legend"><span class="w r">Giới từ (prep)</span><span class="w n">Cụm danh từ / V-ing</span><span class="w v">Liên từ (conj) + S + V</span><span class="w a">Mốc thời gian / nơi chốn</span></div>
+<ul class="lt-toc"><li><a href="#lt-1">1. At / On / In</a></li><li><a href="#lt-2">2. Giới từ thời gian</a></li><li><a href="#lt-3">3. Vị trí &amp; hướng</a></li><li><a href="#lt-4">4. Nguyên nhân &amp; nhượng bộ</a></li><li><a href="#lt-5">5. Cụm cố định</a></li><li><a href="#lt-6">6. Mẹo Part 5</a></li><li><a href="#lt-7">7. Luyện tập</a></li><li><a href="#lt-8">8. Từ vựng</a></li></ul>
+
+<h2 id="lt-1">1. AT / ON / IN: thời gian và nơi chốn</h2>
+<p>Cách nhớ nhanh: đi từ <strong>nhỏ → lớn</strong>: <span class="w n">AT</span> một <strong>điểm</strong> nhỏ, cụ thể → <span class="w a">ON</span> một <strong>ngày</strong> / một <strong>bề mặt</strong> → <span class="w r">IN</span> một <strong>khoảng</strong> dài / một <strong>không gian</strong> lớn.</p>
+
+<h3>Thời gian</h3>
+<table class="gt-big">
+<colgroup><col style="width:14%"><col style="width:40%"><col style="width:46%"></colgroup>
+<thead><tr><th>Giới từ</th><th>Dùng với</th><th>Ví dụ</th></tr></thead>
+<tbody>
+<tr><td class="at">AT</td><td><strong>Giờ</strong> cụ thể, thời điểm trong ngày</td><td>at 9 A.M., at 3:30, at noon, at midnight, at night, at the end of the month, at the moment</td></tr>
+<tr><td class="on">ON</td><td><strong>Thứ</strong>, <strong>ngày</strong> (có ngày tháng), một buổi của ngày cụ thể</td><td>on Monday, on May 15, on Friday morning, on weekdays, on the first day</td></tr>
+<tr><td class="in">IN</td><td><strong>Tháng, năm, mùa, quý</strong>, buổi chung chung; <strong>in + khoảng thời gian</strong> = "… nữa"</td><td>in June, in 2027, in the summer, in the first quarter, in the morning, in two weeks (2 tuần nữa)</td></tr>
+</tbody></table>
+<div class="lt-cards">
+<div class="lt-card a"><h3>Ví dụ trong văn phòng</h3>
+<div class="ex">The interview starts <span class="w r">at</span> <span class="w a">10:30 A.M.</span> <span class="w r">on</span> <span class="w a">Tuesday</span>.<i>Buổi phỏng vấn bắt đầu lúc 10:30 sáng thứ Ba.</i></div>
+<div class="ex">Our new branch will open <span class="w r">in</span> <span class="w a">March</span>.<i>Chi nhánh mới của chúng tôi sẽ khai trương vào tháng Ba.</i></div></div>
+<div class="lt-card v"><h3>Lưu ý nhỏ</h3>
+<p>• <strong>Không dùng</strong> at/on/in trước <b>next, last, this, every, tomorrow, yesterday</b>: <em>next Monday</em> (không nói "on next Monday").</p>
+<p>• <strong>on time</strong> = đúng giờ (theo lịch) · <strong>in time</strong> = kịp lúc (trước khi quá muộn).</p>
+<p>• Ngày + buổi: <em>in the morning</em> nhưng <em>on Monday morning</em>.</p></div>
+</div>
+
+<h3>Nơi chốn</h3>
+<table class="gt-big">
+<colgroup><col style="width:14%"><col style="width:40%"><col style="width:46%"></colgroup>
+<thead><tr><th>Giới từ</th><th>Dùng với</th><th>Ví dụ</th></tr></thead>
+<tbody>
+<tr><td class="at">AT</td><td>Một <strong>điểm</strong> cụ thể, địa chỉ có số nhà, <strong>sự kiện</strong></td><td>at the front desk, at the airport, at 42 Park Street, at the conference, at the entrance</td></tr>
+<tr><td class="on">ON</td><td><strong>Bề mặt</strong>, <strong>tầng</strong>, tên đường (không số), trang / website</td><td>on the desk, on the third floor, on Park Street, on page 12, on our website, on the bulletin board</td></tr>
+<tr><td class="in">IN</td><td><strong>Bên trong</strong> một không gian; thành phố, quốc gia; tài liệu, tờ báo</td><td>in the meeting room, in the warehouse, in Da Nang, in Japan, in the attached file, in the newspaper</td></tr>
+</tbody></table>
+<p class="lt-note">VD: The supply room is <b>on</b> the second floor, <b>in</b> Room 204. · Please wait <b>at</b> the reception desk.</p>
+
+<h2 id="lt-2">2. Các giới từ thời gian hay bị nhầm</h2>
+<div class="lt-cards">
+<div class="lt-card n"><h3>BY ≠ UNTIL <small>hạn chót vs kéo dài</small></h3>
+<p><b>by</b> + mốc = <strong>trước hoặc đúng lúc</strong> (hạn chót, việc xảy ra một lần). Hay đi với <em>submit, finish, complete, send</em>.</p>
+<p><b>until</b> (= till) + mốc = <strong>kéo dài liên tục cho đến</strong>. Hay đi với <em>stay, remain, wait, be open, last</em>.</p>
+<div class="gt-vs"><div><b>by</b>Send the report <span class="w r">by</span> <span class="w a">noon</span>.<i class="lt-note">Gửi báo cáo trước 12 giờ trưa.</i></div><div><b>until</b>The office is open <span class="w r">until</span> <span class="w a">6 P.M.</span><i class="lt-note">Văn phòng mở cửa đến 6 giờ.</i></div></div></div>
+
+<div class="lt-card r"><h3>FOR / DURING / SINCE</h3>
+<p><b>for</b> + <strong>khoảng thời gian</strong> (bao lâu): for three hours, for two years.</p>
+<p><b>during</b> + <strong>danh từ chỉ sự kiện / giai đoạn</strong> (trong suốt lúc): during the meeting, during the holiday season.</p>
+<p><b>since</b> + <strong>mốc bắt đầu</strong> (từ … đến nay), thường đi với thì hiện tại hoàn thành: since 2020, since last Monday.</p>
+<div class="ex">Mr. Ito has worked here <span class="w r">for</span> <span class="w a">five years</span> / <span class="w r">since</span> <span class="w a">2021</span>.<i>Anh Ito đã làm ở đây 5 năm / từ năm 2021.</i></div></div>
+
+<div class="lt-card a"><h3>BEFORE / AFTER / WITHIN</h3>
+<p><b>before</b> = trước · <b>after</b> = sau (+ danh từ hoặc V-ing). <b>prior to</b> = before (trang trọng, rất hay gặp trong TOEIC).</p>
+<p><b>within</b> + khoảng thời gian = <strong>trong vòng</strong> (không quá): within 24 hours, within a week.</p>
+<div class="ex">Please arrive 15 minutes <span class="w r">before</span> <span class="w n">the presentation</span>.<i>Vui lòng đến trước buổi thuyết trình 15 phút.</i></div>
+<div class="ex">We will reply <span class="w r">within</span> <span class="w a">two business days</span>.<i>Chúng tôi sẽ trả lời trong vòng 2 ngày làm việc.</i></div></div>
+</div>
+
+<h2 id="lt-3">3. Giới từ chỉ vị trí và hướng</h2>
+<div class="lt-cards">
+<div class="lt-card n"><h3>BETWEEN ≠ AMONG</h3>
+<p><b>between</b> = ở giữa <strong>2 người / vật</strong> (thường có cấu trúc <strong>between A and B</strong>).</p>
+<p><b>among</b> = ở giữa, trong số <strong>3 trở lên</strong> / một nhóm.</p>
+<div class="ex">The copier is <span class="w r">between</span> <span class="w n">the kitchen</span> and <span class="w n">the lobby</span>.<i>Máy photocopy nằm giữa nhà bếp và sảnh.</i></div>
+<div class="ex">She is popular <span class="w r">among</span> <span class="w n">her coworkers</span>.<i>Cô ấy được các đồng nghiệp quý mến.</i></div></div>
+<div class="lt-card r"><h3>TO / FROM</h3>
+<p><b>to</b> = đến (hướng tới) · <b>from</b> = từ (điểm xuất phát). Hay gặp: <strong>from A to B</strong>, <strong>from Monday to Friday</strong>.</p>
+<p>Lưu ý: <b>arrive at / in</b> (không dùng "arrive to"); <b>go / send / move to</b>.</p>
+<div class="ex">The shipment was sent <span class="w r">from</span> <span class="w a">Busan</span> <span class="w r">to</span> <span class="w a">Ho Chi Minh City</span>.<i>Lô hàng được gửi từ Busan đến TP. Hồ Chí Minh.</i></div></div>
+<div class="lt-card a"><h3>Một số giới từ vị trí khác</h3>
+<p><b>next to</b> = bên cạnh · <b>across from</b> = đối diện · <b>behind</b> = phía sau · <b>in front of</b> = phía trước · <b>near</b> = gần · <b>throughout</b> = khắp, suốt.</p>
+<div class="ex">The bank is <span class="w r">across from</span> <span class="w n">our office</span>.<i>Ngân hàng nằm đối diện văn phòng chúng tôi.</i></div></div>
+</div>
+
+<h2 id="lt-4">4. Nguyên nhân, mục đích, nhượng bộ: GIỚI TỪ hay LIÊN TỪ?</h2>
+<p>Đây là <strong>bẫy số 1</strong> của Part 5. Nhiều cặp từ <strong>cùng nghĩa</strong> nhưng khác loại: <span class="w r">giới từ</span> đi với <span class="w n">cụm danh từ / V-ing</span>, còn <span class="w v">liên từ</span> đi với <strong>mệnh đề (S + V)</strong>.</p>
+<div class="lt-scroll"><table class="lt-t">
+<thead><tr><th>Nghĩa</th><th class="r">Giới từ + N / V-ing</th><th class="v">Liên từ + S + V</th></tr></thead>
+<tbody>
+<tr><td><strong>Vì, do</strong></td><td>because of, due to, owing to</td><td>because, since, as</td></tr>
+<tr><td><strong>Mặc dù</strong></td><td>despite, in spite of</td><td>although, though, even though</td></tr>
+<tr><td><strong>Trong khi</strong></td><td>during</td><td>while</td></tr>
+<tr><td><strong>Để (mục đích)</strong></td><td>for + N (for training)<br><span class="lt-note">in order to / so as to + V nguyên mẫu</span></td><td>so that, in order that</td></tr>
+<tr><td><strong>Trước / sau</strong></td><td>before, after (+ N / V-ing)</td><td>before, after (+ S + V) <span class="lt-note">(dùng được cả hai)</span></td></tr>
+</tbody></table></div>
+<p class="lt-note">Trên điện thoại: vuốt ngang bảng để xem hết 3 cột.</p>
+<div class="lt-cards">
+<div class="lt-card r"><h3>Giới từ + cụm danh từ</h3>
+<div class="ex">The meeting was canceled <span class="w r">because of</span> <span class="w n">the storm</span>.<i>Cuộc họp bị hủy vì cơn bão.</i></div>
+<div class="ex"><span class="w r">Despite</span> <span class="w n">the high price</span>, the product sold well.<i>Dù giá cao, sản phẩm vẫn bán chạy.</i></div></div>
+<div class="lt-card v"><h3>Liên từ + mệnh đề</h3>
+<div class="ex">The meeting was canceled <span class="w v">because</span> the storm was strong.<i>Cuộc họp bị hủy vì bão mạnh.</i></div>
+<div class="ex"><span class="w v">Although</span> the price was high, the product sold well.<i>Mặc dù giá cao, sản phẩm vẫn bán chạy.</i></div></div>
+</div>
+<div class="lt-trap"><h3>⚠️ Bẫy hay gặp</h3>
+<ol>
+<li><strong>"despite of" là SAI.</strong> Chỉ nói <span class="w r">despite</span> + N hoặc <span class="w r">in spite of</span> + N.</li>
+<li><strong>Đếm động từ sau chỗ trống:</strong> có động từ chia (was, is, increased…) → mệnh đề → chọn <strong>liên từ</strong>. Chỉ có danh từ (dù dài) → chọn <strong>giới từ</strong>.<br>VD: ___ <em>the recent increase in fuel prices</em> → không có động từ chia → <span class="w r">due to / despite</span>.</li>
+<li><strong>V-ing sau giới từ:</strong> <em>Before <b>signing</b> the contract</em>, <em>despite <b>having</b> little experience</em>. Không dùng V nguyên mẫu sau giới từ.</li>
+<li><strong>"to" trong cụm cố định là giới từ</strong> → theo sau là N / V-ing: <em>look forward to <b>meeting</b> you</em>, <em>be committed to <b>providing</b></em>.</li>
+</ol></div>
+
+<h2 id="lt-5">5. Cụm cố định với giới từ (Collocations)</h2>
+<p>Những cụm này <strong>không có quy tắc</strong>: phải học thuộc cả cụm. Khi gặp, hãy đọc to cả cụm (VD: "responsible for") để nhớ lâu.</p>
+<div class="lt-suf">
+<div><h3 class="lt-h-v">Động từ + giới từ</h3>
+<table class="lt-t"><thead><tr><th class="v">Cụm</th><th class="v">Nghĩa</th></tr></thead><tbody>
+<tr><td>depend on / rely on</td><td>phụ thuộc vào / dựa vào</td></tr>
+<tr><td>apply for</td><td>nộp đơn xin (một công việc)</td></tr>
+<tr><td>participate in</td><td>tham gia</td></tr>
+<tr><td>respond to / reply to</td><td>trả lời, phản hồi</td></tr>
+<tr><td>comply with</td><td>tuân thủ (quy định)</td></tr>
+<tr><td>register for</td><td>đăng ký (khóa học, sự kiện)</td></tr>
+<tr><td>contribute to</td><td>đóng góp vào</td></tr>
+<tr><td>focus on</td><td>tập trung vào</td></tr>
+</tbody></table></div>
+<div><h3 class="lt-h-a">Tính từ + giới từ</h3>
+<table class="lt-t"><thead><tr><th class="a">Cụm</th><th class="a">Nghĩa</th></tr></thead><tbody>
+<tr><td>responsible for</td><td>chịu trách nhiệm về</td></tr>
+<tr><td>interested in</td><td>quan tâm đến</td></tr>
+<tr><td>eligible for</td><td>đủ điều kiện (nhận…)</td></tr>
+<tr><td>familiar with</td><td>quen thuộc với</td></tr>
+<tr><td>aware of</td><td>nhận thức được, biết</td></tr>
+<tr><td>satisfied with</td><td>hài lòng với</td></tr>
+<tr><td>similar to</td><td>tương tự với</td></tr>
+<tr><td>capable of</td><td>có khả năng</td></tr>
+</tbody></table></div>
+<div><h3 class="lt-h-r">Cụm giới từ (đứng trước N)</h3>
+<table class="lt-t"><thead><tr><th class="r">Cụm</th><th class="r">Nghĩa</th></tr></thead><tbody>
+<tr><td>in charge of</td><td>phụ trách</td></tr>
+<tr><td>on behalf of</td><td>thay mặt cho</td></tr>
+<tr><td>according to</td><td>theo (như)</td></tr>
+<tr><td>in addition to</td><td>ngoài … ra, thêm vào</td></tr>
+<tr><td>ahead of</td><td>trước (ahead of schedule = sớm hơn kế hoạch)</td></tr>
+<tr><td>prior to</td><td>trước (= before)</td></tr>
+<tr><td>instead of</td><td>thay vì</td></tr>
+<tr><td>regardless of</td><td>bất kể</td></tr>
+</tbody></table></div>
+</div>
+<div class="lt-cards">
+<div class="lt-card n"><h3>Ví dụ</h3>
+<div class="ex">Ms. Chen is <span class="w r">in charge of</span> <span class="w n">the new marketing campaign</span>.<i>Chị Chen phụ trách chiến dịch tiếp thị mới.</i></div>
+<div class="ex"><span class="w r">According to</span> <span class="w n">the survey</span>, most customers prefer online payment.<i>Theo cuộc khảo sát, đa số khách hàng thích thanh toán trực tuyến.</i></div></div>
+<div class="lt-card a"><h3>Ví dụ</h3>
+<div class="ex">I am writing <span class="w r">on behalf of</span> <span class="w n">the hiring committee</span>.<i>Tôi viết thư này thay mặt hội đồng tuyển dụng.</i></div>
+<div class="ex">The project was completed <span class="w r">ahead of</span> <span class="w n">schedule</span>.<i>Dự án đã hoàn thành sớm hơn kế hoạch.</i></div></div>
+</div>
+
+<h2 id="lt-6">6. Mẹo làm Part 5 câu giới từ</h2>
+<ol class="lt-steps">
+<li><strong>Nhìn 4 đáp án</strong>: nếu có cả giới từ và liên từ (despite / although, because of / because) → đây là câu <strong>phân biệt loại</strong>, chưa cần dịch.</li>
+<li><strong>Nhìn phần SAU chỗ trống</strong>: chỉ là <span class="w n">cụm danh từ / V-ing</span> → chọn <span class="w r">giới từ</span>. Có <strong>S + V chia thì</strong> (mệnh đề) → chọn <span class="w v">liên từ</span>.</li>
+<li><strong>Nếu cả 4 đều là giới từ</strong>: nhìn danh từ sau chỗ trống. Giờ → at · thứ / ngày → on · tháng / năm → in · khoảng thời gian → for / within · mốc bắt đầu → since · hạn chót → by.</li>
+<li><strong>Nhìn phần TRƯỚC chỗ trống</strong>: là động từ / tính từ / danh từ quen thuộc (responsible, depend, in charge…) → chọn giới từ theo <strong>cụm cố định</strong> đã học thuộc.</li>
+<li><strong>Chỉ dịch khi cần</strong>: nếu vẫn còn 2 đáp án, dịch nghĩa (vì / mặc dù; trước / sau) để chọn.</li>
+</ol>
+
+<h2 id="lt-7">7. Luyện tập (Part 5)</h2>
+<p>12 câu kiểu Part 5. Chạm vào một đáp án để xem đúng / sai, <strong>dấu hiệu</strong> giúp chọn đáp án và bản dịch.</p>
+<div class="lt-score" aria-live="polite"><span id="ltScore">Đúng 0 / 12</span><span class="bar"><i id="ltBar"></i></span><span id="ltDone">Đã làm 0/12</span></div>
+<div id="ltQuiz"></div>
+<div class="lt-end" id="ltEnd" aria-live="polite"><div class="big" id="ltEndIc">🎉</div><p id="ltEndTxt"></p><button type="button" class="lt-btn" id="ltAgain">↺ Làm lại</button></div>
+<p class="lt-again"><button type="button" class="lt-btn alt" id="ltReset">↺ Làm lại</button></p>
+
+<h2 id="lt-8">Bảng từ vựng (Vocabulary Sheet)</h2>
+<p><em>Từ vựng trong chuyên đề này (English – Pronunciation – Vietnamese).</em></p>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 32%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>English</strong></th>
+<th><strong>Pronunciation</strong></th>
+<th><strong>Vietnamese</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd"><td><strong>Despite (prep)</strong></td><td>/dɪˈspaɪt/</td><td>Mặc dù, bất chấp</td></tr>
+<tr class="even"><td><strong>Within (prep)</strong></td><td>/wɪˈðɪn/</td><td>Trong vòng (thời gian), bên trong</td></tr>
+<tr class="odd"><td><strong>Among (prep)</strong></td><td>/əˈmʌŋ/</td><td>Giữa, trong số (3 trở lên)</td></tr>
+<tr class="even"><td><strong>Until (prep)</strong></td><td>/ənˈtɪl/</td><td>Cho đến khi</td></tr>
+<tr class="odd"><td><strong>Throughout (prep)</strong></td><td>/θruːˈaʊt/</td><td>Khắp, suốt</td></tr>
+<tr class="even"><td><strong>Due to (prep)</strong></td><td>—</td><td>Do, vì</td></tr>
+<tr class="odd"><td><strong>Prior to (prep)</strong></td><td>—</td><td>Trước (= before)</td></tr>
+<tr class="even"><td><strong>Responsible for (phr)</strong></td><td>—</td><td>Chịu trách nhiệm về</td></tr>
+<tr class="odd"><td><strong>Depend on (phr)</strong></td><td>—</td><td>Phụ thuộc vào</td></tr>
+<tr class="even"><td><strong>Comply with (phr)</strong></td><td>—</td><td>Tuân thủ</td></tr>
+<tr class="odd"><td><strong>Eligible for (phr)</strong></td><td>—</td><td>Đủ điều kiện (nhận…)</td></tr>
+<tr class="even"><td><strong>In charge of (phr)</strong></td><td>—</td><td>Phụ trách</td></tr>
+<tr class="odd"><td><strong>On behalf of (phr)</strong></td><td>—</td><td>Thay mặt cho</td></tr>
+<tr class="even"><td><strong>According to (phr)</strong></td><td>—</td><td>Theo (như)</td></tr>
+<tr class="odd"><td><strong>In addition to (phr)</strong></td><td>—</td><td>Ngoài … ra, thêm vào</td></tr>
+<tr class="even"><td><strong>Ahead of schedule (phr)</strong></td><td>—</td><td>Sớm hơn kế hoạch</td></tr>
+<tr class="odd"><td><strong>Shipment (n)</strong></td><td>/ˈʃɪpmənt/</td><td>Lô hàng; sự vận chuyển</td></tr>
+<tr class="even"><td><strong>Refund (n)</strong></td><td>/ˈriːfʌnd/</td><td>Tiền hoàn lại</td></tr>
+<tr class="odd"><td><strong>Submit (v)</strong></td><td>/səbˈmɪt/</td><td>Nộp, gửi</td></tr>
+<tr class="even"><td><strong>Quarterly (adj)</strong></td><td>/ˈkwɔːtəli/</td><td>Hằng quý</td></tr>
+</tbody>
+</table>
+</div></main><footer>TOEIC Pre · Tóm tắt kiến thức</footer>
+<script>
+(function(){
+  'use strict';
+  // t: màu của đáp án đúng khi điền vào chỗ trống (r = giới từ, v = liên từ)
+  var Q=[
+    {s:'The quarterly sales meeting will be held ___ Monday morning.',o:['at','on','in','by'],k:1,t:'r',
+     e:'Sau chỗ trống là <b>Monday morning</b> (một buổi của <b>thứ cụ thể</b>) → dùng <b>on</b>. Nhớ: in the morning, nhưng <b>on</b> Monday morning.<span class="dich">Dịch: Cuộc họp doanh số hằng quý sẽ được tổ chức vào sáng thứ Hai.</span>'},
+    {s:'Please submit your travel expense reports ___ Friday at the latest.',o:['until','since','by','during'],k:2,t:'r',
+     e:'<b>submit</b> (nộp) là việc xảy ra một lần, có <b>hạn chót</b> ("at the latest" = chậm nhất) → dùng <b>by</b>. until dùng cho hành động kéo dài liên tục.<span class="dich">Dịch: Vui lòng nộp báo cáo chi phí đi lại chậm nhất vào thứ Sáu.</span>'},
+    {s:'The downtown store will stay open ___ 10 P.M. throughout the holiday season.',o:['by','until','within','since'],k:1,t:'r',
+     e:'<b>stay open</b> (vẫn mở cửa) là trạng thái <b>kéo dài liên tục</b> đến một mốc → dùng <b>until</b>. by dùng cho hạn chót.<span class="dich">Dịch: Cửa hàng ở trung tâm sẽ mở cửa đến 10 giờ tối suốt mùa lễ.</span>'},
+    {s:'Mr. Kim has worked in the accounting department ___ 2019.',o:['for','during','from','since'],k:3,t:'r',
+     e:'Thì <b>hiện tại hoàn thành</b> (has worked) + <b>mốc bắt đầu</b> (2019) → dùng <b>since</b>. for đi với khoảng thời gian (for six years).<span class="dich">Dịch: Anh Kim đã làm việc ở phòng kế toán từ năm 2019.</span>'},
+    {s:'Employees are asked to turn off their phones ___ the safety training session.',o:['while','during','for','since'],k:1,t:'r',
+     e:'Sau chỗ trống là <b>cụm danh từ chỉ sự kiện</b> (the safety training session), không có động từ → cần <b>giới từ during</b> (trong suốt). while là liên từ, cần S + V.<span class="dich">Dịch: Nhân viên được yêu cầu tắt điện thoại trong suốt buổi huấn luyện an toàn.</span>'},
+    {s:'___ the heavy rain, the outdoor product launch went ahead as planned.',o:['Although','Because','Despite','However'],k:2,t:'r',
+     e:'Sau chỗ trống chỉ là <b>cụm danh từ</b> (the heavy rain), không có động từ chia → cần <b>giới từ</b>. Nghĩa "mặc dù" → <b>Despite</b>. Although / Because là liên từ (+ S + V); However là trạng từ.<span class="dich">Dịch: Mặc dù mưa lớn, buổi ra mắt sản phẩm ngoài trời vẫn diễn ra như kế hoạch.</span>'},
+    {s:'The flight to Singapore was delayed ___ a technical problem with the engine.',o:['because of','because','although','despite'],k:0,t:'r',
+     e:'Sau chỗ trống là <b>cụm danh từ</b> (a technical problem…) → cần <b>giới từ</b>. Nghĩa "vì" (nguyên nhân) → <b>because of</b>. because là liên từ; despite nghĩa "mặc dù" không hợp.<span class="dich">Dịch: Chuyến bay đến Singapore bị hoãn vì một sự cố kỹ thuật ở động cơ.</span>'},
+    {s:'___ the weather was bad, most employees arrived at the office on time.',o:['Despite','In spite of','Due to','Although'],k:3,t:'v',
+     e:'Sau chỗ trống là <b>mệnh đề</b> có động từ chia (the weather <b>was</b> bad) → cần <b>liên từ</b>. Nghĩa "mặc dù" → <b>Although</b>. Despite / In spite of / Due to đều là giới từ.<span class="dich">Dịch: Mặc dù thời tiết xấu, hầu hết nhân viên vẫn đến văn phòng đúng giờ.</span>'},
+    {s:'Ms. Patel is responsible ___ training all new sales staff.',o:['to','with','for','on'],k:2,t:'r',
+     e:'Cụm cố định <b>be responsible for</b> + N / V-ing = chịu trách nhiệm về. Sau giới từ dùng V-ing (training).<span class="dich">Dịch: Chị Patel chịu trách nhiệm đào tạo tất cả nhân viên bán hàng mới.</span>'},
+    {s:'The shipping cost will depend ___ the size and weight of the package.',o:['in','on','at','of'],k:1,t:'r',
+     e:'Cụm cố định <b>depend on</b> = phụ thuộc vào (giống rely on).<span class="dich">Dịch: Chi phí vận chuyển sẽ phụ thuộc vào kích thước và trọng lượng của kiện hàng.</span>'},
+    {s:'Customers can receive a full refund ___ 30 days of purchase.',o:['among','within','between','since'],k:1,t:'r',
+     e:'Sau chỗ trống là <b>khoảng thời gian</b> (30 days) với nghĩa "trong vòng, không quá" → <b>within</b>. among / between chỉ vị trí giữa người, vật.<span class="dich">Dịch: Khách hàng có thể được hoàn tiền toàn bộ trong vòng 30 ngày kể từ ngày mua.</span>'},
+    {s:'The new manager\'s office is located ___ the reception area and the conference room.',o:['among','within','from','between'],k:3,t:'r',
+     e:'Có cấu trúc <b>___ A and B</b> (2 nơi) → dùng <b>between</b>. among dùng cho 3 trở lên; from đi với to (from A to B).<span class="dich">Dịch: Văn phòng của người quản lý mới nằm giữa khu lễ tân và phòng hội nghị.</span>'}
+  ];
+  var KEY='summaryOld.gioitu.quiz', L='ABCD';
+  var ans=(function(){try{var a=JSON.parse(localStorage.getItem(KEY)||'{}');return a&&typeof a==='object'?a:{};}catch(e){return {};}})();
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(ans));}catch(e){}}
+  var box=document.getElementById('ltQuiz');
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function render(){
+    box.innerHTML=Q.map(function(q,i){
+      var st=esc(q.s).replace('___','<span class="lt-blank" data-b="'+i+'">&nbsp;</span>');
+      return '<div class="lt-q" id="ltq'+i+'"><div class="num">Câu '+(i+1)+'</div><p class="st">'+st+'</p><div class="lt-opts">'+
+        q.o.map(function(o,j){return '<button type="button" class="lt-opt" data-q="'+i+'" data-o="'+j+'"><b>'+L[j]+'</b><span>'+esc(o)+'</span></button>';}).join('')+
+        '</div><div class="lt-fb" role="status"></div></div>';
+    }).join('');
+    Q.forEach(function(q,i){ if(ans[i]!==undefined) show(i,ans[i]); });
+    score();
+  }
+  function show(i,j){
+    var q=Q[i], el=document.getElementById('ltq'+i), ok=j===q.k;
+    [].forEach.call(el.querySelectorAll('.lt-opt'),function(b,x){
+      b.disabled=true;
+      if(x===q.k) b.classList.add('ok'); else if(x===j) b.classList.add('bad'); else b.classList.add('dim');
+    });
+    var bl=el.querySelector('.lt-blank'); bl.innerHTML='<span class="w '+q.t+'">'+esc(q.o[q.k])+'</span>';
+    var fb=el.querySelector('.lt-fb'); fb.className='lt-fb show '+(ok?'good':'wrong');
+    fb.innerHTML='<strong>'+(ok?'✓ Chính xác!':'✗ Chưa đúng. Đáp án: ('+L[q.k]+') '+esc(q.o[q.k]))+'</strong>'+q.e;
+  }
+  function score(){
+    var n=0,c=0; Q.forEach(function(q,i){ if(ans[i]!==undefined){n++; if(ans[i]===q.k)c++;} });
+    document.getElementById('ltScore').textContent='Đúng '+c+' / '+Q.length;
+    document.getElementById('ltDone').textContent='Đã làm '+n+'/'+Q.length;
+    document.getElementById('ltBar').style.width=(n/Q.length*100)+'%';
+    var end=document.getElementById('ltEnd');
+    if(n===Q.length){
+      end.classList.add('show');
+      document.getElementById('ltEndIc').textContent=c>=10?'🎉':c>=7?'👍':'💪';
+      document.getElementById('ltEndTxt').innerHTML='Bạn làm đúng <b>'+c+'/'+Q.length+'</b> câu. '+(c>=10?'Rất tốt! Bạn đã nắm chắc cách dùng giới từ.':c>=7?'Khá lắm! Xem lại giải thích các câu sai nhé.':'Đọc lại phần 2, 4 và 6 (Mẹo Part 5) rồi làm lại nhé!');
+    } else end.classList.remove('show');
+  }
+  box.addEventListener('click',function(ev){
+    var b=ev.target.closest('.lt-opt'); if(!b||b.disabled) return;
+    var i=+b.dataset.q, j=+b.dataset.o; if(ans[i]!==undefined) return;
+    ans[i]=j; save(); show(i,j); score();
+    if(Object.keys(ans).length===Q.length) setTimeout(function(){document.getElementById('ltEnd').scrollIntoView({behavior:'smooth',block:'center'});},300);
+  });
+  function reset(){ ans={}; save(); render(); document.getElementById('ltq0').scrollIntoView({behavior:'smooth',block:'center'}); }
+  document.getElementById('ltAgain').onclick=reset;
+  document.getElementById('ltReset').onclick=reset;
+  render();
+})();
+</script>
+<script src="../flashcards.js" defer></script><script>window.ETSCFG=window.ETSCFG||{SCRIPT_URL:'https://script.google.com/macros/s/AKfycby3_45o2Zn3FMEMrVAg9nBCiQEIUvU9HgQxI2ZZtwJ4oUQ_bqXxj1vN0kL6cvhbDQCx/exec'};</script><script src="../assets/ui.js?v=3" data-site="summary"></script>
+</body></html>

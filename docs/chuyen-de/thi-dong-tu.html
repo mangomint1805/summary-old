@@ -1,0 +1,331 @@
+<!doctype html><html lang="vi"><head>
+<script>try{var d=document.documentElement,k=JSON.parse(localStorage.getItem('mt.skin')||'""');if(k==='scifi')d.setAttribute('data-theme','dark');if(k)d.setAttribute('data-skin',k)}catch(e){}</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<title>Các thì của động từ trong TOEIC</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css"><script src="../classes.js"></script><link rel="icon" type="image/png" href="../icons/fav-64.png?v=3">
+<style>
+/* Chuyên đề thì – màu cố định: Chủ ngữ xanh dương · Động từ chia thì đỏ · Trợ động từ xanh lá · Dấu hiệu thời gian tím */
+:root{--lt-n:#1d5fa8;--lt-n-bg:#e4eefb;--lt-v:#b42318;--lt-v-bg:#fde9e6;--lt-a:#1f7a4d;--lt-a-bg:#e2f3ea;--lt-r:#6d3fb0;--lt-r-bg:#efe7fb;}
+.lt .w{font-weight:700;border-radius:5px;padding:0 4px;white-space:nowrap;}
+.lt .w.n{color:var(--lt-n);background:var(--lt-n-bg);}
+.lt .w.v{color:var(--lt-v);background:var(--lt-v-bg);}
+.lt .w.a{color:var(--lt-a);background:var(--lt-a-bg);}
+.lt .w.r{color:var(--lt-r);background:var(--lt-r-bg);}
+.lt-legend{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;}
+.lt-legend .w{font-size:14px;padding:3px 10px;}
+.lt-toc{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px;padding:0;list-style:none;}
+.lt-toc a{display:inline-block;font-size:14px;font-weight:600;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;background:var(--paper);}
+.lt-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0;}
+.lt-card{border:1.5px solid var(--line);border-left-width:6px;border-radius:12px;padding:12px 14px;background:var(--card);}
+.lt-card.n{border-left-color:var(--lt-n);} .lt-card.v{border-left-color:var(--lt-v);} .lt-card.a{border-left-color:var(--lt-a);} .lt-card.r{border-left-color:var(--lt-r);}
+.lt-card h3{margin:0 0 4px!important;font-size:17px;}
+.lt-card.n h3{color:var(--lt-n);} .lt-card.v h3{color:var(--lt-v);} .lt-card.a h3{color:var(--lt-a);} .lt-card.r h3{color:var(--lt-r);}
+.lt-card h3 small{font-weight:600;color:var(--dim);font-size:13.5px;}
+.lt-card p{font-size:15px;}
+.lt-card .ex{margin-top:8px;padding:8px 10px;background:var(--paper);border-radius:8px;font-size:15px;}
+.lt-card .ex i{display:block;font-style:normal;color:var(--dim);font-size:13.5px;}
+.lt-suf{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 16px;}
+.lt-suf h3{margin-bottom:4px!important;}
+.lt-suf table td:first-child{white-space:nowrap;font-weight:700;}
+.lt-h-n{color:var(--lt-n)!important;} .lt-h-v{color:var(--lt-v)!important;} .lt-h-a{color:var(--lt-a)!important;} .lt-h-r{color:var(--lt-r)!important;}
+.doc table.lt-t th.n{background:var(--lt-n-bg);color:var(--lt-n);} .doc table.lt-t th.v{background:var(--lt-v-bg);color:var(--lt-v);}
+.doc table.lt-t th.a{background:var(--lt-a-bg);color:var(--lt-a);} .doc table.lt-t th.r{background:var(--lt-r-bg);color:var(--lt-r);}
+.lt-trap{margin:14px 0;padding:14px 16px;border:1.5px dashed #c2410c;border-radius:12px;background:#fff6ef;}
+.lt-trap h3{color:#9a3412!important;margin:0 0 6px!important;}
+.lt-trap ol{margin:0;padding-left:22px;}
+.lt-trap li{margin:8px 0;}
+.lt-steps{counter-reset:s;list-style:none;margin:12px 0;padding:0;display:grid;gap:8px;}
+.lt-steps li{counter-increment:s;position:relative;padding:10px 12px 10px 52px;border:1px solid var(--line);border-radius:12px;background:var(--paper);}
+.lt-steps li::before{content:counter(s);position:absolute;left:12px;top:10px;width:28px;height:28px;border-radius:50%;background:var(--amber);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.lt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;}
+.lt-scroll table{margin:0!important;min-width:560px;}
+.lt-note{font-size:14px;color:var(--dim);}
+.lt-pos td:nth-child(2){white-space:nowrap;}
+/* bài luyện tập */
+.lt-score{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:10px 0 12px;padding:10px 14px;border-radius:12px;background:#fffaf0;border:1px solid #ecd3a6;font-weight:600;}
+.lt-score .bar{flex:1;min-width:120px;height:8px;border-radius:99px;background:var(--line);overflow:hidden;}
+.lt-score .bar i{display:block;height:100%;width:0;background:var(--teal);transition:width .3s;}
+.lt-q{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0;background:var(--card);}
+.lt-q .num{font-size:13px;font-weight:700;color:var(--amber-ink);letter-spacing:.04em;text-transform:uppercase;}
+.lt-q .st{font-size:16.5px;margin:4px 0 10px;line-height:1.55;}
+.lt-blank{display:inline-block;min-width:88px;border-bottom:2px solid var(--ink);text-align:center;font-weight:700;}
+.lt-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.lt-opt{font:inherit;font-size:15.5px;text-align:left;display:flex;gap:8px;align-items:center;min-height:46px;padding:9px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;}
+.lt-opt b{flex:none;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--line);font-size:13px;}
+.lt-opt:hover:not(:disabled){border-color:var(--amber);}
+.lt-opt:focus-visible{outline:3px solid var(--amber);outline-offset:2px;}
+.lt-opt:disabled{cursor:default;}
+.lt-opt.ok{border-color:#1f7a4d;background:#e2f3ea;}
+.lt-opt.ok b{background:#1f7a4d;border-color:#1f7a4d;color:#fff;}
+.lt-opt.bad{border-color:#b42318;background:#fde9e6;}
+.lt-opt.bad b{background:#b42318;border-color:#b42318;color:#fff;}
+.lt-opt.dim{opacity:.55;}
+.lt-fb{display:none;margin-top:10px;padding:10px 12px;border-radius:10px;font-size:15px;}
+.lt-fb.show{display:block;}
+.lt-fb.good{background:#e2f3ea;border:1px solid #9fd2b6;}
+.lt-fb.wrong{background:#fde9e6;border:1px solid #f0b4ab;}
+.lt-fb strong{display:block;margin-bottom:2px;}
+.lt-end{display:none;text-align:center;margin:16px 0 4px;padding:18px 16px;border-radius:14px;border:1.5px solid var(--amber);background:#fffaf0;}
+.lt-end.show{display:block;}
+.lt-end .big{font-size:40px;line-height:1;}
+.lt-end p{margin:8px 0;font-size:17px;}
+.lt-btn{font:inherit;font-weight:700;font-size:16px;border:0;border-radius:10px;padding:11px 20px;background:var(--amber);color:#fff;cursor:pointer;min-height:46px;}
+.lt-btn.alt{background:var(--card);color:var(--amber-ink);border:1.5px solid var(--amber);}
+.lt-again{text-align:right;margin:8px 0 0;}
+@media (max-width:480px){
+  .lt-cards,.lt-suf{grid-template-columns:1fr;}
+  .doc table{font-size:14.5px;}
+  .doc th,.doc td{padding:7px 8px;}
+  .lt-q{padding:12px;}
+  .lt-opt{font-size:15px;padding:8px 9px;}
+  .lt-pos td:nth-child(2){white-space:normal;}
+}
+/* riêng trang thì động từ */
+.lt-card.f{border-left-color:var(--amber);} .lt-card.f h3{color:var(--amber-ink);}
+.lt-form{margin:8px 0;padding:8px 10px;border:1px solid var(--line);border-radius:8px;font-size:15px;}
+.lt-form div{margin:2px 0;}
+.lt-form em{font-style:normal;font-weight:700;color:var(--dim);display:inline-block;min-width:88px;}
+.lt-sig{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0 2px;}
+.lt-sig .w{font-size:14px;}
+.lt-mini{border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;margin:12px 0;background:var(--card);}
+.lt-mini h3{margin:0 0 4px!important;}
+.lt-sigt td:first-child{font-weight:600;}
+@media (max-width:480px){ .lt-form em{min-width:0;display:block;} }
+</style>
+</head><body data-nav="home"><header class="top"><a href="../index.html">TOEIC Pre · Tóm tắt kiến thức</a></header><main class="lt"><p class="sub"><a href="../index.html">← Tất cả bài</a></p><h1>Các thì của động từ trong TOEIC</h1><p class="sub">Chuyên đề bổ trợ · Hiện tại đơn, Hiện tại tiếp diễn, Hiện tại hoàn thành, Quá khứ đơn, Tương lai đơn (Verb tenses)</p><div class="doc">
+<p>Trong <strong>Part 5 và Part 6</strong>, rất nhiều câu cho <strong>4 đáp án là cùng một động từ ở các thì khác nhau</strong> (VD: submit / submitted / has submitted / will submit). Bạn <strong>không cần dịch cả câu</strong>: chỉ cần tìm <strong>dấu hiệu thời gian</strong> (yesterday, since, next week…) rồi chọn thì phù hợp. Cả trang dùng 4 màu cố định:</p>
+<div class="lt-legend"><span class="w n">Chủ ngữ (S)</span><span class="w v">Động từ chia thì</span><span class="w a">Trợ động từ (have / will / be)</span><span class="w r">Dấu hiệu thời gian</span></div>
+<ul class="lt-toc"><li><a href="#lt-1">1. Các thì</a></li><li><a href="#lt-2">2. Thì khác</a></li><li><a href="#lt-3">3. Bảng dấu hiệu</a></li><li><a href="#lt-4">4. Mẹo Part 5</a></li><li><a href="#lt-5">5. Luyện tập</a></li><li><a href="#lt-6">6. Từ vựng</a></li></ul>
+
+<h2 id="lt-1">1. Năm thì quan trọng nhất ở trình độ Pre</h2>
+<p>Ký hiệu: <b>S</b> = chủ ngữ · <b>V</b> = động từ nguyên mẫu · <b>V-s/es</b> = thêm s/es · <b>V2</b> = quá khứ (cột 2) · <b>V3</b> = quá khứ phân từ (cột 3) · <b>V-ing</b> = thêm ing.</p>
+<div class="lt-cards">
+
+<div class="lt-card n"><h3>Hiện tại đơn <small>Present simple</small></h3>
+<div class="lt-form">
+<div><em>Khẳng định:</em> S + V / V-s/es</div>
+<div><em>Phủ định:</em> S + do / does + not + V</div>
+</div>
+<p><strong>Dùng khi:</strong> thói quen, việc lặp lại hằng ngày; sự thật, lịch trình cố định (giờ tàu, giờ mở cửa).</p>
+<p class="lt-note">⚠️ Chủ ngữ số ít (he, she, it, the company, Mr. Kim) → động từ thêm <b>-s/-es</b>.</p>
+<p><strong>Dấu hiệu:</strong></p>
+<div class="lt-sig"><span class="w r">usually</span><span class="w r">always</span><span class="w r">often</span><span class="w r">sometimes</span><span class="w r">every day / week / month</span><span class="w r">once a week</span><span class="w r">regularly</span></div>
+<div class="ex"><span class="w n">The accounting team</span> <span class="w r">usually</span> <span class="w v">checks</span> all invoices <span class="w r">every Friday</span>.<i>Nhóm kế toán thường kiểm tra tất cả hóa đơn vào mỗi thứ Sáu.</i></div></div>
+
+<div class="lt-card a"><h3>Hiện tại tiếp diễn <small>Present continuous</small></h3>
+<div class="lt-form">
+<div><em>Khẳng định:</em> S + am / is / are + V-ing</div>
+<div><em>Phủ định:</em> S + am / is / are + not + V-ing</div>
+</div>
+<p><strong>Dùng khi:</strong> việc <strong>đang xảy ra</strong> ngay lúc nói hoặc trong giai đoạn này; kế hoạch tương lai đã sắp xếp chắc chắn.</p>
+<p><strong>Dấu hiệu:</strong></p>
+<div class="lt-sig"><span class="w r">now</span><span class="w r">right now</span><span class="w r">at the moment</span><span class="w r">currently</span><span class="w r">at present</span><span class="w r">this week</span><span class="w r">Look! / Listen!</span></div>
+<div class="ex"><span class="w n">We</span> <span class="w a">are</span> <span class="w r">currently</span> <span class="w v">renovating</span> the lobby of our headquarters.<i>Chúng tôi hiện đang cải tạo sảnh của trụ sở chính.</i></div></div>
+
+<div class="lt-card r"><h3>Hiện tại hoàn thành <small>Present perfect</small></h3>
+<div class="lt-form">
+<div><em>Khẳng định:</em> S + have / has + V3</div>
+<div><em>Phủ định:</em> S + have / has + not + V3</div>
+</div>
+<p><strong>Dùng khi:</strong> việc bắt đầu trong quá khứ và <strong>kéo dài đến bây giờ</strong>; việc vừa mới xong, <strong>không nói rõ thời điểm</strong>.</p>
+<p><strong>Dấu hiệu:</strong></p>
+<div class="lt-sig"><span class="w r">since + mốc (since 2020)</span><span class="w r">for + khoảng (for 5 years)</span><span class="w r">already</span><span class="w r">yet</span><span class="w r">just</span><span class="w r">recently / lately</span><span class="w r">so far</span><span class="w r">ever / never</span></div>
+<p class="lt-note"><b>already</b>: đứng giữa have và V3 (câu khẳng định) · <b>yet</b>: cuối câu phủ định / câu hỏi.</p>
+<div class="ex"><span class="w n">Ms. Chen</span> <span class="w a">has</span> <span class="w v">managed</span> this branch <span class="w r">since 2021</span>.<i>Cô Chen đã quản lý chi nhánh này từ năm 2021 (đến giờ vẫn quản lý).</i></div>
+<div class="ex"><span class="w n">The client</span> <span class="w a">has not</span> <span class="w v">signed</span> the contract <span class="w r">yet</span>.<i>Khách hàng vẫn chưa ký hợp đồng.</i></div></div>
+
+<div class="lt-card v"><h3>Quá khứ đơn <small>Past simple</small></h3>
+<div class="lt-form">
+<div><em>Khẳng định:</em> S + V2 / V-ed</div>
+<div><em>Phủ định:</em> S + did + not + V</div>
+</div>
+<p><strong>Dùng khi:</strong> việc đã xảy ra và <strong>kết thúc</strong> tại một thời điểm <strong>rõ ràng</strong> trong quá khứ.</p>
+<p class="lt-note">⚠️ Sau <b>did not</b> dùng V nguyên mẫu: did not <b>send</b> (không phải did not sent).</p>
+<p><strong>Dấu hiệu:</strong></p>
+<div class="lt-sig"><span class="w r">yesterday</span><span class="w r">last week / month / year</span><span class="w r">… ago (two days ago)</span><span class="w r">in 2019</span><span class="w r">earlier today</span><span class="w r">previously</span></div>
+<div class="ex"><span class="w n">The company</span> <span class="w v">launched</span> its new product line <span class="w r">last month</span>.<i>Công ty đã ra mắt dòng sản phẩm mới vào tháng trước.</i></div></div>
+
+<div class="lt-card f"><h3>Tương lai đơn <small>will / be going to</small></h3>
+<div class="lt-form">
+<div><em>will:</em> S + will (not) + V</div>
+<div><em>be going to:</em> S + am / is / are (not) + going to + V</div>
+</div>
+<p><strong>will:</strong> quyết định ngay lúc nói, dự đoán, lời hứa, thông báo. <strong>be going to:</strong> kế hoạch đã định trước, dự đoán có bằng chứng.</p>
+<p class="lt-note">Ở Part 5, thấy dấu hiệu tương lai mà đáp án chỉ có <b>will</b> → chọn will. Sau will luôn là <b>V nguyên mẫu</b>.</p>
+<p><strong>Dấu hiệu:</strong></p>
+<div class="lt-sig"><span class="w r">tomorrow</span><span class="w r">next week / month / year</span><span class="w r">soon</span><span class="w r">in the future</span><span class="w r">in two days</span><span class="w r">upcoming</span><span class="w r">later this year</span></div>
+<div class="ex"><span class="w n">The new policy</span> <span class="w a">will</span> <span class="w v">take</span> effect <span class="w r">next month</span>.<i>Chính sách mới sẽ có hiệu lực vào tháng sau.</i></div>
+<div class="ex"><span class="w n">We</span> <span class="w a">are going to</span> <span class="w v">hire</span> two more engineers <span class="w r">next year</span>.<i>Chúng tôi dự định tuyển thêm hai kỹ sư vào năm sau.</i></div></div>
+</div>
+
+<div class="lt-trap"><h3>⚠️ Hiện tại hoàn thành hay Quá khứ đơn? (hay nhầm nhất)</h3>
+<ol>
+<li><strong>Có thời điểm cụ thể trong quá khứ</strong> (yesterday, last week, ago, in 2019) → <strong>quá khứ đơn</strong>.<br>VD: He <span class="w v">submitted</span> the report <span class="w r">yesterday</span>. (KHÔNG dùng has submitted … yesterday)</li>
+<li><strong>Có since / for và việc vẫn còn tiếp diễn</strong> → <strong>hiện tại hoàn thành</strong>.<br>VD: He <span class="w a">has</span> <span class="w v">worked</span> here <span class="w r">for ten years</span>. (bây giờ vẫn làm ở đây)</li>
+<li><strong>Có already / yet / just / so far</strong> → thường là <strong>hiện tại hoàn thành</strong>.<br>VD: The shipment <span class="w a">has</span> <span class="w r">already</span> <span class="w v">arrived</span>.</li>
+</ol></div>
+
+<h2 id="lt-2">2. Hai thì quá khứ khác (biết để nhận ra)</h2>
+<div class="lt-cards">
+<div class="lt-mini"><h3>Quá khứ tiếp diễn <small>Past continuous</small></h3>
+<div class="lt-form"><div>S + was / were (not) + V-ing</div></div>
+<p>Việc <strong>đang xảy ra</strong> tại một thời điểm trong quá khứ, thường bị một việc khác <strong>xen vào</strong> (dùng với <b>when / while</b>).</p>
+<div class="lt-sig"><span class="w r">when + quá khứ đơn</span><span class="w r">while</span><span class="w r">at 9 a.m. yesterday</span></div>
+<div class="ex">The employees <span class="w a">were</span> <span class="w v">preparing</span> the presentation <span class="w r">when the client arrived</span>.<i>Các nhân viên đang chuẩn bị bài thuyết trình thì khách hàng đến.</i></div></div>
+<div class="lt-mini"><h3>Quá khứ hoàn thành <small>Past perfect</small></h3>
+<div class="lt-form"><div>S + had (not) + V3</div></div>
+<p>Việc xảy ra <strong>trước một việc khác</strong> trong quá khứ (việc xảy ra trước dùng had + V3).</p>
+<div class="lt-sig"><span class="w r">by the time + quá khứ đơn</span><span class="w r">before / after</span><span class="w r">by last week</span></div>
+<div class="ex"><span class="w r">By the time</span> the meeting started, Mr. Kim <span class="w a">had</span> <span class="w r">already</span> <span class="w v">left</span>.<i>Khi cuộc họp bắt đầu thì ông Kim đã rời đi rồi.</i></div></div>
+</div>
+
+<h2 id="lt-3">3. Bảng tổng hợp: Dấu hiệu → Thì</h2>
+<p>Học thuộc bảng này là giải được phần lớn câu chia thì trong Part 5.</p>
+<div class="lt-scroll"><table class="lt-sigt">
+<colgroup><col style="width:38%"><col style="width:24%"><col style="width:38%"></colgroup>
+<thead><tr><th>Thấy dấu hiệu</th><th>Chọn thì</th><th>Ví dụ</th></tr></thead>
+<tbody>
+<tr><td><span class="w r">usually</span>, <span class="w r">always</span>, <span class="w r">often</span>, <span class="w r">every…</span>, <span class="w r">once a…</span></td><td>Hiện tại đơn<br><small>V / V-s/es</small></td><td>She <span class="w v">attends</span> a seminar <span class="w r">every month</span>.</td></tr>
+<tr><td><span class="w r">now</span>, <span class="w r">currently</span>, <span class="w r">at the moment</span>, <span class="w r">at present</span></td><td>Hiện tại tiếp diễn<br><small>am/is/are + V-ing</small></td><td>The team <span class="w a">is</span> <span class="w v">reviewing</span> the budget <span class="w r">now</span>.</td></tr>
+<tr><td><span class="w r">since</span>, <span class="w r">for</span>, <span class="w r">already</span>, <span class="w r">yet</span>, <span class="w r">just</span>, <span class="w r">recently</span>, <span class="w r">so far</span></td><td>Hiện tại hoàn thành<br><small>have/has + V3</small></td><td>Sales <span class="w a">have</span> <span class="w v">increased</span> <span class="w r">since</span> May.</td></tr>
+<tr><td><span class="w r">yesterday</span>, <span class="w r">last…</span>, <span class="w r">… ago</span>, <span class="w r">in + năm đã qua</span></td><td>Quá khứ đơn<br><small>V2 / V-ed</small></td><td>We <span class="w v">met</span> the client <span class="w r">two days ago</span>.</td></tr>
+<tr><td><span class="w r">when</span> / <span class="w r">while</span> + việc trong quá khứ</td><td>Quá khứ tiếp diễn<br><small>was/were + V-ing</small></td><td>I <span class="w a">was</span> <span class="w v">typing</span> <span class="w r">when</span> the power went out.</td></tr>
+<tr><td><span class="w r">by the time</span> + quá khứ, <span class="w r">before</span> + quá khứ</td><td>Quá khứ hoàn thành<br><small>had + V3</small></td><td>The order <span class="w a">had</span> <span class="w v">shipped</span> <span class="w r">before</span> she called.</td></tr>
+<tr><td><span class="w r">tomorrow</span>, <span class="w r">next…</span>, <span class="w r">soon</span>, <span class="w r">upcoming</span>, <span class="w r">in + thời gian tới</span></td><td>Tương lai đơn<br><small>will + V / be going to + V</small></td><td>The store <span class="w a">will</span> <span class="w v">close</span> early <span class="w r">tomorrow</span>.</td></tr>
+</tbody></table></div>
+<p class="lt-note">Trên điện thoại: vuốt ngang bảng để xem hết 3 cột.</p>
+
+<h2 id="lt-4">4. Mẹo làm Part 5 câu chia thì</h2>
+<ol class="lt-steps">
+<li><strong>Nhìn 4 đáp án</strong>: cùng một động từ nhưng khác dạng (sends / sent / has sent / will send)? → Đây là câu chia thì.</li>
+<li><strong>Tìm dấu hiệu thời gian</strong> trong câu (thường ở cuối câu hoặc đầu câu): yesterday, since, next week, currently… rồi tra theo bảng ở phần 3.</li>
+<li><strong>Kiểm tra chủ ngữ số ít hay số nhiều</strong>: số ít → <b>is / has / does / V-s</b>; số nhiều → <b>are / have / do / V</b>. VD: The manager <b>has</b>… / The managers <b>have</b>…</li>
+<li><strong>Đừng nhầm với bị động</strong>: nếu chủ ngữ là <b>vật</b> và <b>không tự làm</b> hành động (the report, the order, the policy) mà đáp án có dạng <b>be + V3</b> → có thể là câu bị động. VD: The order <b>was shipped</b> yesterday (đơn hàng được gửi đi).</li>
+<li><strong>Kiểm tra đằng sau trợ động từ</strong>: will / did / do / does → <b>V nguyên mẫu</b>; have / has / had → <b>V3</b>; am / is / are / was / were → <b>V-ing</b> (hoặc V3 nếu bị động).</li>
+</ol>
+
+<h2 id="lt-5">5. Luyện tập (Part 5)</h2>
+<p>12 câu kiểu Part 5. Chạm vào một đáp án để xem đúng / sai, <strong>dấu hiệu thời gian</strong> giúp chọn đáp án và bản dịch.</p>
+<div class="lt-score" aria-live="polite"><span id="ltScore">Đúng 0 / 12</span><span class="bar"><i id="ltBar"></i></span><span id="ltDone">Đã làm 0/12</span></div>
+<div id="ltQuiz"></div>
+<div class="lt-end" id="ltEnd" aria-live="polite"><div class="big" id="ltEndIc">🎉</div><p id="ltEndTxt"></p><button type="button" class="lt-btn" id="ltAgain">↺ Làm lại</button></div>
+<p class="lt-again"><button type="button" class="lt-btn alt" id="ltReset">↺ Làm lại</button></p>
+
+<h2 id="lt-6">Bảng từ vựng (Vocabulary Sheet)</h2>
+<p><em>Từ vựng trong chuyên đề này (English – Pronunciation – Vietnamese).</em></p>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 32%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>English</strong></th>
+<th><strong>Pronunciation</strong></th>
+<th><strong>Vietnamese</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd"><td><strong>Invoice (n)</strong></td><td>/ˈɪnvɔɪs/</td><td>Hóa đơn</td></tr>
+<tr class="even"><td><strong>Renovate (v)</strong></td><td>/ˈrenəveɪt/</td><td>Cải tạo, sửa sang</td></tr>
+<tr class="odd"><td><strong>Headquarters (n)</strong></td><td>/ˌhedˈkwɔːtəz/</td><td>Trụ sở chính</td></tr>
+<tr class="even"><td><strong>Branch (n)</strong></td><td>/brɑːntʃ/</td><td>Chi nhánh</td></tr>
+<tr class="odd"><td><strong>Client (n)</strong></td><td>/ˈklaɪənt/</td><td>Khách hàng</td></tr>
+<tr class="even"><td><strong>Contract (n)</strong></td><td>/ˈkɒntrækt/</td><td>Hợp đồng</td></tr>
+<tr class="odd"><td><strong>Launch (v)</strong></td><td>/lɔːntʃ/</td><td>Ra mắt, tung ra (sản phẩm)</td></tr>
+<tr class="even"><td><strong>Policy (n)</strong></td><td>/ˈpɒləsi/</td><td>Chính sách</td></tr>
+<tr class="odd"><td><strong>Shipment (n)</strong></td><td>/ˈʃɪpmənt/</td><td>Lô hàng, chuyến hàng</td></tr>
+<tr class="even"><td><strong>Budget (n)</strong></td><td>/ˈbʌdʒɪt/</td><td>Ngân sách</td></tr>
+<tr class="odd"><td><strong>Submit (v)</strong></td><td>/səbˈmɪt/</td><td>Nộp, đệ trình</td></tr>
+<tr class="even"><td><strong>Approve (v)</strong></td><td>/əˈpruːv/</td><td>Phê duyệt, chấp thuận</td></tr>
+<tr class="odd"><td><strong>Board of directors (n)</strong></td><td>/bɔːd əv dəˈrektəz/</td><td>Hội đồng quản trị</td></tr>
+<tr class="even"><td><strong>Seminar (n)</strong></td><td>/ˈsemɪnɑː/</td><td>Hội thảo chuyên đề</td></tr>
+<tr class="odd"><td><strong>Relocate (v)</strong></td><td>/ˌriːləʊˈkeɪt/</td><td>Chuyển địa điểm, di dời</td></tr>
+<tr class="even"><td><strong>Quarterly (adj)</strong></td><td>/ˈkwɔːtəli/</td><td>Hằng quý</td></tr>
+<tr class="odd"><td><strong>Supplier (n)</strong></td><td>/səˈplaɪə/</td><td>Nhà cung cấp</td></tr>
+<tr class="even"><td><strong>Take effect (phr)</strong></td><td>/teɪk ɪˈfekt/</td><td>Có hiệu lực</td></tr>
+</tbody>
+</table>
+</div></main><footer>TOEIC Pre · Tóm tắt kiến thức</footer>
+<script>
+(function(){
+  'use strict';
+  // t: màu tô khi điền đáp án đúng vào chỗ trống (v = động từ chia thì)
+  var Q=[
+    {s:'Ms. Park ___ in the accounting department since 2019.',o:['works','worked','has worked','will work'],k:2,t:'v',
+     e:'Dấu hiệu <b>since 2019</b> (từ năm 2019 đến nay) → <b>hiện tại hoàn thành</b>: have/has + V3. Chủ ngữ Ms. Park số ít → <b>has worked</b>.<br>Dịch: Cô Park đã làm việc ở phòng kế toán từ năm 2019.'},
+    {s:'The company ___ a new branch in Da Nang next month.',o:['opened','has opened','will open','opening'],k:2,t:'v',
+     e:'Dấu hiệu <b>next month</b> (tháng sau) → <b>tương lai đơn</b>: will + V nguyên mẫu → <b>will open</b>. "opening" đứng một mình không làm động từ chính được.<br>Dịch: Công ty sẽ mở một chi nhánh mới ở Đà Nẵng vào tháng sau.'},
+    {s:'Mr. Lee ___ the quarterly sales report two days ago.',o:['submits','submitted','has submitted','will submit'],k:1,t:'v',
+     e:'Dấu hiệu <b>two days ago</b> (cách đây hai ngày, thời điểm rõ ràng trong quá khứ) → <b>quá khứ đơn</b> → <b>submitted</b>. Không dùng has submitted với "ago".<br>Dịch: Ông Lee đã nộp báo cáo doanh số hằng quý cách đây hai ngày.'},
+    {s:'The IT team ___ the company website at the moment.',o:['update','updated','is updating','has updated'],k:2,t:'v',
+     e:'Dấu hiệu <b>at the moment</b> (ngay lúc này) → <b>hiện tại tiếp diễn</b>: am/is/are + V-ing. The IT team số ít → <b>is updating</b>.<br>Dịch: Nhóm IT đang cập nhật trang web của công ty vào lúc này.'},
+    {s:'The marketing manager usually ___ the weekly meeting on Monday mornings.',o:['lead','leads','is leading','has led'],k:1,t:'v',
+     e:'Dấu hiệu <b>usually</b> và <b>on Monday mornings</b> (thói quen lặp lại) → <b>hiện tại đơn</b>. Chủ ngữ The marketing manager số ít → thêm -s → <b>leads</b>.<br>Dịch: Trưởng phòng marketing thường chủ trì cuộc họp hằng tuần vào các sáng thứ Hai.'},
+    {s:'We have not received the shipment from our supplier ___.',o:['yet','already','ago','since'],k:0,t:'r',
+     e:'Câu <b>phủ định</b> ở thì hiện tại hoàn thành (have not received), chỗ trống ở <b>cuối câu</b> → <b>yet</b> (vẫn chưa). already dùng trong câu khẳng định; ago dùng với quá khứ đơn; since phải có mốc thời gian theo sau.<br>Dịch: Chúng tôi vẫn chưa nhận được lô hàng từ nhà cung cấp.'},
+    {s:'The board of directors ___ already approved the budget for next year.',o:['is','has','will','did'],k:1,t:'a',
+     e:'Có <b>already</b> và động từ <b>approved (V3)</b> → <b>hiện tại hoàn thành</b>: has + already + V3. The board số ít → <b>has</b>. "for next year" chỉ là ngân sách của năm sau, không phải dấu hiệu chia thì.<br>Dịch: Hội đồng quản trị đã phê duyệt ngân sách cho năm sau rồi.'},
+    {s:'The employees ___ going to relocate to the new office building next week.',o:['is','are','was','have'],k:1,t:'a',
+     e:'Cấu trúc <b>be going to + V</b>, dấu hiệu <b>next week</b> → tương lai. Chủ ngữ <b>The employees</b> số nhiều → <b>are</b> going to. (is: số ít; was: quá khứ; have không đi với going to ở đây.)<br>Dịch: Các nhân viên sẽ chuyển đến tòa nhà văn phòng mới vào tuần sau.'},
+    {s:'The new travel policy ___ to all staff yesterday.',o:['sent','was sent','has sent','sends'],k:1,t:'v',
+     e:'Dấu hiệu <b>yesterday</b> → quá khứ. Chủ ngữ <b>The new travel policy</b> là vật, <b>không tự gửi</b> được → cần <b>bị động quá khứ</b>: was + V3 → <b>was sent</b>. "sent" (chủ động) là bẫy!<br>Dịch: Chính sách công tác mới đã được gửi tới toàn bộ nhân viên vào hôm qua.'},
+    {s:'Ms. Tran ___ for this company for five years, and she still enjoys her job.',o:['works','worked','has worked','will work'],k:2,t:'v',
+     e:'Dấu hiệu <b>for five years</b> + <b>still</b> (đến giờ vẫn làm) → <b>hiện tại hoàn thành</b> → <b>has worked</b>. Nếu dùng worked thì nghĩa là đã nghỉ làm rồi.<br>Dịch: Cô Trần đã làm việc cho công ty này được năm năm, và cô ấy vẫn yêu thích công việc của mình.'},
+    {s:'The employees ___ for the seminar when the client arrived.',o:['prepare','were preparing','have prepared','will prepare'],k:1,t:'v',
+     e:'Có <b>when + quá khứ đơn (arrived)</b>: một việc đang diễn ra thì việc khác xen vào → <b>quá khứ tiếp diễn</b>: were + V-ing → <b>were preparing</b> (chủ ngữ số nhiều).<br>Dịch: Các nhân viên đang chuẩn bị cho buổi hội thảo thì khách hàng đến.'},
+    {s:'By the time the client called, Mr. Kim ___ the signed contract.',o:['sends','has sent','had sent','will send'],k:2,t:'v',
+     e:'Dấu hiệu <b>By the time + quá khứ đơn (called)</b> → việc gửi hợp đồng xảy ra <b>trước</b> → <b>quá khứ hoàn thành</b>: had + V3 → <b>had sent</b>.<br>Dịch: Trước khi khách hàng gọi điện, ông Kim đã gửi bản hợp đồng đã ký.'}
+  ];
+  var KEY='summaryOld.thidongtu.quiz', L='ABCD';
+  var ans=(function(){try{var a=JSON.parse(localStorage.getItem(KEY)||'{}');return a&&typeof a==='object'?a:{};}catch(e){return {};}})();
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(ans));}catch(e){}}
+  var box=document.getElementById('ltQuiz');
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function render(){
+    box.innerHTML=Q.map(function(q,i){
+      var st=esc(q.s).replace('___','<span class="lt-blank" data-b="'+i+'">&nbsp;</span>');
+      return '<div class="lt-q" id="ltq'+i+'"><div class="num">Câu '+(i+1)+'</div><p class="st">'+st+'</p><div class="lt-opts">'+
+        q.o.map(function(o,j){return '<button type="button" class="lt-opt" data-q="'+i+'" data-o="'+j+'"><b>'+L[j]+'</b><span>'+esc(o)+'</span></button>';}).join('')+
+        '</div><div class="lt-fb" role="status"></div></div>';
+    }).join('');
+    Q.forEach(function(q,i){ if(ans[i]!==undefined) show(i,ans[i]); });
+    score();
+  }
+  function show(i,j){
+    var q=Q[i], el=document.getElementById('ltq'+i), ok=j===q.k;
+    [].forEach.call(el.querySelectorAll('.lt-opt'),function(b,x){
+      b.disabled=true;
+      if(x===q.k) b.classList.add('ok'); else if(x===j) b.classList.add('bad'); else b.classList.add('dim');
+    });
+    var bl=el.querySelector('.lt-blank'); bl.innerHTML='<span class="w '+q.t+'">'+esc(q.o[q.k])+'</span>';
+    var fb=el.querySelector('.lt-fb'); fb.className='lt-fb show '+(ok?'good':'wrong');
+    fb.innerHTML='<strong>'+(ok?'✓ Chính xác!':'✗ Chưa đúng. Đáp án: ('+L[q.k]+') '+esc(q.o[q.k]))+'</strong>'+q.e;
+  }
+  function score(){
+    var n=0,c=0; Q.forEach(function(q,i){ if(ans[i]!==undefined){n++; if(ans[i]===q.k)c++;} });
+    document.getElementById('ltScore').textContent='Đúng '+c+' / '+Q.length;
+    document.getElementById('ltDone').textContent='Đã làm '+n+'/'+Q.length;
+    document.getElementById('ltBar').style.width=(n/Q.length*100)+'%';
+    var end=document.getElementById('ltEnd');
+    if(n===Q.length){
+      end.classList.add('show');
+      document.getElementById('ltEndIc').textContent=c>=10?'🎉':c>=7?'👍':'💪';
+      document.getElementById('ltEndTxt').innerHTML='Bạn làm đúng <b>'+c+'/'+Q.length+'</b> câu. '+(c>=10?'Rất tốt! Bạn đã nắm chắc dấu hiệu các thì.':c>=7?'Khá lắm! Xem lại giải thích các câu sai nhé.':'Đọc lại phần 3 (Bảng dấu hiệu) rồi làm lại nhé!');
+    } else end.classList.remove('show');
+  }
+  box.addEventListener('click',function(ev){
+    var b=ev.target.closest('.lt-opt'); if(!b||b.disabled) return;
+    var i=+b.dataset.q, j=+b.dataset.o; if(ans[i]!==undefined) return;
+    ans[i]=j; save(); show(i,j); score();
+    if(Object.keys(ans).length===Q.length) setTimeout(function(){document.getElementById('ltEnd').scrollIntoView({behavior:'smooth',block:'center'});},300);
+  });
+  function reset(){ ans={}; save(); render(); document.getElementById('ltq0').scrollIntoView({behavior:'smooth',block:'center'}); }
+  document.getElementById('ltAgain').onclick=reset;
+  document.getElementById('ltReset').onclick=reset;
+  render();
+})();
+</script>
+<script src="../flashcards.js" defer></script><script>window.ETSCFG=window.ETSCFG||{SCRIPT_URL:'https://script.google.com/macros/s/AKfycby3_45o2Zn3FMEMrVAg9nBCiQEIUvU9HgQxI2ZZtwJ4oUQ_bqXxj1vN0kL6cvhbDQCx/exec'};</script><script src="../assets/ui.js?v=3" data-site="summary"></script>
+</body></html>
