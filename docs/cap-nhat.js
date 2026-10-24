@@ -5,10 +5,10 @@ window.MT_UPDATES = [
     title: '4 chuyên đề ngữ pháp mới cho Part 5',
     link: ['index.html', 'Xem trên trang chủ'],
     items: [
-      'Các thì của động từ: cách dùng và dấu hiệu nhận biết từng thì.',
-      'Giới từ thường gặp: at/on/in, by/until, for/during/since, despite và although, cụm giới từ cố định.',
       'Đại từ: nhân xưng, sở hữu, phản thân và cách nhìn chỗ trống để chọn đúng dạng.',
+      'Các thì của động từ: cách dùng và dấu hiệu nhận biết từng thì.',
       'Câu bị động: be + V3 ở các thì, khi nào dùng chủ động hay bị động.',
+      'Giới từ thường gặp: at/on/in, by/until, for/during/since, despite và although, cụm giới từ cố định.',
       'Mỗi chuyên đề có 12 câu luyện Part 5 giải thích tiếng Việt và flashcard từ vựng; mở sẵn cho mọi lớp.'
     ]
   },
