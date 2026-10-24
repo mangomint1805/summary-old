@@ -1,6 +1,14 @@
 /* Có gì mới trên web Tóm tắt kiến thức TOEIC Pre — mới nhất ở trên cùng. Thêm mục mới vào ĐẦU danh sách; id là ngày (YYYY-MM-DD), cùng ngày thì thêm hậu tố (2026-10-21b). link (tuỳ chọn): [đường dẫn, chữ trên nút]. */
 window.MT_UPDATES = [
   {
+    id: '2026-10-24d', date: '24/10/2026',
+    title: 'Thông báo bài mới mở và ghi bài học trong mỗi chuyên đề',
+    items: [
+      'Mỗi lần bạn vào lại web, nếu lớp mình vừa có bài mới mở thì sẽ hiện thông báo ở cuối màn hình, bấm vào là mở bài luôn.',
+      'Đầu mỗi chuyên đề có thêm ô ghi chuyên đề này nằm ở bài nào trong chương trình học (kèm buổi học), bấm vào là mở bài đó để ôn cho dễ.'
+    ]
+  },
+  {
     id: '2026-10-24c', date: '24/10/2026',
     title: 'Ôn tập Progress Test 2 và 8 chuyên đề mới',
     link: ['index.html', 'Xem trên trang chủ'],

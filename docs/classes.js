@@ -30,6 +30,33 @@ var SN_SESSIONS = {
 var SN_TOTAL = 24;
 /* Các buổi không có trang bài học */
 var SN_OTHER = { 12: 'Progress Test 1', 24: 'Progress Test 2' };
+/* Tên bài (dùng cho thông báo "bài mới mở"), lấy theo trang chủ */
+var SN_TITLES = {
+  "R1": "Reading Unit 1 · Nouns & Pronouns",
+  "R2": "Reading Unit 2 · Adjectives & Adverbs",
+  "R3": "Reading Unit 3 · Verb Tenses",
+  "R4": "Reading Unit 4 · Active & Passive Voice",
+  "R5": "Reading Unit 5–6 · To-infinitives & Gerunds",
+  "R7": "Reading Unit 7 · Participles",
+  "R8": "Reading Unit 8 · Conjunctions",
+  "R9": "Reading Unit 9 · Prepositions",
+  "R10": "Reading Unit 10 · Relative Pronouns & Adverbs",
+  "R11": "Reading Unit 11 · Subjunctive Mood",
+  "R12": "Reading Unit 12 · Agreement",
+  "L1": "Listening Unit 1 · Part 1 – Photos of People",
+  "L2": "Listening Unit 2 · Part 1 – Photos of Objects & Scenes",
+  "L3": "Listening Unit 3 · Part 2 – Information Questions (1)",
+  "L4": "Listening Unit 4 · Part 2 – Information Questions (2)",
+  "L5": "Listening Unit 5 · Part 2 – Yes/No Questions",
+  "L6": "Listening Unit 6 · Part 2 – Other Question Types",
+  "L7": "Listening Unit 7 · Part 3 – Business Activities",
+  "L8": "Listening Unit 8 · Part 3 – Daily Activities",
+  "L9": "Listening Unit 9 · Part 3 – At Public Places",
+  "L10": "Listening Unit 10–11 · Part 4 – Telephone Messages, Announcements & Ads",
+  "L11": "Listening Unit 11–12 · Part 4 – Radio Broadcasts, Speeches & Internal Announcements",
+  "PT1": "Ôn tập sau Progress Test 1",
+  "PT2": "Ôn tập trước Progress Test 2"
+ };
 var SN_PREFIX = 'summaryOld';
 var SN_FILES = {
   'review/progress-test-1.html': 'PT1',
@@ -165,6 +192,41 @@ var SN = (function () {
     var main = document.querySelector('main');
     (main ? main.parentNode : document.body).insertBefore(box, main || null);
   });
+})();
+
+/* ===== Thông báo "bài mới mở" khi học sinh vào lại web =====
+   Máy học sinh nhớ các bài đã mở ở lần vào trước; lần sau có bài mới mở thì hiện thông báo
+   ở góc dưới màn hình (nhãn "Mới" trên trang chủ do extras.js lo). Lần đầu vào chỉ ghi nhớ, không báo. */
+(function () {
+  'use strict';
+  if (typeof SN_TITLES === 'undefined') return;
+  var me = document.currentScript, src = me && me.getAttribute('src');
+  var base = src ? src.replace(/classes\.js.*$/, '') : '';
+  function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (ch) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]; }); }
+  var FILE = {}; Object.keys(SN_FILES).forEach(function (f) { FILE[SN_FILES[f]] = f; });
+  function run() {
+    if (SN.teacher() || new URLSearchParams(location.search).has('xem')) return;
+    var c = SN.current(); if (!c) return;
+    var open = Object.keys(SN_SESSIONS).filter(function (id) { return FILE[id] && SN_TITLES[id] && SN.isOpen(c, id); });
+    var k = SN_PREFIX + '.seen.' + c.ma, raw = get(k);
+    set(k, JSON.stringify(open));
+    if (raw === null) return;
+    var seen = {}; try { JSON.parse(raw).forEach(function (id) { seen[id] = 1; }); } catch (e) { return; }
+    var fresh = open.filter(function (id) { return !seen[id]; })
+      .sort(function (a, b) { return SN_SESSIONS[a] - SN_SESSIONS[b]; });
+    if (!fresh.length) return;
+    var box = document.createElement('div');
+    box.className = 'sn-toast'; box.setAttribute('role', 'status');
+    box.innerHTML = '<button type="button" class="x" aria-label="Đóng thông báo">✕</button>' +
+      '<p class="t">🎉 Lớp ' + esc(c.ma) + ' có ' + (fresh.length > 1 ? fresh.length + ' bài' : 'bài') + ' mới mở</p><ul>' +
+      fresh.slice(0, 5).map(function (id) { return '<li><a href="' + esc(base + FILE[id]) + '">' + esc(SN_TITLES[id]) + '</a></li>'; }).join('') +
+      (fresh.length > 5 ? '<li>… và ' + (fresh.length - 5) + ' bài khác trên trang chủ</li>' : '') + '</ul>';
+    box.querySelector('.x').onclick = function () { box.remove(); };
+    document.body.appendChild(box);
+  }
+  document.addEventListener('DOMContentLoaded', function () { setTimeout(run, 0); });
 })();
 
 /* Nạp thêm tính năng: đánh dấu đã học + tìm kiếm (file extras.js) */

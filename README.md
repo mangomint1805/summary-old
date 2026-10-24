@@ -24,6 +24,8 @@ Thêm lớp mới / sửa lịch: mở file `docs/classes.js`, sửa danh sách 
 - `moc`: (tuỳ chọn) `['2026-10-14', 11]` = tới ngày 14/10 lớp đã học xong buổi 11; các buổi sau tính tiếp từ mốc này.
 - `hocToi`: (tuỳ chọn) ép mở tới buổi số mấy dù chưa tới ngày.
 
+Khi học sinh vào lại web, nếu lớp có bài mới mở kể từ lần vào trước thì hiện thông báo ở cuối màn hình (máy học sinh tự nhớ, lần đầu vào không báo).
+
 Mở link `?gv` một lần trên máy của thầy để xem được mọi bài và xem lịch từng lớp. Đây chỉ là khoá đơn giản trên trình duyệt, không phải bảo mật thật.
 
 ## Flashcard từ vựng
