@@ -62,6 +62,24 @@ Mỗi bài có nút **🃏 Flashcard từ vựng**, thẻ tạo tự động t�
 | Unit 10–11 | [Part 4 – Telephone Messages, Announcements & Ads](https://mangomint1805.github.io/summary-old/listening/unit-10-telephone-messages-announcements-ads.html) | Tin nhắn thoại, thông báo, quảng cáo |
 | Unit 11–12 | [Part 4 – Radio Broadcasts, Speeches & Internal Announcements](https://mangomint1805.github.io/summary-old/listening/unit-11-radio-broadcasts-speeches-internal-announcements.html) | Phát thanh, bài phát biểu, thông báo nội bộ |
 
+## Chuyên đề
+
+Bài tổng hợp theo chủ điểm ngữ pháp, dùng để ôn xuyên suốt khoá.
+
+| # | Chuyên đề |
+|---|---|
+| 1 | [Phân biệt loại từ: Tính – Danh – Động – Trạng](https://mangomint1805.github.io/summary-old/chuyen-de/phan-biet-loai-tu.html) |
+| 2 | [Đại từ trong TOEIC](https://mangomint1805.github.io/summary-old/chuyen-de/dai-tu.html) |
+| 3 | [Các thì của động từ trong TOEIC](https://mangomint1805.github.io/summary-old/chuyen-de/thi-dong-tu.html) |
+| 4 | [Câu bị động trong TOEIC](https://mangomint1805.github.io/summary-old/chuyen-de/cau-bi-dong.html) |
+| 5 | [Giới từ thường gặp trong TOEIC](https://mangomint1805.github.io/summary-old/chuyen-de/gioi-tu.html) |
+
+## Ôn tập
+
+| Bài | Nội dung |
+|---|---|
+| [Ôn tập sau Progress Test 1](https://mangomint1805.github.io/summary-old/review/progress-test-1.html) | Ôn lại kiến thức sau bài Progress Test 1 |
+
 ## Cấu trúc thư mục
 
 ```
@@ -71,8 +89,12 @@ docs/
   flashcards.js  flashcard từ vựng
   audio/         file phát âm từ vựng (tạo bằng tools/make_audio.py)
   style.css      giao diện chung
+  extras.js      đánh dấu "đã ôn tập" + tìm kiếm trong các bài
+  cap-nhat.html  trang "Có gì mới" (nội dung trong cap-nhat.js)
   reading/       trang web từng bài Reading
   listening/     trang web từng bài Listening
+  chuyen-de/     trang web từng chuyên đề ngữ pháp
+  review/        trang ôn tập sau Progress Test
 ```
 
 GitHub Pages: Settings → Pages → Branch `main`, folder `/docs`.
