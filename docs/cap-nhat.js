@@ -4,6 +4,8 @@ window.MT_UPDATES = [
     id: '2026-10-24g', date: '24/10/2026',
     title: 'Bài tóm tắt dễ hiểu hơn',
     items: [
+      'Reading Unit 1–12 và Listening Unit 1–6: hầu hết câu ví dụ có thêm bản dịch tiếng Việt, ký hiệu (S, V, N, V3…) và thuật ngữ được giải thích ngay lần đầu xuất hiện, các ô trống trong bảng đã được điền.',
+      'Sửa các chỗ sai: “discuss about” → discuss (không có about), sửa ví dụ câu bị động, nghĩa và phiên âm sai trong bảng từ vựng (ví dụ: contract, satisfactory, conduct).',
       'Listening Unit 7–11: câu ví dụ và các cụm gợi ý có thêm nghĩa tiếng Việt, các dạng câu hỏi có tên tiếng Việt, sửa một số nghĩa và phiên âm bị sai trong bảng từ vựng (ví dụ: last quarter = quý trước, on sale = đang giảm giá).',
       'Bảng từ vựng Unit 9 và 10 hiện đủ cột Level, flashcard không còn bỏ sót từ.'
     ]
