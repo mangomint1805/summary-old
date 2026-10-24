@@ -1,6 +1,14 @@
 /* Có gì mới trên web Tóm tắt kiến thức TOEIC Pre — mới nhất ở trên cùng. Thêm mục mới vào ĐẦU danh sách; id là ngày (YYYY-MM-DD), cùng ngày thì thêm hậu tố (2026-10-21b). link (tuỳ chọn): [đường dẫn, chữ trên nút]. */
 window.MT_UPDATES = [
   {
+    id: '2026-10-24f', date: '24/10/2026',
+    title: 'Xem bài trên điện thoại gọn hơn',
+    items: [
+      'Trên điện thoại, bài học không còn bị trượt ngang khi vuốt: bảng tự co vừa màn hình, bảng nào quá rộng thì chỉ riêng bảng đó vuốt ngang được.',
+      'Thông báo "bài mới mở" giờ hiện đúng sau khi bạn đăng nhập, không bị bỏ lỡ.'
+    ]
+  },
+  {
     id: '2026-10-24e', date: '24/10/2026',
     title: 'Đăng nhập Google để vào học',
     items: [

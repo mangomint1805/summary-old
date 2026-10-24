@@ -153,3 +153,14 @@ html[data-theme=dark] .doc table.v3note td{background:#2a2216!important;}
 .sn-toast .x:focus-visible{outline:3px solid var(--amber);}
 @keyframes snUp{from{opacity:0;transform:translate(-50%,12px);}to{opacity:1;transform:translate(-50%,0);}}
 @media (prefers-reduced-motion:reduce){.sn-toast{animation:none;}}
+
+/* Điện thoại: bảng co lại vừa khung (chữ được xuống dòng) thay vì đẩy cả khung bài trượt ngang */
+@media (max-width:520px){
+  .doc{padding:16px 12px;}
+  .doc table{font-size:14.5px;}
+  .doc th,.doc td{padding:6px 7px;overflow-wrap:anywhere;}
+  .doc th,.doc td:first-child{overflow-wrap:normal;}
+  .doc col{width:auto!important;}
+}
+.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;}
+.tbl-scroll>table{margin:0!important;}

@@ -287,8 +287,27 @@ var SN = (function () {
     box.querySelector('.x').onclick = function () { box.remove(); };
     document.body.appendChild(box);
   }
-  document.addEventListener('DOMContentLoaded', function () { setTimeout(run, 0); });
+  function whenUnlocked() {
+    var root = document.documentElement;
+    if (!root.classList.contains('sn-auth')) return run();
+    // đang bị che vì chưa đăng nhập: đăng nhập xong mới báo
+    var mo = new MutationObserver(function () { if (!root.classList.contains('sn-auth')) { mo.disconnect(); run(); } });
+    mo.observe(root, { attributes: true, attributeFilter: ['class'] });
+  }
+  document.addEventListener('DOMContentLoaded', function () { setTimeout(whenUnlocked, 0); });
 })();
+
+/* Điện thoại: bảng nào vẫn rộng hơn khung bài thì cho riêng bảng đó cuộn ngang */
+document.addEventListener('DOMContentLoaded', function () {
+  [].forEach.call(document.querySelectorAll('.doc table'), function (t) {
+    var p = t.parentElement;
+    if (!p || p.classList.contains('tbl-scroll') || p.classList.contains('lt-scroll')) return;
+    var cs = getComputedStyle(p), room = p.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+    if (t.offsetWidth <= room + 1) return;
+    var w = document.createElement('div'); w.className = 'tbl-scroll';
+    p.insertBefore(w, t); w.appendChild(t);
+  });
+});
 
 /* Nạp thêm tính năng: đánh dấu đã học + tìm kiếm (file extras.js) */
 (function () {
