@@ -1,4 +1,5 @@
 /* Minto English — thanh menu chung, bộ icon nét, logo. Dùng: <body data-nav="home|mini|stats|dict|cards"> */
+/* File này giống hệt nhau ở 4 web: toeic/assets, cam/shared, summary-new/docs/assets, summary-old/docs/assets. Sửa ở một nơi thì chép sang 3 nơi còn lại. */
 (function () {
   'use strict';
   var ME = document.currentScript && document.currentScript.src || '', ROOT = ME.replace(/(assets|shared)\/ui\.js.*$/, '');
@@ -36,7 +37,7 @@
     };
     window.fetch._mt = 1;
   }
-  if (SITE === 'ielts' && /\/c\d+\/test-\d+\.html$/.test(location.pathname)) { var mks = document.createElement('script'); mks.src = ROOT + 'shared/marks-ielts.js?v=1'; document.head.appendChild(mks); }
+  if (SITE === 'ielts' && /\/(c|v)\d+\/test-\d+\.html$/.test(location.pathname)) { var mks = document.createElement('script'); mks.src = ROOT + 'shared/marks-ielts.js?v=1'; document.head.appendChild(mks); }
   var P = {
     home: '<path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/>',
     test: '<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/>',
@@ -82,6 +83,7 @@
     '.mlinks a{display:flex;align-items:center;gap:7px;font:600 14px/1 "IBM Plex Sans",sans-serif;color:#4b5260;text-decoration:none;padding:9px 12px;border-radius:9px}' +
     '.mlinks a:hover{background:#f6f1e7;color:#6b4410}' +
     '.mlinks a[aria-current=page]{background:#f2e2c4;color:#6b4410}' +
+    'header.mnav{padding:0;margin:0}' + // trang nào tự đặt kiểu cho thẻ header thì thanh menu không bị đẩy xuống
     '.mlinks a:focus-visible,.mbrand:focus-visible{outline:3px solid #f2c879;outline-offset:2px}' +
     'body.has-nav .back{display:none}.mbrand,.mlinks a{white-space:nowrap}' +
     '@media (min-width:761px) and (max-width:1100px){.mnav .in{gap:10px;padding:10px 14px}.mlinks{gap:0}.mlinks a{padding:9px 8px;font-size:13.5px}.mlinks a .ic{display:none}}' +
@@ -209,7 +211,7 @@
       var md = J('ets26.mini.days', {}); Object.keys(md).forEach(function (k) { days[k] = 1; }); o.mini = Object.keys(md).length; o.miniToday = !!md[o.today];
     } else {
       var pairs = {}, bp = {}; o.subs = 0; o.bestL = 0; o.bestR = 0; o.books = {}; o.full = 0; o.lastFull = 0; o.done = {};
-      BOOKS.forEach(function (b) {
+      BOOKS.concat(['v7']).forEach(function (b) {
         J('cam' + b + '.hist', []).forEach(function (r) {
           if (!r) return; o.subs++; if (r.t) days[dkey(r.t)] = 1; o.books[b] = 1; o.done[b + '-' + r.test] = 1;
           if (r.total === 40) { var bd = +r.band || 0; if (r.sec === 'L') o.bestL = Math.max(o.bestL, bd); else o.bestR = Math.max(o.bestR, bd); pairs[b + '-' + r.test + r.sec] = r.t || 1; }
@@ -482,7 +484,7 @@
     if (T) {
       tasks.push(['flame', 'Đề mini hôm nay (10 phút)', 'mini.html', s.miniToday]);
       if (s.nen < nL || s.nenToday) tasks.push(['book', 'Học 1 bài Kiến thức nền' + (s.nen ? ' (' + s.nen + '/' + nL + ')' : ''), 'nen.html', s.nenToday > 0]);
-      var tn = 1, mn = 99; for (var t = 1; t <= 10; t++) { var c = s.tests[t] || 0; if (c < mn) { mn = c; tn = t; } }
+      var tn = 1, mn = 99; for (var t = 1; t <= 20; t++) { var c = s.tests[t] || 0; if (c < mn) { mn = c; tn = t; } }
       if (weak) tasks.push(['target', 'Luyện Part ' + weak[0] + ' (đang đúng ' + Math.round(weak[1] * 100) + '%)', 'test.html?t=' + tn + '&m=p' + weak[0], false]);
       else tasks.push(['headphones', 'Làm thử Part 1 và Part 2 của Test ' + tn, 'test.html?t=' + tn + '&m=p1', false]);
       if (left >= 0 && left <= 60 && s.lastFull < wk) tasks.push(['test', 'Thi thử Full test có giờ (tuần này chưa làm)', 'test.html?t=' + tn + '&m=full', false]);
@@ -1047,9 +1049,318 @@
   setTimeout(check, 400);
   if (document.readyState === 'complete') setTimeout(tour, 900); else addEventListener('load', function () { setTimeout(tour, 900); });
 })();
+/* Tô sáng + ghi chú khi làm bài (Listening & Reading, máy tính & điện thoại) + sửa độ tương phản giao diện tối / Băng hoại. Dùng chung web TOEIC và IELTS. */
+(function () {
+  'use strict';
+  if (/\/summary-(new|old)\//.test((document.currentScript && document.currentScript.src) || '')) return; // chỉ dùng cho trang làm bài IELTS/TOEIC
+  var st = document.createElement('style');
+  st.textContent =
+    'mark.hl{background:#ffe58a;color:inherit;border-radius:2px;cursor:pointer;padding:0}mark.hl.has-note{border-bottom:2px dotted var(--brand,#a8691a)}mark.hl.has-note::after{content:"📝";font-size:11px;margin-left:1px}' +
+    '.mhl-bar{position:absolute;z-index:95;display:flex;gap:4px;background:#1e232b;border-radius:8px;padding:4px;box-shadow:0 6px 18px rgba(0,0,0,.3);-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;touch-action:manipulation}' +
+    '.mhl-bar[hidden],.mhl-note[hidden]{display:none}.mhl-bar button{font:600 13px/1.2 "IBM Plex Sans",system-ui,sans-serif;color:#fff;background:none;border:0;border-radius:5px;padding:7px 10px;cursor:pointer;white-space:nowrap}.mhl-bar button:hover{background:rgba(255,255,255,.15)}' +
+    '.mhl-bar.touch button{font-size:14.5px;padding:11px 12px}' +
+    '.mhl-note{position:absolute;z-index:95;width:280px;max-width:calc(100vw - 16px);background:var(--card,#fff);color:var(--ink,#1e232b);border:1px solid var(--line,#ddd7c9);border-radius:8px;padding:10px;box-shadow:0 10px 26px rgba(0,0,0,.22)}' +
+    '.mhl-note textarea{display:block;width:100%;box-sizing:border-box;font:14px/1.5 "IBM Plex Sans",system-ui,sans-serif;border:1px solid var(--line,#ddd7c9);border-radius:5px;padding:6px 8px;margin:0 0 8px;resize:vertical;background:var(--card,#fff);color:inherit}' +
+    '.mhl-note .btn{padding:6px 12px;font-size:13px;margin-right:6px}' +
+    '.mhl-hint{font-size:12.5px;font-weight:500;color:var(--dim,#666e7a)}' +
+    'html[data-theme=dark] mark.hl,html[data-theme=dark] :is(mark.ev,.evhl,.script-body span.kara){color:#1e232b}' +
+    'html[data-theme=dark] :is(.dir,.vi-psg,.vhint,.karaopt,.mhl-hint){color:var(--dim)!important}' +
+    'html[data-theme=dark] :is(.part,.passage,.ocard) em{color:var(--dim)}' +
+    'html[data-theme=dark] .loc{background:var(--brand-soft);border-color:var(--brand);color:var(--brand-ink)}' +
+    'html[data-theme=dark] .grid a:not(.done):not(.g-ok):not(.g-bad){background:var(--card)}' +
+    'html[data-theme=dark] :is(.grid a.g-ok,.grid a.g-bad,.score .band,.psg .blank.filled,.psg .blank.ok,.psg .blank.bad,.evtag,.sgrid button.g-ok,.sgrid button.g-bad),html[data-theme=dark] .evhl::before{color:#10131a!important}' +
+    'html[data-theme=dark] .exambar:not(.over){background:var(--brand-soft);border-color:var(--brand)}' +
+    'html[data-theme=dark] #xpSheet :is(.xp-a b,.xp-ok){color:var(--ok)}html[data-theme=dark] #xpSheet .xp-no{color:var(--bad)}' +
+    'html[data-theme=dark] ::highlight(cam-vocab){background-color:rgba(242,200,121,.16);text-decoration-color:#d9a24a}';
+  document.head.appendChild(st);
+
+  var P = location.pathname, isT = /\/test\.html$/.test(P), mc = /\/c(\d+)\/test-(\d+)\.html$/.exec(P);
+  if (!isT && !mc) return;
+  var KEY = isT ? 'mt.hl.toeic.t' + Math.max(1, Math.min(20, parseInt(new URLSearchParams(location.search).get('t'), 10) || 1)) : 'mt.hl.cam' + mc[1] + '.t' + mc[2];
+  var OLD = mc ? 'cam' + mc[1] + '.hl.t' + mc[2] : '';
+  var ZONE = '#partBody,.sect';
+  var NOZ = '.panel,.ptools,.qmk,.qnote,.vpop,.audio,audio,.exambar,.mhl-bar,.mhl-note,#xpSheet,.karaopt,summary,.overlay';
+  var SKIP = 'button,input,select,textarea,script,style,audio,.mark,.fix,.evtag,.loc,.blank,.qmk,.qnote,.vi,summary';
+  var BLK = 'p,li,td,th,h1,h2,h3,h4,h5,h6,dt,dd,figcaption,pre,label,.qtext,.blank-q,.psg,.ghead,.qt,.in';
+  var NOWRAP = /^(TABLE|TBODY|THEAD|TFOOT|TR|COLGROUP|UL|OL|DL|SELECT)$/;
+  function get() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
+  function put(o) { try { if (Object.keys(o).length) localStorage.setItem(KEY, JSON.stringify(o)); else localStorage.removeItem(KEY); if (OLD) localStorage.removeItem(OLD); } catch (e) {} }
+  function el(t) { return t && (t.nodeType === 1 ? t : t.parentElement); }
+  function inZone(n) { var e = el(n); return !!(e && e.closest(ZONE) && !e.closest(NOZ)); }
+  function texts(root) {
+    var out = [], w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), t;
+    while ((t = w.nextNode())) { var sk = t.parentElement && t.parentElement.closest(SKIP); if (sk && sk !== root && root.contains(sk)) continue; out.push(t); }
+    return out;
+  }
+  function blockOf(n) { var e = el(n); return e && (e.closest(BLK) || e.closest('[id]')); }
+  function keyOf(b) {
+    var a = b.id ? b : b.parentElement && b.parentElement.closest('[id]'); if (!a) return null;
+    return a === b ? a.id : a.id + '/' + [].indexOf.call(a.querySelectorAll(BLK), b);
+  }
+  function findBlock(k) {
+    var i = k.lastIndexOf('/'), a = document.getElementById(i < 0 ? k : k.slice(0, i)); if (!a) return null;
+    return i < 0 ? a : a.querySelectorAll(BLK)[+k.slice(i + 1)] || null;
+  }
+  var gid = 0;
+  function newG() { return Date.now().toString(36) + (gid++); }
+  function wrapText(t, s, e, g) {
+    if (e <= s || NOWRAP.test(t.parentNode.nodeName) || el(t).closest('mark.hl') || el(t).closest(SKIP)) return null;
+    if (!t.nodeValue.slice(s, e).trim()) return null;
+    if (e < t.length) t.splitText(e);
+    if (s > 0) t = t.splitText(s);
+    var mk = document.createElement('mark'); mk.className = 'hl'; mk.setAttribute('data-g', g);
+    t.parentNode.insertBefore(mk, t); mk.appendChild(t); return mk;
+  }
+  function wrapRange(r, g) {
+    var root = r.commonAncestorContainer, list = [], marks = [];
+    if (root.nodeType === 3) list = [root];
+    else { var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), t; while ((t = w.nextNode())) if (r.intersectsNode(t)) list.push(t); }
+    list.forEach(function (t) {
+      if (!inZone(t)) return;
+      var s = t === r.startContainer ? r.startOffset : 0, e = t === r.endContainer ? r.endOffset : t.length;
+      var mk = wrapText(t, s, e, g); if (mk) marks.push(mk);
+    });
+    return marks;
+  }
+  function setNote(g, v) {
+    var ms = [].slice.call(document.querySelectorAll('mark.hl[data-g="' + g + '"]'));
+    ms.forEach(function (m, i) { var last = i === ms.length - 1; m.classList.toggle('has-note', !!v && last); if (v && last) { m.setAttribute('data-note', v); m.title = v; } else { m.removeAttribute('data-note'); m.removeAttribute('title'); } });
+  }
+  function unwrap(m) { var p = m.parentNode; if (!p) return; while (m.firstChild) p.insertBefore(m.firstChild, m); p.removeChild(m); p.normalize(); }
+  function save() {
+    var o = get();
+    Object.keys(o).forEach(function (k) { var b = findBlock(k); if (b && inZone(b)) delete o[k]; });
+    [].forEach.call(document.querySelectorAll('mark.hl'), function (m) {
+      var b = blockOf(m), k = b && inZone(b) && keyOf(b); if (!k) return;
+      var pos = 0, ts = texts(b), g = m.getAttribute('data-g') || newG(); m.setAttribute('data-g', g);
+      for (var i = 0; i < ts.length; i++) {
+        var t = ts[i];
+        if (m.contains(t)) { var a = o[k] = o[k] || [], last = a[a.length - 1];
+          if (last && last[2] === g && last[1] === pos) { last[1] += t.length; last[3] += t.nodeValue; } else a.push([pos, pos + t.length, g, t.nodeValue, '']);
+          if (m.getAttribute('data-note')) a[a.length - 1][4] = m.getAttribute('data-note');
+        }
+        pos += t.length;
+      }
+    });
+    put(o);
+  }
+  var done = window.WeakSet ? new WeakSet() : null;
+  function restore() {
+    if (!done) return;
+    var o = get();
+    Object.keys(o).forEach(function (k) {
+      var b = findBlock(k); if (!b || done.has(b) || !inZone(b)) return; done.add(b);
+      var had = {}; [].forEach.call(b.querySelectorAll('mark.hl[data-g]'), function (m) { had[m.getAttribute('data-g')] = 1; });
+      o[k].forEach(function (x) {
+        if (had[x[2]]) return;
+        var ts = texts(b), pos = 0, full = ts.map(function (t) { return t.nodeValue; }).join('');
+        if (full.slice(x[0], x[1]) !== x[3]) return;
+        var segs = [];
+        ts.forEach(function (t) { var a = pos, z = pos + t.length; pos = z; var s = Math.max(a, x[0]), e = Math.min(z, x[1]); if (e > s) segs.push([t, s - a, e - a]); });
+        segs.forEach(function (sg) { wrapText(sg[0], sg[1], sg[2], x[2]); });
+        if (x[4]) setNote(x[2], x[4]);
+      });
+    });
+  }
+
+  // ---------- giao diện ----------
+  var bar = document.createElement('div'); bar.className = 'mhl-bar'; bar.hidden = true;
+  bar.innerHTML = '<button type="button" data-h="y">🖍 Tô vàng</button><button type="button" data-h="n">📝 Ghi chú</button><button type="button" data-h="x">✕ Bỏ tô</button>';
+  var nb = document.createElement('div'); nb.className = 'mhl-note'; nb.hidden = true;
+  nb.innerHTML = '<textarea rows="3" placeholder="Ghi chú của bạn…"></textarea><div><button type="button" data-n="save" class="btn">Lưu</button><button type="button" data-n="del" class="btn alt">Bỏ tô</button></div>';
+  var range = null, curG = null, busy = 0, mouseDown = false, lastPT = '', tmr = 0;
+  function isTouch() { return lastPT ? lastPT !== 'mouse' : !!(window.matchMedia && matchMedia('(pointer:coarse)').matches); }
+  function place(box, x, y) { box.style.left = Math.max(8, Math.min(document.documentElement.clientWidth - box.offsetWidth - 8, x)) + 'px'; box.style.top = Math.max(0, y + window.scrollY) + 'px'; }
+  function hits(r) { return [].filter.call(document.querySelectorAll('mark.hl'), function (m) { try { return r.intersectsNode(m); } catch (e) { return false; } }); }
+  function hideBar() { bar.hidden = true; range = null; }
+  function onSel() {
+    var sel = window.getSelection(); if (!sel || !sel.rangeCount || sel.isCollapsed) { if (Date.now() > busy) hideBar(); return; }
+    var r = sel.getRangeAt(0);
+    if (!inZone(r.startContainer) || !inZone(r.endContainer) || !r.toString().trim()) { hideBar(); return; }
+    range = r.cloneRange();
+    var touch = isTouch(); bar.classList.toggle('touch', touch);
+    bar.querySelector('[data-h=x]').hidden = !hits(range).length;
+    bar.hidden = false; nb.hidden = true;
+    var rs = r.getClientRects(), rc = r.getBoundingClientRect(), f = rs[0] || rc, l = rs[rs.length - 1] || rc, h = bar.offsetHeight, vh = window.innerHeight;
+    if (touch) {
+      // điện thoại: đặt DƯỚI vùng chọn để không bị menu Copy/Paste của máy che
+      var y = l.bottom + 30;
+      if (y + h > vh - 8) y = f.top - h - 64 > 8 ? f.top - h - 64 : Math.max(8, vh - h - 12);
+      place(bar, l.left + l.width / 2 - bar.offsetWidth / 2, y);
+    } else {
+      var top = f.top - h - 8;
+      place(bar, f.left + f.width / 2 - bar.offsetWidth / 2, top < 70 ? l.bottom + 8 : top);
+    }
+  }
+  function later(ms) { clearTimeout(tmr); tmr = setTimeout(onSel, ms); }
+  function openNote(m) {
+    curG = m.getAttribute('data-g'); if (!curG) { curG = newG(); m.setAttribute('data-g', curG); }
+    var ms = document.querySelectorAll('mark.hl[data-g="' + curG + '"]'), lastM = ms[ms.length - 1] || m;
+    nb.hidden = false; bar.hidden = true; nb.querySelector('textarea').value = lastM.getAttribute('data-note') || '';
+    var rc = m.getBoundingClientRect(); place(nb, rc.left, rc.bottom + (isTouch() ? 30 : 6));
+    if (!isTouch()) nb.querySelector('textarea').focus();
+  }
+  function act(h) {
+    var r = range; if (!r) return;
+    if (h === 'x') { var gs = {}; hits(r).forEach(function (m) { gs[m.getAttribute('data-g')] = 1; }); Object.keys(gs).forEach(function (g) { [].forEach.call(document.querySelectorAll('mark.hl[data-g="' + g + '"]'), unwrap); }); }
+    var ms = h === 'x' ? [] : wrapRange(r, newG());
+    try { window.getSelection().removeAllRanges(); } catch (e) {}
+    hideBar(); save();
+    if (h === 'n' && ms.length) openNote(ms[0]);
+  }
+  function guard(e) { busy = Date.now() + 700; if (e.type !== 'touchstart') e.preventDefault(); }
+  ['pointerdown', 'mousedown', 'touchstart'].forEach(function (t) { bar.addEventListener(t, guard, t === 'touchstart' ? { passive: true } : false); });
+  bar.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) { e.stopPropagation(); act(b.dataset.h); } });
+  nb.addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b || !curG) return;
+    var ms = [].slice.call(document.querySelectorAll('mark.hl[data-g="' + curG + '"]'));
+    if (b.dataset.n === 'save') setNote(curG, nb.querySelector('textarea').value.trim()); else ms.forEach(unwrap);
+    nb.hidden = true; curG = null; save();
+  });
+
+  function init() {
+    if (!document.body) return;
+    // bỏ thanh tô sáng cũ (chỉ chạy được bằng chuột) của trang IELTS để dùng bản chung này
+    [].forEach.call(document.querySelectorAll('body>.hltool,body>.notebox'), function (x) { x.remove(); });
+    document.body.appendChild(bar); document.body.appendChild(nb);
+    restore();
+    if (OLD) { try { if (localStorage.getItem(OLD) != null) save(); } catch (e) {} }
+    hints();
+    document.addEventListener('pointerdown', function (e) { lastPT = e.pointerType || lastPT; if (e.pointerType === 'mouse') mouseDown = true; if (!nb.contains(e.target) && !bar.contains(e.target)) nb.hidden = true; }, true);
+    document.addEventListener('mousedown', function () { if (!lastPT) mouseDown = true; }, true);
+    document.addEventListener('mouseup', function (e) { mouseDown = false; if (!bar.contains(e.target) && !nb.contains(e.target)) later(10); });
+    document.addEventListener('touchstart', function () { lastPT = 'touch'; }, { passive: true, capture: true });
+    document.addEventListener('touchend', function (e) { if (!bar.contains(e.target) && !nb.contains(e.target)) later(350); }, { passive: true });
+    document.addEventListener('selectionchange', function () { if (!mouseDown) later(isTouch() ? 350 : 250); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { hideBar(); nb.hidden = true; } });
+    window.addEventListener('resize', function () { if (!bar.hidden) later(100); });
+    document.addEventListener('click', function (e) {
+      var t = e.target, sel = window.getSelection(), lab = t.closest && t.closest('label');
+      // bôi đen chữ trong một đáp án không được tự chọn đáp án đó
+      if (lab && !isTouch() && sel && !sel.isCollapsed && lab.contains(sel.anchorNode)) { e.preventDefault(); return; }
+      var m = t.closest && t.closest('mark.hl');
+      if (m && !m.closest('label,a,button,.opt') && !(sel && String(sel).trim())) { e.stopPropagation(); openNote(m); }
+    }, true);
+    // nút "Xoá tô sáng" của từng passage (IELTS)
+    document.addEventListener('click', function (e) {
+      var b = e.target.closest && e.target.closest('[data-clear]'); if (!b) return;
+      var ps = b.closest('.passage'), c0 = window.confirm;
+      window.confirm = function (msg) { window.confirm = c0; var ok = c0.call(window, msg); if (ok && ps) setTimeout(function () { [].forEach.call(ps.querySelectorAll('mark.hl'), unwrap); save(); }, 0); return ok; };
+      setTimeout(function () { window.confirm = c0; save(); }, 0);
+    }, true);
+    if (window.MutationObserver) new MutationObserver(function () { clearTimeout(init.t); init.t = setTimeout(function () { restore(); hints(); }, 60); }).observe(document.body, { childList: true, subtree: true });
+  }
+  function hints() {
+    var h = document.querySelector('#main .pt-head');
+    if (h && !h.querySelector('.mhl-hint')) { var s = document.createElement('span'), k = h.querySelector('.lkhint'); s.className = 'mhl-hint'; s.textContent = (k ? ' · ' : '') + '🖍 Bôi đen chữ để tô vàng / ghi chú'; (k || h).appendChild(s); }
+    [].forEach.call(document.querySelectorAll('.sect .part'), function (p) {
+      var t = p.querySelector('.part-title'); if (!t || p.querySelector('.ptools')) return;
+      var d = document.createElement('div'); d.className = 'ptools'; d.innerHTML = '<span>Bôi đen chữ trong câu hỏi hoặc lời thoại để tô vàng hoặc ghi chú.</span>'; t.insertAdjacentElement('afterend', d);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();
+/* Có gì mới: link trên thanh menu + trong bảng ⚙, và thẻ nhắc nhỏ khi web có cập nhật (dữ liệu ở cap-nhat.js). Dùng chung web TOEIC và IELTS. */
+(function () {
+  'use strict';
+  if (/\/summary-(new|old)\//.test((document.currentScript && document.currentScript.src) || '')) return; // bản cho web TOEIC/IELTS; web Tóm tắt dùng bản ngay dưới
+  var cs = document.currentScript, src = (cs && cs.src) || '';
+  if (!src) { var ss = document.querySelectorAll('script[src*="ui.js"]'); if (ss.length) src = ss[ss.length - 1].src; }
+  var mm = /^(.*\/)(assets|shared)\/ui\.js/.exec(src); if (!mm) return;
+  var ROOT = mm[1], HREF = ROOT + 'cap-nhat.html', KEY = 'mt.seenUpdate', P = location.pathname;
+  if ((cs && cs.getAttribute('data-site') === 'summary') || location.href.indexOf(ROOT) !== 0) return;
+  var NEWS = /\/cap-nhat\.html$/.test(P);
+  var QUIET = !!window.MEXAM || document.documentElement.hasAttribute('data-exam') || /\/(test\.html|test-\d+\.html|ws\.html|mini\.html|xep-lop\.html|chinh-ta\.html|go-tu\.html|phan-xa\.html)$/.test(P);
+  function g(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function s(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  function esc(t) { return String(t == null ? '' : t).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  // đã từng dùng web chưa? (chụp lúc tải trang, trước khi ui.js tự ghi huy hiệu / hướng dẫn lần đầu)
+  var used = false;
+  try { for (var i = 0; i < localStorage.length; i++) { var k = localStorage.key(i); if (k !== KEY && /^(mt\.|ets26\.|cam\d*\.|vocab\.)/.test(k)) { used = true; break; } } } catch (e) {}
+  var SPARK = '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3l1.9 5.6L18.5 10.5l-5.6 1.9L11 18l-1.9-5.6L3.5 10.5l5.6-1.9z"/><path d="M19 15.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg>';
+  var st = document.createElement('style');
+  st.textContent =
+    '.mlinks a.mnew-l{position:relative}.mlinks a.mnew-l.dot::after{content:"";position:absolute;top:6px;right:5px;width:7px;height:7px;border-radius:50%;background:#e0483a;box-shadow:0 0 0 2px var(--card,#fff)}' +
+    '@media (min-width:761px) and (max-width:1359px){.mlinks a.mnew-l{padding-left:9px;padding-right:9px}.mlinks a.mnew-l span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.mlinks a.mnew-l .ic{display:inline-block;width:1.25em;height:1.25em}}' +
+    '@media (max-width:960px){.mlinks a.mnew-l{display:none}}' +
+    'a.mp-new{text-decoration:none;box-sizing:border-box}a.mp-new.dot::after{content:"mới";font:700 10.5px/1 "IBM Plex Sans",sans-serif;background:#e0483a;color:#fff;border-radius:999px;padding:3px 6px 2px;margin-left:2px}' +
+    '.mnew{position:fixed;z-index:96;left:20px;bottom:20px;width:340px;max-width:calc(100vw - 24px);box-sizing:border-box;background:var(--card,#fff);color:var(--ink,#1e232b);border:1px solid var(--line,#ddd7c9);border-left:4px solid var(--brand,#a8691a);border-radius:14px;padding:13px 15px 12px;box-shadow:0 14px 40px rgba(0,0,0,.18);font:14px/1.45 "IBM Plex Sans",system-ui,sans-serif;animation:mnewin .4s cubic-bezier(.2,.9,.3,1.2)}' +
+    '.mnew-k{display:block;font-size:12.5px;font-weight:700;letter-spacing:.02em;color:var(--brand-ink,#6b4410);margin:0 26px 3px 0}.mnew-t{display:block;font:600 16.5px/1.3 Fraunces,Georgia,serif;margin:0 0 6px}' +
+    '.mnew ul{margin:0 0 10px;padding-left:18px;color:var(--ink,#1e232b)}.mnew li{margin:3px 0;font-size:13.5px}' +
+    '.mnew-x{position:absolute;top:8px;right:8px;width:30px;height:30px;border:0;border-radius:50%;background:none;color:var(--dim,#666e7a);font-size:15px;cursor:pointer}.mnew-x:hover{background:var(--panel2,#f2efe8)}' +
+    '.mnew-b{display:flex;gap:8px}.mnew-b a,.mnew-b button{flex:1;display:flex;align-items:center;justify-content:center;min-height:38px;border-radius:10px;font:700 13.5px/1 "IBM Plex Sans",sans-serif;cursor:pointer;text-decoration:none;box-sizing:border-box}' +
+    '.mnew-all{background:var(--brand,#a8691a);border:1px solid var(--brand,#a8691a);color:#fff}.mnew-ok{background:var(--panel2,#f2efe8);border:1px solid var(--line,#ddd7c9);color:var(--ink,#1e232b)}' +
+    '.mnew :focus-visible{outline:3px solid var(--brand,#a8691a);outline-offset:2px}' +
+    'html[data-theme=dark] .mnew{box-shadow:0 14px 40px rgba(0,0,0,.55)}html[data-skin=scifi] .mnew{border-color:#2e4377;border-left-color:#4ad7ff}html[data-skin=scifi] .mnew-k{color:#4ad7ff}' +
+    'html[data-skin=scifi] .mnew-all{color:#1a1240;background:linear-gradient(180deg,#ffe36b,#ffc21a);border-color:#ffc21a}' +
+    '@media (max-width:760px){.mnew{left:12px;right:12px;width:auto;margin:0 auto;bottom:calc(14px + env(safe-area-inset-bottom))}body.has-nav .mnew{bottom:calc(78px + env(safe-area-inset-bottom))}}' +
+    '@keyframes mnewin{from{opacity:0;transform:translateY(16px)}}@media (prefers-reduced-motion:reduce){.mnew{animation:none}}';
+  document.head.appendChild(st);
+  // link trên thanh menu (màn hình rộng; điện thoại / máy tính bảng thanh menu đã chật nên link nằm trong bảng ⚙)
+  var ml = document.querySelector('.mlinks');
+  if (ml && !ml.querySelector('.mnew-l')) {
+    var a = document.createElement('a'); a.className = 'mnew-l'; a.href = HREF; a.title = 'Có gì mới'; a.innerHTML = SPARK + '<span>Có gì mới</span>';
+    if (NEWS) a.setAttribute('aria-current', 'page');
+    ml.appendChild(a);
+  }
+  // nút trong bảng ⚙ (có ở mọi trang, kể cả trang làm bài)
+  var unseen = false;
+  function addPop(p) {
+    if (p.querySelector('.mp-new')) return;
+    var first = p.querySelector('.mp-tour'); if (!first) return;
+    var b = document.createElement('a'); b.className = 'mp-tour mp-new' + (unseen ? ' dot' : ''); b.href = HREF; b.innerHTML = SPARK + ' Có gì mới';
+    first.insertAdjacentElement('afterend', b);
+  }
+  if (window.MutationObserver) new MutationObserver(function (ms) {
+    ms.forEach(function (m) { [].forEach.call(m.addedNodes, function (n) {
+      if (n.nodeType !== 1 || !n.classList.contains('mpop')) return;
+      addPop(n); new MutationObserver(function () { addPop(n); }).observe(n, { childList: true });
+    }); });
+  }).observe(document.body, { childList: true });
+  // dữ liệu cập nhật
+  function ready(U) {
+    var top = U && U[0]; if (!top || !top.id) return;
+    if (NEWS || !used) { s(KEY, top.id); return; }
+    if (g(KEY) === top.id) return;
+    unseen = true;
+    var l = document.querySelector('.mlinks a.mnew-l'); if (l) { l.classList.add('dot'); l.title = 'Có gì mới · có cập nhật mới'; }
+    if (!QUIET) later(top);
+  }
+  function seen(id) { s(KEY, id); unseen = false; [].forEach.call(document.querySelectorAll('.mnew-l.dot,.mp-new.dot'), function (e) { e.classList.remove('dot'); }); }
+  function busy() { return !!document.querySelector('.mtour,.mtoast,.fbk,.mgc,.mpop,.mhl-note:not([hidden])') || document.hidden; }
+  function later(top) {
+    var n = 0;
+    function go() {
+      if (document.querySelector('.mnew')) return;
+      if (busy()) { if (++n < 60) setTimeout(go, 1500); return; }
+      show(top);
+    }
+    if (document.readyState === 'complete') setTimeout(go, 2200); else addEventListener('load', function () { setTimeout(go, 2200); });
+  }
+  function show(top) {
+    var d = document.createElement('div'); d.className = 'mnew'; d.setAttribute('role', 'dialog'); d.setAttribute('aria-label', 'Có gì mới trên web');
+    var items = (top.items || []).slice(0, 2);
+    d.innerHTML = '<button type="button" class="mnew-x" aria-label="Đóng, đã xem">✕</button><b class="mnew-k">✨ Có gì mới (' + esc(String(top.date || '').slice(0, 5)) + ')</b><strong class="mnew-t">' + esc(top.title) + '</strong>' +
+      (items.length ? '<ul>' + items.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' : '') +
+      '<div class="mnew-b"><a class="mnew-all" href="' + esc(HREF) + '">Xem tất cả</a><button type="button" class="mnew-ok">Đã xem</button></div>';
+    function close() { seen(top.id); d.remove(); }
+    d.querySelector('.mnew-x').onclick = close; d.querySelector('.mnew-ok').onclick = close;
+    d.querySelector('.mnew-all').onclick = function () { seen(top.id); };
+    d.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+    document.body.appendChild(d);
+  }
+  if (window.MT_UPDATES) ready(window.MT_UPDATES);
+  else if (!QUIET || !used) {
+    var sc = document.createElement('script'); sc.src = ROOT + 'cap-nhat.js?v=1'; sc.async = true;
+    sc.onload = function () { ready(window.MT_UPDATES); };
+    document.head.appendChild(sc);
+  }
+  window.MNEWS_SEEN = function () { var U = window.MT_UPDATES; if (U && U[0]) seen(U[0].id); };
+})();
 /* Có gì mới: link trên thanh menu + trong bảng ⚙, và thẻ nhắc nhỏ khi web có cập nhật (dữ liệu ở cap-nhat.js). Bản cho web Tóm tắt kiến thức (summary-new / summary-old). */
 (function () {
   'use strict';
+  if (!/\/summary-(new|old)\//.test((document.currentScript && document.currentScript.src) || '')) return; // bản cho web Tóm tắt kiến thức
   var cs = document.currentScript, src = (cs && cs.src) || '';
   if (!src) { var ss = document.querySelectorAll('script[src*="ui.js"]'); if (ss.length) src = ss[ss.length - 1].src; }
   var mm = /^(.*\/)assets\/ui\.js/.exec(src); if (!mm) return;
