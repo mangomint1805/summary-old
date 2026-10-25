@@ -1157,6 +1157,7 @@
   var GA_ID = 'G-WTQLYLYL0G'; // mã đo lường GA4 (G-XXXXXXXXXX); còn bắt đầu bằng '__' thì không chạy GA
   try {
     if (window.__mlive) return; window.__mlive = 1;
+    if (!/(^|\.)github\.io$/.test(location.hostname)) return; // chỉ đếm trên web thật, không đếm khi chạy thử trên máy
     var me0 = document.currentScript && document.currentScript.src || '', mm = /\/(toeic|cam|summary-new|summary-old)\/(?:docs\/)?(?:assets|shared)\/ui\.js/.exec(me0.split('?')[0]);
     if (!mm) return;
     var SITE = mm[1], SITES = ['toeic', 'cam', 'summary-new', 'summary-old'], NAME = { toeic: 'TOEIC ETS', cam: 'IELTS Cam', 'summary-new': 'TOEIC Pre (mới)', 'summary-old': 'TOEIC Pre (cũ)' };
@@ -1235,9 +1236,21 @@
         })();
       });
     }
+    // mã lớp (chỉ web Tóm tắt): gửi kèm để thầy xem bạn nào thuộc lớp nào; nếu máy chủ không nhận trường mới thì gửi lại như cũ
+    function lopNow() {
+      if (!/^summary/.test(SITE)) return '';
+      try { var c = window.SN && window.SN.current && window.SN.current(); if (c && c.ma) return clip(c.ma, 24); } catch (e) {}
+      try { return clip(localStorage.getItem((SITE === 'summary-new' ? 'summaryNew' : 'summaryOld') + '.lop') || '', 24); } catch (e) { return ''; }
+    }
+    function withLop(v, send) {
+      var l = lopNow(); if (!l) return send(v);
+      var v2 = {}; for (var k in v) v2[k] = v[k]; v2.l = l;
+      return send(v2).catch(function () { return send(v); });
+    }
     function whoW() {
       if (!who || !aUser || !aLive || aOff || offline || document.hidden) return;
-      D.set(who, { e: aUser.email, n: clip(aUser.displayName, 60), t: D.serverTimestamp(), u: clip(PATH, 120) }).catch(function () {});
+      var w = who;
+      withLop({ e: aUser.email, n: clip(aUser.displayName, 60), t: D.serverTimestamp(), u: clip(PATH, 120) }, function (v) { return D.set(w, v); }).catch(function () {});
     }
     function acct(wait) {
       return authUser(wait).then(function (u) {
@@ -1259,7 +1272,8 @@
       (had ? acct(true) : Promise.resolve(null)).then(function (u) {
         var v = { t: D.serverTimestamp(), k: KIND, u: clip(PATH, 120), i: ID };
         if (u) { v.e = u.email; v.n = clip(u.displayName, 60); }
-        return D.push(D.ref(u ? aDb : db, 'log/' + SITE), v);
+        var ref = D.ref(u ? aDb : db, 'log/' + SITE);
+        return withLop(v, function (x) { return D.push(ref, x); });
       }).catch(function () {});
     }
     function count(val, now, skip) {
