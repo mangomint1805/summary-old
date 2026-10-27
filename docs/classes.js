@@ -314,4 +314,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var me = document.currentScript; if (!me || !me.src) return;
   var s = document.createElement('script'); s.src = me.src.replace(/classes\.js(\?.*)?$/, 'extras.js'); s.defer = true;
   document.head.appendChild(s);
+  var s2 = document.createElement('script'); s2.src = me.src.replace(/classes\.js(\?.*)?$/, 'luyen-them.js?v=1'); s2.defer = true;
+  document.head.appendChild(s2);
 })();
