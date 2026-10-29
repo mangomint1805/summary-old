@@ -1,6 +1,16 @@
 /* Có gì mới trên web Tóm tắt kiến thức TOEIC Pre — mới nhất ở trên cùng. Thêm mục mới vào ĐẦU danh sách; id là ngày (YYYY-MM-DD), cùng ngày thì thêm hậu tố (2026-10-21b). link (tuỳ chọn): [đường dẫn, chữ trên nút]. */
 window.MT_UPDATES = [
   {
+    id: '2026-10-29', date: '29/10/2026',
+    title: 'Lộ trình theo lịch học và trang chữa Minitest',
+    items: [
+      'Trang chủ xếp mọi bài theo đúng thứ tự trên lịch học: Buổi 1 Reading 1, Buổi 2 Listening 1… nhìn là biết lớp đang học tới đâu.',
+      'Mục Chuyên đề gọn lại thành một nút: bấm vào mới hiện danh sách 13 chủ đề.',
+      'Thêm trang Chữa bài cho cả 7 Minitest: nghe lại từng đoạn, tự chọn đáp án rồi xem đúng sai, dịch tiếng Việt và giải thích vì sao. Minitest 5 có thêm kết quả của lớp.',
+      'Trang chữa Minitest mở sau buổi làm bài và đóng lại khi khoá học kết thúc.'
+    ]
+  },
+  {
     id: '2026-10-28b', date: '28/10/2026',
     title: 'Thanh menu vừa màn hình laptop',
     items: [

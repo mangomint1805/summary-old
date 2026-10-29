@@ -24,10 +24,14 @@ var SN_CLASSES = [
 var SN_SESSIONS = {
   R1: 1, L1: 2, R2: 3, L2: 4, R3: 5, L3: 6, R4: 7, L4: 8, R5: 9, L5: 10, R7: 11,
   L6: 13, R8: 14, L7: 15, R9: 16, L8: 17, R10: 18, L9: 19, R11: 20, L10: 21, R12: 22, L11: 23,
+  /* trang Chữa bài Minitest – mở sau buổi làm minitest, ĐÓNG sau ngày học cuối của lớp (xem SN_CLOSE_END) */
+  MT1: 3, MT2: 6, MT3: 9, MT4: 13, MT5: 16, MT6: 19, MT7: 22,
   PT1: 12, /* trang Ôn tập sau Progress Test 1 – mở sau buổi kiểm tra */
   PT2: 22  /* trang Ôn tập trước Progress Test 2 – mở trước buổi thi vài ngày */
 };
 var SN_TOTAL = 24;
+/* Các trang tự ĐÓNG khi lớp học xong buổi cuối (đóng từ 0h ngày hôm sau). Thầy vẫn xem được ở chế độ giáo viên. */
+var SN_CLOSE_END = { MT1: 1, MT2: 1, MT3: 1, MT4: 1, MT5: 1, MT6: 1, MT7: 1 };
 /* Các buổi không có trang bài học */
 var SN_OTHER = { 12: 'Progress Test 1', 24: 'Progress Test 2' };
 /* Tên bài (dùng cho thông báo "bài mới mở"), lấy theo trang chủ */
@@ -54,11 +58,25 @@ var SN_TITLES = {
   "L9": "Listening Unit 9 · Part 3 – At Public Places",
   "L10": "Listening Unit 10–11 · Part 4 – Telephone Messages, Announcements & Ads",
   "L11": "Listening Unit 12 · Part 4 – Radio Broadcasts, Speeches & Internal Announcements",
+  "MT1": "Chữa bài Minitest 1 · Part 1",
+  "MT2": "Chữa bài Minitest 2 · Part 5",
+  "MT3": "Chữa bài Minitest 3 · Part 2",
+  "MT4": "Chữa bài Minitest 4 · Part 6",
+  "MT5": "Chữa bài Minitest 5 · Part 3",
+  "MT6": "Chữa bài Minitest 6 · Part 4",
+  "MT7": "Chữa bài Minitest 7 · Part 7",
   "PT1": "Ôn tập sau Progress Test 1",
   "PT2": "Ôn tập trước Progress Test 2"
  };
 var SN_PREFIX = 'summaryOld';
 var SN_FILES = {
+  'review/minitest-1.html': 'MT1',
+  'review/minitest-2.html': 'MT2',
+  'review/minitest-3.html': 'MT3',
+  'review/minitest-4.html': 'MT4',
+  'review/minitest-5.html': 'MT5',
+  'review/minitest-6.html': 'MT6',
+  'review/minitest-7.html': 'MT7',
   'review/progress-test-1.html': 'PT1',
   'review/progress-test-2.html': 'PT2',
   'reading/unit-01-nouns-pronouns.html': 'R1',
@@ -138,7 +156,9 @@ var SN = (function () {
     ds.forEach(function (d, i) { var o = new Date(d); o.setHours(e[0], e[1], 0, 0); if (now >= o) n = i + 1; });
     return Math.max(n, c.hocToi || 0);
   }
-  function isOpen(c, id) { var s = SN_SESSIONS[id]; return !s || s <= doneSessions(c); }
+  function closeDate(c) { var ds = dates(c), d = new Date(ds[ds.length - 1]); d.setDate(d.getDate() + 1); d.setHours(0, 0, 0, 0); return d; }
+  function isClosed(c, id) { return !!(c && typeof SN_CLOSE_END !== 'undefined' && SN_CLOSE_END[id]) && new Date() >= closeDate(c); }
+  function isOpen(c, id) { var s = SN_SESSIONS[id]; return (!s || s <= doneSessions(c)) && !isClosed(c, id); }
   function openDate(c, id) { var s = SN_SESSIONS[id]; return s ? dates(c)[s - 1] : null; }
   var TH = ['CN', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'];
   function fmt(d, withDay) {
@@ -151,7 +171,7 @@ var SN = (function () {
   function leave() { set(KEY, null); }
   function teacher(v) { if (v === undefined) return get(GV) === '1'; set(GV, v ? '1' : null); }
   return { find: find, current: current, choose: choose, leave: leave, teacher: teacher, dates: dates,
-    doneSessions: doneSessions, isOpen: isOpen, openDate: openDate, fmt: fmt, today: today, norm: norm };
+    doneSessions: doneSessions, isOpen: isOpen, isClosed: isClosed, closeDate: closeDate, openDate: openDate, fmt: fmt, today: today, norm: norm };
 })();
 
 /* ===== Bắt đăng nhập Google trước khi xem web =====
@@ -244,6 +264,11 @@ var SN = (function () {
     if (!c) {
       box.innerHTML = '<div class="ic">🔑</div><h2>Bạn chưa nhập mã lớp</h2><p>Vào trang chủ, nhập mã lớp thầy gửi để xem các bài lớp đã học nhé.</p>' +
         '<a class="btn" href="' + home + '">Về trang chủ nhập mã lớp</a>';
+    } else if (SN.isClosed(c, id)) {
+      var last = SN.dates(c)[SN.dates(c).length - 1];
+      box.innerHTML = '<div class="ic">🔒</div><h2>Trang này đã đóng</h2>' +
+        '<p>Khoá học của lớp ' + c.ma + ' đã kết thúc ngày <b>' + SN.fmt(last) + '/' + last.getFullYear() + '</b>, nên trang chữa minitest đã đóng lại.</p>' +
+        '<p>Các bài tóm tắt kiến thức vẫn mở để bạn ôn tiếp nhé!</p><a class="btn" href="' + home + '">← Về danh sách bài</a>';
     } else {
       var d = SN.openDate(c, id);
       box.innerHTML = '<div class="ic">🔒</div><h2>Lớp mình chưa học tới bài này</h2>' +
