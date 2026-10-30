@@ -1,6 +1,16 @@
 /* Có gì mới trên web Tóm tắt kiến thức TOEIC Pre — mới nhất ở trên cùng. Thêm mục mới vào ĐẦU danh sách; id là ngày (YYYY-MM-DD), cùng ngày thì thêm hậu tố (2026-10-21b). link (tuỳ chọn): [đường dẫn, chữ trên nút]. */
 window.MT_UPDATES = [
   {
+    id: '2026-10-30b', date: '30/10/2026',
+    title: 'Phong cách đẹp và dễ đọc hơn, nút bấm hợp từng phong cách',
+    items: [
+      'Hành baro và Thiên thần: hoạ tiết nền nhạt bớt, chữ trên nền dễ đọc hơn; ô đáp án đổi sang màu nhạt hợp phong cách thay cho màu be.',
+      'Thiên thần: bỏ bóng hồng ở tiêu đề nhỏ trên trang làm bài, chữ không còn bị nhoè.',
+      'Nút bấm mới theo phong cách: Hành baro tròn bóng như phím đàn, Thiên thần kiểu pixel đổ bóng tím, Băng hoại cắt góc vàng kim.',
+      'Băng hoại: khung Đăng nhập để học không còn bị chữ trắng trên nền trắng.'
+    ]
+  },
+  {
     id: '2026-10-30', date: '30/10/2026',
     title: 'Flashcard đọc được trên iPhone',
     items: [

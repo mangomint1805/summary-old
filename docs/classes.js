@@ -188,15 +188,15 @@ var SN = (function () {
   var root = document.documentElement, box = null, locked = false;
   var css = document.createElement('style');
   css.textContent = 'html.sn-auth body>*:not(.sn-auth-box){display:none!important}html.sn-auth body{background:var(--paper,#faf8f4)}' +
-    '.sn-auth-box{max-width:420px;margin:12vh auto 24px;padding:26px 22px 22px;background:#fff;border:1.5px solid var(--line,#ddd7c9);border-radius:16px;box-shadow:0 10px 30px rgba(30,35,43,.08);text-align:center;box-sizing:border-box;width:calc(100% - 32px);}' +
+    '.sn-auth-box{max-width:420px;margin:12vh auto 24px;padding:26px 22px 22px;background:var(--card,#fff);border:1.5px solid var(--line,#ddd7c9);border-radius:16px;box-shadow:0 10px 30px rgba(30,35,43,.08);text-align:center;box-sizing:border-box;width:calc(100% - 32px);}' +
     '.sn-auth-box .ic{font-size:44px;line-height:1}' +
     '.sn-auth-box h2{font-family:Fraunces,Lora,"Times New Roman",serif;font-weight:600;font-size:24px;margin:12px 0 6px;color:var(--ink,#1e232b)}' +
     '.sn-auth-box p{color:var(--dim,#666e7a);margin:4px 0 0;font-size:15.5px;line-height:1.55}' +
-    '.sn-auth-box .mp-acc{text-align:left;margin-top:16px;border-top:1px dashed #e2dbcd;padding-top:14px;font-size:15px}' +
+    '.sn-auth-box .mp-acc{text-align:left;margin-top:16px;border-top:1px dashed var(--line,#e2dbcd);padding-top:14px;font-size:15px}' +
     '.sn-auth-box .mp-acc .ma-g{font-size:15.5px;padding:13px}' +
     '.sn-auth-box .mp-acc .ma-t{display:none}' +
     '.sn-auth-box .wait{color:var(--dim,#666e7a);font-size:14.5px}' +
-    '.sn-auth-box .retry{margin-top:10px;font:600 14.5px/1 inherit;padding:10px 16px;border-radius:10px;border:1.5px solid var(--amber,#a8691a);background:#fff;color:var(--amber-ink,#6b4410);cursor:pointer}';
+    '.sn-auth-box .retry{margin-top:10px;font:600 14.5px/1 inherit;padding:10px 16px;border-radius:10px;border:1.5px solid var(--amber,#a8691a);background:var(--card,#fff);color:var(--amber-ink,#6b4410);cursor:pointer}';
   document.head.appendChild(css);
 
   function draw() {
