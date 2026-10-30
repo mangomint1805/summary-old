@@ -243,12 +243,14 @@
   function gSpeak(t) { playUrl('https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en&q=' + encodeURIComponent(t)); }
   function nativeSpeak(t, voiceURI, fail) {
     var list = voices();
-    if (!native || !list.length) { fail(); return; }
+    if (!native) { fail(); return; }
     try {
       var u = new SpeechSynthesisUtterance(t);
       var v = voiceURI && list.filter(function (x) { return x.voiceURI === voiceURI; })[0];
       if (!v) v = list.filter(function (x) { return /en[-_]US/i.test(x.lang); })[0] || list[0];
-      u.voice = v; u.lang = v.lang; u.rate = rate();
+      // iPhone hay trả danh sách giọng rỗng lúc đầu: vẫn đọc bằng giọng tiếng Anh mặc định
+      if (v) { u.voice = v; u.lang = v.lang; } else u.lang = 'en-US';
+      u.rate = rate();
       var started = false;
       u.onstart = function () { started = true; clearTimeout(watchdog); talk(true); };
       u.onend = function () { talk(false); };
@@ -257,12 +259,27 @@
       watchdog = setTimeout(function () { if (!started) { try { speechSynthesis.cancel(); } catch (e) {} fail(); } }, 1500);
     } catch (e) { fail(); }
   }
+  // iPhone chỉ cho phát tiếng ngay trong lúc chạm. Nếu đợi file lỗi rồi mới đổi sang giọng của máy
+  // thì iPhone chặn, nên kiểm tra trước file có hay không (has[url]) để chọn đúng cách đọc ngay khi chạm.
+  var has = {};
+  function fileOf(text) { return AUDIO_BASE + (vs.v.indexOf('f:') === 0 ? vs.v.slice(2) : 'us-f') + '/' + slug(text) + '.mp3'; }
+  function probe(text) {
+    var u = fileOf(text);
+    if (u in has || !window.fetch) return;
+    has[u] = null;
+    fetch(u, { method: 'HEAD' }).then(function (r) { has[u] = r.ok; }).catch(function () { delete has[u]; });
+  }
+  var unlocked = false;
+  function unlock() { // "mở khoá" giọng đọc của máy trong lần chạm đầu tiên (iPhone/iPad)
+    if (unlocked || !native) return; unlocked = true;
+    try { var u = new SpeechSynthesisUtterance(' '); u.volume = 0; speechSynthesis.speak(u); } catch (e) {}
+  }
   function speak(text) {
     var t = clean(text);
     stopAll();
-    var file = AUDIO_BASE + 'us-f/' + slug(text) + '.mp3';
+    var file = fileOf(text);
+    if (has[file] === false) { nativeSpeak(t, vs.v.indexOf('f:') === 0 ? '' : vs.v, function () { gSpeak(t); }); return; }
     if (vs.v.indexOf('f:') === 0) {
-      file = AUDIO_BASE + vs.v.slice(2) + '/' + slug(text) + '.mp3';
       playUrl(file, function () { nativeSpeak(t, '', function () { gSpeak(t); }); });
     } else {
       nativeSpeak(t, vs.v, function () { playUrl(file, function () { gSpeak(t); }); });
@@ -312,6 +329,7 @@
     });
     swipe(card);
     enter = '';
+    probe(c.en); if (deck[i + 1]) probe(deck[i + 1].en);
     autoSay();
   }
 
@@ -411,6 +429,7 @@
 
   function open() {
     lastFocus = document.activeElement;
+    unlock();
     bg.classList.add('on'); document.documentElement.style.overflow = 'hidden';
     busy = false; enter = ''; build();
     var c = main.querySelector('.fc-card'); if (c) c.focus();

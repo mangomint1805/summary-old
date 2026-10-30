@@ -1,6 +1,14 @@
 /* Có gì mới trên web Tóm tắt kiến thức TOEIC Pre — mới nhất ở trên cùng. Thêm mục mới vào ĐẦU danh sách; id là ngày (YYYY-MM-DD), cùng ngày thì thêm hậu tố (2026-10-21b). link (tuỳ chọn): [đường dẫn, chữ trên nút]. */
 window.MT_UPDATES = [
   {
+    id: '2026-10-30', date: '30/10/2026',
+    title: 'Flashcard đọc được trên iPhone',
+    items: [
+      'Sửa lỗi flashcard trên iPhone/iPad: bấm 🔊 mà không nghe thấy gì. Giờ bấm là đọc ngay.',
+      'Mẹo: nếu vẫn chưa nghe, bạn kiểm tra nút gạt im lặng bên hông máy và âm lượng.'
+    ]
+  },
+  {
     id: '2026-10-29', date: '29/10/2026',
     title: 'Lộ trình theo lịch học và trang chữa Minitest',
     items: [

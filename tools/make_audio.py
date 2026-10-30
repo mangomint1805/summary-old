@@ -8,7 +8,7 @@ import glob, html, os, re, subprocess, sys, tempfile
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'docs')
 VOICES = {'us-f': ('af_heart', 'en-us'), 'us-m': ('am_michael', 'en-us'), 'uk-f': ('bf_emma', 'en-gb')}
-POS = re.compile(r'\s*\((n|v|adj|adv|phr|prep|conj|n/v|v/n|pron)\)\s*$', re.I)
+POS = re.compile(r'\s*\((n|v|adj|adv|phr|prep|conj|n/v|v/n|pron|phr\.v|np)\)\s*$', re.I)
 
 
 def clean(s):  # giống hàm speak() trong flashcards.js
@@ -22,7 +22,7 @@ def slug(s):  # giống hàm slug() trong flashcards.js
 
 def words():
     out = {}
-    for f in glob.glob(os.path.join(ROOT, '*', '*.html')):
+    for f in glob.glob(os.path.join(ROOT, '**', '*.html'), recursive=True):
         s = open(f, encoding='utf-8').read()
         m = re.search(r'<h2[^>]*>[^<]*Bảng từ vựng', s)  # tiêu đề bảng, không phải dòng mục lục
         if not m:
