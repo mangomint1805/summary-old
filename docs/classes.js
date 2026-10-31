@@ -32,6 +32,8 @@ var SN_SESSIONS = {
 var SN_TOTAL = 24;
 /* Các trang tự ĐÓNG khi lớp học xong buổi cuối (đóng từ 0h ngày hôm sau). Thầy vẫn xem được ở chế độ giáo viên. */
 var SN_CLOSE_END = { MT1: 1, MT2: 1, MT3: 1, MT4: 1, MT5: 1, MT6: 1, MT7: 1 };
+/* trang Chữa bài Minitest mở TRỄ 2 ngày sau buổi làm bài (cho cả lớp làm xong mới xem đáp án) */
+var SN_OPEN_DELAY = { MT1: 2, MT2: 2, MT3: 2, MT4: 2, MT5: 2, MT6: 2, MT7: 2 };
 /* Các buổi không có trang bài học */
 var SN_OTHER = { 12: 'Progress Test 1', 24: 'Progress Test 2' };
 /* Tên bài (dùng cho thông báo "bài mới mở"), lấy theo trang chủ */
@@ -158,8 +160,19 @@ var SN = (function () {
   }
   function closeDate(c) { var ds = dates(c), d = new Date(ds[ds.length - 1]); d.setDate(d.getDate() + 1); d.setHours(0, 0, 0, 0); return d; }
   function isClosed(c, id) { return !!(c && typeof SN_CLOSE_END !== 'undefined' && SN_CLOSE_END[id]) && new Date() >= closeDate(c); }
-  function isOpen(c, id) { var s = SN_SESSIONS[id]; return (!s || s <= doneSessions(c)) && !isClosed(c, id); }
-  function openDate(c, id) { var s = SN_SESSIONS[id]; return s ? dates(c)[s - 1] : null; }
+  function delay(id) { return (typeof SN_OPEN_DELAY !== 'undefined' && SN_OPEN_DELAY[id]) || 0; }
+  function openDate(c, id) {
+    var s = SN_SESSIONS[id]; if (!s) return null;
+    var d = new Date(dates(c)[s - 1]); d.setDate(d.getDate() + delay(id)); return d;
+  }
+  function isOpen(c, id) {
+    var s = SN_SESSIONS[id];
+    if (s && delay(id)) { // mở lúc tan học của ngày (buổi + số ngày trễ)
+      var o = openDate(c, id), e = snEndHM(c); o.setHours(e[0], e[1], 0, 0);
+      return new Date() >= o && !isClosed(c, id);
+    }
+    return (!s || s <= doneSessions(c)) && !isClosed(c, id);
+  }
   var TH = ['CN', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'];
   function fmt(d, withDay) {
     if (!d) return '';
@@ -271,8 +284,8 @@ var SN = (function () {
         '<p>Các bài tóm tắt kiến thức vẫn mở để bạn ôn tiếp nhé!</p><a class="btn" href="' + home + '">← Về danh sách bài</a>';
     } else {
       var d = SN.openDate(c, id);
-      box.innerHTML = '<div class="ic">🔒</div><h2>Lớp mình chưa học tới bài này</h2>' +
-        '<p>Bài này sẽ mở sau giờ học, lúc <b>' + snEndText(c) + ' ngày ' + SN.fmt(d, true) + '/' + d.getFullYear() + '</b> (buổi ' + SN_SESSIONS[id] + ' của lớp ' + c.ma + ').</p>' +
+      box.innerHTML = '<div class="ic">🔒</div><h2>' + (SN_OPEN_DELAY[id] ? 'Trang chữa bài chưa mở' : 'Lớp mình chưa học tới bài này') + '</h2>' +
+        '<p>Bài này sẽ mở sau giờ học, lúc <b>' + snEndText(c) + ' ngày ' + SN.fmt(d, true) + '/' + d.getFullYear() + '</b> (' + (SN_OPEN_DELAY && SN_OPEN_DELAY[id] ? SN_OPEN_DELAY[id] + ' ngày sau ' : '') + 'buổi ' + SN_SESSIONS[id] + ' của lớp ' + c.ma + ').</p>' +
         '<p>Ôn lại các bài đã học trước nha!</p><a class="btn" href="' + home + '">← Về danh sách bài</a>';
     }
     var main = document.querySelector('main');
