@@ -1,6 +1,13 @@
 /* Có gì mới trên web Tóm tắt kiến thức TOEIC Pre — mới nhất ở trên cùng. Thêm mục mới vào ĐẦU danh sách; id là ngày (YYYY-MM-DD), cùng ngày thì thêm hậu tố (2026-10-21b). link (tuỳ chọn): [đường dẫn, chữ trên nút]. */
 window.MT_UPDATES = [
   {
+    id: '2026-10-31b', date: '31/10/2026',
+    title: 'Gọn gàng hơn trên điện thoại',
+    items: [
+      'Trên điện thoại màn hình nhỏ, thanh trên cùng không còn bị tràn ra ngoài khi dùng giao diện Sci-fi, Y2K hay Idol: nút Cài đặt luôn bấm được, trang không bị lệch ngang.'
+    ]
+  },
+  {
     id: '2026-10-31', date: '31/10/2026',
     title: 'Trang chữa Minitest hiện lại bài bạn đã làm online',
     items: [
