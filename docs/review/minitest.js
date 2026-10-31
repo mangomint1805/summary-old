@@ -155,4 +155,43 @@
     var pick = b.classList.contains('mt-skip') ? '-' : b.dataset.c;
     ans[n] = pick; save(); show(q, pick === '-' ? null : pick); score();
   });
+
+  // ===== Bài làm online của chính bạn (trang thi minitest lưu ở mt.exam.<mã đề>; đăng nhập Google thì tự đồng bộ giữa các máy) =====
+  var css2 = document.createElement('style');
+  css2.textContent = '.mt-mine{margin:14px 0 4px;padding:11px 14px;border-radius:12px;background:var(--brand-soft,#f2e2c4);border:1.5px solid var(--line);display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;justify-content:space-between}' +
+    '.mt-mine button{font:inherit;font-size:13.5px;font-weight:600;border:1px solid var(--line);background:var(--card,#fff);border-radius:8px;padding:5px 10px;cursor:pointer;color:var(--ink)}' +
+    '.mt-qh .me{font-size:12.5px;font-weight:700;border-radius:99px;padding:1px 9px}.mt-qh .me.y{background:#e1f4ec;color:#1f7a4d}.mt-qh .me.n{background:#fbe6e2;color:#b2412d}' +
+    '.mt-opt.mine{outline:2.5px dashed #6b5bd6;outline-offset:2px}#mt.hide-mine .me{display:none}#mt.hide-mine .mt-opt.mine{outline:0}';
+  document.head.appendChild(css2);
+  function mine() {
+    var best = null;
+    try {
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (k.indexOf('mt.exam.TOEIC-PRE-MT' + M.n + '-') !== 0) continue;
+        var L = JSON.parse(localStorage.getItem(k) || '[]'); if (!Array.isArray(L)) continue;
+        L.forEach(function (x) { if (x && x.a && (!x.src || x.src.indexOf('/pretoeic-minitest/') >= 0) && (!best || x.at > best.at)) best = x; });
+      }
+    } catch (e) {}
+    return best;
+  }
+  function paintMine() {
+    var x = mine(); if (!x || document.getElementById('mtMine')) return !!x;
+    var ok = 0, tot = 0;
+    Q.forEach(function (q) {
+      var el = document.getElementById('q' + q.n); if (!el) return;
+      var c = x.a[q.n] || x.a[String(q.n)] || ''; tot++;
+      var right = c && q.ans.indexOf(c) >= 0; if (right) ok++;
+      el.querySelector('.mt-qh').insertAdjacentHTML('beforeend', '<span class="me ' + (right ? 'y' : 'n') + '">Bài online: ' + (c ? c + (right ? ' ✓' : ' ✗') : 'bỏ trống ✗') + '</span>');
+      var b = c && el.querySelector('.mt-opt[data-c="' + c + '"]'); if (b) b.classList.add('mine');
+    });
+    var d = new Date(x.at), when = ('0' + d.getDate()).slice(-2) + '/' + ('0' + (d.getMonth() + 1)).slice(-2) + ' ' + ('0' + d.getHours()).slice(-2) + ':' + ('0' + d.getMinutes()).slice(-2);
+    var bx = document.createElement('div'); bx.className = 'mt-mine'; bx.id = 'mtMine';
+    bx.innerHTML = '<span>📝 Đang hiện <b>bài làm online của bạn</b> ngày ' + when + ': đúng <b>' + ok + '/' + tot + '</b> câu. Câu bạn chọn có khung tím nét đứt.</span><button type="button">Ẩn bài làm</button>';
+    var sc = document.getElementById('mtScore'); sc.parentNode.insertBefore(bx, sc);
+    bx.querySelector('button').onclick = function () { var h = root.classList.toggle('hide-mine'); this.textContent = h ? 'Hiện bài làm' : 'Ẩn bài làm'; };
+    return true;
+  }
+  // máy khác: bài làm về sau khi đăng nhập Google đồng bộ xong, thử lại vài lần
+  if (!paintMine()) [3000, 8000, 15000].forEach(function (t) { setTimeout(paintMine, t); });
 })();
