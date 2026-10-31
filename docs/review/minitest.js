@@ -1,10 +1,10 @@
 /* Trang chữa bài Minitest: vẽ nội dung từ window.MT (dữ liệu nằm trong từng trang minitest-N.html).
-   Học viên chọn đáp án → hiện đúng/sai, dịch, giải thích. Bài làm lưu trên máy (khoá summaryOld.mtN, tự đồng bộ khi đăng nhập). */
+   Học viên chọn đáp án → hiện đúng/sai, dịch, giải thích. Bài làm lưu trên máy (khoá <SN_PREFIX>.mtN, tự đồng bộ khi đăng nhập). */
 (function () {
   'use strict';
   var M = window.MT, root = document.getElementById('mt');
   if (!M || !root) return;
-  var L = 'ABCD', KEY = 'summaryOld.mt' + M.n;
+  var L = 'ABCD', KEY = (window.SN_PREFIX || 'summaryOld') + '.mt' + M.n;
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   // **đậm** và (32) trong lời thoại
   function fmt(s) { return esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/&lt;(\/?)(b|i|u|br)&gt;/g, '<$1$2>'); }
@@ -168,9 +168,9 @@
     try {
       for (var i = 0; i < localStorage.length; i++) {
         var k = localStorage.key(i);
-        if (k.indexOf('mt.exam.TOEIC-PRE-MT' + M.n + '-') !== 0) continue;
+        if (k.indexOf('mt.exam.' + (M.exam || 'TOEIC-PRE-MT' + M.n) + '-') !== 0) continue;
         var L = JSON.parse(localStorage.getItem(k) || '[]'); if (!Array.isArray(L)) continue;
-        L.forEach(function (x) { if (x && x.a && (!x.src || x.src.indexOf('/pretoeic-minitest/') >= 0) && (!best || x.at > best.at)) best = x; });
+        L.forEach(function (x) { if (x && x.a && (!x.src || x.src.indexOf(M.examSrc || '/pretoeic-minitest/') >= 0) && (!best || x.at > best.at)) best = x; });
       }
     } catch (e) {}
     return best;
