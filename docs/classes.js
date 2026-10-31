@@ -196,7 +196,7 @@ var SN = (function () {
   if (window.SN_GATE) return; window.SN_GATE = 1;
   if (SN.teacher() || /[?&]gv(=|&|$)/.test(location.search)) return;
   var me = document.currentScript, src = (me && me.getAttribute('src')) || 'classes.js';
-  var ACC = src.replace(/classes\.js.*$/, '') + 'assets/acc.js?v=9';
+  var ACC = src.replace(/classes\.js.*$/, '') + 'assets/acc.js?v=10';
   var had = false; try { had = !!localStorage.getItem('mt.acc'); } catch (e) {}
   var root = document.documentElement, box = null, locked = false;
   var css = document.createElement('style');
