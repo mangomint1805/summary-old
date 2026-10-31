@@ -1,13 +1,6 @@
 /* Có gì mới trên web Tóm tắt kiến thức TOEIC Pre — mới nhất ở trên cùng. Thêm mục mới vào ĐẦU danh sách; id là ngày (YYYY-MM-DD), cùng ngày thì thêm hậu tố (2026-10-21b). link (tuỳ chọn): [đường dẫn, chữ trên nút]. */
 window.MT_UPDATES = [
   {
-    id: '2026-10-31', date: '31/10/2026',
-    title: 'Trang chữa Minitest mở sau 2 ngày',
-    items: [
-      'Trang Chữa bài Minitest giờ mở 2 ngày sau buổi làm bài (lúc tan học), để cả lớp làm xong hết rồi mới cùng xem đáp án.'
-    ]
-  },
-  {
     id: '2026-10-30c', date: '30/10/2026',
     title: 'Thêm nút bấm hợp phong cách',
     items: [
