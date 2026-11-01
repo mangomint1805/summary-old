@@ -164,3 +164,9 @@ html[data-theme=dark] .doc table.v3note td{background:#2a2216!important;}
 }
 .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;}
 .tbl-scroll>table{margin:0!important;}
+/* điện thoại: vùng chạm tối thiểu ~44px (máy tính không đổi) */
+@media (max-width:600px){
+.sched>summary,details.cal>summary,.sn-toc summary{padding-top:9px;padding-bottom:9px;}
+.sn-pill,.mt-skip{position:relative;}
+.sn-pill::before,.mt-skip::before{content:"";position:absolute;inset:-9px -4px;}
+}

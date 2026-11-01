@@ -1,6 +1,14 @@
 /* Có gì mới trên web Tóm tắt kiến thức TOEIC Pre — mới nhất ở trên cùng. Thêm mục mới vào ĐẦU danh sách; id là ngày (YYYY-MM-DD), cùng ngày thì thêm hậu tố (2026-10-21b). link (tuỳ chọn): [đường dẫn, chữ trên nút]. */
 window.MT_UPDATES = [
   {
+    id: '2026-11-02', date: '02/11/2026',
+    title: 'Nút bấm dễ chạm hơn trên điện thoại',
+    items: [
+      'Trên điện thoại, các nút nhỏ giờ có vùng bấm rộng hơn nên ít bấm trượt: nút đánh dấu đã ôn bài, mở Lịch học, "Chưa chắc? Xem đáp án luôn" trong bài ôn và các nút trên thanh trên cùng.',
+      'Bảng Cài đặt, khung Góp ý và phần Hướng dẫn: các nút to hơn, dễ bấm bằng ngón tay. Trên máy tính mọi thứ giữ nguyên.'
+    ]
+  },
+  {
     id: '2026-10-31b', date: '31/10/2026',
     title: 'Gọn gàng hơn trên điện thoại',
     items: [
