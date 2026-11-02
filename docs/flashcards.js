@@ -63,7 +63,7 @@
   var css = '' +
     '.fc-open{display:inline-flex;align-items:center;gap:8px;font:inherit;font-weight:700;font-size:15px;color:#fff;background:var(--amber,#a8691a);border:0;border-radius:10px;padding:11px 16px;cursor:pointer;margin:4px 0 8px;}' +
     '.fc-open:hover{filter:brightness(1.08);}' +
-    '.fc-open small{font-weight:500;opacity:.85;}' +
+    '.fc-open small{font-weight:500;opacity:1;}' +
     '.fc-jump{display:inline-flex;align-items:center;gap:6px;margin:16px 0 0;font:inherit;font-size:14.5px;font-weight:600;color:var(--amber-ink,#6b4410);background:var(--amber-soft,#f2e2c4);border:1.5px solid var(--amber,#a8691a);border-radius:999px;padding:7px 14px;cursor:pointer;}' +
     '.fc-bg{position:fixed;inset:0;z-index:50;background:rgba(30,35,43,.55);display:none;align-items:center;justify-content:center;padding:16px;}' +
     '.fc-bg.on{display:flex;}' +

@@ -65,7 +65,7 @@
     '.lt-grid a{display:flex;gap:10px;align-items:flex-start;padding:11px 12px;border:1px solid var(--line,#ddd7c9);border-radius:11px;background:var(--paper,#faf8f4);text-decoration:none;color:var(--ink,#1e232b)}' +
     '.lt-grid a:hover{border-color:var(--amber,#a8691a);box-shadow:0 4px 14px rgba(107,68,16,.08)}' +
     '.lt-grid .ic{font-size:22px;line-height:1.1;flex:none}.lt-grid b{display:block;font-size:15px;line-height:1.3}.lt-grid small{display:block;color:var(--dim,#666e7a);font-size:13px;line-height:1.35;margin-top:2px}' +
-    '.lt-grid small.st{color:#c2410c;font-weight:700}.lt-quick .lt-grid{grid-template-columns:repeat(auto-fill,minmax(165px,1fr))}';
+    '.lt-grid small.st{color:#c2410c;font-weight:700}html[data-theme=dark] .lt-grid small.st{color:#ff9a62}.lt-quick .lt-grid{grid-template-columns:repeat(auto-fill,minmax(165px,1fr))}';
   document.head.appendChild(css);
 
   function href(u) { return /^(\/|https?:)/.test(u) ? u : base + u; }
