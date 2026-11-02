@@ -343,6 +343,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var cs = getComputedStyle(p), room = p.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
     if (t.offsetWidth <= room + 1) return;
     var w = document.createElement('div'); w.className = 'tbl-scroll';
+    // cuộn được bằng bàn phím (Tab vào bảng rồi dùng phím ←/→), trình đọc màn hình biết đây là vùng bảng
+    w.tabIndex = 0; w.setAttribute('role', 'region'); w.setAttribute('aria-label', 'Bảng (vuốt hoặc dùng phím mũi tên để xem hết)');
     p.insertBefore(w, t); w.appendChild(t);
   });
 });

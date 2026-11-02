@@ -162,6 +162,7 @@ html[data-theme=dark] .doc table.v3note td{background:#2a2216!important;}
   .doc th,.doc td:first-child{overflow-wrap:normal;}
   .doc col{width:auto!important;}
 }
+.lt-scroll:focus-visible,.tbl-scroll:focus-visible{outline:3px solid var(--amber,#9a5f14);outline-offset:2px;border-radius:6px}
 .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;}
 .tbl-scroll>table{margin:0!important;}
 /* điện thoại: vùng chạm tối thiểu ~44px (máy tính không đổi) */

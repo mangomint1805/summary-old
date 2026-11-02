@@ -6,7 +6,10 @@ window.MT_UPDATES = [
     items: [
       'Chữ màu cam, chữ phụ màu xám và nút bấm ở giao diện Xoài, Hành baro, Thiên thần được làm đậm hơn một chút, nhìn rõ hơn trên điện thoại, nhất là khi ra ngoài trời sáng.',
       'Thanh menu dưới cùng có chữ to hơn một chút, dễ đọc tên từng mục hơn.',
-      'Băng hoại: nút "Vào học" ở ô nhập mã lớp không còn chữ trắng trên nền vàng, đọc rõ hơn.'
+      'Băng hoại: nút "Vào học" ở ô nhập mã lớp không còn chữ trắng trên nền vàng, đọc rõ hơn.',
+      'Nút chính ở giao diện Hành baro và Thiên thần giữ nguyên kiểu bóng và màu, chỉ đậm hơn để chữ trắng đọc rõ.',
+      'Chữ "TOEIC" cạnh logo to hơn, dễ đọc trên điện thoại.',
+      'Bảng rộng trong bài học cuộn được bằng phím mũi tên khi dùng máy tính.'
     ]
   },
   {
