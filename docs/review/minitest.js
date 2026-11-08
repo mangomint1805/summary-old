@@ -118,8 +118,20 @@
     h += '</section>';
   });
   if (M.recap) h += M.recap;
+  // Bảng từ vựng của đề: flashcards.js đọc bảng này để tạo bộ thẻ (tiến độ lưu chung với flashcard các bài tóm tắt)
+  if (M.vocab && M.vocab.length) {
+    h += '<h2 data-fc-jump="🃏 Flashcard từ vựng bài này">Bảng từ vựng bài này</h2><p class="mt-qvi">' + M.vocab.length + ' từ và cụm từ hay gặp lấy từ chính đề này, kèm câu ví dụ trong đề. Bấm nút bên dưới để ôn bằng thẻ.</p>' +
+      '<table class="mt-voc"><thead><tr><th>English</th><th>Part of speech</th><th>Phonetics</th><th>Vietnamese</th><th>Example</th></tr></thead><tbody>' +
+      M.vocab.map(function (v) { return '<tr><td><b>' + esc(v[0]) + '</b></td><td>' + esc(v[1]) + '</td><td>' + esc(v[2]) + '</td><td>' + esc(v[3]) + '</td><td><i>' + esc(v[4]) + '</i></td></tr>'; }).join('') +
+      '</tbody></table>';
+  }
   h += '<div class="mt-end" id="mtEnd" hidden></div>';
   root.innerHTML = h;
+  if (M.vocab && M.vocab.length) {
+    var me = document.querySelector('script[src*="minitest.js"]'), fc = document.createElement('script');
+    fc.src = (me ? me.getAttribute('src').replace(/minitest\.js.*$/, '') : '') + '../flashcards.js?v=3';
+    document.body.appendChild(fc);
+  }
 
   function show(q, pick) {
     var el = document.getElementById('q' + q.n); if (!el) return;

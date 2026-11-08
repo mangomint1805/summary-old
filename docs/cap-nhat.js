@@ -1,6 +1,14 @@
 /* Có gì mới trên web Tóm tắt kiến thức TOEIC Pre — mới nhất ở trên cùng. Thêm mục mới vào ĐẦU danh sách; id là ngày (YYYY-MM-DD), cùng ngày thì thêm hậu tố (2026-10-21b). link (tuỳ chọn): [đường dẫn, chữ trên nút]. */
 window.MT_UPDATES = [
   {
+    id: '2026-11-08', date: '08/11/2026',
+    title: 'Flashcard từ vựng cho các bài chữa Minitest',
+    items: [
+      'Mỗi trang chữa Minitest 1–7 giờ có Bảng từ vựng riêng: khoảng 20–30 từ và cụm từ hay gặp lấy từ chính đề, có phiên âm, nghĩa tiếng Việt và câu ví dụ trong đề.',
+      'Bấm nút "🃏 Flashcard từ vựng bài này" ở đầu trang để ôn bằng thẻ: lật thẻ, nghe phát âm, đánh dấu "Đã thuộc" như flashcard ở các bài tóm tắt. Mặt sau thẻ có câu ví dụ trong đề để nhớ từ theo ngữ cảnh.'
+    ]
+  },
+  {
     id: '2026-11-03', date: '03/11/2026',
     title: 'Chữ và nút dễ đọc hơn',
     items: [

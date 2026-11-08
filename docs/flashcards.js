@@ -18,17 +18,20 @@
   if (!tables.length) return;
 
   function txt(n) { return n ? n.textContent.replace(/\s+/g, ' ').trim() : ''; }
-  var POS = /\s*\((n|v|adj|adv|phr|prep|conj|n\/v|v\/n|pron)\)\s*$/i;
+  var POS = /\s*\((n|v|adj|adv|phr|prep|conj|n\/v|v\/n|pron|phr\.v|np)\)\s*$/i;
   var cards = [], seen = {};
   tables.forEach(function (table) {
+    if (table.classList.contains('no-fc')) return; // bảng phụ (VD Word Forms, Paraphrase): không làm thẻ
     var rows = [].slice.call(table.querySelectorAll('tr'));
     if (!rows.length) return;
     // Xác định cột theo dòng tiêu đề: English / Pronunciation / Vietnamese
     var head = table.querySelector('thead tr') || rows[0];
     var hs = [].slice.call(head.children).map(function (c) { return txt(c).toLowerCase(); });
-    var cEn = -1, cIpa = -1, cVi = -1;
+    var cEn = -1, cIpa = -1, cVi = -1, cPos = -1, cEx = -1;
     hs.forEach(function (h, k) {
-      if (/english|tiếng anh|từ vựng|word/.test(h) && cEn < 0) cEn = k;
+      if (/^(example|ví dụ)/.test(h)) cEx = k;
+      else if (/part of speech|loại từ/.test(h)) cPos = k;
+      else if (/english|tiếng anh|từ vựng|word/.test(h) && cEn < 0) cEn = k;
       else if (/pronunc|phonetic|phát âm|ipa|phiên âm/.test(h)) cIpa = k;
       else if (/vietnam|tiếng việt|nghĩa|meaning/.test(h)) cVi = k;
     });
@@ -45,10 +48,11 @@
       if (!en || !vi || /^english$/i.test(en)) return;
       var m = en.match(POS), pos = '';
       if (m) { pos = m[1].toLowerCase(); en = en.replace(POS, ''); }
+      else if (cPos >= 0 && td[cPos]) pos = esc(txt(td[cPos]).toLowerCase());
       if (ipa && !/^\/?.*\/$/.test(ipa) && ipa.indexOf('/') < 0) ipa = '';
       var key = en.toLowerCase();
       if (seen[key]) return; seen[key] = 1;
-      cards.push({ en: en, vi: vi, pos: pos, ipa: ipa });
+      cards.push({ en: en, vi: vi, pos: pos, ipa: ipa, ex: cEx >= 0 && td[cEx] ? txt(td[cEx]) : '' });
     });
   });
   if (cards.length < 2) return;
@@ -86,6 +90,7 @@
     '.fc-word{font-size:clamp(24px,7vw,34px);font-weight:700;line-height:1.25;color:var(--ink,#1e232b);word-break:break-word;}' +
     '.fc-back .fc-word{color:var(--amber-ink,#6b4410);font-size:clamp(21px,6vw,28px);}' +
     '.fc-pos{margin-top:8px;font-size:13px;font-weight:600;color:var(--dim,#666e7a);background:var(--paper,#faf8f4);border:1px solid var(--line,#ddd7c9);border-radius:99px;padding:2px 10px;}' +
+    '.fc-ex{margin-top:12px;font-size:14.5px;line-height:1.45;font-style:italic;color:var(--dim,#666e7a);max-width:100%;overflow-wrap:anywhere;}' +
     '.fc-ipa{margin-top:6px;font-size:16px;color:var(--dim,#666e7a);font-family:"Segoe UI","Noto Sans","Lucida Sans Unicode",system-ui,sans-serif;}' +
     '.fc-hint{position:absolute;bottom:10px;font-size:12px;color:var(--dim,#666e7a);}' +
     '.fc-say{position:absolute;top:10px;right:10px;font-size:20px;background:none;border:0;cursor:pointer;padding:6px;border-radius:8px;}' +
@@ -133,7 +138,8 @@
     '@keyframes fcTalk{50%{transform:scale(1.25)}}' +
     '@keyframes fcBounce{0%{transform:scale(0) rotate(-30deg)}60%{transform:scale(1.3) rotate(10deg)}100%{transform:scale(1)}}' +
     '@keyframes fcFall{to{transform:translateY(110vh) rotate(720deg);}}' +
-    '@media (max-width:480px){.fc-card{height:220px}.fc-keys{display:none}}' +
+    '@media (max-width:480px){.fc-card{height:220px}.fc-card.has-ex{height:260px}.fc-keys{display:none}}' +
+    '.fc-card.has-ex{height:280px}.fc-card.has-ex .fc-face{overflow-y:auto}' +
     '@media (prefers-reduced-motion:reduce){.fc-card,.fc-scene,.fc-bg,.fc-box,.fc-stamp,.fc-done,.fc-done .big{transition:none!important;animation:none!important}.fc-stamp{transform:translate(-50%,-50%)}.fc-confetti{display:none}}';
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
 
@@ -144,7 +150,7 @@
   }
   h2.parentNode.insertBefore(openBtn('fc-open', '🃏 Học bằng flashcard <small>(' + cards.length + ' từ)</small>'), h2.nextSibling);
   var sub = document.querySelector('main > .sub + h1 + .sub') || document.querySelector('main > h1');
-  if (sub) sub.parentNode.insertBefore(openBtn('fc-jump', '🃏 Flashcard từ vựng'), sub.nextSibling);
+  if (sub) sub.parentNode.insertBefore(openBtn('fc-jump', esc(h2.getAttribute('data-fc-jump') || '🃏 Flashcard từ vựng')), sub.nextSibling);
 
   // ---------- 5. Hộp flashcard ----------
   var bg = document.createElement('div');
@@ -307,11 +313,11 @@
     var c = deck[i];
     var enFace = '<div class="fc-word">' + esc(c.en) + '</div>' + (c.ipa ? '<div class="fc-ipa">' + esc(c.ipa) + '</div>' : '') + (c.pos ? '<span class="fc-pos">' + c.pos + '</span>' : '');
     var viFace = '<div class="fc-word">' + esc(c.vi) + '</div>';
-    var front = viFirst ? viFace : enFace, back = viFirst ? enFace : viFace;
+    var front = viFirst ? viFace : enFace, back = (viFirst ? enFace : viFace) + (c.ex ? '<div class="fc-ex">“' + esc(c.ex) + '”</div>' : '');
     var say = canSpeak ? '<button class="fc-say" type="button" aria-label="Nghe phát âm" title="Nghe phát âm">🔊</button>' : '';
     var tag = known[c.en] ? '<span class="fc-tag">✓ Đã thuộc</span>' : '';
     main.innerHTML =
-      '<div class="fc-scene' + (enter ? ' ' + enter : '') + '"><div class="fc-card' + (flipped ? ' flip' : '') + '" tabindex="0" role="button" aria-label="Lật thẻ">' +
+      '<div class="fc-scene' + (enter ? ' ' + enter : '') + '"><div class="fc-card' + (flipped ? ' flip' : '') + (c.ex ? ' has-ex' : '') + '" tabindex="0" role="button" aria-label="Lật thẻ">' +
       '<div class="fc-face">' + tag + (viFirst ? '' : say) + front + '<span class="fc-hint">Chạm để lật thẻ</span></div>' +
       '<div class="fc-face fc-back">' + tag + (viFirst ? say : '') + back + '</div>' +
       '</div></div>' +
