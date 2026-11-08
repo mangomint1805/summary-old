@@ -1,6 +1,15 @@
 /* Có gì mới trên web Tóm tắt kiến thức TOEIC Pre — mới nhất ở trên cùng. Thêm mục mới vào ĐẦU danh sách; id là ngày (YYYY-MM-DD), cùng ngày thì thêm hậu tố (2026-10-21b). link (tuỳ chọn): [đường dẫn, chữ trên nút]. */
 window.MT_UPDATES = [
   {
+    id: '2026-11-09', date: '09/11/2026',
+    title: 'Ôn Progress Test 2: thêm luyện nghe và nhiều câu đọc hơn',
+    items: [
+      'Trang "Ôn tập trước Progress Test 2" giờ có 20 câu luyện nghe Part 1–4 với audio thật: Part 1 có tranh, Part 2 không in đáp án giống đề thi thật. Chọn xong sẽ hiện lời băng đọc kèm bản dịch tiếng Việt.',
+      'Phần đọc tăng từ 20 lên 51 câu: thêm 31 câu từ sách Starter TOEIC (Part 5, một đoạn Part 6 và hai bài đọc Part 7), mỗi câu đều có giải thích. Cần đăng nhập Google để tải phần này.'
+    ],
+    link: ['review/progress-test-2.html#pt-4', 'Làm bài luyện tập']
+  },
+  {
     id: '2026-11-08', date: '08/11/2026',
     title: 'Flashcard từ vựng cho các bài chữa Minitest',
     items: [

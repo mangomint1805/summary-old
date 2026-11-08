@@ -54,6 +54,17 @@
 .lt-opt.bad{border-color:#b42318;background:#fde9e6;}
 .lt-opt.bad b{background:#b42318;border-color:#b42318;color:#fff;}
 .lt-opt.dim{opacity:.55;}
+.lt-photo{display:block;max-width:100%;width:420px;border-radius:10px;border:1px solid var(--line);margin:4px 0 10px;}
+.lt-au{display:block;width:100%;max-width:460px;margin:2px 0 10px;}
+.lt-opt .lt-hid{color:var(--dim);letter-spacing:.2em;}
+.lt-tr{margin:6px 0 0;padding-left:24px;}
+.lt-tr li{margin:3px 0;}
+.lt-tr li.ok{font-weight:700;color:#1f7a4d;}
+.lt-tr i,.lt-scr i,.lt-fb i{color:var(--dim);font-style:normal;font-size:14px;}
+.lt-scr{margin:4px 0 0;font-size:15px;}
+.lt-scr summary{cursor:pointer;font-weight:600;color:var(--amber-ink);}
+.lt-scr p{margin:8px 0;}
+.lt-passage .t7{white-space:pre-line;}
 .lt-fb{display:none;margin-top:10px;padding:10px 12px;border-radius:10px;font-size:15px;}
 .lt-fb.show{display:block;}
 .lt-fb.good{background:#e2f3ea;border:1px solid #9fd2b6;}
@@ -85,11 +96,11 @@
 <tbody>
 <tr class="odd">
 <td><p><strong>Cách ôn hiệu quả</strong></p>
-<p>1. Đọc mẹo của từng Part, phần nào thấy lạ thì bấm vào tên unit để mở lại bài tóm tắt.</p><p>2. Làm <strong>20 câu luyện tập</strong> ở phần 4 (tự chọn trước, đọc giải thích sau). Câu nào sai, ghi lại chủ điểm để ôn thêm.</p><p>3. Cuối trang có <strong>Bảng từ vựng</strong>: bấm “Flashcard từ vựng” để ôn bằng thẻ.</p><p>4. Đã có trang <a href="progress-test-1.html">Ôn tập sau Progress Test 1</a> (lỗi hay sai giữa khóa): xem lại nếu còn thời gian.</p></td>
+<p>1. Đọc mẹo của từng Part, phần nào thấy lạ thì bấm vào tên unit để mở lại bài tóm tắt.</p><p>2. Làm <strong>phần luyện tập</strong> ở phần 4: 20 câu nghe (audio thật) và 51 câu đọc (tự chọn trước, đọc giải thích sau). Câu nào sai, ghi lại chủ điểm để ôn thêm.</p><p>3. Cuối trang có <strong>Bảng từ vựng</strong>: bấm “Flashcard từ vựng” để ôn bằng thẻ.</p><p>4. Đã có trang <a href="progress-test-1.html">Ôn tập sau Progress Test 1</a> (lỗi hay sai giữa khóa): xem lại nếu còn thời gian.</p></td>
 </tr>
 </tbody>
 </table>
-<ul class="lt-toc"><li><a href="#pt-1">1. Listening</a></li><li><a href="#pt-2">2. Reading</a></li><li><a href="#pt-3">3. Bảng ngữ pháp</a></li><li><a href="#pt-4">4. Luyện tập</a></li><li><a href="#pt-5">5. Mẹo ngày thi</a></li><li><a href="#pt-6">6. Từ vựng</a></li></ul>
+<ul class="lt-toc"><li><a href="#pt-1">1. Listening</a></li><li><a href="#pt-2">2. Reading</a></li><li><a href="#pt-3">3. Bảng ngữ pháp</a></li><li><a href="#pt-4a">4. Luyện tập nghe</a></li><li><a href="#pt-4b">Luyện tập đọc</a></li><li><a href="#pt-5">5. Mẹo ngày thi</a></li><li><a href="#pt-6">6. Từ vựng</a></li></ul>
 
 <h2 id="pt-1">1. Listening: mẹo từng Part</h2>
 
@@ -235,12 +246,23 @@
 <li><em>by</em> và <em>until</em>: <em>submit … <b>by</b> Friday</em> (hạn chót) nhưng <em>stay open <b>until</b> 9 p.m.</em> (kéo dài).</li>
 </ol></div>
 
-<h2 id="pt-4">4. Luyện tập: 20 câu Part 5 &amp; Part 6</h2>
-<p>16 câu Part 5 (mỗi câu một chủ điểm của 12 unit) và 1 đoạn Part 6 có 4 chỗ trống. Chạm vào đáp án để xem đúng / sai và <strong>giải thích</strong>. Kết quả được lưu trên máy của bạn, bấm “Làm lại” để làm từ đầu.</p>
+<h2 id="pt-4">4. Luyện tập: 20 câu nghe + 51 câu đọc</h2>
+<p>Làm phần nghe trước rồi tới phần đọc, giống thứ tự lúc thi. Chạm vào đáp án để xem đúng / sai và <strong>giải thích</strong>. Kết quả được lưu trên máy của bạn, bấm “Làm lại” để làm từ đầu.</p>
+
+<h3 id="pt-4a">4.1. Listening: 20 câu Part 1–4</h3>
+<p>Audio thật lấy từ đề ETS. <strong>Bấm ▶ để nghe</strong>, mỗi câu nghe tối đa 2 lần rồi chọn. Part 1 và Part 2 giống đề thật: đáp án <strong>không in chữ</strong>, chỉ nghe rồi chọn A, B, C (D); chọn xong mới hiện lời băng đọc kèm bản dịch.</p>
+<div class="lt-score" aria-live="polite"><span id="lsScore">Đúng 0 / 20</span><span class="bar"><i id="lsBar"></i></span><span id="lsDone">Đã làm 0/20</span></div>
+<div id="lsQuiz"></div>
+<div class="lt-end" id="lsEnd" aria-live="polite"><div class="big" id="lsEndIc">🎉</div><p id="lsEndTxt"></p><button type="button" class="lt-btn" id="lsAgain">↺ Làm lại</button></div>
+<p class="lt-again"><button type="button" class="lt-btn alt" id="lsReset">↺ Làm lại phần nghe</button></p>
+
+<h3 id="pt-4b">4.2. Reading: 51 câu Part 5–7</h3>
+<p>20 câu đầu thầy soạn theo 12 unit của khoá. 31 câu sau lấy từ sách <strong>Starter TOEIC</strong> (Part 5, một đoạn Part 6 và hai bài đọc Part 7), cần <strong>đăng nhập Google</strong> để tải.</p>
 <div class="lt-score" aria-live="polite"><span id="ltScore">Đúng 0 / 20</span><span class="bar"><i id="ltBar"></i></span><span id="ltDone">Đã làm 0/20</span></div>
 <div id="ltQuiz"></div>
+<p class="lt-note" id="ltStarter">Đang tải 31 câu Starter TOEIC…</p>
 <div class="lt-end" id="ltEnd" aria-live="polite"><div class="big" id="ltEndIc">🎉</div><p id="ltEndTxt"></p><button type="button" class="lt-btn" id="ltAgain">↺ Làm lại</button></div>
-<p class="lt-again"><button type="button" class="lt-btn alt" id="ltReset">↺ Làm lại</button></p>
+<p class="lt-again"><button type="button" class="lt-btn alt" id="ltReset">↺ Làm lại phần đọc</button></p>
 
 <h2 id="pt-5">5. Mẹo ngày thi</h2>
 <ul>
@@ -327,12 +349,13 @@
 <script>
 (function(){
   'use strict';
-  // s: câu (___ = chỗ trống) · o: 4 đáp án · k: đáp án đúng · u: chủ điểm · h: tiêu đề/đoạn văn chèn trước câu (nếu có)
+  // Câu hỏi: s câu (___ = chỗ trống) · o đáp án · k đáp án đúng · u chủ điểm · h HTML chèn trước câu · e giải thích (HTML)
+  // Thêm cho phần nghe: au audio · img hình · hide 1 = đáp án không in chữ (Part 1–2), hiện sau khi chọn
   var P6='<div class="lt-grp">Part 6 · Câu 17–20: đọc đoạn email, rồi chọn đáp án cho từng chỗ trống</div>'+
     '<div class="lt-passage"><p class="hd"><b>To:</b> All staff<br><b>Subject:</b> Third-floor renovation</p>'+
     '<p>Dear staff,</p><p>Please note that the third floor of our building <b>(17)</b> ______ next week. During this time, the meeting rooms on that floor will be closed. Employees <b>(18)</b> ______ usually work on the third floor will move to the second floor until Friday.</p>'+
     '<p><b>(19)</b> ______ you need a quiet place for a client call, please book Room 205 in advance. Each of the new rooms on the second floor <b>(20)</b> ______ a large screen and a projector.</p><p>We are sorry for any inconvenience.</p><p>Office Management Team</p></div>';
-  var Q=[
+  var QR=[
     {h:'<div class="lt-grp">Part 5 · Câu 1–16</div>',u:'R1 · Danh từ',
      s:'Please send your ___ to the human resources department by Friday.',o:['apply','application','applied','applicable'],k:1,
      e:'Sau <b>tính từ sở hữu your</b> cần một <b>danh từ</b> → <b>application</b> (đơn đăng ký). apply là động từ, applied là V2/V3, applicable là tính từ.<br>Dịch: Vui lòng gửi đơn của bạn đến phòng nhân sự trước thứ Sáu.'},
@@ -375,54 +398,136 @@
     {u:'Part 6 · Hòa hợp chủ ngữ – động từ',s:'(20) Each of the new rooms on the second floor ___ a large screen and a projector.',o:['have','has','having','to have'],k:1,
      e:'Câu cần <b>động từ chính</b> → loại having, to have. Chủ ngữ là <b>Each of the + N số nhiều</b> → động từ <b>số ít</b> → <b>has</b>. Đừng chia theo “rooms” hay “floor” đứng gần.<br>Dịch: Mỗi phòng mới ở tầng 2 đều có một màn hình lớn và một máy chiếu.'}
   ];
-  var KEY='summaryOld.pt2.quiz', L='ABCD';
-  var ans=(function(){try{var a=JSON.parse(localStorage.getItem(KEY)||'{}');return a&&typeof a==='object'?a:{};}catch(e){return {};}})();
-  function save(){try{localStorage.setItem(KEY,JSON.stringify(ans));}catch(e){}}
-  var box=document.getElementById('ltQuiz');
-  function esc(s){return s.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
-  function render(){
-    box.innerHTML=Q.map(function(q,i){
-      var st=esc(q.s).replace('___','<span class="lt-blank">&nbsp;</span>');
-      return (q.h||'')+'<div class="lt-q" id="ltq'+i+'"><div class="num">Câu '+(i+1)+' <small>· '+esc(q.u)+'</small></div><p class="st">'+st+'</p><div class="lt-opts">'+
-        q.o.map(function(o,j){return '<button type="button" class="lt-opt" data-q="'+i+'" data-o="'+j+'"><b>'+L[j]+'</b><span>'+esc(o)+'</span></button>';}).join('')+
-        '</div><div class="lt-fb" role="status"></div></div>';
-    }).join('');
-    Q.forEach(function(q,i){ if(typeof ans[i]==='number' && ans[i]>=0 && ans[i]<4) show(i,ans[i]); else delete ans[i]; });
-    score();
-  }
-  function show(i,j){
-    var q=Q[i], el=document.getElementById('ltq'+i), ok=j===q.k;
-    [].forEach.call(el.querySelectorAll('.lt-opt'),function(b,x){
-      b.disabled=true;
-      if(x===q.k) b.classList.add('ok'); else if(x===j) b.classList.add('bad'); else b.classList.add('dim');
+  var QL=[{"h":"<div class=\"lt-grp\">Part 1 · Câu 1–4: nhìn tranh, nghe 4 câu mô tả, chọn câu đúng nhất</div>","u":"Part 1 · Tranh","hide":1,"s":"","img":"../../toeic/img/t13/q1.jpg","au":"../../toeic/audio/t13/E24-T03-01.mp3","o":["She's cleaning an oven.","She's moving a pot.","She's opening a cabinet.","She's holding a towel."],"k":3,"e":"<br>Băng đọc:<ol class=\"lt-tr\" type=\"A\"><li>She's cleaning an oven. <i>Cô ấy đang lau chùi lò nướng.</i></li><li>She's moving a pot. <i>Cô ấy đang di chuyển một cái nồi.</i></li><li>She's opening a cabinet. <i>Cô ấy đang mở một cái tủ.</i></li><li class=\"ok\">She's holding a towel. <i>Cô ấy đang cầm một chiếc khăn.</i></li></ol>"},{"h":"","u":"Part 1 · Tranh","hide":1,"s":"","img":"../../toeic/img/t19/q1.jpg","au":"../../toeic/audio/t19/E24-T09-01.mp3","o":["He's standing on a rug.","He's turning a doorknob.","He's climbing a ladder.","He's painting a wall."],"k":2,"e":"<br>Băng đọc:<ol class=\"lt-tr\" type=\"A\"><li>He's standing on a rug. <i>Anh ấy đang đứng trên tấm thảm.</i></li><li>He's turning a doorknob. <i>Anh ấy đang vặn tay nắm cửa.</i></li><li class=\"ok\">He's climbing a ladder. <i>Anh ấy đang leo thang.</i></li><li>He's painting a wall. <i>Anh ấy đang sơn tường.</i></li></ol>"},{"h":"","u":"Part 1 · Tranh","hide":1,"s":"","img":"../../toeic/img/t3/q1.jpg","au":"../../toeic/audio/t3/E26-T03-01.mp3","o":["He's fixing a file drawer.","He's rolling up his sleeves.","He's closing a laptop computer.","He's drinking from a mug."],"k":3,"e":"<br>Băng đọc:<ol class=\"lt-tr\" type=\"A\"><li>He's fixing a file drawer. <i>Anh ấy đang sửa chữa một ngăn kéo hồ sơ.</i></li><li>He's rolling up his sleeves. <i>Anh ấy đang xắn tay áo lên.</i></li><li>He's closing a laptop computer. <i>Anh ấy đang đóng máy tính xách tay.</i></li><li class=\"ok\">He's drinking from a mug. <i>Anh ấy đang uống từ một chiếc cốc.</i></li></ol>"},{"h":"","u":"Part 1 · Tranh","hide":1,"s":"","img":"../../toeic/img/t10/q3.jpg","au":"../../toeic/audio/t10/E26-T10-03.mp3","o":["They’re strolling in a park.","They’re shaking hands.","He’s holding up an umbrella.","She’s handing him a phone."],"k":2,"e":"<br>Băng đọc:<ol class=\"lt-tr\" type=\"A\"><li>They’re strolling in a park. <i>Họ đang dạo bộ trong công viên.</i></li><li>They’re shaking hands. <i>Họ đang bắt tay nhau.</i></li><li class=\"ok\">He’s holding up an umbrella. <i>Anh ấy đang cầm một chiếc ô giơ lên.</i></li><li>She’s handing him a phone. <i>Cô ấy đang đưa cho anh ấy một chiếc điện thoại.</i></li></ol>"},{"h":"<div class=\"lt-grp\">Part 2 · Câu 5–14: nghe câu hỏi và 3 câu trả lời, chọn câu đáp phù hợp</div>","u":"Part 2 · Who","hide":1,"s":"","au":"../../toeic/audio/t15/E24-T05-20.mp3","o":["I just ate.","It closes at five.","Alberto did."],"k":2,"e":"<br>Câu hỏi: <b>Who paid for lunch?</b> <i>Ai đã trả tiền bữa trưa?</i><ol class=\"lt-tr\" type=\"A\"><li>I just ate. <i>Tôi vừa ăn xong.</i></li><li>It closes at five. <i>Nó đóng cửa lúc năm giờ.</i></li><li class=\"ok\">Alberto did. <i>Alberto đã trả.</i></li></ol>"},{"h":"","u":"Part 2 · When","hide":1,"s":"","au":"../../toeic/audio/t8/E26-T08-25.mp3","o":["A new travel guide.","At eight o’clock.","On the shelf."],"k":1,"e":"<br>Câu hỏi: <b>When does the bookstore open?</b> <i>Hiệu sách mở cửa khi nào?</i><ol class=\"lt-tr\" type=\"A\"><li>A new travel guide. <i>Một cuốn cẩm nang du lịch mới.</i></li><li class=\"ok\">At eight o’clock. <i>Lúc tám giờ.</i></li><li>On the shelf. <i>Trên kệ.</i></li></ol>"},{"h":"","u":"Part 2 · Where","hide":1,"s":"","au":"../../toeic/audio/t19/E24-T09-08.mp3","o":["It's in room 235.","No, the black one.","Just some blouses."],"k":0,"e":"<br>Câu hỏi: <b>Where is the fashion seminar?</b> <i>Hội thảo thời trang diễn ra ở đâu?</i><ol class=\"lt-tr\" type=\"A\"><li class=\"ok\">It's in room 235. <i>Ở phòng 235.</i></li><li>No, the black one. <i>Không, cái màu đen.</i></li><li>Just some blouses. <i>Chỉ vài cái áo cánh thôi.</i></li></ol>"},{"h":"","u":"Part 2 · Where","hide":1,"s":"","au":"../../toeic/audio/t3/E26-T03-07.mp3","o":["On the bottom shelf.","A large serving spoon.","It was discounted."],"k":0,"e":"<br>Câu hỏi: <b>Where's the coffeemaker?</b> <i>Máy pha cà phê ở đâu?</i><ol class=\"lt-tr\" type=\"A\"><li class=\"ok\">On the bottom shelf. <i>Ở kệ dưới cùng.</i></li><li>A large serving spoon. <i>Một cái thìa phục vụ lớn.</i></li><li>It was discounted. <i>Nó đã được giảm giá.</i></li></ol>"},{"h":"","u":"Part 2 · Where","hide":1,"s":"","au":"../../toeic/audio/t7/E26-T07-07.mp3","o":["A large account.","Here at the bottom.","Hang it on the wall."],"k":1,"e":"<br>Câu hỏi: <b>Where do I sign this contract?</b> <i>Tôi ký hợp đồng này ở đâu?</i><ol class=\"lt-tr\" type=\"A\"><li>A large account. <i>Một tài khoản lớn.</i></li><li class=\"ok\">Here at the bottom. <i>Ở đây, phía dưới cùng.</i></li><li>Hang it on the wall. <i>Treo nó lên tường.</i></li></ol>"},{"h":"","u":"Part 2 · When","hide":1,"s":"","au":"../../toeic/audio/t2/E26-T02-16.mp3","o":["A round-trip ticket.","Let's break for lunch.","At 3:30 P.M."],"k":2,"e":"<br>Câu hỏi: <b>When's the bus going to be here?</b> <i>Xe buýt sẽ đến đây lúc nào?</i><ol class=\"lt-tr\" type=\"A\"><li>A round-trip ticket. <i>Vé khứ hồi.</i></li><li>Let's break for lunch. <i>Hãy nghỉ ăn trưa.</i></li><li class=\"ok\">At 3:30 P.M. <i>Lúc 3:30 chiều.</i></li></ol>"},{"h":"","u":"Part 2 · How","hide":1,"s":"","au":"../../toeic/audio/t6/E26-T06-07.mp3","o":["About a month.","Mostly the roof.","I finished that book."],"k":0,"e":"<br>Câu hỏi: <b>How long will the renovations take?</b> <i>Việc cải tạo sẽ mất bao lâu?</i><ol class=\"lt-tr\" type=\"A\"><li class=\"ok\">About a month. <i>Khoảng một tháng.</i></li><li>Mostly the roof. <i>Chủ yếu là phần mái nhà.</i></li><li>I finished that book. <i>Tôi đã đọc xong cuốn sách đó rồi.</i></li></ol>"},{"h":"","u":"Part 2 · When","hide":1,"s":"","au":"../../toeic/audio/t18/E24-T08-08.mp3","o":["This afternoon.","That's a good point.","At a medical clinic."],"k":0,"e":"<br>Câu hỏi: <b>When is your doctor's appointment?</b> <i>Lịch hẹn khám bác sĩ của bạn là khi nào?</i><ol class=\"lt-tr\" type=\"A\"><li class=\"ok\">This afternoon. <i>Chiều nay.</i></li><li>That's a good point. <i>Ý đó hay đấy.</i></li><li>At a medical clinic. <i>Ở một phòng khám.</i></li></ol>"},{"h":"","u":"Part 2 · When","hide":1,"s":"","au":"../../toeic/audio/t5/E26-T05-12.mp3","o":["It was too expensive.","I don't need one.","By Tuesday at the latest."],"k":2,"e":"<br>Câu hỏi: <b>When is your budget report due?</b> <i>Báo cáo ngân sách của bạn hạn chót là khi nào?</i><ol class=\"lt-tr\" type=\"A\"><li>It was too expensive. <i>Nó quá đắt.</i></li><li>I don't need one. <i>Tôi không cần.</i></li><li class=\"ok\">By Tuesday at the latest. <i>Muộn nhất là thứ Ba.</i></li></ol>"},{"h":"","u":"Part 2 · Who","hide":1,"s":"","au":"../../toeic/audio/t18/E24-T08-07.mp3","o":["Some paper napkins.","Camille said she will.","He took out the trash."],"k":1,"e":"<br>Câu hỏi: <b>Who's picking up the newspaper?</b> <i>Ai sẽ đi lấy tờ báo?</i><ol class=\"lt-tr\" type=\"A\"><li>Some paper napkins. <i>Vài cái khăn giấy.</i></li><li class=\"ok\">Camille said she will. <i>Camille nói cô ấy sẽ đi lấy.</i></li><li>He took out the trash. <i>Anh ấy đã đổ rác.</i></li></ol>"},{"h":"<div class=\"lt-grp\">Part 3 · Hội thoại · Câu 15–17</div><div class=\"lt-passage\"><audio class=\"lt-au\" controls preload=\"none\" src=\"../../toeic/audio/t17/E24-T07-41-43.mp3\"></audio><details class=\"lt-scr\"><summary>Lời thoại &amp; bản dịch (xem sau khi làm xong)</summary><p><b>M:</b> Did you see the road construction sign at the corner? All traffic is being directed away from our street—no one can come this way!<br><i>Chị có thấy biển báo thi công đường ở góc phố không? Tất cả xe cộ đang bị chuyển hướng khỏi con phố của mình, không ai đi lối này được!</i></p><p><b>W:</b> I know! How will customers visit our store to make copies and pick up photo prints?<br><i>Tôi biết! Vậy khách hàng làm sao đến cửa hàng mình để photo tài liệu và lấy ảnh in đây?</i></p><p><b>M:</b> I'm afraid they'll have to park on another street. They can still access the store on foot.<br><i>Tôi e là họ sẽ phải đỗ xe ở phố khác. Họ vẫn có thể đi bộ đến cửa hàng.</i></p><p><b>W:</b> OK. I'll update our social media page to direct our customers.<br><i>Được rồi. Tôi sẽ cập nhật trang mạng xã hội của mình để chỉ đường cho khách.</i></p></details></div>","u":"Part 3 · Hội thoại","s":"What problem do the speakers discuss?","o":["A parking garage is full.","A street is closed.","Some equipment is broken.","Some items are damaged."],"k":1,"e":"<br>Những người nói đang bàn về vấn đề gì? → <b>Một con phố bị đóng.</b>"},{"h":"","u":"Part 3 · Hội thoại","s":"What does the man say customers will have to do?","o":["Visit an online store","Present a receipt","Park in a different area","Schedule a delivery"],"k":2,"e":"<br>Người đàn ông nói khách hàng sẽ phải làm gì? → <b>Đỗ xe ở khu vực khác</b>"},{"h":"","u":"Part 3 · Hội thoại","s":"What will the woman do next?","o":["Cancel her plans for the weekend","Close the shop early","Drive slowly","Post an update on social media"],"k":3,"e":"<br>Người phụ nữ sẽ làm gì tiếp theo? → <b>Đăng thông tin cập nhật lên mạng xã hội</b>"},{"h":"<div class=\"lt-grp\">Part 4 · Bài nói · Câu 18–20</div><div class=\"lt-passage\"><audio class=\"lt-au\" controls preload=\"none\" src=\"../../toeic/audio/t1/E26-T01-83-85.mp3\"></audio><details class=\"lt-scr\"><summary>Lời thoại &amp; bản dịch (xem sau khi làm xong)</summary><p>Attention, passengers. All trains to Midway Station are delayed for track repairs. They expect to complete the repair within the hour. A bus will be departing for that destination in fifteen minutes. Also, a reminder that the station café opens at eight A.M., and there are food kiosks on platform one.<br><i>Xin hành khách chú ý. Tất cả các đoàn tàu đến ga Midway đều bị hoãn để sửa chữa đường ray. Họ dự kiến sẽ hoàn thành việc sửa chữa trong vòng một giờ tới. Một chiếc xe buýt sẽ khởi hành đến điểm đến đó trong 15 phút nữa. Ngoài ra, xin nhắc lại rằng quán cà phê tại nhà ga mở cửa lúc 8 giờ sáng, và có các quầy thực phẩm tại sân ga số 1.</i></p></details></div>","u":"Part 4 · Bài nói","s":"What is the announcement mainly about?","o":["A promotional event","A vacation package","A building renovation","A travel delay"],"k":3,"e":"<br>Thông báo chủ yếu nói về điều gì? → <b>Một sự trì hoãn chuyến đi</b>"},{"h":"","u":"Part 4 · Bài nói","s":"Why does the speaker say, \"A bus will be departing for that destination in fifteen minutes\"?","o":["To suggest an alternative arrangement","To explain an extended wait time","To recommend changing the travel date","To inform customers about a new destination"],"k":0,"e":"<br>Tại sao người nói lại nói &quot;Một chiếc xe buýt sẽ khởi hành đến điểm đến đó trong 15 phút nữa&quot;? → <b>Để gợi ý một sự sắp xếp thay thế</b>"},{"h":"","u":"Part 4 · Bài nói","s":"What does the speaker remind the listeners about?","o":["How to download a mobile application","Where a waiting area is located","How to reserve tickets","Where to buy food"],"k":3,"e":"<br>Người nói nhắc nhở người nghe về điều gì? → <b>Nơi mua thức ăn</b>"}];
+  var L='ABCD';
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+  function quiz(pre,key,Q,end){
+    var ans=(function(){try{var a=JSON.parse(localStorage.getItem(key)||'{}');return a&&typeof a==='object'?a:{};}catch(e){return {};}})();
+    function save(){try{localStorage.setItem(key,JSON.stringify(ans));}catch(e){}}
+    var box=document.getElementById(pre+'Quiz');
+    function render(){
+      box.innerHTML=Q.map(function(q,i){
+        var st=q.s?'<p class="st">'+esc(q.s).replace('___','<span class="lt-blank">&nbsp;</span>')+'</p>':'';
+        return (q.h||'')+'<div class="lt-q" id="'+pre+'q'+i+'"><div class="num">Câu '+(i+1)+' <small>· '+esc(q.u)+'</small></div>'+
+          (q.img?'<img class="lt-photo" src="'+q.img+'" alt="Tranh câu '+(i+1)+'" loading="lazy">':'')+
+          (q.au?'<audio class="lt-au" controls preload="none" src="'+q.au+'"></audio>':'')+st+'<div class="lt-opts">'+
+          q.o.map(function(o,j){return '<button type="button" class="lt-opt" data-q="'+i+'" data-o="'+j+'"><b>'+L[j]+'</b><span'+(q.hide?' class="lt-hid">· · ·':'>'+esc(o))+'</span></button>';}).join('')+
+          '</div><div class="lt-fb" role="status"></div></div>';
+      }).join('');
+      Q.forEach(function(q,i){ if(typeof ans[i]==='number' && ans[i]>=0 && ans[i]<q.o.length) show(i,ans[i]); else delete ans[i]; });
+      score();
+    }
+    function show(i,j){
+      var q=Q[i], el=document.getElementById(pre+'q'+i), ok=j===q.k;
+      [].forEach.call(el.querySelectorAll('.lt-opt'),function(b,x){
+        b.disabled=true;
+        if(q.hide){var sp=b.querySelector('span');sp.className='';sp.textContent=q.o[x];}
+        if(x===q.k) b.classList.add('ok'); else if(x===j) b.classList.add('bad'); else b.classList.add('dim');
+      });
+      var bl=el.querySelector('.lt-blank'); if(bl){bl.textContent=q.o[q.k]; bl.classList.add('on');}
+      var fb=el.querySelector('.lt-fb'); fb.className='lt-fb show '+(ok?'good':'wrong');
+      fb.innerHTML='<strong>'+(ok?'✓ Chính xác!':'✗ Chưa đúng. Đáp án: ('+L[q.k]+') '+esc(q.o[q.k]))+'</strong>'+(q.e?(/^<br>/.test(q.e)?'':' ')+q.e:'');
+    }
+    function score(){
+      var n=0,c=0; Q.forEach(function(q,i){ if(ans[i]!==undefined){n++; if(ans[i]===q.k)c++;} });
+      document.getElementById(pre+'Score').textContent='Đúng '+c+' / '+Q.length;
+      document.getElementById(pre+'Done').textContent='Đã làm '+n+'/'+Q.length;
+      document.getElementById(pre+'Bar').style.width=(Q.length?n/Q.length*100:0)+'%';
+      var en=document.getElementById(pre+'End'), r=Q.length?c/Q.length:0;
+      if(Q.length && n===Q.length){
+        en.classList.add('show');
+        document.getElementById(pre+'EndIc').textContent=r>=0.8?'🎉':r>=0.55?'👍':'💪';
+        document.getElementById(pre+'EndTxt').innerHTML='Bạn làm đúng <b>'+c+'/'+Q.length+'</b> câu. '+end(r);
+      } else en.classList.remove('show');
+    }
+    box.addEventListener('click',function(ev){
+      var b=ev.target.closest('.lt-opt'); if(!b||b.disabled) return;
+      var i=+b.dataset.q, j=+b.dataset.o; if(ans[i]!==undefined) return;
+      ans[i]=j; save(); show(i,j); score();
+      if(Object.keys(ans).length===Q.length) setTimeout(function(){document.getElementById(pre+'End').scrollIntoView({behavior:'smooth',block:'center'});},300);
     });
-    var bl=el.querySelector('.lt-blank'); bl.textContent=q.o[q.k]; bl.classList.add('on');
-    var fb=el.querySelector('.lt-fb'); fb.className='lt-fb show '+(ok?'good':'wrong');
-    fb.innerHTML='<strong>'+(ok?'✓ Chính xác!':'✗ Chưa đúng. Đáp án: ('+L[q.k]+') '+esc(q.o[q.k]))+'</strong>'+q.e;
+    // chỉ phát một audio một lúc
+    box.addEventListener('play',function(ev){ [].forEach.call(document.querySelectorAll('audio'),function(a){ if(a!==ev.target) a.pause(); }); },true);
+    function reset(){ ans={}; save(); render(); var f=document.getElementById(pre+'q0'); if(f) f.scrollIntoView({behavior:'smooth',block:'center'}); }
+    document.getElementById(pre+'Again').onclick=reset;
+    document.getElementById(pre+'Reset').onclick=reset;
+    render();
+    return {add:function(more){ [].push.apply(Q,more); render(); }};
   }
-  function score(){
-    var n=0,c=0; Q.forEach(function(q,i){ if(ans[i]!==undefined){n++; if(ans[i]===q.k)c++;} });
-    document.getElementById('ltScore').textContent='Đúng '+c+' / '+Q.length;
-    document.getElementById('ltDone').textContent='Đã làm '+n+'/'+Q.length;
-    document.getElementById('ltBar').style.width=(n/Q.length*100)+'%';
-    var end=document.getElementById('ltEnd');
-    if(n===Q.length){
-      end.classList.add('show');
-      document.getElementById('ltEndIc').textContent=c>=16?'🎉':c>=11?'👍':'💪';
-      document.getElementById('ltEndTxt').innerHTML='Bạn làm đúng <b>'+c+'/'+Q.length+'</b> câu. '+(c>=16?'Rất tốt! Bạn đã sẵn sàng cho Progress Test 2.':c>=11?'Khá lắm! Đọc lại giải thích các câu sai và xem lại unit tương ứng trong bảng ngữ pháp nhé.':'Đừng lo! Ôn lại phần 3 (Bảng ngữ pháp), mở lại các unit hay sai rồi làm lại nhé.');
-    } else end.classList.remove('show');
-  }
-  box.addEventListener('click',function(ev){
-    var b=ev.target.closest('.lt-opt'); if(!b||b.disabled) return;
-    var i=+b.dataset.q, j=+b.dataset.o; if(ans[i]!==undefined) return;
-    ans[i]=j; save(); show(i,j); score();
-    if(Object.keys(ans).length===Q.length) setTimeout(function(){document.getElementById('ltEnd').scrollIntoView({behavior:'smooth',block:'center'});},300);
+
+  quiz('ls','summaryOld.pt2.listen',QL,function(r){
+    return r>=0.8?'Tai nghe tốt lắm! Giữ phong độ này cho ngày thi nhé.':r>=0.55?'Khá lắm! Mở “Lời thoại & bản dịch” ở các câu sai, nghe lại vài lần cho quen.':'Đừng lo! Nghe lại từng câu sai, vừa nghe vừa nhìn lời thoại, rồi làm lại nhé.';
   });
-  function reset(){ ans={}; save(); render(); document.getElementById('ltq0').scrollIntoView({behavior:'smooth',block:'center'}); }
-  document.getElementById('ltAgain').onclick=reset;
-  document.getElementById('ltReset').onclick=reset;
-  render();
+  var RQ=quiz('lt','summaryOld.pt2.quiz',QR,function(r){
+    return r>=0.8?'Rất tốt! Bạn đã sẵn sàng cho Progress Test 2.':r>=0.55?'Khá lắm! Đọc lại giải thích các câu sai và xem lại unit tương ứng trong bảng ngữ pháp nhé.':'Đừng lo! Ôn lại phần 3 (Bảng ngữ pháp), mở lại các unit hay sai rồi làm lại nhé.';
+  });
+
+  // ---------- 31 câu Starter TOEIC: tải từ Firestore starter/uNN (có bản quyền, không để trong repo) ----------
+  var SREF={p5:[['u01',101],['u01',105],['u02',102],['u02',104],['u03',101],['u03',103],['u04',101],['u04',103],['u05',103],['u05',104],
+               ['u07',101],['u07',103],['u08',102],['u08',103],['u09',102],['u09',103],['u11',101],['u11',103],['u12',102],['u12',103]],
+            p6:[['u03',1]], p7:[['u07',1],['u12',0]]};
+  var msg=document.getElementById('ltStarter');
+  function note(h){ msg.innerHTML=h; msg.hidden=!h; }
+  function accLoad(){
+    return new Promise(function(ok,no){
+      if(window.MACC) return ok();
+      var s=document.createElement('script'); s.src='../assets/acc.js';
+      s.onload=function(){ window.MACC?ok():no({kind:'net'}); }; s.onerror=function(){ no({kind:'net'}); };
+      document.head.appendChild(s);
+    });
+  }
+  function waitUser(ms){
+    return new Promise(function(ok){ var t0=Date.now();
+      (function tick(){ var u=window.MACC&&window.MACC.user(); if(u||Date.now()-t0>ms) return ok(u||null); setTimeout(tick,150); })(); });
+  }
+  function signedIn(){ try{ return !!localStorage.getItem('mt.acc'); }catch(e){ return false; } }
+  var K={A:0,B:1,C:2,D:3};
+  function paras(t){ return esc(t).split(/\n+/).filter(function(x){return x.trim();}).map(function(x){return '<p>'+x+'</p>';}).join(''); }
+  function unitName(d){ return String(d.title||'').split(' · ')[0]; }
+  function build(U){
+    var out=[], n=QR.length+1, first=true;
+    SREF.p5.forEach(function(r){
+      var d=U[r[0]], q=d&&(d.p5||[]).filter(function(x){return x.n===r[1];})[0]; if(!q) return;
+      out.push({h:first?'<div class="lt-grp">Part 5 · Câu '+n+'–'+(n+SREF.p5.length-1)+' · sách Starter TOEIC</div>':'',u:'Starter U'+(+r[0].slice(1))+' · '+unitName(d),
+        s:q.q.replace(/-{3,}/,'___'),o:q.o,k:K[q.a],e:esc(q.x||'')});
+      first=false;
+    });
+    SREF.p6.concat(SREF.p7).forEach(function(r,idx){
+      var isP6=idx<SREF.p6.length, d=U[r[0]], set=d&&(isP6?d.p6:d.p7)[r[1]]; if(!set) return;
+      var from=QR.length+out.length+1, to=from+set.qs.length-1;
+      var body=isP6?paras(set.text).replace(/\[\[(\d+)\]\]/g,'<b>($1)</b> ______'):(set.texts||[]).map(function(t){return '<div class="t7">'+esc(t)+'</div>';}).join('<hr>');
+      var h='<div class="lt-grp">'+(isP6?'Part 6':'Part 7')+' · Câu '+from+'–'+to+' · sách Starter TOEIC</div><div class="lt-passage"><p class="hd">'+esc(set.head||'')+'</p>'+body+'</div>';
+      set.qs.forEach(function(q,i){
+        out.push({h:i?'':h,u:(isP6?'Part 6':'Part 7')+' · Starter U'+(+r[0].slice(1)),
+          s:isP6?'('+q.n+') Chọn từ điền vào chỗ trống ('+q.n+').':q.q,o:q.o,k:K[q.a],e:esc(q.x||'')});
+      });
+    });
+    return out;
+  }
+  function loadStarter(){
+    note('Đang tải 31 câu Starter TOEIC…');
+    accLoad().then(function(){ return window.MACC.fs(); }).then(function(x){
+      return waitUser(x.user?0:(signedIn()?5000:2500)).then(function(u){ if(!u) throw {kind:'login'}; return x; });
+    }).then(function(x){
+      var ids={}; SREF.p5.concat(SREF.p6,SREF.p7).forEach(function(r){ids[r[0]]=1;});
+      return Promise.all(Object.keys(ids).map(function(id){
+        return x.F.getDoc(x.F.doc(x.db,'starter',id)).then(function(sn){ return [id, sn.exists()?sn.data():null]; });
+      }));
+    }).then(function(list){
+      var U={}; list.forEach(function(p){ U[p[0]]=p[1]; });
+      var more=build(U); if(!more.length) throw {kind:'none'};
+      RQ.add(more); note('');
+    }).catch(function(e){
+      var k=e&&e.kind, c=(e&&(e.code||e.message))||'';
+      if(k==='login') note('🔒 <b>Đăng nhập Google</b> để làm thêm 31 câu Starter TOEIC (nút đăng nhập ở góc trên trang). Đăng nhập xong tải lại trang nhé.');
+      else if(/permission/i.test(c)) note('🔒 Tài khoản của bạn chưa xem được bài Starter TOEIC. Nhắn thầy để được mở nhé.');
+      else note('Chưa tải được 31 câu Starter TOEIC (mạng chập chờn?). <a href="#pt-4b" onclick="location.reload();return false">Thử lại</a>');
+    });
+  }
+  loadStarter();
 })();
+
 </script>
 <script src="../flashcards.js?v=2" defer></script><script>window.ETSCFG=window.ETSCFG||{SCRIPT_URL:'https://script.google.com/macros/s/AKfycby3_45o2Zn3FMEMrVAg9nBCiQEIUvU9HgQxI2ZZtwJ4oUQ_bqXxj1vN0kL6cvhbDQCx/exec'};</script><script src="../assets/ui.js?v=17" data-site="summary"></script>
 </body></html>
