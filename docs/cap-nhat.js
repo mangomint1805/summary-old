@@ -1,6 +1,14 @@
 /* Có gì mới trên web Tóm tắt kiến thức TOEIC Pre — mới nhất ở trên cùng. Thêm mục mới vào ĐẦU danh sách; id là ngày (YYYY-MM-DD), cùng ngày thì thêm hậu tố (2026-10-21b). link (tuỳ chọn): [đường dẫn, chữ trên nút]. */
 window.MT_UPDATES = [
   {
+    id: '2026-11-09b', date: '09/11/2026',
+    title: '⚡ Thêm khung "Tóm tắt nhanh" ở đầu mỗi bài',
+    items: [
+      'Đầu mỗi bài tóm tắt giờ có khung "⚡ Tóm tắt nhanh": 3–4 ý chính đánh số, 6 từ vựng quan trọng nhất và một ô "Bẫy hay gặp".',
+      'Đọc khung này 1 phút trước khi học chi tiết, hoặc xem lại nhanh trước giờ kiểm tra. Phần chi tiết bên dưới vẫn giữ nguyên.'
+    ]
+  },
+  {
     id: '2026-11-09', date: '09/11/2026',
     title: 'Ôn Progress Test 2: thêm luyện nghe và nhiều câu đọc hơn',
     items: [
