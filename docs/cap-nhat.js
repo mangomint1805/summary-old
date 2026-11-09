@@ -4,7 +4,7 @@ window.MT_UPDATES = [
     id: '2026-11-09b', date: '09/11/2026',
     title: '⚡ Thêm khung "Tóm tắt nhanh" ở đầu mỗi bài',
     items: [
-      'Đầu mỗi bài tóm tắt giờ có khung "⚡ Tóm tắt nhanh": 3–4 ý chính đánh số, 6 từ vựng quan trọng nhất và một ô "Bẫy hay gặp".',
+      'Đầu mỗi bài tóm tắt và mỗi trang chuyên đề (bẫy Part 1, câu bị động, liên từ…) giờ có khung "⚡ Tóm tắt nhanh": 3–4 ý chính đánh số, 6 từ vựng quan trọng nhất và một ô "Bẫy hay gặp".',
       'Đọc khung này 1 phút trước khi học chi tiết, hoặc xem lại nhanh trước giờ kiểm tra. Phần chi tiết bên dưới vẫn giữ nguyên.'
     ]
   },
