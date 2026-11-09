@@ -236,3 +236,19 @@ html[data-theme=dark] .fx .fx-n{color:#c4a6ff;background:rgba(160,120,255,.16);}
 .doc em strong,.doc i strong,.doc strong em{color:var(--teal);}
 .doc th strong,.doc summary strong,.doc h2 strong,.doc h3 strong,.doc h4 strong,.doc h5 strong{color:inherit;}
 .doc strong .fx-f{color:inherit;}
+
+/* Đồng bộ màu theo theme (09/11/2026): các phần mới dùng màu chủ đạo của theme (--amber*),
+   không dùng xanh lá cố định, để Xoài / Hành baro / Thiên thần / Băng hoại đều đồng nhất. */
+.qk-h b{color:var(--amber-ink);}
+.qk-pts li::before{background:var(--amber);}
+.qk-pts li:nth-child(even)::before{background:var(--amber-ink);}
+.qk-w{background:var(--paper);border:1px solid var(--line);}
+.qk-w b{color:var(--amber-ink);}
+.doc h2:not(.ex-head){color:var(--amber-ink);border-left-color:var(--amber);background:linear-gradient(90deg,var(--amber-soft),transparent 75%);}
+.sec-all{color:var(--amber-ink);background:var(--amber-soft);}
+.doc details.sec>summary::after{color:var(--amber);}
+.doc details.more-box{border-color:var(--amber);}
+.doc details.more-box>summary{color:var(--amber-ink);}
+.doc h4{color:var(--amber-ink);}
+.doc em strong,.doc i strong,.doc strong em{color:var(--amber);}
+.qk-pts li::before{color:var(--card);}
