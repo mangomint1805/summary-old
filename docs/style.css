@@ -208,3 +208,25 @@ html[data-theme=dark] .doc table.v3note td{background:#2a2216!important;}
 html[data-theme=dark] .fx .fx-s{color:#8db4ff;background:rgba(96,140,255,.16);}
 html[data-theme=dark] .fx .fx-n{color:#c4a6ff;background:rgba(160,120,255,.16);}
 .fx-legend{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:13.5px;color:var(--dim);margin:0 0 10px;}
+
+/* Đề mục dạng thu gọn (details.sec) + mục "Học kỹ hơn" (09/11/2026) */
+.sec-tools{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 12px;color:var(--dim);font-size:14px;}
+.sec-all{font:inherit;font-weight:700;color:var(--teal);background:var(--teal-soft);border:0;border-radius:999px;padding:7px 14px;cursor:pointer;}
+.doc details.sec{border:1px solid var(--line);border-radius:12px;margin:10px 0;background:var(--card);}
+.doc details.sec>summary{list-style:none;cursor:pointer;padding:4px 12px 4px 4px;display:flex;align-items:center;gap:8px;}
+.doc details.sec>summary::-webkit-details-marker{display:none;}
+.doc details.sec>summary::after{content:"▾";margin-left:auto;color:var(--teal);font-size:18px;transition:transform .2s;}
+.doc details.sec[open]>summary::after{transform:rotate(180deg);}
+.doc details.sec>summary h2{margin:6px 0!important;flex:1;font-size:19px;}
+.doc details.sec[open]{padding:0 16px 14px;}
+.doc details.sec[open]>summary{margin:0 -16px 6px;padding-left:4px;padding-right:28px;border-bottom:1px solid var(--line);}
+.doc details.more-box{border:1px dashed var(--teal);border-radius:12px;margin:10px 0;padding:0 14px;}
+.doc details.more-box>summary{cursor:pointer;font-weight:800;color:var(--teal);padding:12px 0;list-style:none;}
+.doc details.more-box>summary::-webkit-details-marker{display:none;}
+.doc details.more-box>summary::after{content:" ▾";}
+.doc details.more-box[open]>summary::after{content:" ▴";}
+.doc details.more-box[open]{padding-bottom:12px;}
+.doc h4{font-size:17px;color:var(--teal);margin:20px 0 8px;}
+.doc h5{font-size:15.5px;color:var(--amber-ink);margin:16px 0 6px;}
+.doc .sub-note{color:var(--dim);font-size:14.5px;}
+@media (max-width:560px){.doc details.sec[open]{padding:0 10px 12px;}.doc details.sec[open]>summary{margin:0 -10px 6px;}.doc details.sec>summary h2{font-size:17px;}}

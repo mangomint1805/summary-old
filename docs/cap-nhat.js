@@ -1,6 +1,14 @@
 /* Có gì mới trên web Tóm tắt kiến thức TOEIC Pre — mới nhất ở trên cùng. Thêm mục mới vào ĐẦU danh sách; id là ngày (YYYY-MM-DD), cùng ngày thì thêm hậu tố (2026-10-21b). link (tuỳ chọn): [đường dẫn, chữ trên nút]. */
 window.MT_UPDATES = [
   {
+    id: '2026-11-09d', date: '09/11/2026',
+    title: '📂 Bài tóm tắt thu gọn theo đề mục',
+    items: [
+      'Mọi bài tóm tắt giờ hiện danh sách đề mục gọn gàng: bấm vào đề mục nào thì mở phần đó, bấm lần nữa để gập lại. Nút "▾ Mở tất cả" để xem cả bài.',
+      'Khung "⚡ Tóm tắt nhanh" ở đầu bài và nút flashcard từ vựng vẫn giữ nguyên. Khi in bài, mọi phần tự mở ra.'
+    ]
+  },
+  {
     id: '2026-11-09c', date: '09/11/2026',
     title: '🎨 Công thức và đề mục có màu, dễ đọc hơn',
     items: [

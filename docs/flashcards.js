@@ -9,7 +9,8 @@
     hs2.filter(function (h) { return /Vocabulary|Từ vựng/i.test(h.textContent); }).pop();
   if (!h2) return;
   // Lấy MỌI bảng nằm giữa tiêu đề "Bảng từ vựng" và tiêu đề h2 kế tiếp
-  var tables = [], el = h2.nextElementSibling;
+  var anchor = h2.parentNode && h2.parentNode.tagName === 'SUMMARY' ? h2.parentNode : h2; // đề mục thu gọn
+  var tables = [], el = anchor.nextElementSibling;
   while (el && el.tagName !== 'H2') {
     if (el.tagName === 'TABLE') tables.push(el);
     else if (el.querySelectorAll) [].push.apply(tables, el.querySelectorAll('table'));
@@ -148,7 +149,7 @@
     var b = document.createElement('button'); b.type = 'button'; b.className = cls; b.innerHTML = html;
     b.addEventListener('click', function () { open(); }); return b;
   }
-  h2.parentNode.insertBefore(openBtn('fc-open', '🃏 Học bằng flashcard <small>(' + cards.length + ' từ)</small>'), h2.nextSibling);
+  anchor.parentNode.insertBefore(openBtn('fc-open', '🃏 Học bằng flashcard <small>(' + cards.length + ' từ)</small>'), anchor.nextSibling);
   var sub = document.querySelector('main > .sub + h1 + .sub') || document.querySelector('main > h1');
   if (sub) sub.parentNode.insertBefore(openBtn('fc-jump', esc(h2.getAttribute('data-fc-jump') || '🃏 Flashcard từ vựng')), sub.nextSibling);
 
