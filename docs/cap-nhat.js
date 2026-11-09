@@ -1,6 +1,14 @@
 /* Có gì mới trên web Tóm tắt kiến thức TOEIC Pre — mới nhất ở trên cùng. Thêm mục mới vào ĐẦU danh sách; id là ngày (YYYY-MM-DD), cùng ngày thì thêm hậu tố (2026-10-21b). link (tuỳ chọn): [đường dẫn, chữ trên nút]. */
 window.MT_UPDATES = [
   {
+    id: '2026-11-09c', date: '09/11/2026',
+    title: '🎨 Công thức và đề mục có màu, dễ đọc hơn',
+    items: [
+      'Công thức ngữ pháp được tô màu theo vai trò: chủ ngữ / tân ngữ (xanh dương), động từ (xanh lá), trợ động từ be / have / will (cam), danh từ / tính từ / trạng từ (tím). Nhìn là biết chỗ nào cần điền gì.',
+      'Đầu bài có dòng chú thích màu. Các đề mục lớn có vạch màu bên trái, đề mục nhỏ có chấm màu, lướt tìm phần cần xem nhanh hơn.'
+    ]
+  },
+  {
     id: '2026-11-09b', date: '09/11/2026',
     title: '⚡ Thêm khung "Tóm tắt nhanh" ở đầu mỗi bài',
     items: [
