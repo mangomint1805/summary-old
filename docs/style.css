@@ -230,3 +230,9 @@ html[data-theme=dark] .fx .fx-n{color:#c4a6ff;background:rgba(160,120,255,.16);}
 .doc h5{font-size:15.5px;color:var(--amber-ink);margin:16px 0 6px;}
 .doc .sub-note{color:var(--dim);font-size:14.5px;}
 @media (max-width:560px){.doc details.sec[open]{padding:0 10px 12px;}.doc details.sec[open]>summary{margin:0 -10px 6px;}.doc details.sec>summary h2{font-size:17px;}}
+
+/* Chữ in đậm có màu cho dễ đọc (09/11/2026) */
+.doc p strong,.doc li strong,.doc td strong,.doc dd strong{color:var(--amber-ink);}
+.doc em strong,.doc i strong,.doc strong em{color:var(--teal);}
+.doc th strong,.doc summary strong,.doc h2 strong,.doc h3 strong,.doc h4 strong,.doc h5 strong{color:inherit;}
+.doc strong .fx-f{color:inherit;}

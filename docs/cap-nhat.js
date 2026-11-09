@@ -5,7 +5,8 @@ window.MT_UPDATES = [
     title: '📂 Bài tóm tắt thu gọn theo đề mục',
     items: [
       'Mọi bài tóm tắt giờ hiện danh sách đề mục gọn gàng: bấm vào đề mục nào thì mở phần đó, bấm lần nữa để gập lại. Nút "▾ Mở tất cả" để xem cả bài.',
-      'Khung "⚡ Tóm tắt nhanh" ở đầu bài và nút flashcard từ vựng vẫn giữ nguyên. Khi in bài, mọi phần tự mở ra.'
+      'Khung "⚡ Tóm tắt nhanh" ở đầu bài và nút flashcard từ vựng vẫn giữ nguyên. Khi in bài, mọi phần tự mở ra.',
+      'Chữ in đậm giờ có màu: ý quan trọng màu cam nâu, từ khoá trong câu ví dụ màu xanh, liếc qua là thấy.'
     ]
   },
   {
